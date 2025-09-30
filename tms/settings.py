@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-MIDDLEWARE = [
+""" MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,7 +64,7 @@ TEMPLATES = [
             ],
         },
     },
-]
+] """
 
 WSGI_APPLICATION = 'tms.wsgi.application'
 
@@ -120,3 +120,93 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Custom User Model
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# Middleware configuration (order matters!)
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'tenant.middleware.TenantMiddleware',  # Must come after AuthenticationMiddleware
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+# Context processors
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'tenant.context_processors.tenant_context',  # Add tenant context
+            ],
+        },
+    },
+]
+
+# Tenant-specific settings
+TENANT_MODEL = 'tenant.Tenant'
+TENANT_SUBDOMAIN_PREFIX = 'app'  # e.g., tenant1.app.yourdomain.com
+TENANT_DEFAULT_SLUG = 'demo'  # For development/testing
+
+# Session configuration for tenant isolation
+SESSION_COOKIE_NAME = 'tenant_sessionid'
+SESSION_COOKIE_DOMAIN = '.yourdomain.com'  # Allow cookies across subdomains
+SESSION_COOKIE_SECURE = True  # Use HTTPS in production
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'
+
+# Cache configuration for tenant isolation
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'KEY_PREFIX': 'tenant',  # Prefix cache keys with tenant
+        'OPTIONS': {
+            'CLIENT_CLASS': 'tenant.cache.TenantAwareRedisClient',
+        }
+    }
+}
+
+# Database routing for advanced isolation (optional)
+DATABASE_ROUTERS = ['tenant.routers.TenantDatabaseRouter']
+
+# Logging configuration for audit
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'tenant_audit': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'logs/tenant_audit.log',
+            'maxBytes': 1024 * 1024 * 10,  # 10MB
+            'backupCount': 10,
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'tenant.audit': {
+            'handlers': ['tenant_audit'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {tenant_id} {user_id} {message}',
+            'style': '{',
+        },
+    },
+}
