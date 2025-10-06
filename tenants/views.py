@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 
 from .decorators import tenant_required, tenant_owner_required
 from .models import Tenant, TenantUser, TenantInvitation
+from accounts.models import CustomUser
 
 
 class TenantSelectView(LoginRequiredMixin, ListView):
@@ -42,4 +43,81 @@ class TenantSelectView(LoginRequiredMixin, ListView):
 
 
 class TenantCreateView(LoginRequiredMixin, CreateView):
-    ...
+    """ View for creating a new tenant (company registration). """
+
+    model = Tenant
+    template_name = 'tenants/create.html'
+    fields = [
+        'name',
+        'legal_name',
+        'document',
+        'slug',
+        'email',
+        'phone',
+    ]
+    success_url = reverse_lazy('dashboard')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        # Creator automatically becomes the owner of the tenant.
+        messages.success(
+            self.request,
+            f"Company {self.object.name} created successfully!"
+        )
+
+        # Set as current tenant
+        self.request.session['tenant_id'] = str(self.object.id)
+        self.request.user.current_tenant = self.object
+        self.request.user.save(update_fields=['current_tenant'])
+
+        return response
+
+
+@login_required
+@tenant_required
+@tenant_owner_required
+def invite_user(request):
+    """ View for inviting users to join a tenant."""
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        role = request.POST.get('role', 'user')
+
+        # Check if the user already exists in the tenant
+        existing_user = CustomUser.objects.filter(email=email).first()
+        if existing_user:
+            if request.tenant.members.filter(user=existing_user).exists():
+                messages.error(request, 'User is already a member of this tenant')
+                return redirect('tenants:members')
+
+        # Create invitation
+        invitation = TenantInvitation.objects.create(
+            tenant=request.tenant,
+            email=email,
+            invited_by=request.user,
+            role=role
+        )
+
+        # Send invitation email logic
+        # send_invitation_email(invitation)
+
+        messages.success(request, f"Invitation sent to {email}")
+        return redirect('tenants:members')
+
+    context = {
+        'roles': TenantUser.ROLE_CHOICES[1:]
+    }
+    return render(request, 'tenants/invite.html', context)
+
+
+@login_required
+def accept_invitation(request, token):
+    """ View for accepting a tena t invitation. """
+    invitation = get_object_or_404(TenantInvitation, token=token)
+
+    if not invitation.is_valid():
+        messages.error(request, 'This invitation has expired or already been used.')
+        return redirect('login')
+
+    # Check if e-mail matches
+    
