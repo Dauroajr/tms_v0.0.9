@@ -16,6 +16,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# Criar diretório de logs se não existir
+LOGS_DIR = BASE_DIR / 'logs'
+LOGS_DIR.mkdir(exist_ok=True)
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -182,7 +187,72 @@ CACHES = {
 # Database routing for advanced isolation (optional)
 DATABASE_ROUTERS = ['tenant.routers.TenantDatabaseRouter']
 
-# Logging configuration for audit
+
+# ==========================================
+# LOGGING CONFIGURATION
+# ==========================================
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': str(LOGS_DIR / 'django.log'),
+            'maxBytes': 1024 * 1024 * 5,  # 5MB
+            'backupCount': 5,
+            'formatter': 'verbose',
+        },
+        'tenant_audit': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': str(LOGS_DIR / 'tenant_audit.log'),
+            'maxBytes': 1024 * 1024 * 10,  # 10MB
+            'backupCount': 10,
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['console', 'file'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'tenant': {
+            'handlers': ['console', 'tenant_audit'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'tenant.audit': {
+            'handlers': ['tenant_audit'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
+
+
+""" # Logging configuration for audit
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -210,3 +280,21 @@ LOGGING = {
         },
     },
 }
+ """
+
+
+# ==========================================
+# SECURITY SETTINGS FOR MULTI-TENANT
+# ==========================================
+
+# Adicione seu domínio permitido
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.yourdomain.com']
+
+# CSRF settings for subdomains
+# CSRF_COOKIE_DOMAIN = '.yourdomain.com'  # Uncomment for production
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    # Add your production domains here
+]
