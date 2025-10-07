@@ -120,4 +120,17 @@ def accept_invitation(request, token):
         return redirect('login')
 
     # Check if e-mail matches
-    
+    if request.user.email != invitation.email:
+        messages.error(request, 'This invitation was sent to a different email address.')
+        return redirect('dashboard')
+
+    # Accepting the invitation
+    membership = invitation.accept(request.user)
+
+    # Set as the current tenant
+    request.session['tenant_id'] = str(invitation.tenant.id)
+    request.user.current_tenant = invitation.tenant
+    request.user.save(update_fields=['current_tenant'])
+
+    messages.success(request, f"You've joined {invitation.tenant.name}!")
+    return redirect('dashboard')

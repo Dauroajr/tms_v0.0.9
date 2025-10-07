@@ -20,7 +20,7 @@ class CustomUser(AbstractUser):
         null=True,
         blank=True,
         related_name='current_users',
-        help_text=_('Currentlky active tenant for this user')
+        help_text=_('Currently active tenant for this user')
     )
     phone = models.CharField(max_length=20, blank=True, null=True)
     document_number = models.CharField(
