@@ -41,7 +41,7 @@ class TenantUserAdmin(ModelAdmin):
     list_filter = ['role', 'is_owner', 'is_active', 'joined_at']
     search_fields = ['user__email__icontains', 'user__username__icontains', 'tenant__name__icontains']
     readonly_fields = ['id', 'joined_at', 'last_access']
-    autocomplete_fields = ['user', 'tenant', 'invited_by']
+    # autocomplete_fields = ['user', 'tenant', 'invited_by']
 
 
 @admin.register(TenantInvitation)
@@ -50,7 +50,7 @@ class TenantInvitationAdmin(ModelAdmin):
     list_filter = ['role', 'created_at', 'expires_at']
     search_fields = ['email__icontains', 'tenant__name__icontains', 'invited_by__username__icontains']
     readonly_fields = ['id', 'token', 'created_at', 'accepted_at', 'accepted_by']
-    autocomplete_fields = ['tenant', 'invited_by']
+    # autocomplete_fields = ['tenant', 'invited_by']
 
 
 @admin.register(TenantAuditLog)
@@ -64,8 +64,8 @@ class TenantAuditLogAdmin(ModelAdmin):
         'model_name__icontains',
         'action__icontains'
     ]
-    readonly_fields = ['id', 'tenant', 'user', 'action', 'timestamp', 'details']
-    autocomplete_fields = ['tenant', 'user']
+    readonly_fields = ['id', 'tenant', 'user', 'action', 'timestamp', ]
+    # autocomplete_fields = ['tenant', 'user']
 
     def has_add_permission(self, request):
         return False  # Audit logs should be added automatically, not manually

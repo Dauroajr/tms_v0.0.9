@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'accounts',
+    'audit',
+    'core',
+    'tenants',
 ]
 
 """ MIDDLEWARE = [
@@ -146,7 +151,9 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -154,14 +161,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'tenant.context_processors.tenant_context',  # Add tenant context
+                'tenants.context_processors.tenant_context',  # Add tenant context
             ],
         },
     },
 ]
 
 # Tenant-specific settings
-TENANT_MODEL = 'tenant.Tenant'
+TENANT_MODEL = 'tenants.Tenant'
 TENANT_SUBDOMAIN_PREFIX = 'app'  # e.g., tenant1.app.yourdomain.com
 TENANT_DEFAULT_SLUG = 'demo'  # For development/testing
 
@@ -185,14 +192,14 @@ CACHES = {
 }
 
 # Database routing for advanced isolation (optional)
-DATABASE_ROUTERS = ['tenant.routers.TenantDatabaseRouter']
+DATABASE_ROUTERS = ['tenants.routers.TenantDatabaseRouter']
 
 
 # ==========================================
 # LOGGING CONFIGURATION
 # ==========================================
 
-LOGGING = {
+""" LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
@@ -249,7 +256,7 @@ LOGGING = {
             'propagate': False,
         },
     },
-}
+} """
 
 
 """ # Logging configuration for audit

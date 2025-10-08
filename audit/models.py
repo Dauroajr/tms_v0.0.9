@@ -20,7 +20,7 @@ class TenantAuditLog(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     tenant = models.ForeignKey(
-        'tenant.Tenant',
+        'tenants.Tenant',
         on_delete=models.CASCADE,
         related_name='audit_logs'
     )
