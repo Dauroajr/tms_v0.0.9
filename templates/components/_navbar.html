@@ -1,0 +1,83 @@
+{% load static i18n l10n %}
+
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-top">
+  <div class="container-fluid flex-row">
+    <!-- Left side menu -->
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-menu">
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">{% translate 'Início' %}</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">{% translate 'Sobre Nós' %}</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {% translate 'Serviços' %}
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">{% translate 'Eventos' %}</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">{% translate 'Negócios' %}</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">{% translate 'Viagens' %}</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">{% translate 'Transfers' %}</a></li>
+        </ul>
+      </li>
+      
+      {% if user.is_authenticated %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {% translate 'Seus Veículos' %}
+        </a>
+        <ul class="dropdown-menu">
+          {% if not company.cars %}
+            <li><a class="dropdown-item" href="#">{% translate 'Adicionar Veículo' %}</a></li>
+            <li><hr class="dropdown-divider"></li>
+          {% endif %}
+          <li><a class="dropdown-item" href="#">{% translate 'SUVS' %}</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">{% translate 'SEDANS' %}</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">{% translate 'MINIVANS' %}</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a class="nav-link" href="#">{% translate 'Seu Painel' %}</a></li>
+      {% endif %}
+
+    </ul>
+
+    <!-- Right side login/register/logout links -->
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-signup">
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="mt-2 alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      {% if user.is_authenticated %}
+      <li class="nav-item welcome">
+        {% translate 'Bem vindo' %}, <a class="nav-link" href="#">{{ user.first_name|default:user.username }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">{% translate 'Sair' %}</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="#">{% translate 'Login' %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">{% translate 'Cadastrar-se' %}</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

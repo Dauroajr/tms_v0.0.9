@@ -1,0 +1,38 @@
+{% load static i18n l10n %}
+
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+<footer>
+  <div class="footer-top">
+    <div class="site-map">{% translate 'Mapa do Site' %}
+      <ul>
+        <li>{% translate 'Início' %}</li>
+        <li>{% translate 'Sobre Nós' %}</li>
+        <li>{% translate 'Serviços' %}</li>
+        <li>{% translate 'Veículos' %}</li>
+      </ul>
+    </div>
+    <div class="social-media">
+      <ul>
+        <li style='--i:6;--clr:#1877f2'>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+        </li>
+        <li style='--i:5;--clr:#25d366'>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </li>
+
+        <li style='--i:4;--clr:#000000'>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+        </li>
+        
+        <li style='--i:3;--clr:#c32aa3'>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+        </li>
+        
+        <li style='--i:2;--clr:#ff0000'>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

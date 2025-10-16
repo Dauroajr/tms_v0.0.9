@@ -1,0 +1,58 @@
+.main-content {
+  width: 100%;
+  max-width: none;
+  display: grid;
+  /* align-items: center; */
+  /* align-content: center; */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: #efefef; /* #9392d2 */
+}
+
+.home-title {
+  font-family: "Baskervville";
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.card-group {
+  margin: 15px;
+  display: block;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+}
+
+.card:nth-child(1),
+.card:nth-child(3) {
+  flex-direction: row-reverse;
+}
+
+.card-img-top {
+  max-height: 260px;
+  max-width: 750px;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(0.5px);
+  /* filter: opacity(90%); */
+  background-clip: content-box;
+  border-radius: 0;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+p.card-text {
+  width: 700px;
+  align-items: flex-start;
+}

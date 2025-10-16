@@ -1,0 +1,83 @@
+.navbar-top {
+  /* background: linear-gradient(to bottom, #15425e, #093739); */
+  background: color-mix(in srgb, black 50%, #13436c 50%);
+  color: aliceblue;
+  font-family: 'Baskervville';
+  height: 50px;
+  border-top: 1px solid #075f8c;
+  position: sticky;
+  opacity: 95%;
+  top: 0;
+  /* width: 100%;
+  z-index: 1000; */
+}
+
+.navbar-top a {
+  color: aliceblue;
+  font-size: 1.1rem;
+}
+
+.navbar-top a:hover {
+  color: aliceblue;
+}
+
+li.nav-item:not(.welcome):hover {
+  color: rgb(144, 235, 255);
+  transition: 0.3s;
+  background-color: #19425a;
+  border-radius: 5px;
+}
+
+li a.dropdown-item {
+  color: #f2f2f2;
+  font-family: 'Baskervville';
+}
+
+li a.dropdown-item:not(li.nav-item.welcome):hover {
+  color: #f2f2f2;
+  background-color: #144c6c;
+  transition: 0.3s;
+}
+
+.dropdown-menu.show {
+  background-color: #0d3146;
+}
+
+.nav-menu li {
+  margin: 0 0 0 10px;
+}
+
+.nav-signup {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-signup.nav-item::not(.welcome) {
+  color: rgb(144, 235, 255);
+  transition: 0.3s;
+  background-color: #1c5658;
+  border-radius: 5px;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.welcome a {
+  color: #fff780;
+}
+
+.welcome a:hover {
+  text-decoration: underline;
+  color: #fff780 !important;
+}
+
+.nav-signup li {
+  padding: 0;
+  margin: 0 10px 0 0;
+}

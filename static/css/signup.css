@@ -1,0 +1,56 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form.signup-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.signup-form p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup-form p input {
+  border: solid 1px grey;
+  border-radius: 3px;
+}
+
+#id_email::placeholder {
+  color: rgb(0, 76, 100);
+  opacity: 40%;
+}
+
+#id_password1::placeholder {
+  color: rgb(0, 76, 100);
+  opacity: 40%;
+}
+
+#id_password2::placeholder {
+  color: rgb(0, 76, 100);
+  opacity: 40%;
+}
+
+.signup-form p:nth-child(5) {
+  display: grid;
+  grid-template-columns: 2fr auto;
+  flex: 2;
+}
+
+.signup-form p:nth-child(3) span#id_password_helptext {
+  justify-content: center;
+}
+
+.btn-signup {
+  width: 40%;
+  justify-content: center;
+  align-self: center;
+}

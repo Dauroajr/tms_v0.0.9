@@ -1,0 +1,55 @@
+{% load static i18n l10n %}
+
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+<header>
+
+  <div class="header-top">
+    <img class="m-2 logo" src="{% static 'images/logos/3d_logo_transparent.png' %}" alt="">
+
+    <h1 class="header-title">{% translate 'TMS - Gestão de Frotas Veiculares' %}</h1>
+
+    <div class="languages">
+      <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select name="language">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+          <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+            {{ language.name_local|capfirst }} ({{ language.code }})
+          </option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="{% translate 'Ir' %}">
+      </form>
+    </div>
+  </div>
+  </div>
+
+</header>
+
+
+<!-- if language.code == LANGUAGE_CODE -->
+
+
+<!-- <div class="languages">
+      <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select name="language">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+          <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+            {{ language.name_local }} ({{ language.code }})
+          </option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Go">
+      </form>
+    </div>
+  </div> -->

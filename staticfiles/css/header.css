@@ -1,0 +1,88 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  background: linear-gradient(to bottom, #000000, #17445f); /* #295f81
+  /* background: linear-gradient(to bottom, #2a2e36, #292e36); */
+  /* #304959 */
+  color: aliceblue;
+  padding: 0 20px;
+}
+
+.header-top {
+  font-family: "Newsreader";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  margin-right: 20px;
+  height: 80px;
+  width: 80px;
+}
+
+.header-title {
+  flex-grow: 1;
+  /* Allow the title to take up available space */
+  text-align: center;
+}
+
+h1.header-title {
+  padding: 0;
+  margin: 0;
+}
+
+div.languages {
+  display: flex;
+  /* Use flexbox for the languages section */
+  align-items: center;
+  /* Align items vertically */
+}
+
+.languages form select,
+.languages form input[type="submit"] {
+  height: 30px;
+  /* Set a consistent height for the select and input */
+  margin-left: 5px;
+  /* Space between elements */
+  align-items: center;
+}
+
+.languages input[type="submit"] {
+  cursor: pointer;
+  /* Change cursor to pointer for submit button */
+}
+
+/* 
+.languages form input #shadow-root {
+  align-items: center;
+}
+ */
+/* 
+.header-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom,  #000000, #557284);  
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+}
+
+.header-title {
+  color: aliceblue;
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ */

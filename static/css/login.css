@@ -1,0 +1,51 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form.login-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-form p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form p input {
+  border: solid 1px grey;
+  border-radius: 3px;
+}
+
+#id_login::placeholder {
+  color: rgb(0, 76, 100);
+  opacity: 40%;
+}
+
+#id_password::placeholder {
+  color: rgb(0, 76, 100);
+  opacity: 40%;
+
+}
+
+.login-form p:nth-child(3) {
+  display: grid;
+  grid-template-columns: 2fr auto;
+  flex: 2;
+}
+
+.login-form p:nth-child(3) span#id_password_helptext {
+  justify-content: center;
+}
+
+.btn-login {
+  width: 30%;
+  justify-content: center;
+  align-self: center;
+}
