@@ -6,6 +6,7 @@ from django.db import transaction
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView
+from django.utils import timezone
 
 from .decorators import tenant_required, tenant_owner_required
 from .models import Tenant, TenantUser, TenantInvitation
@@ -104,7 +105,7 @@ class TenantDetailView(LoginRequiredMixin, DetailView):
 
         # Check user permission
         if not self.request.user.has_tenant_permission(tenant):
-            raise PermissionDenied(f"You do not have access to this tenant.")
+            raise PermissionDenied("You do not have access to this tenant.")
 
         # Get member count and recent members
         context['member_count'] = tenant.members.filter(is_active=True).count()
@@ -175,7 +176,29 @@ class TenantMemberListView(LoginRequiredMixin, ListView):
             'user'
         ).order_by('-is_owner', '-joined_at')
 
-    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tenant_id = self.kwargs.get('tenant_id')
+        tenant = get_object_or_404(Tenant, id=tenant_id)
+
+        context['tenant'] = tenant
+        context['pending_invitations'] = tenant.invitations.filter(
+            accepted_at__isnull=True,
+            expires_at__gt=timezone.now()
+        ).order_by('-created_at')
+
+        # Check if current user is owner
+        try:
+            membership = TenantUser.objects.get(
+                user=self.request.user,
+                tenant=tenant,
+                is_active=True
+            )
+            context['is_owner'] = membership.is_owner
+        except TenantUser.DoesNotExist:
+            context['is_owner'] = False
+
+        return context
 
 
 @login_required
