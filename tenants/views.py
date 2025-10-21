@@ -1,9 +1,11 @@
+from django.core.exceptions import ValidationError, PermissionDenied
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.db import transaction
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import ListView, CreateView, UpdateView
 from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, DetailView, UpdateView
 
 from .decorators import tenant_required, tenant_owner_required
 from .models import Tenant, TenantUser, TenantInvitation
@@ -27,7 +29,10 @@ class TenantSelectView(LoginRequiredMixin, ListView):
             tenant = Tenant.objects.get(id=tenant_id, is_active=True)
 
             if not request.user.has_tenant_permission(tenant):
-                messages.error(request, f"{request.user.username} does not have access to {tenant.name}.")
+                messages.error(
+                    request,
+                    f"{request.user.username} does not have access to {tenant.name}."
+                )
                 return redirect('tenants:select')
 
             # Set tenant in session and user model
@@ -57,21 +62,120 @@ class TenantCreateView(LoginRequiredMixin, CreateView):
     ]
     success_url = reverse_lazy('dashboard')
 
+    @transaction.atomic
     def form_valid(self, form):
         response = super().form_valid(form)
 
         # Creator automatically becomes the owner of the tenant.
+        tenant = self.object
+        tenant.add_member(
+            user=self.requiest.user,
+            role='owner',
+            is_owner=True
+        )
+
         messages.success(
             self.request,
-            f"Company {self.object.name} created successfully!"
+            f"Company {tenant.name} created successfully!"
         )
 
         # Set as current tenant
-        self.request.session['tenant_id'] = str(self.object.id)
-        self.request.user.current_tenant = self.object
+        self.request.session['tenant_id'] = str(tenant.id)
+        self.request.user.current_tenant = tenant
         self.request.user.save(update_fields=['current_tenant'])
 
         return response
+
+
+class TenantDetailView(LoginRequiredMixin, DetailView):
+    """ View for displaying tenant details. """
+
+    model = Tenant
+    template_name = 'tenants/detail.html'
+    context_object_name = 'tenant'
+    pk_url_kwarg = 'tenant_id'
+
+    def get_queryset(self):
+        return Tenant.objects.filter(is_active=True)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tenant = self.get_object()
+
+        # Check user permission
+        if not self.request.user.has_tenant_permission(tenant):
+            raise PermissionDenied(f"You do not have access to this tenant.")
+
+        # Get member count and recent members
+        context['member_count'] = tenant.members.filter(is_active=True).count()
+        context['recent_members'] = tenant.members.filter(
+            is_active=True
+        ).select_related('user').order_by('-joined_at')[:5]
+
+        return context
+
+
+class TenantUpdateView(LoginRequiredMixin, UpdateView):
+    """ View for updating tenant information. """
+
+    model = Tenant
+    template_name = 'tenants/update.html'
+    fields = [
+        'name',
+        'legal_name',
+        'email',
+        'phone',
+        'address',
+        'plan'
+    ]
+    pk_url_kwarg = 'tenant_id'
+
+    def get_queryset(self):
+        return Tenant.objects.filter(is_active=True)
+
+    def get_success_url(self):
+        return reverse_lazy('tenants:detail', kwargs={'tenant_id': self.object.id})
+
+    def dispatch(self, request, *args, **kwargs):
+        tenant = self.get_object()
+        # Only owner can update tenant information
+        try:
+            membership = TenantUser.objects.get(
+                user=request.user,
+                tenant=tenant,
+                is_active=True
+            )
+            if not membership.is_owner:
+                raise PermissionDenied("Only tenant owners can edit this tenant.")
+        except TenantUser.DoesNotExist:
+            raise PermissionDenied("You are not a member of this tenant.")
+
+        return super().dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        messages.success(self.request, "Tenant information updated successfully!")
+        return super().form_valid(form)
+
+
+class TenantMemberListView(LoginRequiredMixin, ListView):
+    """ View for listing all members of a tenant. """
+    template_name = 'tenants/memebrs_list.html'
+    context_object_name = 'members'
+    paginate_by = 20
+
+    def get_queryset(self):
+        tenant_id = self.kwargs.get('tenant_id')
+        tenant = get_object_or_404(Tenant, id=tenant_id, is_active=True)
+
+        # Check user permission
+        if not self.request.user.has_tenant_permission(tenant):
+            raise PermissionDenied("You don't have access to this tenant.")
+
+        return tenant.members.filter(is_active=True).selected_related(
+            'user'
+        ).order_by('-is_owner', '-joined_at')
+
+    
 
 
 @login_required

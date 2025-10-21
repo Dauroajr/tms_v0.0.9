@@ -174,12 +174,35 @@ def log_user_logout(sender, request, user, **kwargs):
 
 # Generic audit signal for any model
 def audit_model_change(sender, instance, action, **kwargs):
-    """ Generic audit log for model changes within a tenant context. """
+    """
+    Generic audit log for model changes within a tenant context.
+
+    Usage in models:
+        from django.db.models.signals import post_save
+        from .signals import audit_model_change
+
+        @receiver(post_save, sender=MyModel)
+        def log_mymodel_change(sender, instance, created, **kwargs):
+            audit_model_change(
+                sender,
+                instance,
+                action='create' if created else 'update',
+                **kwargs
+            )
+
+    """
 
     tenant = get_current_tenant()
     user = get_current_user()
 
-    if tenant and user:
+    if not tenant or not user:
+        logger.debug(
+            f"Audit log skipped for {instance.__class__.__name__}: "
+            f"tenant or user context missing"
+        )
+        return
+
+    try:
         changes = None
         if action == 'update' and hasattr(instance, '_original_values'):
             changes = {
@@ -192,10 +215,19 @@ def audit_model_change(sender, instance, action, **kwargs):
             }
 
         TenantAuditLog.objects.create(
-            tenant=tenant,
+            Tenant=tenant,
             user=user,
             action=action,
             model_name=instance.__class__.__name__,
             object_id=str(instance.pk) if instance.pk else None,
             changes=changes
+        )
+
+        logger.info(
+            f"Audit log created: {instance.__class__.__name__} - {action}"
+        )
+    except Exception as e:
+        logger.error(
+            f"Error creating audit log for {instance.__class__.__name__}: {str(e)}",
+            exc_info=True
         )
