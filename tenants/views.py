@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 from .decorators import tenant_required, tenant_owner_required
 from .models import Tenant, TenantUser, TenantInvitation
@@ -32,7 +33,7 @@ class TenantSelectView(LoginRequiredMixin, ListView):
             if not request.user.has_tenant_permission(tenant):
                 messages.error(
                     request,
-                    f"{request.user.username} does not have access to {tenant.name}."
+                    _(f"{request.user.username} does not have access to {tenant.name}.")
                 )
                 return redirect('tenants:select')
 
@@ -41,10 +42,10 @@ class TenantSelectView(LoginRequiredMixin, ListView):
             request.user.current_tenant = tenant
             request.user.save(update_fields=['current_tenant'])
 
-            messages.success(request, f"Switched to {tenant.name}")
+            messages.success(request, _(f"Switched to {tenant.name}"))
             return redirect('dashboard')
         except Tenant.DoesNotExist:
-            messages.error(request, "Invalid tenant selection.")
+            messages.error(request, _("Invalid tenant selection."))
             return redirect('tenants:select')
 
 
@@ -77,7 +78,7 @@ class TenantCreateView(LoginRequiredMixin, CreateView):
 
         messages.success(
             self.request,
-            f"Company {tenant.name} created successfully!"
+            _(f"Company {tenant.name} created successfully!")
         )
 
         # Set as current tenant
@@ -105,7 +106,7 @@ class TenantDetailView(LoginRequiredMixin, DetailView):
 
         # Check user permission
         if not self.request.user.has_tenant_permission(tenant):
-            raise PermissionDenied("You do not have access to this tenant.")
+            raise PermissionDenied(_("You do not have access to this tenant."))
 
         # Get member count and recent members
         context['member_count'] = tenant.members.filter(is_active=True).count()
@@ -147,14 +148,14 @@ class TenantUpdateView(LoginRequiredMixin, UpdateView):
                 is_active=True
             )
             if not membership.is_owner:
-                raise PermissionDenied("Only tenant owners can edit this tenant.")
+                raise PermissionDenied(_("Only tenant owners can edit this tenant."))
         except TenantUser.DoesNotExist:
-            raise PermissionDenied("You are not a member of this tenant.")
+            raise PermissionDenied(_("You are not a member of this tenant."))
 
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
-        messages.success(self.request, "Tenant information updated successfully!")
+        messages.success(self.request, _("Tenant information updated successfully!"))
         return super().form_valid(form)
 
 
@@ -170,7 +171,7 @@ class TenantMemberListView(LoginRequiredMixin, ListView):
 
         # Check user permission
         if not self.request.user.has_tenant_permission(tenant):
-            raise PermissionDenied("You don't have access to this tenant.")
+            raise PermissionDenied(_("You don't have access to this tenant."))
 
         return tenant.members.filter(is_active=True).selected_related(
             'user'
@@ -207,32 +208,37 @@ class TenantMemberListView(LoginRequiredMixin, ListView):
 def invite_user(request):
     """ View for inviting users to join a tenant."""
     if request.method == 'POST':
-        email = request.POST.get('email')
+        email = request.POST.get('email', '').strip()
         role = request.POST.get('role', 'user')
 
-        # Check if the user already exists in the tenant
-        existing_user = CustomUser.objects.filter(email=email).first()
-        if existing_user:
-            if request.tenant.members.filter(user=existing_user).exists():
-                messages.error(request, 'User is already a member of this tenant')
-                return redirect('tenants:members')
+        if not email:
+            messages.error(request, _('Email is required.'))
+            return redirect('tenants:members', tenant_id=request.tenant.id)
 
-        # Create invitation
-        invitation = TenantInvitation.objects.create(
-            tenant=request.tenant,
-            email=email,
-            invited_by=request.user,
-            role=role
-        )
+        try:
+            # Attempt to create invitation with validation
+            invitation = TenantInvitation(
+                tenant=request.tenant,
+                email=email,
+                invited_by=request.user,
+                role=role
+            )
+            invitation.full_clean()
+            invitation.save()
 
-        # Send invitation email logic
-        # send_invitation_email(invitation)
+            messages.success(request, _(f"Invitation sent to {email}"))
+            return redirect('tenants:members', tenant_id=request.tenant_id)
 
-        messages.success(request, f"Invitation sent to {email}")
-        return redirect('tenants:members')
+        except ValidationError as e:
+            messages.error(request, str(e.message))
+            return redirect('tenants:members', tenant_id=request.tenant_id)
+        except Exception as e:
+            messages.error(request, _(f"An error has occurred: {str(e)}"))
+            return redirect('tenants>members', tenant_id=request.tenant_id)
 
     context = {
-        'roles': TenantUser.ROLE_CHOICES[1:]
+        'roles': TenantUser.ROLE_CHOICES[1:],
+        'tenant': request.tenant
     }
     return render(request, 'tenants/invite.html', context)
 
@@ -248,16 +254,74 @@ def accept_invitation(request, token):
 
     # Check if e-mail matches
     if request.user.email != invitation.email:
-        messages.error(request, 'This invitation was sent to a different email address.')
+        messages.error(request, _('This invitation was sent to a different email address.'))
         return redirect('dashboard')
 
-    # Accepting the invitation
-    membership = invitation.accept(request.user)
+    try:
+        # Accepting the invitation
+        with transaction.atomic():
+            membership = invitation.accept(request.user)  # noqa
 
-    # Set as the current tenant
-    request.session['tenant_id'] = str(invitation.tenant.id)
-    request.user.current_tenant = invitation.tenant
-    request.user.save(update_fields=['current_tenant'])
+            # Set as the current tenant
+            request.session['tenant_id'] = str(invitation.tenant.id)
+            request.user.current_tenant = invitation.tenant
+            request.user.save(update_fields=['current_tenant'])
 
-    messages.success(request, f"You've joined {invitation.tenant.name}!")
+            messages.success(request, _(f"You've joined {invitation.tenant.name}!"))
+    except ValueError as e:
+        messages.error(request, str(e))
+        return redirect('dashboard')
+
     return redirect('dashboard')
+
+
+@login_required
+@tenant_required
+@tenant_owner_required
+def remove_member(request, tenant_id, user_id):
+    """ View for removing a member from a tenant. """
+
+    tenant = get_object_or_404(Tenant, id=tenant_id, is_active=True)
+
+    # Verify user is owner
+    try:
+        membership = TenantUser.objects.get(
+            user=request.user,
+            tenant=tenant,
+            is_active=True
+        )
+        if not membership.is_owner:
+            raise PermissionDenied(_("Only tenant owners can remove members."))
+    except TenantUser.DoesNotExist:
+        raise PermissionDenied(_("You are not a member of this tenant."))
+
+    # Get the member to remove
+    member = get_object_or_404(
+        TenantUser,
+        id=user_id,
+        tenant=tenant
+    )
+
+    # Prevent removing the last owner
+    if member.is_owner:
+        other_owners = tenant.members.filter(
+            is_owner=True,
+            is_active=True
+        ).exclude(id=member.id).exists()
+
+        if not other_owners:
+            messages.error(request, _("Cannot remove the last owner of the tenant."))
+            return redirect('tenants:members', tenant_id=tenant_id)
+
+    # Remove member
+    if request.method == 'POST':
+        member.is_active = False
+        member.save(update_fields=['is_active'])
+        messages.success(request, _(f"{member.user.email} has been removed from {tenant.name}"))
+        return redirect('tenants:members', tenant_id=tenant_id)
+
+    context = {
+        'member': member,
+        'tenant': tenant
+    }
+    return render(request, 'tenants/remove_member.html', context)
