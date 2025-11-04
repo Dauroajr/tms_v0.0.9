@@ -12,6 +12,10 @@ from .views import home_view
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", home_view, name="home"),
+    path("accounts/", include("accounts.urls")),
+    path("audit/", include("audit.urls")),
+    path("core/", include("core.urls")),
+    path("tenants/", include("tenants.urls")),
 
     path("i18n/", set_language, name="set_language"),
 ]

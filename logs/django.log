@@ -1,0 +1,12 @@
+INFO 2025-11-04 18:02:51,983 autoreload 29544 25452 Watching for file changes with StatReloader
+INFO 2025-11-04 18:03:32,297 basehttp 29544 27024 "GET / HTTP/1.1" 200 24156
+INFO 2025-11-04 18:03:32,384 basehttp 29544 27024 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-11-04 18:03:32,399 basehttp 29544 27024 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 304 0
+INFO 2025-11-04 18:03:32,403 basehttp 29544 23912 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2025-11-04 18:03:32,404 basehttp 29544 12692 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 304 0
+INFO 2025-11-04 18:03:32,408 basehttp 29544 27024 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2025-11-04 18:03:32,418 basehttp 29544 27024 "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-11-04 18:03:32,772 basehttp 29544 27024 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 304 0
+INFO 2025-11-04 18:04:32,888 autoreload 29544 25452 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-11-04 18:07:07,440 autoreload 3776 19788 Watching for file changes with StatReloader
+INFO 2025-11-04 18:07:18,655 basehttp 3776 26036 "GET / HTTP/1.1" 200 6802
