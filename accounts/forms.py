@@ -117,7 +117,7 @@ class UserRegistrationForm(UserCreationForm):
 class UserLoginForm(AuthenticationForm):
     """ Custom Login Form with styled fields."""
 
-    username = forms.Charfield(
+    username = forms.CharField(
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': 'Username or E-mail',

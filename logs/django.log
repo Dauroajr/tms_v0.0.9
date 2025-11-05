@@ -10,3 +10,227 @@ INFO 2025-11-04 18:03:32,772 basehttp 29544 27024 "GET /static/images/logos/tms-
 INFO 2025-11-04 18:04:32,888 autoreload 29544 25452 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
 INFO 2025-11-04 18:07:07,440 autoreload 3776 19788 Watching for file changes with StatReloader
 INFO 2025-11-04 18:07:18,655 basehttp 3776 26036 "GET / HTTP/1.1" 200 6802
+INFO 2025-11-04 18:13:42,408 autoreload 3776 19788 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:13:44,407 autoreload 29580 27796 Watching for file changes with StatReloader
+INFO 2025-11-04 18:13:50,175 autoreload 29580 27796 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:13:50,915 autoreload 20764 20648 Watching for file changes with StatReloader
+INFO 2025-11-04 18:13:54,287 autoreload 20764 20648 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:13:55,273 autoreload 14792 25728 Watching for file changes with StatReloader
+INFO 2025-11-04 18:13:57,547 autoreload 14792 25728 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:13:58,270 autoreload 8032 7984 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:01,513 autoreload 8032 7984 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:02,267 autoreload 22824 19680 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:04,533 autoreload 22824 19680 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:05,892 autoreload 30116 22420 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:26,878 autoreload 30116 22420 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:27,452 autoreload 29788 26000 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:28,640 autoreload 29788 26000 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:29,246 autoreload 25564 22792 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:32,493 autoreload 25564 22792 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:33,153 autoreload 28540 26692 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:35,584 autoreload 28540 26692 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:36,239 autoreload 13228 18148 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:41,534 autoreload 13228 18148 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:42,181 autoreload 25244 28576 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:51,584 autoreload 25244 28576 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:52,596 autoreload 9840 17404 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:53,857 autoreload 9840 17404 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:54,561 autoreload 28472 30636 Watching for file changes with StatReloader
+INFO 2025-11-04 18:14:56,889 autoreload 28472 30636 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:14:58,281 autoreload 24956 26812 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:03,299 autoreload 24956 26812 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:05,859 autoreload 2892 8008 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:09,405 autoreload 2892 8008 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:10,350 autoreload 22072 5624 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:16,713 autoreload 22072 5624 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:17,514 autoreload 19512 13976 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:20,870 autoreload 19512 13976 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:21,418 autoreload 23940 9312 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:22,687 autoreload 23940 9312 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:23,611 autoreload 30680 7256 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:30,044 autoreload 30680 7256 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:31,532 autoreload 8100 13228 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:34,923 autoreload 8100 13228 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:35,593 autoreload 24872 21732 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:40,895 autoreload 24872 21732 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:42,553 autoreload 8108 23440 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:45,287 autoreload 8108 23440 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:45,926 autoreload 24488 17204 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:47,154 autoreload 24488 17204 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:48,204 autoreload 17060 26396 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:50,825 autoreload 17060 26396 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:51,520 autoreload 25528 30404 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:53,805 autoreload 25528 30404 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:55,175 autoreload 25448 25428 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:56,482 autoreload 25448 25428 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:57,081 autoreload 8220 28148 Watching for file changes with StatReloader
+INFO 2025-11-04 18:15:58,324 autoreload 8220 28148 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:15:59,456 autoreload 5832 26008 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:00,763 autoreload 5832 26008 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:01,572 autoreload 28280 14816 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:07,884 autoreload 28280 14816 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:08,625 autoreload 19296 30308 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:13,904 autoreload 19296 30308 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:14,728 autoreload 14880 4168 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:17,009 autoreload 14880 4168 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:17,737 autoreload 25640 21316 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:24,047 autoreload 25640 21316 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:24,547 autoreload 27380 24912 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:29,834 autoreload 27380 24912 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:31,112 autoreload 11836 2596 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:33,735 autoreload 11836 2596 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:34,602 autoreload 20256 26292 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:37,968 autoreload 20256 26292 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:38,703 autoreload 26440 24792 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:41,026 autoreload 26440 24792 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:43,070 autoreload 26388 12524 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:47,533 autoreload 26388 12524 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:49,474 autoreload 28436 28312 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:54,846 autoreload 28436 28312 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:55,360 autoreload 29064 30232 Watching for file changes with StatReloader
+INFO 2025-11-04 18:16:58,600 autoreload 29064 30232 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:16:59,584 autoreload 8016 4060 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:01,951 autoreload 8016 4060 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:03,289 autoreload 30520 7840 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:04,587 autoreload 30520 7840 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:05,263 autoreload 26932 7248 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:08,575 autoreload 26932 7248 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:09,158 autoreload 2772 11588 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:15,438 autoreload 2772 11588 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:16,142 autoreload 8304 19328 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:24,650 autoreload 8304 19328 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:26,446 autoreload 12468 26236 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:29,935 autoreload 12468 26236 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:30,518 autoreload 24248 28772 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:31,729 autoreload 24248 28772 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:33,055 autoreload 25360 1468 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:41,661 autoreload 25360 1468 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:42,922 autoreload 7060 10524 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:44,233 autoreload 7060 10524 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:45,691 autoreload 13976 28228 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:48,101 autoreload 13976 28228 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:48,964 autoreload 28704 25820 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:50,224 autoreload 28704 25820 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:51,073 autoreload 20896 26528 Watching for file changes with StatReloader
+INFO 2025-11-04 18:17:58,402 autoreload 20896 26528 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:17:58,935 autoreload 29992 14552 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:00,130 autoreload 29992 14552 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:01,004 autoreload 27784 6932 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:02,267 autoreload 27784 6932 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:02,849 autoreload 21292 19288 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:07,134 autoreload 21292 19288 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:07,623 autoreload 23492 13908 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:12,161 autoreload 23492 13908 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:12,798 autoreload 14616 15928 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:20,111 autoreload 14616 15928 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:20,597 autoreload 4924 396 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:22,806 autoreload 4924 396 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:23,813 autoreload 25856 20812 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:31,431 autoreload 25856 20812 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:32,906 autoreload 5328 12524 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:42,441 autoreload 5328 12524 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:43,390 autoreload 25440 4180 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:49,968 autoreload 25440 4180 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:50,815 autoreload 19668 23840 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:53,288 autoreload 19668 23840 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:54,094 autoreload 5056 20976 Watching for file changes with StatReloader
+INFO 2025-11-04 18:18:57,400 autoreload 5056 20976 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:18:58,105 autoreload 17464 23736 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:01,473 autoreload 17464 23736 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:02,808 autoreload 27456 24700 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:06,113 autoreload 27456 24700 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:06,650 autoreload 7256 27404 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:07,899 autoreload 7256 27404 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:08,470 autoreload 27032 6896 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:09,766 autoreload 27032 6896 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:10,512 autoreload 28396 17852 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:12,045 autoreload 28396 17852 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:12,628 autoreload 26696 24920 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:19,951 autoreload 26696 24920 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:20,562 autoreload 17604 28208 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:27,940 autoreload 17604 28208 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:28,467 autoreload 29008 29556 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:30,688 autoreload 29008 29556 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:31,476 autoreload 5676 26368 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:43,011 autoreload 5676 26368 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:43,877 autoreload 26224 15804 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:50,180 autoreload 26224 15804 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:50,737 autoreload 24940 24908 Watching for file changes with StatReloader
+INFO 2025-11-04 18:19:58,019 autoreload 24940 24908 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:19:58,684 autoreload 28120 26120 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:12,267 autoreload 28120 26120 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:12,915 autoreload 15468 21872 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:18,305 autoreload 15468 21872 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:18,868 autoreload 19024 30004 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:21,123 autoreload 19024 30004 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:22,775 autoreload 28744 28312 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:25,023 autoreload 28744 28312 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:25,932 autoreload 7984 12924 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:29,210 autoreload 7984 12924 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:29,990 autoreload 26380 28692 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:32,256 autoreload 26380 28692 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:33,243 autoreload 824 24760 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:45,971 autoreload 824 24760 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:46,612 autoreload 27064 30376 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:52,898 autoreload 27064 30376 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:53,546 autoreload 17808 26216 Watching for file changes with StatReloader
+INFO 2025-11-04 18:20:55,761 autoreload 17808 26216 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:20:56,520 autoreload 10244 17884 Watching for file changes with StatReloader
+INFO 2025-11-04 18:21:06,136 autoreload 10244 17884 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:21:06,676 autoreload 25756 27668 Watching for file changes with StatReloader
+INFO 2025-11-04 18:21:30,558 autoreload 25756 27668 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:21:31,289 autoreload 28776 25984 Watching for file changes with StatReloader
+INFO 2025-11-04 18:21:38,761 autoreload 28776 25984 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:21:39,718 autoreload 15512 2964 Watching for file changes with StatReloader
+INFO 2025-11-04 18:21:44,034 autoreload 15512 2964 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:21:45,131 autoreload 17080 25748 Watching for file changes with StatReloader
+INFO 2025-11-04 18:21:48,474 autoreload 17080 25748 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:21:49,070 autoreload 24760 27628 Watching for file changes with StatReloader
+INFO 2025-11-04 18:21:51,358 autoreload 24760 27628 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:21:52,315 autoreload 15068 948 Watching for file changes with StatReloader
+INFO 2025-11-04 18:21:55,586 autoreload 15068 948 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:21:56,073 autoreload 14220 17248 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:04,418 autoreload 14220 17248 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:05,261 autoreload 16708 20720 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:07,625 autoreload 16708 20720 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:08,909 autoreload 14440 9368 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:16,206 autoreload 14440 9368 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:16,712 autoreload 30092 27668 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:17,913 autoreload 30092 27668 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:18,629 autoreload 23728 21032 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:20,848 autoreload 23728 21032 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:21,548 autoreload 4592 16872 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:23,843 autoreload 4592 16872 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:24,426 autoreload 6848 2988 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:27,666 autoreload 6848 2988 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:28,266 autoreload 27080 27776 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:29,478 autoreload 27080 27776 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:30,531 autoreload 18340 14116 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:34,891 autoreload 18340 14116 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:36,055 autoreload 9524 10924 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:38,300 autoreload 9524 10924 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:39,152 autoreload 9168 11780 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:49,589 autoreload 9168 11780 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:50,174 autoreload 25032 20880 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:53,441 autoreload 25032 20880 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:54,457 autoreload 17248 14220 Watching for file changes with StatReloader
+INFO 2025-11-04 18:22:56,714 autoreload 17248 14220 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:22:57,839 autoreload 4900 23064 Watching for file changes with StatReloader
+INFO 2025-11-04 18:23:02,131 autoreload 4900 23064 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:23:02,836 autoreload 29140 25676 Watching for file changes with StatReloader
+INFO 2025-11-04 18:23:06,059 autoreload 29140 25676 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:23:06,726 autoreload 19092 7964 Watching for file changes with StatReloader
+INFO 2025-11-04 18:23:10,976 autoreload 19092 7964 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:23:11,461 autoreload 27792 27164 Watching for file changes with StatReloader
+INFO 2025-11-04 18:23:16,894 autoreload 27792 27164 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:23:17,384 autoreload 24872 2872 Watching for file changes with StatReloader
+INFO 2025-11-04 18:23:26,780 autoreload 24872 2872 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:23:27,422 autoreload 29760 27456 Watching for file changes with StatReloader
+INFO 2025-11-04 18:23:37,839 autoreload 29760 27456 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\admin.py changed, reloading.
+INFO 2025-11-04 18:23:38,360 autoreload 26440 26208 Watching for file changes with StatReloader
+INFO 2025-11-04 18:24:07,432 autoreload 26440 26208 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\urls.py changed, reloading.
+INFO 2025-11-04 18:24:08,128 autoreload 28788 25084 Watching for file changes with StatReloader
+INFO 2025-11-04 18:24:10,369 autoreload 28788 25084 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\urls.py changed, reloading.
+INFO 2025-11-04 18:24:10,876 autoreload 29556 4508 Watching for file changes with StatReloader
+INFO 2025-11-04 18:24:19,181 autoreload 29556 4508 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\urls.py changed, reloading.
+INFO 2025-11-04 18:24:20,180 autoreload 9076 25396 Watching for file changes with StatReloader
