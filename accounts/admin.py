@@ -10,6 +10,7 @@ class TenantUserInline(admin.TabularInline):
     """ Inline for displaying user's tenant memberships. """
 
     model = TenantUser
+    fk_name = 'user'
     extra = 0
     fields = ['tenant', 'role', 'is_owner', 'is_active', 'joined_at']
     readonly_fields = ['joined_at']

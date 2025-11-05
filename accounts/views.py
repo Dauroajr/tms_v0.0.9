@@ -155,7 +155,7 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 
 
 @login_required
-def deçlete_account(request):
+def delete_account(request):
     """ View for account deletion. """
     if request.method == 'POST':
         user = request.user
