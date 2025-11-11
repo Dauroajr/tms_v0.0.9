@@ -28,7 +28,7 @@ class CustomUser(AbstractUser):
     phone = models.CharField(max_length=20, blank=True, null=True)
     document_number = models.CharField(
         max_length=30,
-        unique=True,
+        # unique=True,
         blank=True,
         null=True,
         help_text=_('Unique identifier like SSN or Tax ID, CPF or CNPJ')

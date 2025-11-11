@@ -46,18 +46,18 @@ class Tenant(models.Model):
     document = models.CharField(
         max_length=30,
         unique=True,
-        help_text=_("Unique identifier like SSN or Tax ID, CPF or CNPJ0"),
+        help_text=_("Unique identifier like SSN or Tax ID, CPF or CNPJ"),
     )
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=30)
-    address = models.JSONField(default=dict, blank=True)
+    address = models.CharField(max_length=250, null=True, blank=True)
 
     is_active = models.BooleanField(default=True)
     plan = models.CharField(max_length=20, choices=PLAN_CHOICES, default="free")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    settings = models.JSONField(default=dict)
+    settings = models.JSONField(default=None)
     subscription_expires_at = models.DateTimeField(blank=True, null=True)
 
     objects = TenantManager()

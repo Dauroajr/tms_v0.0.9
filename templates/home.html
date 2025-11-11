@@ -2,6 +2,102 @@
 
 {% block content %}
 
-<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aliquam deleniti at mollitia quia saepe voluptatibus. Doloribus atque soluta, dolores reiciendis, sequi totam magnam nisi accusantium, eligendi id ipsum provident!</h1>
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row py-5">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold mb-4">
+                <i class="bi bi-building text-primary"></i>
+                Tenant Management System
+            </h1>
+            <p class="lead mb-4">
+                Manage multiple organizations efficiently with our powerful multi-tenant platform.
+                Perfect for SaaS applications, business management, and team collaboration.
+            </p>
+            
+            {% if not user.is_authenticated %}
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg px-4 gap-3">
+                        <i class="bi bi-person-plus"></i> Get Started
+                    </a>
+                    <a href="{% url 'accounts:login' %}" class="btn btn-outline-secondary btn-lg px-4">
+                        <i class="bi bi-box-arrow-in-right"></i> Login
+                    </a>
+                </div>
+            {% else %}
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg px-4">
+                        <i class="bi bi-speedometer2"></i> Go to Dashboard
+                    </a>
+                    <a href="{% url 'tenants:create' %}" class="btn btn-outline-primary btn-lg px-4">
+                        <i class="bi bi-plus-circle"></i> Create Organization
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row g-4 py-5">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm card-hover">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-building-check display-4 text-primary"></i>
+                    </div>
+                    <h5 class="card-title">Multi-Tenant Architecture</h5>
+                    <p class="card-text text-muted">
+                        Manage multiple organizations with complete data isolation and security.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm card-hover">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-people display-4 text-success"></i>
+                    </div>
+                    <h5 class="card-title">Team Collaboration</h5>
+                    <p class="card-text text-muted">
+                        Invite team members, assign roles, and manage permissions effortlessly.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm card-hover">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <i class="bi bi-shield-check display-4 text-danger"></i>
+                    </div>
+                    <h5 class="card-title">Secure & Auditable</h5>
+                    <p class="card-text text-muted">
+                        Complete audit trail for all activities with enterprise-grade security.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    {% if not user.is_authenticated %}
+        <div class="row py-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card bg-primary text-white border-0 shadow">
+                    <div class="card-body text-center p-5">
+                        <h3 class="mb-3">Ready to Get Started?</h3>
+                        <p class="mb-4">Join thousands of organizations using TMS to manage their teams.</p>
+                        <a href="{% url 'accounts:register' %}" class="btn btn-light btn-lg">
+                            <i class="bi bi-person-plus"></i> Create Free Account
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
 
 {% endblock %}

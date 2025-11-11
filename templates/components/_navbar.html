@@ -3,6 +3,103 @@
 
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+          <i class="bi bi-building"></i> TMS
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+              {% if user.is_authenticated %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'dashboard' %}">
+                          <i class="bi bi-speedometer2"></i> Dashboard
+                      </a>
+                  </li>
+              {% endif %}
+          </ul>
+          
+          <ul class="navbar-nav">
+              {% if user.is_authenticated %}                    
+                  {% if current_tenant %}
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                              <span class="tenant-badge">
+                                  <i class="bi bi-building"></i> {{ current_tenant.name }}
+                              </span>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                  <a class="dropdown-item" href="{% url 'tenants:detail' current_tenant.id %}">
+                                      <i class="bi bi-info-circle"></i> Tenant Details
+                                  </a>
+                              </li>
+                              <li>
+                                  <a class="dropdown-item" href="{% url 'tenants:members' current_tenant.id %}">
+                                      <i class="bi bi-people"></i> Members
+                                  </a>
+                              </li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li>
+                                  <a class="dropdown-item" href="{% url 'tenants:select' %}">
+                                      <i class="bi bi-arrow-left-right"></i> Switch Tenant
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                  {% else %}
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'tenants:select' %}">
+                              <i class="bi bi-building"></i> Select Tenant
+                          </a>
+                      </li>
+                  {% endif %}
+                                      
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                          <i class="bi bi-person-circle"></i> {{ user.get_full_name|default:user.username }}
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                          <li>
+                              <a class="dropdown-item" href="{% url 'accounts:profile' %}">
+                                  <i class="bi bi-person"></i> My Profile
+                              </a>
+                          </li>
+                          <li>
+                              <a class="dropdown-item" href="{% url 'accounts:password_change' %}">
+                                  <i class="bi bi-key"></i> Change Password
+                              </a>
+                          </li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li>
+                              <a class="dropdown-item" href="{% url 'accounts:logout' %}">
+                                  <i class="bi bi-box-arrow-right"></i> Logout
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
+              {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'accounts:login' %}">
+                          <i class="bi bi-box-arrow-in-right"></i> Login
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'accounts:register' %}">
+                          <i class="bi bi-person-plus"></i> Register
+                      </a>
+                  </li>
+              {% endif %}
+          </ul>
+      </div>
+  </div>
+</nav> -->
+
 <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-top">
   <div class="container-fluid flex-row">
     <!-- Left side menu -->

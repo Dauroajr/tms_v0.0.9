@@ -251,3 +251,599 @@ INFO 2025-11-05 18:41:34,240 basehttp 30000 32116 "GET / HTTP/1.1" 200 8092
 INFO 2025-11-05 18:41:46,202 basehttp 30000 32116 "GET / HTTP/1.1" 200 8092
 INFO 2025-11-05 18:41:57,543 basehttp 30000 32116 "GET / HTTP/1.1" 200 8089
 INFO 2025-11-05 18:45:13,134 basehttp 30000 29080 "GET / HTTP/1.1" 200 8092
+INFO 2025-11-07 14:57:50,337 autoreload 16668 17896 Watching for file changes with StatReloader
+INFO 2025-11-07 16:23:05,499 basehttp 16668 28172 "GET / HTTP/1.1" 200 7007
+INFO 2025-11-07 16:24:12,019 basehttp 16668 5768 "GET / HTTP/1.1" 200 7131
+INFO 2025-11-07 16:24:28,532 basehttp 16668 17856 "GET / HTTP/1.1" 200 6802
+INFO 2025-11-07 16:24:45,380 basehttp 16668 18612 "GET / HTTP/1.1" 200 6931
+INFO 2025-11-07 16:24:53,720 basehttp 16668 5768 "GET / HTTP/1.1" 200 6940
+INFO 2025-11-07 18:57:22,010 basehttp 16668 5436 "GET / HTTP/1.1" 200 6940
+INFO 2025-11-09 19:06:32,039 basehttp 16668 40828 "GET / HTTP/1.1" 200 11477
+INFO 2025-11-09 19:06:48,400 basehttp 16668 2648 "GET /accounts/login/ HTTP/1.1" 200 9874
+ERROR 2025-11-09 19:07:09,168 log 16668 38652 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/register.html
+ERROR 2025-11-09 19:07:09,178 basehttp 16668 38652 "GET /accounts/register/ HTTP/1.1" 500 86938
+WARNING 2025-11-09 19:07:09,292 basehttp 16668 38652 "GET /favicon.ico HTTP/1.1" 404 3469
+INFO 2025-11-09 21:29:21,927 autoreload 40648 33388 Watching for file changes with StatReloader
+INFO 2025-11-09 21:34:19,664 basehttp 40648 40908 "GET / HTTP/1.1" 200 11477
+INFO 2025-11-09 21:34:23,121 basehttp 40648 3364 "GET / HTTP/1.1" 200 11477
+INFO 2025-11-09 21:34:29,899 basehttp 40648 3364 "GET /accounts/register/ HTTP/1.1" 200 12718
+INFO 2025-11-09 21:34:58,665 basehttp 40648 24224 "GET /accounts/login/ HTTP/1.1" 200 9874
+INFO 2025-11-10 00:40:36,285 basehttp 40648 28048 "GET /accounts/register/ HTTP/1.1" 200 12718
+INFO 2025-11-10 00:40:40,517 basehttp 40648 28048 "GET / HTTP/1.1" 200 11477
+INFO 2025-11-10 00:40:49,313 basehttp 40648 39852 "GET /accounts/register/ HTTP/1.1" 200 12718
+INFO 2025-11-10 00:41:32,746 basehttp 40648 16420 "POST /accounts/register/ HTTP/1.1" 200 13354
+INFO 2025-11-10 00:41:52,232 basehttp 40648 34376 "POST /accounts/register/ HTTP/1.1" 200 13104
+INFO 2025-11-10 00:42:09,580 basehttp 40648 35464 "POST /accounts/register/ HTTP/1.1" 302 0
+ERROR 2025-11-10 00:42:09,700 log 40648 35464 Internal Server Error: /tenants/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tenants/select.html, tenants/tenantuser_list.html
+ERROR 2025-11-10 00:42:09,707 basehttp 40648 35464 "GET /tenants/ HTTP/1.1" 500 89257
+INFO 2025-11-10 00:42:19,261 basehttp 40648 36940 "GET /accounts/register/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:42:29,880 basehttp 40648 15512 "GET /admin HTTP/1.1" 301 0
+INFO 2025-11-10 00:42:29,896 basehttp 40648 32156 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:42:29,950 basehttp 40648 32156 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3840
+INFO 2025-11-10 00:42:30,071 basehttp 40648 32156 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-11-10 00:42:30,079 basehttp 40648 32156 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-11-10 00:42:30,089 basehttp 40648 32156 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-11-10 00:42:30,096 basehttp 40648 32156 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-11-10 00:42:30,103 basehttp 40648 32156 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-11-10 00:42:30,107 basehttp 40648 32156 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-11-10 00:42:30,110 basehttp 40648 32156 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-11-10 00:42:30,136 basehttp 40648 32156 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-11-10 00:42:41,383 basehttp 40648 7808 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3854
+INFO 2025-11-10 00:44:37,174 autoreload 8280 36688 Watching for file changes with StatReloader
+INFO 2025-11-10 00:44:42,412 basehttp 8280 24472 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:44:42,464 basehttp 8280 24472 "GET /admin/ HTTP/1.1" 200 10020
+INFO 2025-11-10 00:44:42,536 basehttp 8280 24472 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-11-10 00:44:42,551 basehttp 8280 24472 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-11-10 00:44:42,551 basehttp 8280 34424 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-11-10 00:44:47,068 basehttp 8280 34424 "GET /admin/tenants/tenant/ HTTP/1.1" 200 12784
+INFO 2025-11-10 00:44:47,114 basehttp 8280 34424 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-11-10 00:44:47,120 basehttp 8280 7388 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-11-10 00:44:47,127 basehttp 8280 34424 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-11-10 00:44:47,132 basehttp 8280 7388 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-11-10 00:44:47,135 basehttp 8280 34424 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-11-10 00:44:47,137 basehttp 8280 7388 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-11-10 00:44:47,140 basehttp 8280 34424 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-11-10 00:44:47,142 basehttp 8280 24472 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-11-10 00:44:47,150 basehttp 8280 24472 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-11-10 00:44:47,159 basehttp 8280 34424 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:44:47,163 basehttp 8280 7388 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-11-10 00:44:47,167 basehttp 8280 34424 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-11-10 00:44:47,230 basehttp 8280 7388 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-11-10 00:44:47,230 basehttp 8280 34424 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-11-10 00:44:49,589 basehttp 8280 34424 "GET /admin/tenants/tenant/add/ HTTP/1.1" 200 21753
+INFO 2025-11-10 00:44:49,616 basehttp 8280 34424 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-11-10 00:44:49,632 basehttp 8280 21140 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-11-10 00:44:49,634 basehttp 8280 34424 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-11-10 00:44:49,637 basehttp 8280 7388 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-11-10 00:44:49,641 basehttp 8280 20436 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-11-10 00:44:49,642 basehttp 8280 24472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:44:49,650 basehttp 8280 24472 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-11-10 00:44:49,761 basehttp 8280 24472 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-11-10 00:44:49,764 basehttp 8280 20436 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-11-10 00:46:48,911 autoreload 8280 36688 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:46:49,833 autoreload 39044 40564 Watching for file changes with StatReloader
+INFO 2025-11-10 00:46:55,103 autoreload 39044 40564 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:46:55,726 autoreload 28064 7120 Watching for file changes with StatReloader
+INFO 2025-11-10 00:46:57,095 autoreload 28064 7120 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:46:57,906 autoreload 35776 39384 Watching for file changes with StatReloader
+INFO 2025-11-10 00:46:59,199 autoreload 35776 39384 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:47:00,439 autoreload 34168 35404 Watching for file changes with StatReloader
+INFO 2025-11-10 00:47:01,977 autoreload 34168 35404 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:47:02,629 autoreload 40348 38308 Watching for file changes with StatReloader
+INFO 2025-11-10 00:47:12,089 autoreload 40348 38308 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:47:12,809 autoreload 39984 35348 Watching for file changes with StatReloader
+INFO 2025-11-10 00:47:14,050 autoreload 39984 35348 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:47:14,590 autoreload 39228 22480 Watching for file changes with StatReloader
+INFO 2025-11-10 00:47:17,835 autoreload 39228 22480 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:47:18,419 autoreload 11324 39780 Watching for file changes with StatReloader
+INFO 2025-11-10 00:47:57,630 autoreload 3364 40196 Watching for file changes with StatReloader
+INFO 2025-11-10 00:48:03,193 basehttp 3364 1804 "GET /admin/tenants/tenant/ HTTP/1.1" 200 12784
+INFO 2025-11-10 00:48:03,279 basehttp 3364 1804 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:48:04,576 basehttp 3364 1804 "GET /admin/tenants/tenant/add/ HTTP/1.1" 200 21712
+INFO 2025-11-10 00:48:04,601 basehttp 3364 1804 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:48:19,880 autoreload 3364 40196 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:48:20,468 autoreload 34936 9580 Watching for file changes with StatReloader
+INFO 2025-11-10 00:48:28,673 basehttp 34936 20332 "GET /admin/tenants/tenant/add/ HTTP/1.1" 200 21684
+INFO 2025-11-10 00:48:28,708 basehttp 34936 20332 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:49:41,124 autoreload 34936 9580 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:49:41,713 autoreload 26748 17344 Watching for file changes with StatReloader
+ERROR 2025-11-10 00:49:44,604 log 26748 36580 Internal Server Error: /admin/tenants/tenant/add/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (settings) specified for Tenant
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1984, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+        request, obj, change=not add, fields=flatten_fieldsets(fieldsets)
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unknown field(s) (settings) specified for Tenant. Check fields/fieldsets/exclude attributes of class TenantAdmin.
+ERROR 2025-11-10 00:49:44,608 basehttp 26748 36580 "GET /admin/tenants/tenant/add/ HTTP/1.1" 500 154660
+INFO 2025-11-10 00:49:56,496 autoreload 26748 17344 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:49:57,097 autoreload 4952 8564 Watching for file changes with StatReloader
+INFO 2025-11-10 00:50:31,970 autoreload 4952 8564 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:50:32,474 autoreload 40708 4416 Watching for file changes with StatReloader
+ERROR 2025-11-10 00:50:36,580 log 40708 38288 Internal Server Error: /admin/tenants/tenant/add/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (settings) specified for Tenant
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1984, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+        request, obj, change=not add, fields=flatten_fieldsets(fieldsets)
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unknown field(s) (settings) specified for Tenant. Check fields/fieldsets/exclude attributes of class TenantAdmin.
+ERROR 2025-11-10 00:50:36,584 basehttp 40708 38288 "GET /admin/tenants/tenant/add/ HTTP/1.1" 500 154659
+INFO 2025-11-10 00:51:17,322 autoreload 3364 15512 Watching for file changes with StatReloader
+INFO 2025-11-10 00:51:20,647 basehttp 3364 33532 "GET /admin/tenants/tenant/add/ HTTP/1.1" 200 21587
+INFO 2025-11-10 00:51:20,686 basehttp 3364 33532 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:51:58,260 autoreload 3364 15512 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:51:59,623 autoreload 26588 34676 Watching for file changes with StatReloader
+INFO 2025-11-10 00:52:16,535 basehttp 26588 25952 "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 2455
+INFO 2025-11-10 00:52:30,754 basehttp 26588 34960 "POST /admin/tenants/tenant/add/ HTTP/1.1" 200 22039
+INFO 2025-11-10 00:52:30,793 basehttp 26588 34960 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-11-10 00:52:55,815 log 26588 26836 Internal Server Error: /admin/tenants/tenant/add/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: tenants.settings
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1984, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1843, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1894, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1314, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: tenants.settings
+ERROR 2025-11-10 00:52:55,829 basehttp 26588 26836 "POST /admin/tenants/tenant/add/ HTTP/1.1" 500 222321
+INFO 2025-11-10 00:53:08,052 autoreload 26588 34676 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:53:08,884 autoreload 33820 20808 Watching for file changes with StatReloader
+INFO 2025-11-10 00:53:10,285 autoreload 33820 20808 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:53:10,963 autoreload 22960 14652 Watching for file changes with StatReloader
+INFO 2025-11-10 00:53:15,207 autoreload 22960 14652 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:53:15,759 autoreload 39524 38416 Watching for file changes with StatReloader
+INFO 2025-11-10 00:53:19,086 autoreload 39524 38416 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:53:19,660 autoreload 19448 27096 Watching for file changes with StatReloader
+INFO 2025-11-10 00:53:21,061 autoreload 19448 27096 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:53:22,176 autoreload 37548 35432 Watching for file changes with StatReloader
+INFO 2025-11-10 00:53:27,515 autoreload 37548 35432 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:53:28,100 autoreload 13120 11064 Watching for file changes with StatReloader
+INFO 2025-11-10 00:53:47,337 autoreload 21604 36712 Watching for file changes with StatReloader
+INFO 2025-11-10 00:54:12,084 autoreload 21604 36712 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:54:12,793 autoreload 39896 40012 Watching for file changes with StatReloader
+INFO 2025-11-10 00:54:15,091 autoreload 39896 40012 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:54:15,713 autoreload 24072 22884 Watching for file changes with StatReloader
+INFO 2025-11-10 00:54:16,954 autoreload 24072 22884 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:54:17,422 autoreload 38480 35996 Watching for file changes with StatReloader
+INFO 2025-11-10 00:54:23,683 autoreload 38480 35996 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:54:24,270 autoreload 33020 37708 Watching for file changes with StatReloader
+INFO 2025-11-10 00:54:26,688 autoreload 33020 37708 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:54:27,535 autoreload 26788 37148 Watching for file changes with StatReloader
+ERROR 2025-11-10 00:54:32,935 log 26788 7908 Internal Server Error: /admin/tenants/tenant/add/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: tenants.settings
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1984, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1843, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1894, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1314, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: tenants.settings
+ERROR 2025-11-10 00:54:32,944 basehttp 26788 7908 "POST /admin/tenants/tenant/add/ HTTP/1.1" 500 221609
+INFO 2025-11-10 00:54:52,569 autoreload 26788 37148 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:54:53,237 autoreload 37076 28276 Watching for file changes with StatReloader
+INFO 2025-11-10 00:54:55,523 autoreload 37076 28276 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:54:56,071 autoreload 35272 28172 Watching for file changes with StatReloader
+INFO 2025-11-10 00:54:59,302 autoreload 35272 28172 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:54:59,935 autoreload 20808 39152 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:05,242 autoreload 20808 39152 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:55:05,970 autoreload 36184 32620 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:09,414 autoreload 36184 32620 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:55:09,968 autoreload 37792 9164 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:11,409 autoreload 37792 9164 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:55:12,225 autoreload 40068 38060 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:14,489 autoreload 40068 38060 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:55:15,022 autoreload 33228 22376 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:17,256 autoreload 33228 22376 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:55:17,915 autoreload 34904 6264 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:21,191 autoreload 34904 6264 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\admin.py changed, reloading.
+INFO 2025-11-10 00:55:21,751 autoreload 29040 29648 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:27,139 autoreload 29040 29648 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:55:27,704 autoreload 35276 18312 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:32,035 autoreload 35276 18312 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-10 00:55:32,740 autoreload 37272 40344 Watching for file changes with StatReloader
+INFO 2025-11-10 00:55:36,429 basehttp 37272 38956 "POST /admin/tenants/tenant/add/ HTTP/1.1" 200 21935
+INFO 2025-11-10 00:55:36,465 basehttp 37272 38956 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:55:59,131 signals 37272 12792 Tenant 079df3ba-5465-4106-b9de-b77a78685eee: User daj@daj.com koined as owner
+INFO 2025-11-10 00:55:59,315 basehttp 37272 12792 "POST /admin/tenants/tenant/add/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:55:59,396 basehttp 37272 12792 "GET /admin/tenants/tenant/ HTTP/1.1" 200 15321
+INFO 2025-11-10 00:55:59,431 basehttp 37272 12792 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:56:08,818 basehttp 37272 2944 "GET /admin/tenants/tenantuser/ HTTP/1.1" 200 15565
+INFO 2025-11-10 00:56:08,857 basehttp 37272 2944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:56:15,104 basehttp 37272 2944 "GET /admin/tenants/tenantinvitation/ HTTP/1.1" 200 13152
+INFO 2025-11-10 00:56:15,137 basehttp 37272 2944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:56:16,604 basehttp 37272 2944 "GET /admin/tenants/tenantinvitation/add/ HTTP/1.1" 200 19330
+INFO 2025-11-10 00:56:16,645 basehttp 37272 2944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:56:31,503 basehttp 37272 39684 "POST /admin/tenants/tenantinvitation/add/ HTTP/1.1" 200 19593
+INFO 2025-11-10 00:56:31,538 basehttp 37272 39684 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:56:41,306 basehttp 37272 34344 "POST /admin/tenants/tenantinvitation/add/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:56:41,349 basehttp 37272 34344 "GET /admin/tenants/tenantinvitation/ HTTP/1.1" 200 16061
+INFO 2025-11-10 00:56:41,390 basehttp 37272 34344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:56:50,139 basehttp 37272 38568 "GET /admin/accounts/customuser/ HTTP/1.1" 200 18191
+INFO 2025-11-10 00:56:50,170 basehttp 37272 38568 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:56:50,395 basehttp 37272 38568 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-11-10 00:56:50,433 basehttp 37272 38044 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-11-10 00:56:58,352 basehttp 37272 39100 "POST /admin/accounts/customuser/ HTTP/1.1" 200 10774
+INFO 2025-11-10 00:56:58,380 basehttp 37272 39100 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-11-10 00:56:59,663 basehttp 37272 39100 "POST /admin/accounts/customuser/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:56:59,710 basehttp 37272 39100 "GET /admin/accounts/customuser/ HTTP/1.1" 200 17572
+INFO 2025-11-10 00:56:59,751 basehttp 37272 39100 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:01,283 basehttp 37272 39100 "GET /admin/tenants/tenant/ HTTP/1.1" 200 15089
+INFO 2025-11-10 00:57:01,316 basehttp 37272 39100 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:04,300 basehttp 37272 39100 "POST /admin/tenants/tenant/ HTTP/1.1" 200 10057
+INFO 2025-11-10 00:57:06,518 basehttp 37272 39100 "GET /admin/auth/group/ HTTP/1.1" 200 10902
+INFO 2025-11-10 00:57:06,546 basehttp 37272 39100 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:07,526 basehttp 37272 28320 "GET /admin/audit/tenantauditlog/ HTTP/1.1" 200 14220
+INFO 2025-11-10 00:57:10,659 basehttp 37272 28320 "GET /admin/audit/tenantauditlog/012b5680-3bf1-4b61-9cca-fb1291cf2113/change/ HTTP/1.1" 200 17207
+INFO 2025-11-10 00:57:10,688 basehttp 37272 28320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:18,725 basehttp 37272 40352 "GET /admin/audit/tenantauditlog/ HTTP/1.1" 200 14220
+INFO 2025-11-10 00:57:23,477 basehttp 37272 40352 "GET /admin/audit/tenantauditlog/ HTTP/1.1" 200 14220
+INFO 2025-11-10 00:57:24,744 basehttp 37272 40352 "GET /admin/accounts/customuser/ HTTP/1.1" 200 17431
+INFO 2025-11-10 00:57:24,775 basehttp 37272 40352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:26,538 basehttp 37272 40352 "GET /admin/tenants/tenantuser/ HTTP/1.1" 200 15565
+INFO 2025-11-10 00:57:26,572 basehttp 37272 40352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:27,181 basehttp 37272 40352 "GET /admin/tenants/tenant/ HTTP/1.1" 200 15089
+INFO 2025-11-10 00:57:27,216 basehttp 37272 40352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:28,516 basehttp 37272 40352 "GET /admin/tenants/tenantinvitation/ HTTP/1.1" 200 15750
+INFO 2025-11-10 00:57:28,541 basehttp 37272 40352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:29,457 basehttp 37272 40352 "GET /admin/tenants/tenant/ HTTP/1.1" 200 15089
+INFO 2025-11-10 00:57:29,491 basehttp 37272 40352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:31,008 basehttp 37272 40352 "GET /admin/tenants/tenantinvitation/ HTTP/1.1" 200 15750
+INFO 2025-11-10 00:57:31,040 basehttp 37272 40352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:33,251 basehttp 37272 40352 "GET /admin/tenants/tenant/ HTTP/1.1" 200 15089
+INFO 2025-11-10 00:57:33,294 basehttp 37272 40352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:36,696 basehttp 37272 40352 "POST /admin/tenants/tenant/ HTTP/1.1" 200 10057
+INFO 2025-11-10 00:57:51,185 basehttp 37272 40352 "GET /admin/accounts/customuser/ HTTP/1.1" 200 17431
+INFO 2025-11-10 00:57:51,221 basehttp 37272 40352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:52,301 basehttp 37272 40352 "GET /admin/accounts/customuser/2db9a76b-97c0-48fd-a049-525815a000cd/change/ HTTP/1.1" 200 41938
+INFO 2025-11-10 00:57:52,329 basehttp 37272 33428 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-11-10 00:57:52,333 basehttp 37272 40352 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2025-11-10 00:57:52,338 basehttp 37272 37720 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:57:52,340 basehttp 37272 33428 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-11-10 00:57:52,358 basehttp 37272 33428 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-11-10 00:57:52,409 basehttp 37272 33428 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-11-10 00:58:28,132 basehttp 37272 33876 "POST /admin/accounts/customuser/2db9a76b-97c0-48fd-a049-525815a000cd/change/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:58:28,255 basehttp 37272 33876 "GET /admin/accounts/customuser/2db9a76b-97c0-48fd-a049-525815a000cd/change/ HTTP/1.1" 200 42643
+INFO 2025-11-10 00:58:28,296 basehttp 37272 33876 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:58:48,718 basehttp 37272 16420 "POST /admin/accounts/customuser/2db9a76b-97c0-48fd-a049-525815a000cd/change/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:58:48,746 basehttp 37272 16420 "GET /admin/accounts/customuser/ HTTP/1.1" 200 17713
+INFO 2025-11-10 00:58:48,795 basehttp 37272 16420 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-10 00:58:54,115 basehttp 37272 16420 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-11-10 00:58:54,148 basehttp 37272 16420 "GET / HTTP/1.1" 200 11477
+INFO 2025-11-10 08:18:55,735 basehttp 37272 32372 "GET / HTTP/1.1" 200 11477
+INFO 2025-11-10 08:19:02,538 basehttp 37272 32372 "GET /accounts/register/ HTTP/1.1" 200 12718
+INFO 2025-11-10 08:19:06,464 basehttp 37272 25560 "GET /accounts/login/ HTTP/1.1" 200 9874
+INFO 2025-11-10 08:19:08,284 basehttp 37272 25560 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-11-10 08:19:08,372 log 37272 25560 Internal Server Error: /tenants/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tenants/select.html, tenants/tenantuser_list.html
+ERROR 2025-11-10 08:19:08,380 basehttp 37272 25560 "GET /tenants/ HTTP/1.1" 500 89225
+INFO 2025-11-10 08:19:11,243 basehttp 37272 25560 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-11-11 18:14:03,542 autoreload 10136 2120 Watching for file changes with StatReloader
