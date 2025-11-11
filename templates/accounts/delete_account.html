@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Delete Account - TMS' %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow border-danger mt-5">
+        <div class="card-header bg-danger text-white">
+          <h5 class="mb-0"><i class="bi bi-exclamation-triangle"></i> {% translate 'Delete Account' %}</h5>
+        </div>
+        <div class="card-body p-4">
+          <div class="alert alert-danger">
+            <strong>{% translate 'Warning' %}!</strong> {% translate 'This action cannot be undone' %}.
+          </div>
+          <p>{% translate 'Are you sure you want to delete your account? This will' %}:</p>
+          <ul>
+            <li>{% translate 'Permanently delete your profile' %}</li>
+            <li>{% translate "Remove you from all organizations (where you're not the sole owner)" %}</li>
+            <li>{% translate 'Delete all your personal data' %}</li>
+          </ul>
+          <form method="post">
+            {% csrf_token %}
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash"></i> {% translate 'Yes, Delete My Account' %}
+              </button>
+              <a href="{% url 'accounts:profile' %}" class="btn btn-outline-secondary">
+                {% translate 'Cancel' %}
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
