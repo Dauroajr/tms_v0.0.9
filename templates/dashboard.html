@@ -1,175 +1,175 @@
 {% extends 'base.html' %}
 {% load static i18n l10n %}
 
-{% block title %}Dashboard - TMS{% endblock %}
+{% block title %}{% translate 'Dashboard - TMS' %}{% endblock %}
 
 {% block content %}
 <div class="container">
-    <!-- Welcome Section -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <h2 class="mb-3">
-                <i class="bi bi-speedometer2"></i> Dashboard
-            </h2>
-            <p class="text-muted">
-                Welcome back, <strong>{{ user.get_full_name|default:user.username }}</strong>!
-            </p>
+  <!-- Welcome Section -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <h2 class="mb-3">
+        <i class="bi bi-speedometer2"></i> {% translate "Dashboard" %}
+      </h2>
+      <p class="text-muted">
+        {% translate "Welcome back" %}, <strong>{{ user.get_full_name|default:user.username }}</strong>!
+      </p>
+    </div>
+  </div>
+
+  <!-- Current Tenant Info -->
+  {% if current_tenant %}
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card shadow-sm border-primary">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="mb-1">
+                <i class="bi bi-building"></i> {{ current_tenant.name }}
+              </h5>
+              <p class="text-muted mb-0">
+                {% translate "Current Organization" %} | {{ tenant_role|default:"Member" }}
+                {% if is_tenant_owner %}
+                <span class="badge bg-primary ms-2">Owner</span>
+                {% endif %}
+              </p>
+            </div>
+            <div>
+              <a href="{% url 'tenants:detail' current_tenant.id %}" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-right"></i> {% translate "View Details" %}
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="row g-4 mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <i class="bi bi-people display-4 text-primary"></i>
+          <h3 class="mt-3 mb-0">--</h3>
+          <p class="text-muted mb-0">{% translate "Team Members" %}</p>
+        </div>
+      </div>
     </div>
 
-    <!-- Current Tenant Info -->
-    {% if current_tenant %}
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="card shadow-sm border-primary">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h5 class="mb-1">
-                                    <i class="bi bi-building"></i> {{ current_tenant.name }}
-                                </h5>
-                                <p class="text-muted mb-0">
-                                    Current Organization | {{ tenant_role|default:"Member" }}
-                                    {% if is_tenant_owner %}
-                                        <span class="badge bg-primary ms-2">Owner</span>
-                                    {% endif %}
-                                </p>
-                            </div>
-                            <div>
-                                <a href="{% url 'tenants:detail' current_tenant.id %}" class="btn btn-outline-primary">
-                                    <i class="bi bi-arrow-right"></i> View Details
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <i class="bi bi-folder display-4 text-success"></i>
+          <h3 class="mt-3 mb-0">--</h3>
+          <p class="text-muted mb-0">{% translate "Projects" %}</p>
         </div>
+      </div>
+    </div>
 
-        <!-- Stats Cards -->
-        <div class="row g-4 mb-4">
-            <div class="col-md-3">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-people display-4 text-primary"></i>
-                        <h3 class="mt-3 mb-0">--</h3>
-                        <p class="text-muted mb-0">Team Members</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-3">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-folder display-4 text-success"></i>
-                        <h3 class="mt-3 mb-0">--</h3>
-                        <p class="text-muted mb-0">Projects</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-3">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-list-check display-4 text-warning"></i>
-                        <h3 class="mt-3 mb-0">--</h3>
-                        <p class="text-muted mb-0">Tasks</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-3">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-graph-up display-4 text-danger"></i>
-                        <h3 class="mt-3 mb-0">--</h3>
-                        <p class="text-muted mb-0">Activities</p>
-                    </div>
-                </div>
-            </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <i class="bi bi-list-check display-4 text-warning"></i>
+          <h3 class="mt-3 mb-0">--</h3>
+          <p class="text-muted mb-0">{% translate "Tasks" %}</p>
         </div>
+      </div>
+    </div>
 
-        <!-- Quick Actions -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-white">
-                        <h6 class="mb-0"><i class="bi bi-lightning-charge"></i> Quick Actions</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="row g-3">
-                            {% if is_tenant_owner %}
-                                <div class="col-md-4">
-                                    <a href="{% url 'tenants:invite' current_tenant.id %}" class="btn btn-outline-primary w-100">
-                                        <i class="bi bi-person-plus"></i> Invite Member
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="{% url 'tenants:members' current_tenant.id %}" class="btn btn-outline-primary w-100">
-                                        <i class="bi bi-people"></i> Manage Members
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="{% url 'tenants:update' current_tenant.id %}" class="btn btn-outline-primary w-100">
-                                        <i class="bi bi-gear"></i> Organization Settings
-                                    </a>
-                                </div>
-                            {% else %}
-                                <div class="col-md-6">
-                                    <a href="{% url 'tenants:members' current_tenant.id %}" class="btn btn-outline-primary w-100">
-                                        <i class="bi bi-people"></i> View Members
-                                    </a>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="{% url 'tenants:detail' current_tenant.id %}" class="btn btn-outline-primary w-100">
-                                        <i class="bi bi-info-circle"></i> Organization Info
-                                    </a>
-                                </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <i class="bi bi-graph-up display-4 text-danger"></i>
+          <h3 class="mt-3 mb-0">--</h3>
+          <p class="text-muted mb-0">{% translate "Activities" %}</p>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- Recent Activity (placeholder) -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-white">
-                        <h6 class="mb-0"><i class="bi bi-clock-history"></i> Recent Activity</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="text-center py-5 text-muted">
-                            <i class="bi bi-inbox display-1"></i>
-                            <p class="mt-3">No recent activity</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Quick Actions -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h6 class="mb-0"><i class="bi bi-lightning-charge"></i> {% translate "Quick Actions" %}</h6>
         </div>
+        <div class="card-body">
+          <div class="row g-3">
+            {% if is_tenant_owner %}
+            <div class="col-md-4">
+              <a href="{% url 'tenants:invite' current_tenant.id %}" class="btn btn-outline-primary w-100">
+                <i class="bi bi-person-plus"></i> {% translate "Invite Member" %}
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="{% url 'tenants:members' current_tenant.id %}" class="btn btn-outline-primary w-100">
+                <i class="bi bi-people"></i> {% translate "Manage Members" %}
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="{% url 'tenants:update' current_tenant.id %}" class="btn btn-outline-primary w-100">
+                <i class="bi bi-gear"></i> {% translate "Organization Settings" %}
+              </a>
+            </div>
+            {% else %}
+            <div class="col-md-6">
+              <a href="{% url 'tenants:members' current_tenant.id %}" class="btn btn-outline-primary w-100">
+                <i class="bi bi-people"></i> {% translate "View Members" %}
+              </a>
+            </div>
+            <div class="col-md-6">
+              <a href="{% url 'tenants:detail' current_tenant.id %}" class="btn btn-outline-primary w-100">
+                <i class="bi bi-info-circle"></i> {% translate "Organization Info" %}
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    {% else %}
-        <!-- No Tenant Selected -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card shadow-sm">
-                    <div class="card-body text-center p-5">
-                        <i class="bi bi-building display-1 text-muted"></i>
-                        <h4 class="mt-4">No Organization Selected</h4>
-                        <p class="text-muted">Please select an organization to view your dashboard.</p>
-                        <div class="mt-4">
-                            <a href="{% url 'tenants:select' %}" class="btn btn-primary me-2">
-                                <i class="bi bi-building"></i> Select Organization
-                            </a>
-                            <a href="{% url 'tenants:create' %}" class="btn btn-outline-primary">
-                                <i class="bi bi-plus-circle"></i> Create New Organization
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Recent Activity (placeholder) -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h6 class="mb-0"><i class="bi bi-clock-history"></i> {% translate "Recent Activity" %}</h6>
         </div>
-    {% endif %}
+        <div class="card-body">
+          <div class="text-center py-5 text-muted">
+            <i class="bi bi-inbox display-1"></i>
+            <p class="mt-3">{% translate "No recent activity" %}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% else %}
+  <!-- No Tenant Selected -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-body text-center p-5">
+          <i class="bi bi-building display-1 text-muted"></i>
+          <h4 class="mt-4">{% translate "No Organization Selected" %}</h4>
+          <p class="text-muted">{% translate "Please select an organization to view your dashboard" %}.</p>
+          <div class="mt-4">
+            <a href="{% url 'tenants:select' %}" class="btn btn-primary me-2">
+              <i class="bi bi-building"></i> {% translate "Select Organization" %}
+            </a>
+            <a href="{% url 'tenants:create' %}" class="btn btn-outline-primary">
+              <i class="bi bi-plus-circle"></i> {% translate "Create New Organization" %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

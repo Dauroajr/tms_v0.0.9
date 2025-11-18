@@ -6,12 +6,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.i18n import set_language
 
-from .views import home_view
+from .views import home_view, dashboard_view
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+
     path("", home_view, name="home"),
+    path("dashboard/", dashboard_view, name='dashboard'),
+
     path("accounts/", include("accounts.urls")),
     path("audit/", include("audit.urls")),
     path("core/", include("core.urls")),

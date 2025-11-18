@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Remove Member' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow border-danger">
+        <div class="card-header bg-danger text-white">
+          <h5 class="mb-0"><i class="bi bi-exclamation-triangle"></i> {% translate 'Remove Member' %}</h5>
+        </div>
+        <div class="card-body p-4">
+          <p>{% translate 'Are you sure you want to remove' %} <strong>{{
+              member.user.get_full_name|default:member.user.username
+              }}</strong> {% translate 'from' %} <strong>{{ tenant.name }}</strong>?</p>
+          <div class="alert alert-warning">
+            {% translate 'This action cannot be undone. The user will lose access to this organization' %}.
+          </div>
+          <form method="post">
+            {% csrf_token %}
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash"></i> {% translate 'Yes, Remove' %}
+              </button>
+              <a href="{% url 'tenants:members' tenant.id %}" class="btn btn-outline-secondary">
+                {% translate 'Cancel' %}
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

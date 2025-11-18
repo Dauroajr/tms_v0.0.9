@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ROOT_URLCONF = "tms.urls"
 
 LOGIN_URL = "accounts:login"
-LOGIN_REDIRECT_URL = "tenants:select"
+LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "home"
 
 

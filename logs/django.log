@@ -920,3 +920,587 @@ Traceback (most recent call last):
 django.urls.exceptions.NoReverseMatch: Reverse for 'dashboard' not found. 'dashboard' is not a valid view function or pattern name.
 ERROR 2025-11-11 18:14:08,589 basehttp 10136 42156 "GET / HTTP/1.1" 500 177270
 WARNING 2025-11-11 18:14:08,915 basehttp 10136 42156 "GET /favicon.ico HTTP/1.1" 404 3469
+INFO 2025-11-11 18:52:15,286 basehttp 10136 44452 "GET /admin/accounts/customuser/ HTTP/1.1" 200 17580
+INFO 2025-11-11 18:52:15,370 basehttp 10136 44452 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-11 18:52:18,868 basehttp 10136 30808 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-11-11 18:52:18,912 basehttp 10136 30808 "GET / HTTP/1.1" 200 11477
+INFO 2025-11-11 18:52:18,984 basehttp 10136 30808 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2025-11-11 18:52:18,985 basehttp 10136 29624 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 304 0
+INFO 2025-11-11 18:52:18,990 basehttp 10136 30808 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2025-11-11 18:52:22,390 basehttp 10136 30808 "GET /accounts/login/ HTTP/1.1" 200 9874
+INFO 2025-11-11 18:52:24,230 basehttp 10136 30808 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-11-11 18:52:24,474 log 10136 30808 Internal Server Error: /tenants/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'dashboard' not found. 'dashboard' is not a valid view function or pattern name.
+ERROR 2025-11-11 18:52:24,494 basehttp 10136 30808 "GET /tenants/ HTTP/1.1" 500 181169
+INFO 2025-11-11 18:52:26,401 basehttp 10136 30808 "GET /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-11-11 18:52:34,736 log 10136 15040 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py", line 10, in home_view
+    return render(request, 'home.html', context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'dashboard' not found. 'dashboard' is not a valid view function or pattern name.
+ERROR 2025-11-11 18:52:34,741 basehttp 10136 15040 "GET / HTTP/1.1" 500 177244
+INFO 2025-11-12 09:12:18,915 autoreload 10136 2120 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:12:20,909 autoreload 33448 15808 Watching for file changes with StatReloader
+INFO 2025-11-12 09:12:32,489 autoreload 33448 15808 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:12:33,996 autoreload 12068 22928 Watching for file changes with StatReloader
+INFO 2025-11-12 09:12:43,427 autoreload 12068 22928 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:12:44,728 autoreload 42496 5504 Watching for file changes with StatReloader
+INFO 2025-11-12 09:12:46,146 autoreload 42496 5504 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:12:47,043 autoreload 43508 28320 Watching for file changes with StatReloader
+INFO 2025-11-12 09:12:50,363 autoreload 43508 28320 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:12:51,042 autoreload 22936 20160 Watching for file changes with StatReloader
+INFO 2025-11-12 09:12:56,393 autoreload 22936 20160 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:12:57,138 autoreload 17124 44068 Watching for file changes with StatReloader
+INFO 2025-11-12 09:12:58,425 autoreload 17124 44068 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:12:59,016 autoreload 12596 32996 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:00,123 autoreload 12596 32996 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:00,756 autoreload 31376 13104 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:05,996 autoreload 31376 13104 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:07,192 autoreload 38700 32076 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:12,438 autoreload 38700 32076 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:12,983 autoreload 35388 39912 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:19,479 autoreload 35388 39912 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:20,600 autoreload 44644 23956 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:26,327 autoreload 44644 23956 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:27,019 autoreload 11360 28140 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:28,247 autoreload 11360 28140 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:28,696 autoreload 40728 45920 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:30,954 autoreload 40728 45920 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:31,626 autoreload 24296 40872 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:34,958 autoreload 24296 40872 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:35,639 autoreload 30708 27812 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:36,851 autoreload 30708 27812 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:37,389 autoreload 39732 30024 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:38,637 autoreload 39732 30024 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:39,283 autoreload 22540 22248 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:44,697 autoreload 22540 22248 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:46,038 autoreload 40920 10684 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:49,401 autoreload 40920 10684 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:49,945 autoreload 41760 42368 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:54,534 autoreload 41760 42368 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:55,088 autoreload 42328 39772 Watching for file changes with StatReloader
+INFO 2025-11-12 09:13:58,445 autoreload 42328 39772 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:13:58,934 autoreload 34668 4308 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:00,054 autoreload 34668 4308 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:00,595 autoreload 3636 28224 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:01,850 autoreload 3636 28224 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:02,317 autoreload 21984 36336 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:05,711 autoreload 21984 36336 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:06,303 autoreload 18720 9952 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:08,667 autoreload 18720 9952 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:09,511 autoreload 30508 24184 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:12,915 autoreload 30508 24184 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:13,686 autoreload 15740 43088 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:15,123 autoreload 15740 43088 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:16,294 autoreload 10876 17220 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:26,635 autoreload 10876 17220 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:27,232 autoreload 27980 19064 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:32,492 autoreload 27980 19064 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:33,099 autoreload 4844 33448 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:36,267 autoreload 4844 33448 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:36,897 autoreload 44324 27068 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:42,095 autoreload 44324 27068 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:42,853 autoreload 42152 30152 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:44,043 autoreload 42152 30152 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:44,849 autoreload 44104 32064 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:46,287 autoreload 44104 32064 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:47,212 autoreload 39356 42496 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:49,522 autoreload 39356 42496 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:50,085 autoreload 34676 44380 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:53,417 autoreload 34676 44380 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:53,976 autoreload 33580 31652 Watching for file changes with StatReloader
+INFO 2025-11-12 09:14:55,608 autoreload 33580 31652 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:14:56,193 autoreload 17836 43296 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:04,547 autoreload 17836 43296 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:05,149 autoreload 21252 43424 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:08,444 autoreload 21252 43424 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:09,032 autoreload 9672 32380 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:12,302 autoreload 9672 32380 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:12,843 autoreload 23408 31072 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:17,262 autoreload 23408 31072 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:18,011 autoreload 33824 32712 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:27,786 autoreload 33824 32712 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:28,481 autoreload 42392 27836 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:31,855 autoreload 42392 27836 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:32,484 autoreload 33836 17196 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:35,775 autoreload 33836 17196 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:36,841 autoreload 45992 43128 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:38,235 autoreload 45992 43128 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:38,802 autoreload 35708 10684 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:39,958 autoreload 35708 10684 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:41,130 autoreload 22740 7768 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:46,495 autoreload 22740 7768 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:47,091 autoreload 31928 39184 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:51,248 autoreload 31928 39184 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:51,841 autoreload 10784 11640 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:56,390 autoreload 10784 11640 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:56,975 autoreload 41728 22372 Watching for file changes with StatReloader
+INFO 2025-11-12 09:15:58,653 autoreload 41728 22372 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:15:59,558 autoreload 8172 28064 Watching for file changes with StatReloader
+INFO 2025-11-12 09:16:07,004 autoreload 8172 28064 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:16:07,563 autoreload 13996 13144 Watching for file changes with StatReloader
+INFO 2025-11-12 09:16:11,036 autoreload 13996 13144 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:16:11,922 autoreload 28452 42804 Watching for file changes with StatReloader
+INFO 2025-11-12 09:16:16,302 autoreload 28452 42804 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:16:17,067 autoreload 43164 32076 Watching for file changes with StatReloader
+INFO 2025-11-12 09:16:19,314 autoreload 43164 32076 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:16:19,925 autoreload 41176 43236 Watching for file changes with StatReloader
+INFO 2025-11-12 09:16:23,198 autoreload 41176 43236 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\views.py changed, reloading.
+INFO 2025-11-12 09:16:23,738 autoreload 7540 42768 Watching for file changes with StatReloader
+INFO 2025-11-12 09:16:44,517 autoreload 7540 42768 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:16:46,056 autoreload 10280 32968 Watching for file changes with StatReloader
+INFO 2025-11-12 09:16:50,416 autoreload 10280 32968 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:16:51,690 autoreload 3732 4132 Watching for file changes with StatReloader
+INFO 2025-11-12 09:16:53,635 autoreload 3732 4132 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:16:55,773 autoreload 29068 45916 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:01,075 autoreload 29068 45916 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:02,811 autoreload 44552 41700 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:04,005 autoreload 44552 41700 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:05,152 autoreload 9064 31652 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:08,558 autoreload 9064 31652 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:09,684 autoreload 38900 30340 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:12,951 autoreload 38900 30340 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:14,359 autoreload 32488 20096 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:21,642 autoreload 32488 20096 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:22,684 autoreload 38952 988 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:26,883 autoreload 38952 988 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:28,109 autoreload 13136 30724 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:29,270 autoreload 13136 30724 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:30,351 autoreload 40400 32956 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:34,526 autoreload 40400 32956 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:35,946 autoreload 10168 23528 Watching for file changes with StatReloader
+INFO 2025-11-12 09:17:41,226 autoreload 10168 23528 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 09:17:43,355 autoreload 45376 26772 Watching for file changes with StatReloader
+INFO 2025-11-12 11:59:51,806 autoreload 45376 26772 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 11:59:57,693 autoreload 41648 43504 Watching for file changes with StatReloader
+INFO 2025-11-12 12:00:01,250 autoreload 41648 43504 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\urls.py changed, reloading.
+INFO 2025-11-12 12:00:02,346 autoreload 28388 29304 Watching for file changes with StatReloader
+INFO 2025-11-12 12:21:34,126 autoreload 40632 7972 Watching for file changes with StatReloader
+INFO 2025-11-12 12:21:45,811 basehttp 40632 31908 "GET /admin/accounts/customuser/ HTTP/1.1" 200 17580
+INFO 2025-11-12 12:21:45,907 basehttp 40632 31908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-12 12:21:48,283 basehttp 40632 31908 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:21:48,323 basehttp 40632 31908 "GET / HTTP/1.1" 200 11477
+INFO 2025-11-12 12:21:48,373 basehttp 40632 31908 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-11-12 12:21:48,380 basehttp 40632 31908 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 304 0
+INFO 2025-11-12 12:21:48,397 basehttp 40632 31908 "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-11-12 12:21:51,087 basehttp 40632 31908 "GET /accounts/login/ HTTP/1.1" 200 9874
+INFO 2025-11-12 12:21:53,322 basehttp 40632 31908 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:21:53,365 basehttp 40632 31908 "GET /tenants/ HTTP/1.1" 200 12317
+INFO 2025-11-12 12:22:07,161 basehttp 40632 31908 "GET / HTTP/1.1" 200 12929
+INFO 2025-11-12 12:22:15,534 basehttp 40632 31908 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:22:15,558 basehttp 40632 31908 "GET /tenants/ HTTP/1.1" 200 12344
+INFO 2025-11-12 12:22:23,216 basehttp 40632 31908 "POST /tenants/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:22:23,237 basehttp 40632 31908 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:22:23,287 basehttp 40632 31908 "GET /tenants/ HTTP/1.1" 200 13648
+INFO 2025-11-12 12:22:28,291 basehttp 40632 31908 "POST /tenants/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:22:28,302 basehttp 40632 31908 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:22:28,329 basehttp 40632 31908 "GET /tenants/ HTTP/1.1" 200 13648
+INFO 2025-11-12 12:22:31,451 basehttp 40632 31908 "GET /tenants/create/ HTTP/1.1" 200 14874
+INFO 2025-11-12 12:22:35,498 basehttp 40632 31908 "GET /tenants/ HTTP/1.1" 200 13434
+INFO 2025-11-12 12:22:42,104 basehttp 40632 31908 "POST /tenants/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:22:42,123 basehttp 40632 31908 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-12 12:22:42,154 basehttp 40632 31908 "GET /tenants/ HTTP/1.1" 200 13648
+INFO 2025-11-12 18:52:21,284 basehttp 40632 9196 "GET /tenants/ HTTP/1.1" 200 13434
+INFO 2025-11-13 18:41:50,135 basehttp 40632 47660 "GET /tenants/create/ HTTP/1.1" 200 14874
+INFO 2025-11-13 18:41:51,802 basehttp 40632 47660 "GET / HTTP/1.1" 200 14153
+INFO 2025-11-14 09:27:26,981 basehttp 40632 21028 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:27:27,125 basehttp 40632 21028 "GET /tenants/ HTTP/1.1" 200 13568
+INFO 2025-11-14 09:27:37,219 basehttp 40632 21028 "POST /tenants/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:27:37,236 basehttp 40632 21028 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:27:37,281 basehttp 40632 21028 "GET /tenants/ HTTP/1.1" 200 13648
+INFO 2025-11-14 09:27:39,883 basehttp 40632 21028 "GET /tenants/create/ HTTP/1.1" 200 14874
+ERROR 2025-11-14 09:28:24,342 log 40632 21028 Internal Server Error: /tenants/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: tenants.settings
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\riode\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\views.py", line 69, in form_valid
+    response = super().form_valid(form)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 133, in form_valid
+    self.object = form.save()
+                  ~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: tenants.settings
+ERROR 2025-11-14 09:28:24,400 basehttp 40632 21028 "POST /tenants/create/ HTTP/1.1" 500 198640
+WARNING 2025-11-14 09:28:24,551 basehttp 40632 21028 "GET /favicon.ico HTTP/1.1" 404 3640
+ERROR 2025-11-14 09:28:31,139 log 40632 21028 Internal Server Error: /tenants/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: tenants.settings
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\riode\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\views.py", line 69, in form_valid
+    response = super().form_valid(form)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 133, in form_valid
+    self.object = form.save()
+                  ~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: tenants.settings
+ERROR 2025-11-14 09:28:31,151 basehttp 40632 21028 "POST /tenants/create/ HTTP/1.1" 500 198640
+INFO 2025-11-14 09:32:57,381 autoreload 40632 7972 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-14 09:33:03,830 autoreload 2988 48412 Watching for file changes with StatReloader
+INFO 2025-11-14 09:33:16,998 autoreload 2988 48412 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-14 09:33:17,705 autoreload 48456 47004 Watching for file changes with StatReloader
+INFO 2025-11-14 09:33:21,052 autoreload 48456 47004 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\models.py changed, reloading.
+INFO 2025-11-14 09:33:21,756 autoreload 20468 47652 Watching for file changes with StatReloader
+INFO 2025-11-14 09:33:51,166 autoreload 36308 36244 Watching for file changes with StatReloader
+INFO 2025-11-14 09:33:59,227 signals 36308 37244 Tenant 636d10c6-ffee-46ed-bf34-675c44703cd4: User daj@daj.com koined as owner
+ERROR 2025-11-14 09:33:59,498 log 36308 37244 Internal Server Error: /tenants/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\riode\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\views.py", line 74, in form_valid
+    user=self.requiest.user,
+         ^^^^^^^^^^^^^
+AttributeError: 'TenantCreateView' object has no attribute 'requiest'. Did you mean: 'request'?
+ERROR 2025-11-14 09:33:59,500 basehttp 36308 37244 "POST /tenants/create/ HTTP/1.1" 500 102055
+INFO 2025-11-14 09:34:21,418 autoreload 36308 36244 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\views.py changed, reloading.
+INFO 2025-11-14 09:34:22,650 autoreload 31932 9200 Watching for file changes with StatReloader
+INFO 2025-11-14 09:34:23,183 signals 31932 4460 Tenant 635c366c-3a42-4a6e-90db-59a5bdbf5d8a: User daj@daj.com koined as owner
+INFO 2025-11-14 09:34:23,220 basehttp 31932 4460 "POST /tenants/create/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:34:23,239 basehttp 31932 4460 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:34:23,360 basehttp 31932 4460 "GET /tenants/ HTTP/1.1" 200 15338
+INFO 2025-11-14 09:34:30,511 basehttp 31932 4460 "POST /tenants/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:34:30,521 basehttp 31932 4460 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:34:30,538 basehttp 31932 4460 "GET /tenants/ HTTP/1.1" 200 15320
+INFO 2025-11-14 09:34:34,004 basehttp 31932 4460 "POST /tenants/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:34:34,015 basehttp 31932 4460 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-11-14 09:34:34,033 basehttp 31932 4460 "GET /tenants/ HTTP/1.1" 200 15312
+INFO 2025-11-14 18:59:28,130 autoreload 49988 14216 Watching for file changes with StatReloader
+INFO 2025-11-14 18:59:32,026 basehttp 49988 32048 "GET /tenants/ HTTP/1.1" 200 15098
+INFO 2025-11-14 18:59:32,255 basehttp 49988 32048 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 304 0

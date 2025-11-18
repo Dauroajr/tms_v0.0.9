@@ -71,7 +71,7 @@ class TenantCreateView(LoginRequiredMixin, CreateView):
         # Creator automatically becomes the owner of the tenant.
         tenant = self.object
         tenant.add_member(
-            user=self.requiest.user,
+            user=self.request.user,
             role='owner',
             is_owner=True
         )
