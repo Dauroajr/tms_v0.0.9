@@ -16,7 +16,7 @@ class TenantAuditLogAdmin(admin.ModelAdmin):
         "tenant_name",
         "user_display",
         "action_badge",
-        "modelP_name",
+        "model_name",
         "object_id",
         "ip_address",
     ]

@@ -53,7 +53,7 @@ class TenantInvitationAdmin(ModelAdmin):
     # autocomplete_fields = ['tenant', 'invited_by']
 
 
-@admin.register(TenantAuditLog)
+""" @admin.register(TenantAuditLog)
 class TenantAuditLogAdmin(ModelAdmin):
     list_display = ['tenant', 'user', 'action', 'model_name', 'timestamp']
     list_filter = ['action', 'model_name', 'timestamp']
@@ -71,4 +71,4 @@ class TenantAuditLogAdmin(ModelAdmin):
         return False  # Audit logs should be added automatically, not manually
 
     def has_delete_permission(self, request, obj=None):
-        return False  # Audit logs should never be deleted
+        return False  # Audit logs should never be deleted """

@@ -9,5 +9,3 @@ urlpatterns = [
     path('<uuid:pk>/', views.AuditLogDetailView.as_view(), name='log_detail'),
     path('export/', views.ExportAuditLogsView.as_view(), name='export'),
 ]
-
-

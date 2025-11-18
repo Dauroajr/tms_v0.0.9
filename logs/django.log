@@ -1504,3 +1504,7 @@ INFO 2025-11-14 09:34:34,033 basehttp 31932 4460 "GET /tenants/ HTTP/1.1" 200 15
 INFO 2025-11-14 18:59:28,130 autoreload 49988 14216 Watching for file changes with StatReloader
 INFO 2025-11-14 18:59:32,026 basehttp 49988 32048 "GET /tenants/ HTTP/1.1" 200 15098
 INFO 2025-11-14 18:59:32,255 basehttp 49988 32048 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 304 0
+INFO 2025-11-18 10:08:03,376 autoreload 20976 30052 Watching for file changes with StatReloader
+INFO 2025-11-18 10:30:35,805 autoreload 28732 7740 Watching for file changes with StatReloader
+INFO 2025-11-18 10:31:12,063 autoreload 28732 7740 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\audit\admin.py changed, reloading.
+INFO 2025-11-18 10:31:13,078 autoreload 18904 30352 Watching for file changes with StatReloader
