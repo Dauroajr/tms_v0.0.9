@@ -2,11 +2,154 @@
 {% load static i18n l10n %}
 
 {% block title %}
-  {% translate 'Audit Log Details' %} - TMS
+{% translate 'Audit Log Details' %} - TMS
 {% endblock title %}
 
 {% block content %}
 
+<div class="container">
+  <div class="row mb-4">
+    <div class="col-12">
+      <a href="{% url 'audit:log_list' %}" class="btn btn-outline-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> {% translate 'Back to Logs' %}
+      </a>
 
+      <h2>
+        <i class="bi bi-file-text"></i> {% translate 'Audit Log Details' %}
+      </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card shadow-sm-mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0"><i class="bi bi-ibfo-circle">{% translate 'Basic Information' %}</i></h6>
+        </div>
+
+        <div class="card-body">
+          <dl class="row mb-0">
+            <dt class="col-sm-3">{% translate 'Timestamp' %}:</dt>
+            <dd class="col-sm-9">
+              {{ log.timestamp|date:"d-m-Y H:i:s" }}
+              <small class="text-muted">{{ log.timestamp|timesince}}</small>
+            </dd>
+
+            <dt class="col-sm-3">{% translate 'User' %}:</dt>
+            <dd class="col-sm-9">
+              {% if log.user %}
+                <strong>{{ log.user.get_full_name|default:log.user.usernme }}</strong>
+                <br>
+                <small class="text-muted">{{ log.user.email }}</small>
+              {% else %}
+                <em class="text-muted">{% translate 'System' %}</em>
+              {% endif %}
+            </dd>
+
+            <dt class="col-sm-3">{% translate 'Action' %}:</dt>
+            <dd class="col-sm-9">
+              <span class="badge bg-{% if log.action == 'create' %}success{% elif log.action == 'update' %}info{% elif log.action == 'delete' %}danger{% elif log.action == 'login' %}primary{% elif log.action == 'logout' %}warning{% else %}secondary{% endif %} fs-6">
+                {{ log.get_action_display }}
+              </span>
+            </dd>
+
+            <dt class="col-sm-3">{% translate 'Model' %}:</dt>
+            <dd class="col-sm-9"><code>{{ log.model_name }}</code></dd>
+
+            <dt class="col-sm-3">{% translate 'Object ID' %}:</dt>
+            <dd class="col-sm-9">
+              {% if log.object_id %}
+                <code>{{ log.object_id }}</code>
+              {% else %}
+                <em class="text-muted">{% translate 'N/A' %}</em>
+              {% endif %}
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      {% if log.changes %}
+        <div class="card shadow-sm mb-4">
+          <div class="card-header bg-white">
+            <h6 class="mb-0"><i class="bi bi-oencil-square"></i> {% translate 'Changes' %}</h6>
+          </div>
+
+          <div class="card-body">
+            <pre class="bg-light p-3 rounded" style="max-height: 400; overflow-y: auto;">
+              <code>{{ log.changes|safe }}</code>
+            </pre>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0"><i class="bi bi-globe"></i> {% translate 'Request Information' %}</h6>
+        </div>
+
+        <div class="card-body">
+          <dl class="row mb-0">
+            <dt class="col-sm-5">{% translate 'IP Address' %}:</dt>
+            <dd class="col-sm-7">
+              {% if log.ip_address %}
+                <code>{{ log.ip_address }}</code>
+              {% else %}
+                <em class="text-muted">{% translate 'Unknown' %}</em>
+              {% endif %}
+            </dd>
+
+            <dt class="col-sm-5">{% translate 'User Agent' %}</dt>
+            <dd class="col-sm-7">
+              {% if log.user_agent %}
+                <small class="text-muted" style="word-break: break-all;">
+                  {{ log.user_agent|truncatewords:20}}
+                </small>
+              {% else %}
+                <em class="text-muted">{% translate 'Unknown' %}</em>
+              {% endif %}
+            </dd>
+
+            <dt class="col-sm-5">{% translate 'Log ID' %}:</dt>
+            <dd class="col-sm-7">
+              <small><code>{{ log.id }}</code></small>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h6 class="mb-0"><i class="bi bi-building"></i> {% translate 'Organization' %}</h6>
+        </div>
+
+        <div class="card-body">
+          <p class="mb-1"><strong>{{ log.tenant.name }}</strong></p>
+          <p class="text-muted mb-0 small">{{ log.tenant.legal_name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% block extra_js %}
+  <script>
+    // Format JSON in changes, if present
+    document.addEventListener(
+      'DOMContentLoaded', function() {
+        const changesElement = document.querySelector('pre code');
+        if (changesElement) {
+          try {
+            const jsonData = JSON.parse(changesElement.textContent);
+            changesElement.textContent = JSON.stringify(jsonData, null, 2)
+          } catch (e) {
+            // Not JSON, leave as is
+          }
+        }
+      }
+    );
+  </script>
+{% endblock extra_js %}
 
 {% endblock %}

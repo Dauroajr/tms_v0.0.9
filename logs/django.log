@@ -1508,3 +1508,24 @@ INFO 2025-11-18 10:08:03,376 autoreload 20976 30052 Watching for file changes wi
 INFO 2025-11-18 10:30:35,805 autoreload 28732 7740 Watching for file changes with StatReloader
 INFO 2025-11-18 10:31:12,063 autoreload 28732 7740 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\audit\admin.py changed, reloading.
 INFO 2025-11-18 10:31:13,078 autoreload 18904 30352 Watching for file changes with StatReloader
+INFO 2025-11-18 11:00:32,859 basehttp 18904 17744 "GET / HTTP/1.1" 200 14153
+INFO 2025-11-18 11:00:41,773 basehttp 18904 17744 "GET / HTTP/1.1" 200 14153
+INFO 2025-11-18 11:00:42,288 basehttp 18904 17744 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-11-18 11:00:42,296 basehttp 18904 20748 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-11-18 11:00:42,313 basehttp 18904 29136 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-11-18 11:00:42,330 basehttp 18904 29136 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-11-18 11:00:42,550 basehttp 18904 34740 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-11-18 11:00:42,556 basehttp 18904 31700 "GET /static/css/navbar.css HTTP/1.1" 200 1434
+INFO 2025-11-18 11:00:42,665 basehttp 18904 31700 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2025-11-18 11:07:41,334 basehttp 18904 3324 "GET / HTTP/1.1" 200 14153
+INFO 2025-11-18 11:07:41,380 basehttp 18904 3324 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-11-18 11:07:41,383 basehttp 18904 23608 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-11-18 11:07:41,389 basehttp 18904 3324 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-11-18 11:07:41,394 basehttp 18904 18628 "GET /static/css/navbar.css HTTP/1.1" 200 1434
+INFO 2025-11-18 11:07:41,399 basehttp 18904 23608 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-11-18 11:07:41,400 basehttp 18904 18628 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-11-18 11:07:41,833 basehttp 18904 18628 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2025-11-18 11:07:47,414 basehttp 18904 18628 "GET / HTTP/1.1" 200 14153
+INFO 2025-11-18 11:07:48,385 basehttp 18904 18628 "GET / HTTP/1.1" 200 14153
+INFO 2025-11-18 11:07:48,896 basehttp 18904 18628 "GET / HTTP/1.1" 200 14153
+INFO 2025-11-18 11:07:49,320 basehttp 18904 18628 "GET / HTTP/1.1" 200 14153
