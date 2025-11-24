@@ -57,7 +57,7 @@ class Tenant(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    settings = models.JSONField(default=None, null=True)
+    settings = models.JSONField(default=dict, blank=True, null=True)
     subscription_expires_at = models.DateTimeField(blank=True, null=True)
 
     objects = TenantManager()

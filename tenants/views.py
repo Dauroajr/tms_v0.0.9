@@ -161,7 +161,7 @@ class TenantUpdateView(LoginRequiredMixin, UpdateView):
 
 class TenantMemberListView(LoginRequiredMixin, ListView):
     """ View for listing all members of a tenant. """
-    template_name = 'tenants/memebrs_list.html'
+    template_name = 'tenants/members_list.html'
     context_object_name = 'members'
     paginate_by = 20
 
@@ -173,7 +173,7 @@ class TenantMemberListView(LoginRequiredMixin, ListView):
         if not self.request.user.has_tenant_permission(tenant):
             raise PermissionDenied(_("You don't have access to this tenant."))
 
-        return tenant.members.filter(is_active=True).selected_related(
+        return tenant.members.filter(is_active=True).select_related(
             'user'
         ).order_by('-is_owner', '-joined_at')
 
@@ -205,7 +205,7 @@ class TenantMemberListView(LoginRequiredMixin, ListView):
 @login_required
 @tenant_required
 @tenant_owner_required
-def invite_user(request):
+def invite_user(request, tenant_id):
     """ View for inviting users to join a tenant."""
     if request.method == 'POST':
         email = request.POST.get('email', '').strip()
