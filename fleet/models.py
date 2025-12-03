@@ -104,7 +104,7 @@ class Vehicle(TenantAwareModel):
 
     type = models.CharField(max_length=20, choices=TYPE_CHOICES, default=None)
     brand = models.ForeignKey(VehicleBrand, on_delete=models.PROTECT)
-    model = models.CharField(max_length=100, help_text=_('Vehicle Model'))
+    model = models.CharField(max_length=100, help_text=_("Vehicle Model"))
     plate = models.CharField(
         max_length=10,
         unique=True,
@@ -124,7 +124,7 @@ class Vehicle(TenantAwareModel):
         decimal_places=2,
         blank=True,
         null=True,
-        help_text=_('Load capacity in kilograms')
+        help_text=_("Load capacity in kilograms"),
     )
 
     capacity_m3 = models.DecimalField(
@@ -132,23 +132,23 @@ class Vehicle(TenantAwareModel):
         decimal_places=2,
         blank=True,
         null=True,
-        help_text=_('Volume capacity in cubic meters')
+        help_text=_("Volume capacity in cubic meters"),
     )
 
     fuel_type = models.CharField(
         max_length=20,
         choices=FUEL_CHOICES,
-        default='diesel',
+        default="diesel",
     )
 
     chassis_number = models.CharField(
-        max_length=50,
-        unique=True,
-        verbose_name=_("Chassis Number")
+        max_length=50, unique=True, verbose_name=_("Chassis Number")
     )
-    renavam = models.CharField(max_length=11, unique=True, help_text=_('RENAVAM number'))
+    renavam = models.CharField(
+        max_length=11, unique=True, help_text=_("RENAVAM number")
+    )
 
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="active")
     purchase_date = models.DateField(blank=True, null=True)
     purchase_value = models.DecimalField(
         max_digits=12,
@@ -157,89 +157,89 @@ class Vehicle(TenantAwareModel):
         null=True,
     )
 
-    current_km = models.PositiveIntegerField(default=0, help_text=_('Current odometer reading'))
+    current_km = models.PositiveIntegerField(
+        default=0, help_text=_("Current odometer reading")
+    )
     last_maintenance_km = models.PositiveIntegerField(default=0, blank=True, null=True)
     next_maintenance_km = models.PositiveIntegerField(blank=True, null=True)
 
     notes = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['plate']
-        verbose_name = _('Vehicle')
-        verbose_name_plural = _('Vehicles')
+        ordering = ["plate"]
+        verbose_name = _("Vehicle")
+        verbose_name_plural = _("Vehicles")
         indexes = [
-            models.Index(fields=['tenant', 'status']),
-            models.Index(fields=['plate'])
+            models.Index(fields=["tenant", "status"]),
+            models.Index(fields=["plate"]),
         ]
 
     def __str__(self):
         return f"{self.brand} {self.model} - {self.plate}"
 
     def is_available(self):
-        """ Check if vehicle is available for assignment. """
-        return self.status == 'active' and not self.current_assignment
+        """Check if vehicle is available for assignment."""
+        return self.status == "active" and not self.current_assignment
 
     @property
     def current_assignment(self):
-        """ Get current vehicle assignment. """
+        """Get current vehicle assignment."""
         return self.assignments.filter(is_active=True).first()
 
     def needs_maintenance(self):
-        """ Check if vehicle needs maintenance based on km."""
+        """Check if vehicle needs maintenance based on km."""
         if self.next_maintenance_km:
             return self.current_km >= self.next_maintenance_km
         return False
 
 
 class VehicleDocument(TenantAwareModel):
-    """ Documents related to vehicles(CRLV, insurance, etc.)."""
+    """Documents related to vehicles(CRLV, insurance, etc.)."""
 
     DOCUMENT_TYPE_CHOICES = [
-        ('crlv', _('CRLV (Vehicle Registration)')),
-        ('insurance', _('Insurance')),
-        ('antt', _('ANTT Registration')),
-        ('inspection', _('Vehicle Inspection')),
-        ('emission', _('Emission Certificate')),
-        ('other', _('Other')),
+        ("crlv", _("CRLV (Vehicle Registration)")),
+        ("insurance", _("Insurance")),
+        ("antt", _("ANTT Registration")),
+        ("inspection", _("Vehicle Inspection")),
+        ("emission", _("Emission Certificate")),
+        ("other", _("Other")),
     ]
 
     vehicle = models.ForeignKey(
-        Vehicle,
-        on_delete=models.CASCADE,
-        related_name='documents'
+        Vehicle, on_delete=models.CASCADE, related_name="documents"
     )
     document_type = models.CharField(max_length=20, choices=DOCUMENT_TYPE_CHOICES)
     document_number = models.CharField(max_length=50, blank=True)
-    issue_date = models.DateField(verbose_name=_('Issue Date'))
+    issue_date = models.DateField(verbose_name=_("Issue Date"))
     expiry_date = models.DateField(blank=True, null=True)
     issuing_authority = models.CharField(max_length=100, blank=True)
     file = models.FileField(
-        upload_to='fleet/vehicle_documents/',
+        upload_to="fleet/vehicle_documents/",
         blank=True,
         null=True,
     )
     notes = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['-issue_date']
-        verbose_name = _('Vehicle Document')
-        verbose_name_plural = _('Vehicle Documents')
+        ordering = ["-issue_date"]
+        verbose_name = _("Vehicle Document")
+        verbose_name_plural = _("Vehicle Documents")
         indexes = [
-            models.Index(fields=['vehicle', 'document_type']),
-            models.Index(fields=['expiry_date'])
+            models.Index(fields=["vehicle", "document_type"]),
+            models.Index(fields=["expiry_date"]),
         ]
 
     def __str__(self):
         return f"{self.vehicle.plate} - {self.get_document_type_display()}"
 
     def is_valid(self):
-        """ Check if document is still valid. """
+        """Check if document is still valid."""
         if self.expiry_date:
             return self.expiry_date >= timezone.now().date()
         return True
 
     def expires_soon(self, days=30):
-        """ Check if document expires within given days. """
+        """Check if document expires within given days."""
         if self.expiry_date:
             delta = self.expiry_date - timezone.now().date()
             return 0 <= delta <= days
@@ -247,29 +247,27 @@ class VehicleDocument(TenantAwareModel):
 
 
 class MaintenanceRecord(TenantAwareModel):
-    """ Maintenance records for vehicles. """
+    """Maintenance records for vehicles."""
 
     MAINTENANCE_TYPE_CHOICES = [
-        ('preventive', _('Preventive Maintenance')),
-        ('corrective', _('Corrective Maintenance')),
-        ('inspection', _('Inspection')),
-        ('tire_change', _('Tire Change')),
-        ('oil_change', _('Oil Change')),
-        ('brake_service', _('Brake Service')),
-        ('other', _('Other')),
+        ("preventive", _("Preventive Maintenance")),
+        ("corrective", _("Corrective Maintenance")),
+        ("inspection", _("Inspection")),
+        ("tire_change", _("Tire Change")),
+        ("oil_change", _("Oil Change")),
+        ("brake_service", _("Brake Service")),
+        ("other", _("Other")),
     ]
 
     STATUS_CHOICES = [
-        ('scheduled', _('Scheduled')),
-        ('in_progress', _('In Progress')),
-        ('completed', _('Completed')),
-        ('cancelled', _('Cancelled')),
+        ("scheduled", _("Scheduled")),
+        ("in_progress", _("In Progress")),
+        ("completed", _("Completed")),
+        ("cancelled", _("Cancelled")),
     ]
 
     vehicle = models.ForeignKey(
-        Vehicle,
-        on_delete=models.CASCADE,
-        related_name='maintenance_records'
+        Vehicle, on_delete=models.CASCADE, related_name="maintenance_records"
     )
 
     maintenanec_type = models.CharField(
@@ -279,13 +277,15 @@ class MaintenanceRecord(TenantAwareModel):
     status = models.CharField(
         max_length=30,
         choices=STATUS_CHOICES,
-        default='scheduled',
+        default="scheduled",
     )
 
     scheduled_date = models.DateTimeField()
     completed_date = models.DateTimeField()
 
-    odometer_reading = models.PositiveIntegerField(help_text=_('odometer km at maintenance.'))
+    odometer_reading = models.PositiveIntegerField(
+        help_text=_("odometer km at maintenance.")
+    )
     netx_maintenance_km = models.PositiveIntegerField(blank=True, null=True)
 
     description = models.TextField()
@@ -297,25 +297,27 @@ class MaintenanceRecord(TenantAwareModel):
         null=True,
     )
 
-    parts_replaced = models.TextField(blank=True, help_text=_('List of parts replaced.'))
+    parts_replaced = models.TextField(
+        blank=True, help_text=_("List of parts replaced.")
+    )
     notes = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['-scheduled_date']
-        verbose_name = _('Maintenance Record')
-        verbose_name_plural = _('Maintenance Records')
+        ordering = ["-scheduled_date"]
+        verbose_name = _("Maintenance Record")
+        verbose_name_plural = _("Maintenance Records")
         indexes = [
-            models.Index(fields=['vehicle', 'status']),
-            models.Index(fields=['schaduled_date']),
+            models.Index(fields=["vehicle", "status"]),
+            models.Index(fields=["schaduled_date"]),
         ]
 
     def __str__(self):
         return f"{self.vehicle.plate} - {self.get_maintenance_type_display()} - {self.scheduled_date}"
 
     def mark_completed(self, completed_date=None):
-        """ Mark maintenance as completed."""
+        """Mark maintenance as completed."""
 
-        self.status = 'completed'
+        self.status = "completed"
         self.completed_date = completed_date or timezone.now().date()
         self.save()
 
@@ -328,55 +330,84 @@ class MaintenanceRecord(TenantAwareModel):
 
 
 class VehicleAssignment(TenantAwareModel):
-    """ Assignment of drivers to vehicles. """
+    """Assignment of drivers to vehicles."""
 
     vehicle = models.ForeignKey(
-        Vehicle,
-        on_delete=models.CASCADE,
-        related_name='assignments'
+        Vehicle, on_delete=models.CASCADE, related_name="assignments"
     )
+
+    # MUDANÇA: Agora referencia Employee ao invés de Driver
     driver = models.ForeignKey(
-        Driver,
+        "personnel.Employee",  # FK para personnel.Employee
         on_delete=models.CASCADE,
-        related_name='sssignments',
+        related_name="vehicle_assignments",
+        limit_choices_to={"employee_type": "driver"},  # Só motoristas
     )
 
     start_date = models.DateField(default=timezone.now)
     end_date = models.DateField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
+
     notes = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['-start_date']
-        vertbose_name = _('Vehicle Assignment')
-        vertbose_name_plural = _('Vehicle Assignments')
+        ordering = ["-start_date"]
+        verbose_name = _("Vehicle Assignment")
+        verbose_name_plural = _("Vehicle Assignments")
         indexes = [
-            models.Index(fields=['vehicle', 'is_active']),
-            models.Index(fields=['driver', 'is_active']),
+            models.Index(fields=["vehicle", "is_active"]),
+            models.Index(fields=["driver", "is_active"]),
         ]
 
-    def str(self):
-        return f"{self.driver.driver_full_name} -> {self.vehicle.plate}"
+    def __str__(self):
+        return f"{self.driver.full_name} → {self.vehicle.plate}"
+
+    def clean(self):
+        """Validate that employee is a driver with valid license."""
+        super().clean()
+
+        from django.core.exceptions import ValidationError
+
+        # Check if employee is a driver
+        if self.driver.employee_type != "driver":
+            raise ValidationError(
+                'Only employees with type "driver" can be assigned to vehicles.'
+            )
+
+        # Check if driver has profile
+        if not self.driver.has_driver_profile():
+            raise ValidationError("This driver does not have a driver profile.")
+
+        # Check if driver's license is valid
+        driver_profile = self.driver.driver_profile
+        if not driver_profile.license_is_valid():
+            raise ValidationError("This driver's license is expired.")
+
+        # Check if driver's medical exam is valid
+        if not driver_profile.medical_exam_is_valid():
+            raise ValidationError("This driver's medical exam is expired.")
 
     def save(self, *args, **kwargs):
-        """ Override save to ensure only one active assignment per vehicle and driver. """
+        """Override save to ensure only one active assignment per vehicle/driver."""
         if self.is_active:
             # Deactivate other active assignments for this vehicle
             VehicleAssignment.objects.filter(
-                vehicle=self.vehicle,
-                is_active=True
-            ).exclude(id=self.id).update(is_active=False)
+                vehicle=self.vehicle, is_active=True
+            ).exclude(id=self.id).update(
+                is_active=False, end_date=timezone.now().date()
+            )
 
             # Deactivate other active assignments for this driver
             VehicleAssignment.objects.filter(
-                driver=self.driver,
-                is_active=True
-            ).exclude(id=self.id).update(is_active=False, end_date=timezone.now().date())
+                driver=self.driver, is_active=True
+            ).exclude(id=self.id).update(
+                is_active=False, end_date=timezone.now().date()
+            )
 
         super().save(*args, **kwargs)
 
     def end_assignment(self, end_date=None):
-        # End this assignment
+        """End this assignment."""
         self.is_active = False
         self.end_date = end_date or timezone.now().date()
         self.save()
