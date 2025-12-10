@@ -82,7 +82,7 @@ class LoginView(DjangoLoginView):
         messages.success(
             self.request,
             _('Welcome back, {name}!').format(
-                name=form.get_user().get_full_name() or form.get_user.username
+                name=form.get_user().get_full_name()  # or form.get_user.username
             )
         )
         return super().form_valid(form)

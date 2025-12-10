@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "audit.apps.AuditConfig",
     "core.apps.CoreConfig",
-    "personnel.apps.PersonnelConfig"
+    "personnel.apps.PersonnelConfig",
     "tenants.apps.TenantsConfig",
 ]
 

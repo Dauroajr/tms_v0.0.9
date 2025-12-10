@@ -17,7 +17,7 @@ class TenantAwareManager(models.Manager):
         queryset = super().get_queryset()
 
         # Get current tenant from thread local storage (set by middleware)
-        from .middleware import get_current_tenant
+        from tenants.middleware import get_current_tenant
 
         tenant = get_current_tenant()
 
@@ -85,14 +85,19 @@ class TenantAwareModel(models.Model):
             if tenant:
                 self.tenant = tenant
             else:
-                # Allow saving without tenant for special cases (migrations, fixtures)
-                if not kwargs.get("force_insert") and not kwargs.get(
-                    "skip_tenant_check"
-                ):
-                    raise ValueError(
-                        f"Cannot save {self.__class__.__name__} without tenant context. "
-                        f"Use save(skip_tenant_check=True) to bypass."
-                    )
+                # Check if being called from admin or with skip flag
+                skip_check = kwargs.get("skip_tenant_check", False)
+                force_insert = kwargs.get("force_insert", False)
+
+                # Allow save without tenant only if explicitly skipped or in admin context
+                if not skip_check and not force_insert:
+                    # Check if there's a valid user context (admin scenario)
+                    user = get_current_user()
+                    if not user or not user.is_superuser:
+                        raise ValueError(
+                            f"Cannot save {self.__class__.__name__} without tenant context. "
+                            f"Use save(skip_tenant_check=True) to bypass."
+                        )
 
         # Auto-inject user info
         user = get_current_user()

@@ -37,9 +37,28 @@ class TenantAwareAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         """Auto-inject tenant and user on save."""
-        if not obj.tenant_id and hasattr(request, "tenant"):
-            obj.tenant = request.tenant
+        # SEMPRE tentar definir tenant ANTES de salvar
+        if not obj.tenant_id:
+            # Primeiro tenta pegar do request
+            if hasattr(request, "tenant") and request.tenant:
+                obj.tenant = request.tenant
+            # Se não tem, e user é superuser, pega o primeiro tenant ativo
+            elif request.user.is_superuser:
+                from tenants.models import Tenant
 
+                first_tenant = Tenant.objects.filter(is_active=True).first()
+                if first_tenant:
+                    obj.tenant = first_tenant
+                # Se não tem nenhum tenant, precisa criar um primeiro!
+                else:
+                    from django.contrib import messages
+
+                    messages.error(
+                        request, "No active tenant found. Please create a tenant first."
+                    )
+                    return  # Não salva
+
+        # Set user info
         if not change:  # New object
             if not obj.created_by:
                 obj.created_by = request.user
@@ -47,6 +66,7 @@ class TenantAwareAdmin(admin.ModelAdmin):
         if not obj.updated_by:
             obj.updated_by = request.user
 
+        # Agora salva com tenant definido
         super().save_model(request, obj, form, change)
 
     def has_view_permission(self, request, obj=None):
