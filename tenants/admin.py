@@ -1,7 +1,9 @@
+import json
+
 from django.contrib import admin
+from django.utils import timezone
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
-import json
 
 from .models import Tenant, TenantUser, TenantInvitation
 
@@ -262,7 +264,7 @@ class TenantInvitationAdmin(admin.ModelAdmin):
 
 
 # Import timezone for status_badge
-from django.utils import timezone
+# from django.utils import timezone
 
 
 """ from django.contrib import admin
