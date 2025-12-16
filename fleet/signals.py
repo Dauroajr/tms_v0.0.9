@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 from audit.models import TenantAuditLog
 from tenants.middleware import get_current_user
-from personnel.models import Driver
+from personnel.models import Employee
 from .models import Vehicle, VehicleAssignment, MaintenanceRecord
 
 
@@ -30,7 +30,7 @@ def log_vehicle_change(sender, instance, created, **kwargs):
             object_id=str(instance.id),
             changes={
                 "plate": instance.plate,
-                "brand": instance.brand,  # .name if instance.brand else None,
+                "brand": instance.brand,  # .name if instance.brand.name else None,
                 "model": instance.model,
                 "status": instance.status,
             },
@@ -56,14 +56,14 @@ def log_assignment_change(sender, instance, created, **kwargs):
             model_name="VehicleAssignment",
             object_id=str(instance.id),
             changes={
-                "driver": instance.driver.driver_full_name,
+                "driver": instance.driver.full_name,
                 "vehicle": instance.vehicle.plate,
                 "is_active": instance.is_active,
                 "start_date": str(instance.start_date),
             },
         )
         logger.info(
-            f"Assignment: {instance.driver.driver_full_name} → {instance.vehicle.plate} "
+            f"Assignment: {instance.driver.full_name} → {instance.vehicle.plate} "
             f"({'active' if instance.is_active else 'ended'})"
         )
     except Exception as e:

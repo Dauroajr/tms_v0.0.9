@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 from django.conf.global_settings import LANGUAGES as DJANGO_LANGUAGES
+from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "audit.apps.AuditConfig",
     "core.apps.CoreConfig",
+    "fleet.apps.FleetConfig",
     "personnel.apps.PersonnelConfig",
     "tenants.apps.TenantsConfig",
 ]
@@ -46,7 +48,7 @@ ROOT_URLCONF = "tms.urls"
 
 LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "dashboard"
-LOGOUT_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = reverse_lazy("home")
 
 
 WSGI_APPLICATION = "tms.wsgi.application"

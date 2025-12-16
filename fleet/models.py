@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from core.models import TenantAwareModel
-from personnel.models import Driver
+from personnel.models import Employee
 
 
 class VehicleBrand(TenantAwareModel):
@@ -67,16 +67,14 @@ class Vehicle(TenantAwareModel):
         ("sold", _("Sold")),
     ]
 
-    FUEL_CHOICES = (
-        [
-            ("diesel", _("Diesel")),
-            ("gasoline", _("Gasoline")),
-            ("ethanol", _("Ethanol")),
-            ("flex", _("Flex")),
-            ("electric", _("Electric")),
-            ("hybrid", _("Hybrid")),
-        ],
-    )
+    FUEL_CHOICES = [
+        ("diesel", _("Diesel")),
+        ("gasoline", _("Gasoline")),
+        ("ethanol", _("Ethanol")),
+        ("flex", _("Flex")),
+        ("electric", _("Electric")),
+        ("hybrid", _("Hybrid")),
+    ]
 
     COLOR_CHOICES = [
         ("black", _("Black")),
@@ -270,7 +268,7 @@ class MaintenanceRecord(TenantAwareModel):
         Vehicle, on_delete=models.CASCADE, related_name="maintenance_records"
     )
 
-    maintenanec_type = models.CharField(
+    maintenance_type = models.CharField(
         max_length=30,
         choices=MAINTENANCE_TYPE_CHOICES,
     )
@@ -286,7 +284,7 @@ class MaintenanceRecord(TenantAwareModel):
     odometer_reading = models.PositiveIntegerField(
         help_text=_("odometer km at maintenance.")
     )
-    netx_maintenance_km = models.PositiveIntegerField(blank=True, null=True)
+    next_maintenance_km = models.PositiveIntegerField(blank=True, null=True)
 
     description = models.TextField()
     service_provider = models.CharField(max_length=250, blank=True)
@@ -308,7 +306,7 @@ class MaintenanceRecord(TenantAwareModel):
         verbose_name_plural = _("Maintenance Records")
         indexes = [
             models.Index(fields=["vehicle", "status"]),
-            models.Index(fields=["schaduled_date"]),
+            models.Index(fields=["scheduled_date"]),
         ]
 
     def __str__(self):
@@ -324,7 +322,7 @@ class MaintenanceRecord(TenantAwareModel):
         # Update vehicle's last maintenance km
         if self.odometer_reading > self.vehicle.last_maintenance_km:
             self.vehicle.last_maintenance_km = self.odometer_reading
-            if self.netx_maintenance_km:
+            if self.next_maintenance_km:
                 self.vehicle.next_maintenance_km = self.netx_maintenance_km
             self.vehicle.save()
 

@@ -140,7 +140,7 @@ class VehicleAdmin(TenantAwareAdmin):
         return format_html(
             "<span class='badge bg={}'>{}</span>",
             colors.get(obj.status, "secondary"),
-            obj.get_status_dysplay(),
+            obj.get_status_display(),
         )
 
     status_badge.short_description = _("Status")

@@ -6,8 +6,7 @@ from .models import (
     VehicleAssignment,
     VehicleBrand,
     VehicleDocument,
-    Driver,
-    DriverDocument,
+    Employee,
     MaintenanceRecord,
 )
 
@@ -166,4 +165,4 @@ class VehicleAssignmentForm(forms.ModelForm):
         # Filter for showing only available vehicles/drivers
         if 'instance' not in kwargs or not kwargs['instance'].pk:
             self.fields['vehicle'].queryset = Vehicle.objects.filter(status='active')
-            self.fields['driver'].queryset = Driver.obkects.filter(status='active')
+            self.fields['driver'].queryset = Employee.objects.filter(status='active')

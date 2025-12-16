@@ -17,10 +17,10 @@
           </div>
 
           <h4 class="mb-1">
-            {{ profile_user.get_full_name|default:profile_user.username }}
+            {{ user_profile.get_full_name|default:user_profile.username }}
           </h4>
 
-          <p class="text-muted mb-3">{{ profile_user.email }}</p>
+          <p class="text-muted mb-3">{{ user_profile.email }}</p>
 
           <div class="d-grid gap-2">
             <a href="{% url 'accounts:profile_edit' %}" class="btn btn-primary">
@@ -41,16 +41,16 @@
         <div class="card-body">
           <dl class="row mb-0">
             <dt class="col-sm-5 text-muted small">{% translate 'Username' %}:</dt>
-            <dd class="col-sm-7 small">{{ profile_user.username }}</dd>
+            <dd class="col-sm-7 small">{{ user_profile.username }}</dd>
 
             
             <dt class="col-sm-5 text-muted small">{% translate 'Phone' %}:</dt>
-            <dd class="col-sm-7 small">{{ profile_user.phone|default:"Not provided" }}</dd>
+            <dd class="col-sm-7 small">{{ user_profile.phone|default:"Not provided" }}</dd>
 
             <dt class="col-sm-5 text-muted small">{% translate 'Document' %}:</dt>
             <dd class="col-sm-7 small">
-              {% if profile_user.document_ number %}
-                {{ profile_user.get_document_type_display }}: {{ profile_user.document_number}}
+              {% if user_profile.document_number %}
+                {{ user_profile.get_document_type_display }}: {{ user_profile.document_number}}
               {% else %}
                 {% translate 'Not provided' %}
               {% endif %}
@@ -58,13 +58,13 @@
 
             <dt class="col-sm-5 text-muted small">{% translate 'Joined' %}:</dt>
             <dd class="col-sm-7 small">
-              {{ profile_user.date_joined|date:"d M, Y" }}
+              {{ user_profile.date_joined|date:"d M, Y" }}
             </dd>
 
             <dt class="col-sm-5 text-muted small">{% translate 'Last Login' %}:</dt>
             <dd class="col-sm-7 small">
-              {% if profile_user.last_login %}
-                {{ profile_user.last_login|date:"d M, Y H:i" }}
+              {% if user_profile.last_login %}
+                {{ user_profile.last_login|date:"d M, Y H:i" }}
               {% else %}
                 {% translate 'Never' %}
               {% endif %}
