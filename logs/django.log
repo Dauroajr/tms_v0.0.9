@@ -4904,3 +4904,57 @@ INFO 2025-12-16 18:52:34,014 basehttp 4672 7808 "GET /dashboard/ HTTP/1.1" 302 0
 INFO 2025-12-16 18:52:34,046 basehttp 4672 7808 "GET /tenants/ HTTP/1.1" 200 15485
 INFO 2025-12-16 18:52:35,663 basehttp 4672 7808 "GET /fleet/vehicles/ HTTP/1.1" 200 17509
 INFO 2025-12-16 18:52:39,232 basehttp 4672 7808 "GET /fleet/vehicles/create/ HTTP/1.1" 200 22145
+INFO 2025-12-17 10:22:43,825 autoreload 12992 23748 Watching for file changes with StatReloader
+INFO 2025-12-17 10:22:49,933 basehttp 12992 20924 "GET /fleet/vehicles/create/ HTTP/1.1" 200 23056
+INFO 2025-12-17 10:22:50,038 basehttp 12992 20924 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2025-12-17 10:23:27,867 autoreload 12992 23748 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\forms.py changed, reloading.
+INFO 2025-12-17 10:23:28,767 autoreload 19324 6436 Watching for file changes with StatReloader
+INFO 2025-12-17 10:23:29,304 basehttp 19324 19392 "GET /fleet/vehicles/create/ HTTP/1.1" 200 23103
+INFO 2025-12-17 10:25:03,270 autoreload 19324 6436 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 10:25:04,179 autoreload 33356 32296 Watching for file changes with StatReloader
+INFO 2025-12-17 10:25:10,030 autoreload 33356 32296 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 10:25:10,986 autoreload 23904 2436 Watching for file changes with StatReloader
+INFO 2025-12-17 10:25:17,446 autoreload 23904 2436 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 10:25:18,335 autoreload 35476 14716 Watching for file changes with StatReloader
+INFO 2025-12-17 10:25:19,908 autoreload 35476 14716 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 10:25:20,945 autoreload 32216 21920 Watching for file changes with StatReloader
+INFO 2025-12-17 10:25:26,727 autoreload 32216 21920 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 10:25:27,756 autoreload 32348 24692 Watching for file changes with StatReloader
+INFO 2025-12-17 18:20:21,939 autoreload 18564 22744 Watching for file changes with StatReloader
+INFO 2025-12-17 18:26:37,851 autoreload 18564 22744 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:26:39,852 autoreload 17220 6156 Watching for file changes with StatReloader
+INFO 2025-12-17 18:26:44,758 autoreload 17220 6156 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:26:46,013 autoreload 16608 5200 Watching for file changes with StatReloader
+INFO 2025-12-17 18:26:58,169 autoreload 16608 5200 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:26:59,225 autoreload 34092 33856 Watching for file changes with StatReloader
+INFO 2025-12-17 18:27:00,993 autoreload 34092 33856 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:27:01,921 autoreload 29268 35628 Watching for file changes with StatReloader
+INFO 2025-12-17 18:27:07,966 basehttp 29268 22764 "GET /fleet/vehicles/create/ HTTP/1.1" 200 23103
+INFO 2025-12-17 18:27:10,881 basehttp 29268 22764 "GET /fleet/vehicles/create/ HTTP/1.1" 200 23103
+INFO 2025-12-17 18:27:11,484 basehttp 29268 22764 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-12-17 18:27:11,502 basehttp 29268 11968 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-12-17 18:27:11,511 basehttp 29268 28612 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-12-17 18:27:11,530 basehttp 29268 28612 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-12-17 18:27:11,754 basehttp 29268 32784 "GET /static/css/navbar.css HTTP/1.1" 200 1906
+INFO 2025-12-17 18:27:11,781 basehttp 29268 19104 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-12-17 18:27:12,573 basehttp 29268 19104 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2025-12-17 18:27:35,029 autoreload 29268 35628 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:27:35,943 autoreload 25784 24012 Watching for file changes with StatReloader
+INFO 2025-12-17 18:27:39,799 autoreload 25784 24012 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:27:41,183 autoreload 30784 28416 Watching for file changes with StatReloader
+INFO 2025-12-17 18:27:46,703 autoreload 30784 28416 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:27:47,662 autoreload 32684 24276 Watching for file changes with StatReloader
+INFO 2025-12-17 18:27:49,354 autoreload 32684 24276 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:27:50,376 autoreload 22016 15108 Watching for file changes with StatReloader
+INFO 2025-12-17 18:27:52,244 autoreload 22016 15108 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:27:53,510 autoreload 32528 25972 Watching for file changes with StatReloader
+INFO 2025-12-17 18:27:56,056 basehttp 32528 10148 "GET /fleet/vehicles/create/ HTTP/1.1" 200 23103
+INFO 2025-12-17 18:27:56,299 basehttp 32528 10148 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-12-17 18:27:56,315 basehttp 32528 10148 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-12-17 18:27:56,319 basehttp 32528 10148 "GET /static/css/navbar.css HTTP/1.1" 200 1906
+INFO 2025-12-17 18:27:56,324 basehttp 32528 7336 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-12-17 18:27:56,326 basehttp 32528 10148 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-12-17 18:27:56,387 basehttp 32528 768 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-12-17 18:27:56,765 basehttp 32528 768 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2025-12-17 18:28:36,517 autoreload 32528 25972 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
+INFO 2025-12-17 18:28:37,530 autoreload 32668 23464 Watching for file changes with StatReloader

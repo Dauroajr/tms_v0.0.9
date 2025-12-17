@@ -64,10 +64,10 @@ class VehicleForm(forms.ModelForm):
                 attrs={"class": "form-control", "placeholder": "ABC1D23"}
             ),
             "type": forms.Select(attrs={"class": "form-control"}),
-            "brand": forms.TextInput(attrs={"class": "form-control"}),
+            "brand": forms.Select(attrs={"class": "form-control"}),
             "model": forms.TextInput(attrs={"class": "form-control"}),
             "year": forms.NumberInput(attrs={"class": "form-control"}),
-            "color": forms.TextInput(attrs={"class": "form-control"}),
+            "color": forms.Select(attrs={"class": "form-control"}),
             "capacity_kg": forms.NumberInput(attrs={"class": "form-control"}),
             "capacity_m3": forms.NumberInput(attrs={"class": "form-control"}),
             "fuel_type": forms.Select(attrs={"class": "form-control"}),

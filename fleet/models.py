@@ -11,12 +11,94 @@ from personnel.models import Employee
 class VehicleBrand(TenantAwareModel):
     """Vehicle brand/manufacturer model."""
 
+    BRAND_CHOICES = [
+        # Carros
+        ("alfa_romeo", "Alfa Romeo"),
+        ("aston_martin", "Aston Martin"),
+        ("audi", "Audi"),
+        ("bentley", "Bentley"),
+        ("bmw", "BMW"),
+        ("bugatti", "Bugatti"),
+        ("byd", "BYD"),
+        ("chery", "Chery"),
+        ("chevrolet", "Chevrolet"),
+        ("citroen", "Citroën"),
+        ("dacia", "Dacia"),
+        ("ferrari", "Ferrari"),
+        ("fiat", "Fiat"),
+        ("ford", "Ford"),
+        ("geely", "Geely"),
+        ("great_wall", "Great Wall"),
+        ("honda", "Honda"),
+        ("hyundai", "Hyundai"),
+        ("jaguar", "Jaguar"),
+        ("kia", "Kia"),
+        ("lamborghini", "Lamborghini"),
+        ("land_rover", "Land Rover"),
+        ("maserati", "Maserati"),
+        ("mazda", "Mazda"),
+        ("mercedes_benz", "Mercedes-Benz"),
+        ("mitsubishi", "Mitsubishi"),
+        ("nissan", "Nissan"),
+        ("peugeot", "Peugeot"),
+        ("porsche", "Porsche"),
+        ("renault", "Renault"),
+        ("rolls_royce", "Rolls-Royce"),
+        ("saab", "Saab"),
+        ("seat", "SEAT"),
+        ("skoda", "Škoda"),
+        ("subaru", "Subaru"),
+        ("suzuki", "Suzuki"),
+        ("tesla", "Tesla"),
+        ("toyota", "Toyota"),
+        ("volkswagen", "Volkswagen"),
+        ("volvo", "Volvo"),
+
+        # Caminhões e ônibus
+        ("ashok_leyland", "Ashok Leyland"),
+        ("caio", "Caio"),
+        ("daf", "DAF"),
+        ("freightliner", "Freightliner"),
+        ("hino", "Hino"),
+        ("international", "International"),
+        ("iveco", "Iveco"),
+        ("kenworth", "Kenworth"),
+        ("mack", "Mack"),
+        ("man", "MAN"),
+        ("marcopolo", "Marcopolo"),
+        ("mercedes_trucks", "Mercedes-Benz Trucks"),
+        ("neobus", "Neobus"),
+        ("peterbilt", "Peterbilt"),
+        ("scania", "Scania"),
+        ("tata", "Tata Motors"),
+        ("volvo_trucks", "Volvo Trucks"),
+        ("yutong", "Yutong"),
+
+        # Motocicletas
+        ("aprilia", "Aprilia"),
+        ("bajaj", "Bajaj"),
+        ("ducati", "Ducati"),
+        ("harley_davidson", "Harley-Davidson"),
+        ("honda_moto", "Honda (Motos)"),
+        ("kawasaki", "Kawasaki"),
+        ("ktm", "KTM"),
+        ("mv_agusta", "MV Agusta"),
+        ("piaggio", "Piaggio"),
+        ("royal_enfield", "Royal Enfield"),
+        ("suzuki_moto", "Suzuki (Motos)"),
+        ("triumph", "Triumph"),
+        ("vespa", "Vespa"),
+        ("yamaha", "Yamaha"),
+    ]
+
     def logo_path(obj, instance):
         if instance.logo:
             return format_html(obj and f"<src={obj.logo.url} height='40' width='40' />")
 
     name = models.CharField(
-        max_length=100, help_text=_("Brand name (e.g., Jeep, Mercedes)")
+        max_length=100,
+        choices=BRAND_CHOICES,
+        help_text=_("Brand name (e.g., Jeep, Mercedes)"),
     )
     country = models.CharField(
         max_length=50, blank=True, help_text=_("Country of origin")
