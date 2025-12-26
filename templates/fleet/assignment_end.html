@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'End Assignment' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <!-- End Assignment Card -->
+      <div class="card shadow-sm border-warning">
+        <div class="card-header bg-warning text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-stop-circle"></i> {% translate "End Assignment" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <!-- Assignment Info -->
+          <div class="text-center mb-4">
+            <i class="bi bi-person-check display-1 text-warning"></i>
+            <h4 class="mt-3">{{ object.driver.full_name }}</h4>
+            <p class="text-muted mb-1">
+              <i class="bi bi-truck"></i> {{ object.vehicle.plate }} - {{ object.vehicle.brand.name }} {{
+              object.vehicle.model }}
+            </p>
+            <small class="text-muted">
+              {% translate "Started" %}: {{ object.start_date|date:"SHORT_DATE_FORMAT" }}
+            </small>
+          </div>
+
+          <!-- Warning Message -->
+          <div class="alert alert-warning" role="alert">
+            <h6 class="alert-heading">
+              <i class="bi bi-exclamation-triangle-fill"></i> {% translate "Important" %}
+            </h6>
+            <p class="mb-0">
+              {% translate "Ending this assignment will mark the vehicle and driver as available for new assignments."
+              %}
+            </p>
+          </div>
+
+          <!-- Assignment Duration -->
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+              <h6 class="card-title">{% translate "Assignment Duration" %}</h6>
+              {% now "U" as current_timestamp %}
+              {% widthratio current_timestamp|add:object.start_date|date:"U"|add:"-" 86400 1 as duration_days %}
+              <p class="mb-0">
+                <strong>{{ duration_days }} {% translate "days" %}</strong>
+                <small class="text-muted d-block">
+                  {% translate "From" %} {{ object.start_date|date:"SHORT_DATE_FORMAT" }} {% translate "until today" %}
+                </small>
+              </p>
+            </div>
+          </div>
+
+          <!-- End Form -->
+          <form method="post">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+              {{ form.non_field_errors }}
+            </div>
+            {% endif %}
+
+            <div class="mb-3">
+              <label for="{{ form.end_date.id_for_label }}" class="form-label">
+                {% translate "End Date" %} <span class="text-danger">*</span>
+              </label>
+              {{ form.end_date }}
+              {% if form.end_date.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.end_date.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted">
+                {% translate "Date when the assignment ends (defaults to today)" %}
+              </small>
+            </div>
+
+            <div class="mb-3">
+              <label for="{{ form.notes.id_for_label }}" class="form-label">
+                {% translate "Final Notes" %}
+              </label>
+              {{ form.notes }}
+              {% if form.notes.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.notes.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted">
+                {% translate "Any observations about the assignment end (optional)" %}
+              </small>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <a href="{% url 'fleet:assignment_list' %}" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> {% translate "Cancel" %}
+              </a>
+              <button type="submit" class="btn btn-warning">
+                <i class="bi bi-stop-circle"></i> {% translate "End Assignment" %}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Info Card -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="bi bi-info-circle"></i> {% translate "What happens next?" %}
+          </h6>
+          <ul class="mb-0 small text-muted">
+            <li>{% translate "The assignment will be marked as inactive" %}</li>
+            <li>{% translate "The vehicle will be available for new assignments" %}</li>
+            <li>{% translate "The driver will be available for new assignments" %}</li>
+            <li>{% translate "The assignment history will be preserved" %}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

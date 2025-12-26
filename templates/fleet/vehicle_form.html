@@ -57,248 +57,295 @@
               <i class="bi bi-info-circle"></i> {% translate "Basic Information" %}
             </h5>
 
-            <div class="row g-3 mb-4">
-              <div class="col-md-6">
-                <label for="{{ form.plate.id_for_label }}" class="form-label">
-                  {% translate "Plate" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.plate }}
-                {% if form.plate.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.plate.errors }}
-                </div>
-                {% endif %}
-                <small class="text-muted">{% translate "Format: ABC1D23" %}</small>
-              </div>
-
-              <div class="col-md-6">
-                <label for="{{ form.type.id_for_label }}" class="form-label">
-                  {% translate "Vehicle Type" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.type }}
-                {% if form.type.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.type.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-4">
-                <label for="{{ form.brand.id_for_label }}" class="form-label">
-                  {% translate "Brand" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.brand }}
-                {% if form.brand.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.brand.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-4">
-                <label for="{{ form.model.id_for_label }}" class="form-label">
-                  {% translate "Model" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.model }}
-                {% if form.model.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.model.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-4">
-                <label for="{{ form.year.id_for_label }}" class="form-label">
-                  {% translate "Year" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.year }}
-                {% if form.year.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.year.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-6">
-                <label for="{{ form.color.id_for_label }}" class="form-label">
-                  {% translate "Color" %}
-                </label>
-                {{ form.color }}
-                {% if form.color.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.color.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-6">
-                <label for="{{ form.status.id_for_label }}" class="form-label">
-                  {% translate "Status" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.status }}
-                {% if form.status.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.status.errors }}
-                </div>
-                {% endif %}
-              </div>
-            </div>
-
-            <!-- Specifications -->
-            <h5 class="mb-3 mt-4">
-              <i class="bi bi-gear"></i> {% translate "Specifications" %}
-            </h5>
-
-            <div class="row g-3 mb-4">
-              <div class="col-md-4">
-                <label for="{{ form.capacity_kg.id_for_label }}" class="form-label">
-                  {% translate "Capacity (kg)" %}
-                </label>
-                {{ form.capacity_kg }}
-                {% if form.capacity_kg.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.capacity_kg.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-4">
-                <label for="{{ form.capacity_m3.id_for_label }}" class="form-label">
-                  {% translate "Capacity (m³)" %}
-                </label>
-                {{ form.capacity_m3 }}
-                {% if form.capacity_m3.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.capacity_m3.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-4">
-                <label for="{{ form.fuel_type.id_for_label }}" class="form-label">
-                  {% translate "Fuel Type" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.fuel_type }}
-                {% if form.fuel_type.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.fuel_type.errors }}
-                </div>
-                {% endif %}
-              </div>
-            </div>
-
-            <!-- Identification -->
-            <h5 class="mb-3 mt-4">
-              <i class="bi bi-fingerprint"></i> {% translate "Identification" %}
-            </h5>
-
-            <div class="row g-3 mb-4">
-              <div class="col-md-6">
-                <label for="{{ form.chassis_number.id_for_label }}" class="form-label">
-                  {% translate "Chassis Number" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.chassis_number }}
-                {% if form.chassis_number.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.chassis_number.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-6">
-                <label for="{{ form.renavam.id_for_label }}" class="form-label">
-                  {% translate "RENAVAM" %} <span class="text-danger">*</span>
-                </label>
-                {{ form.renavam }}
-                {% if form.renavam.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.renavam.errors }}
-                </div>
-                {% endif %}
-              </div>
-            </div>
-
-            <!-- Purchase Information -->
-            <h5 class="mb-3 mt-4">
-              <i class="bi bi-cash-stack"></i> {% translate "Purchase Information" %}
-            </h5>
-
-            <div class="row g-3 mb-4">
-              <div class="col-md-6">
-                <label for="{{ form.purchase_date.id_for_label }}" class="form-label">
-                  {% translate "Purchase Date" %}
-                </label>
-                {{ form.purchase_date }}
-                {% if form.purchase_date.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.purchase_date.errors }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="col-md-6">
-                <label for="{{ form.purchase_value.id_for_label }}" class="form-label">
-                  {% translate "Purchase Value" %}
-                </label>
-                {{ form.purchase_value }}
-                {% if form.purchase_value.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.purchase_value.errors }}
-                </div>
-                {% endif %}
-              </div>
-            </div>
-
-            <!-- Odometer -->
-            <h5 class="mb-3 mt-4">
-              <i class="bi bi-speedometer2"></i> {% translate "Odometer" %}
-            </h5>
-
-            <div class="row g-3 mb-4">
-              <div class="col-md-12">
-                <label for="{{ form.current_km.id_for_label }}" class="form-label">
-                  {% translate "Current Kilometers" %}
-                </label>
-                {{ form.current_km }}
-                {% if form.current_km.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.current_km.errors }}
-                </div>
-                {% endif %}
-              </div>
-            </div>
-
-            <!-- Notes -->
-            <h5 class="mb-3 mt-4">
-              <i class="bi bi-journal-text"></i> {% translate "Additional Notes" %}
-            </h5>
-
             <div class="mb-4">
-              <label for="{{ form.notes.id_for_label }}" class="form-label">
-                {% translate "Notes" %}
+              <label for="{{ form.photo.id_for_label }}" class="form-label">
+                {% translate "Vehicle Photo" %}
               </label>
-              {{ form.notes }}
-              {% if form.notes.errors %}
-              <div class="invalid-feedback d-block">
-                {{ form.notes.errors }}
+
+              <!-- Show current photo if editing -->
+              {% if object and object.photo %}
+              <div class="mb-2">
+                <img src="{{ object.photo.url }}" alt="{{ object.plate }}" class="img-thumbnail"
+                  style="max-width: 200px;">
+                <p class="small text-muted mt-1">{% translate "Current photo" %}</p>
               </div>
               {% endif %}
+
+              {{ form.photo }}
+              {% if form.photo.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.photo.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted">{% translate "Upload a photo of the vehicle (optional)" %}</small>
             </div>
 
-            <!-- Form Actions -->
-            <div class="d-flex justify-content-between mt-4">
-              <a href="{% url 'fleet:vehicle_list' %}" class="btn btn-outline-secondary">
-                <i class="bi bi-x-circle"></i> {% translate "Cancel" %}
-              </a>
-              <button type="submit" class="btn btn-primary">
-                <i class="bi bi-check-circle"></i>
-                {% if object %}
-                {% translate "Update Vehicle" %}
-                {% else %}
-                {% translate "Create Vehicle" %}
+            <div class="row g-3 mb-4">
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="{{ form.plate.id_for_label }}" class="form-label">
+                    {% translate "Plate" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.plate }}
+                  {% if form.plate.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.plate.errors }}
+                  </div>
+                  {% endif %}
+                  <small class="text-muted">{% translate "Format: ABC1D23" %}</small>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="{{ form.type.id_for_label }}" class="form-label">
+                    {% translate "Vehicle Type" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.type }}
+                  {% if form.type.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.type.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                  <label for="{{ form.brand.id_for_label }}" class="form-label">
+                    {% translate "Brand" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.brand }}
+                  {% if form.brand.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.brand.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                  <label for="{{ form.brand.id_for_label }}" class="form-label">
+                    {% translate "Brand" %} <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    {{ form.brand }}
+                    <a href="{% url 'fleet:brand_create' %}" class="btn btn-outline-secondary" target="_blank"
+                      title="{% translate 'Add new brand' %}">
+                      <i class="bi bi-plus"></i>
+                    </a>
+                  </div>
+                  {% if form.brand.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.brand.errors }}
+                  </div>
+                  {% endif %}
+                  <small class="text-muted">
+                    {% translate "Don't see your brand?" %}
+                    <a href="{% url 'fleet:brand_list' %}" target="_blank">{% translate "Add it here" %}</a>
+                  </small>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="{{ form.model.id_for_label }}" class="form-label">
+                    {% translate "Model" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.model }}
+                  {% if form.model.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.model.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                  <label for="{{ form.year.id_for_label }}" class="form-label">
+                    {% translate "Year" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.year }}
+                  {% if form.year.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.year.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-6">
+                  <label for="{{ form.color.id_for_label }}" class="form-label">
+                    {% translate "Color" %}
+                  </label>
+                  {{ form.color }}
+                  {% if form.color.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.color.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-6">
+                  <label for="{{ form.status.id_for_label }}" class="form-label">
+                    {% translate "Status" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.status }}
+                  {% if form.status.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.status.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Specifications -->
+              <h5 class="mb-3 mt-4">
+                <i class="bi bi-gear"></i> {% translate "Specifications" %}
+              </h5>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                  <label for="{{ form.capacity_kg.id_for_label }}" class="form-label">
+                    {% translate "Capacity (kg)" %}
+                  </label>
+                  {{ form.capacity_kg }}
+                  {% if form.capacity_kg.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.capacity_kg.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                  <label for="{{ form.capacity_m3.id_for_label }}" class="form-label">
+                    {% translate "Capacity (m³)" %}
+                  </label>
+                  {{ form.capacity_m3 }}
+                  {% if form.capacity_m3.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.capacity_m3.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                  <label for="{{ form.fuel_type.id_for_label }}" class="form-label">
+                    {% translate "Fuel Type" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.fuel_type }}
+                  {% if form.fuel_type.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.fuel_type.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Identification -->
+              <h5 class="mb-3 mt-4">
+                <i class="bi bi-fingerprint"></i> {% translate "Identification" %}
+              </h5>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="{{ form.chassis_number.id_for_label }}" class="form-label">
+                    {% translate "Chassis Number" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.chassis_number }}
+                  {% if form.chassis_number.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.chassis_number.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-6">
+                  <label for="{{ form.renavam.id_for_label }}" class="form-label">
+                    {% translate "RENAVAM" %} <span class="text-danger">*</span>
+                  </label>
+                  {{ form.renavam }}
+                  {% if form.renavam.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.renavam.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Purchase Information -->
+              <h5 class="mb-3 mt-4">
+                <i class="bi bi-cash-stack"></i> {% translate "Purchase Information" %}
+              </h5>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="{{ form.purchase_date.id_for_label }}" class="form-label">
+                    {% translate "Purchase Date" %}
+                  </label>
+                  {{ form.purchase_date }}
+                  {% if form.purchase_date.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.purchase_date.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-6">
+                  <label for="{{ form.purchase_value.id_for_label }}" class="form-label">
+                    {% translate "Purchase Value" %}
+                  </label>
+                  {{ form.purchase_value }}
+                  {% if form.purchase_value.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.purchase_value.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Odometer -->
+              <h5 class="mb-3 mt-4">
+                <i class="bi bi-speedometer2"></i> {% translate "Odometer" %}
+              </h5>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-12">
+                  <label for="{{ form.current_km.id_for_label }}" class="form-label">
+                    {% translate "Current Kilometers" %}
+                  </label>
+                  {{ form.current_km }}
+                  {% if form.current_km.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ form.current_km.errors }}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Notes -->
+              <h5 class="mb-3 mt-4">
+                <i class="bi bi-journal-text"></i> {% translate "Additional Notes" %}
+              </h5>
+
+              <div class="mb-4">
+                <label for="{{ form.notes.id_for_label }}" class="form-label">
+                  {% translate "Notes" %}
+                </label>
+                {{ form.notes }}
+                {% if form.notes.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.notes.errors }}
+                </div>
                 {% endif %}
-              </button>
-            </div>
+              </div>
+
+              <!-- Form Actions -->
+              <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'fleet:vehicle_list' %}" class="btn btn-outline-secondary">
+                  <i class="bi bi-x-circle"></i> {% translate "Cancel" %}
+                </a>
+                <button type="submit" class="btn btn-primary">
+                  <i class="bi bi-check-circle"></i>
+                  {% if object %}
+                  {% translate "Update Vehicle" %}
+                  {% else %}
+                  {% translate "Create Vehicle" %}
+                  {% endif %}
+                </button>
+              </div>
           </form>
         </div>
       </div>

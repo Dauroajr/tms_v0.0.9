@@ -1,0 +1,363 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Fleet Dashboard' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-speedometer2"></i> {% translate "Fleet Dashboard" %}
+      </h2>
+      <p class="text-muted">
+        {% translate "Overview of your fleet management system" %}
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="{% url 'fleet:vehicle_create' %}" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> {% translate "Add Vehicle" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Alerts Section -->
+  {% if expired_documents or vehicles_need_maintenance %}
+  <div class="row mb-4">
+    <!-- Expired Documents Alert -->
+    {% if expired_documents %}
+    <div class="col-md-6 mb-3">
+      <div class="alert alert-danger">
+        <h6 class="alert-heading">
+          <i class="bi bi-exclamation-triangle-fill"></i> {% translate "Expired Documents" %}
+        </h6>
+        <p class="mb-2">
+          {% blocktranslate count counter=expired_documents|length %}
+          {{ counter }} document has expired
+          {% plural %}
+          {{ counter }} documents have expired
+          {% endblocktranslate %}
+        </p>
+        <ul class="mb-0 small">
+          {% for doc in expired_documents|slice:":3" %}
+          <li>{{ doc.vehicle.plate }} - {{ doc.get_document_type_display }}</li>
+          {% endfor %}
+          {% if expired_documents|length > 3 %}
+          <li><em>{% translate "and" %} {{ expired_documents|length|add:"-3" }} {% translate "more..." %}</em></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Maintenance Alert -->
+    {% if vehicles_need_maintenance %}
+    <div class="col-md-6 mb-3">
+      <div class="alert alert-warning">
+        <h6 class="alert-heading">
+          <i class="bi bi-tools"></i> {% translate "Maintenance Required" %}
+        </h6>
+        <p class="mb-2">
+          {% blocktranslate count counter=vehicles_need_maintenance|length %}
+          {{ counter }} vehicle needs maintenance
+          {% plural %}
+          {{ counter }} vehicles need maintenance
+          {% endblocktranslate %}
+        </p>
+        <ul class="mb-0 small">
+          {% for vehicle in vehicles_need_maintenance|slice:":3" %}
+          <li>{{ vehicle.plate }} - {{ vehicle.current_km|localize }} km</li>
+          {% endfor %}
+          {% if vehicles_need_maintenance|length > 3 %}
+          <li><em>{% translate "and" %} {{ vehicles_need_maintenance|length|add:"-3" }} {% translate "more..." %}</em>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Main Statistics Cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <i class="bi bi-truck display-4 text-primary"></i>
+          <h3 class="mt-3 mb-0">{{ total_vehicles }}</h3>
+          <p class="text-muted mb-0">{% translate "Total Vehicles" %}</p>
+          <small class="text-success">
+            {{ active_vehicles }} {% translate "active" %}
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <i class="bi bi-check-circle display-4 text-success"></i>
+          <h3 class="mt-3 mb-0">{{ available_for_assignment }}</h3>
+          <p class="text-muted mb-0">{% translate "Available" %}</p>
+          <small class="text-muted">
+            {% translate "Ready for assignment" %}
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <i class="bi bi-tools display-4 text-warning"></i>
+          <h3 class="mt-3 mb-0">{{ maintenance_vehicles }}</h3>
+          <p class="text-muted mb-0">{% translate "In Maintenance" %}</p>
+          <small class="text-warning">
+            {{ scheduled_maintenance }} {% translate "scheduled" %}
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <i class="bi bi-person-check display-4 text-info"></i>
+          <h3 class="mt-3 mb-0">{{ active_assignments }}</h3>
+          <p class="text-muted mb-0">{% translate "Assigned" %}</p>
+          <small class="text-muted">
+            {% translate "Active assignments" %}
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Row -->
+  <div class="row g-3 mb-4">
+    <!-- Vehicles by Type -->
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-pie-chart"></i> {% translate "Vehicles by Type" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          {% if vehicles_by_type %}
+          <div class="list-group list-group-flush">
+            {% for item in vehicles_by_type %}
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+              <span>{{ item.type|title }}</span>
+              <span class="badge bg-primary rounded-pill">{{ item.count }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="text-muted text-center mb-0">{% translate "No data available" %}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Vehicles by Brand -->
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-bar-chart"></i> {% translate "Top Brands" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          {% if vehicles_by_brand %}
+          <div class="list-group list-group-flush">
+            {% for item in vehicles_by_brand %}
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+              <span>{{ item.brand__name }}</span>
+              <span class="badge bg-success rounded-pill">{{ item.count }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="text-muted text-center mb-0">{% translate "No data available" %}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fleet Information Cards -->
+  <div class="row g-3 mb-4">
+    <!-- Fleet Value -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="flex-grow-1">
+              <h6 class="text-muted mb-1">{% translate "Fleet Value" %}</h6>
+              <h4 class="mb-0">R$ {{ total_fleet_value|floatformat:2|localize }}</h4>
+            </div>
+            <div>
+              <i class="bi bi-currency-dollar display-4 text-success"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Average Age -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div class="flex-grow-1">
+              <h6 class="text-muted mb-1">{% translate "Average Age" %}</h6>
+              <h4 class="mb-0">{{ average_fleet_age|floatformat:1 }} {% translate "years" %}</h4>
+            </div>
+            <div>
+              <i class="bi bi-calendar-date display-4 text-info"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fuel Distribution -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6 class="text-muted mb-3">{% translate "Fuel Types" %}</h6>
+          {% if vehicles_by_fuel %}
+          {% for item in vehicles_by_fuel|slice:":3" %}
+          <div class="d-flex justify-content-between mb-2">
+            <small>{{ item.fuel_type|title }}</small>
+            <small class="text-muted">{{ item.count }}</small>
+          </div>
+          {% endfor %}
+          {% else %}
+          <p class="text-muted small mb-0">{% translate "No data" %}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Activity -->
+  <div class="row g-3 mb-4">
+    <!-- Recent Vehicles -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-clock-history"></i> {% translate "Recently Added" %}
+          </h6>
+        </div>
+        <div class="card-body p-0">
+          {% if recent_vehicles %}
+          <div class="list-group list-group-flush">
+            {% for vehicle in recent_vehicles %}
+            <a href="{% url 'fleet:vehicle_detail' vehicle.pk %}" class="list-group-item list-group-item-action">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>{{ vehicle.plate }}</strong>
+                  <small class="text-muted d-block">
+                    {{ vehicle.brand.name }} {{ vehicle.model }}
+                  </small>
+                </div>
+                <small class="text-muted">
+                  {{ vehicle.created_at|date:"SHORT_DATE_FORMAT" }}
+                </small>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="text-muted text-center py-3 mb-0">{% translate "No recent vehicles" %}</p>
+          {% endif %}
+        </div>
+        <div class="card-footer bg-white text-center">
+          <a href="{% url 'fleet:vehicle_list' %}" class="btn btn-sm btn-outline-primary">
+            {% translate "View All Vehicles" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Maintenance -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-calendar-check"></i> {% translate "Upcoming Maintenance" %}
+          </h6>
+        </div>
+        <div class="card-body p-0">
+          {% if upcoming_maintenance %}
+          <div class="list-group list-group-flush">
+            {% for maintenance in upcoming_maintenance %}
+            <div class="list-group-item">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>{{ maintenance.vehicle.plate }}</strong>
+                  <small class="text-muted d-block">
+                    {{ maintenance.get_maintenance_type_display }}
+                  </small>
+                </div>
+                <small class="text-muted">
+                  {{ maintenance.scheduled_date|date:"SHORT_DATE_FORMAT" }}
+                </small>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="text-muted text-center py-3 mb-0">{% translate "No upcoming maintenance" %}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="bi bi-lightning-charge"></i> {% translate "Quick Actions" %}
+          </h6>
+          <div class="row g-2">
+            <div class="col-md-3">
+              <a href="{% url 'fleet:vehicle_create' %}" class="btn btn-outline-primary w-100">
+                <i class="bi bi-plus-circle"></i> {% translate "Add Vehicle" %}
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="{% url 'fleet:brand_create' %}" class="btn btn-outline-secondary w-100">
+                <i class="bi bi-award"></i> {% translate "Add Brand" %}
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="{% url 'fleet:vehicle_list' %}" class="btn btn-outline-info w-100">
+                <i class="bi bi-list"></i> {% translate "View All Vehicles" %}
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="{% url 'fleet:brand_list' %}" class="btn btn-outline-success w-100">
+                <i class="bi bi-award-fill"></i> {% translate "View Brands" %}
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="{% url 'fleet:assignment_list' %}" class="btn btn-outline-info w-100">
+                <i class="bi bi-person-check"></i> {% translate "View Assignments" %}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

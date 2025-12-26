@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}
+{% if object %}
+{% translate 'Edit Assignment' %}
+{% else %}
+{% translate 'New Assignment' %}
+{% endif %} - TMS
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <!-- Page Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2>
+            <i class="bi bi-person-check"></i>
+            {% if object %}
+            {% translate "Edit Assignment" %}
+            {% else %}
+            {% translate "New Assignment" %}
+            {% endif %}
+          </h2>
+          <p class="text-muted">
+            {% if object %}
+            {% translate "Update assignment information" %}
+            {% else %}
+            {% translate "Assign a driver to a vehicle" %}
+            {% endif %}
+          </p>
+        </div>
+        <div>
+          <a href="{% url 'fleet:assignment_list' %}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> {% translate "Back to List" %}
+          </a>
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <form method="post" novalidate>
+            {% csrf_token %}
+
+            <!-- Display form errors -->
+            {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+              {{ form.non_field_errors }}
+            </div>
+            {% endif %}
+
+            <!-- Assignment Information -->
+            <h5 class="mb-3">
+              <i class="bi bi-info-circle"></i> {% translate "Assignment Information" %}
+            </h5>
+
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label for="{{ form.vehicle.id_for_label }}" class="form-label">
+                  {% translate "Vehicle" %} <span class="text-danger">*</span>
+                </label>
+                {{ form.vehicle }}
+                {% if form.vehicle.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.vehicle.errors }}
+                </div>
+                {% endif %}
+                <small class="text-muted">
+                  {% translate "Select an available vehicle" %}
+                </small>
+              </div>
+
+              <div class="col-md-6">
+                <label for="{{ form.driver.id_for_label }}" class="form-label">
+                  {% translate "Driver" %} <span class="text-danger">*</span>
+                </label>
+                {{ form.driver }}
+                {% if form.driver.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.driver.errors }}
+                </div>
+                {% endif %}
+                <small class="text-muted">
+                  {% translate "Select an available driver" %}
+                </small>
+              </div>
+            </div>
+
+            <!-- Dates -->
+            <h5 class="mb-3 mt-4">
+              <i class="bi bi-calendar"></i> {% translate "Period" %}
+            </h5>
+
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label for="{{ form.start_date.id_for_label }}" class="form-label">
+                  {% translate "Start Date" %} <span class="text-danger">*</span>
+                </label>
+                {{ form.start_date }}
+                {% if form.start_date.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.start_date.errors }}
+                </div>
+                {% endif %}
+              </div>
+
+              <div class="col-md-6">
+                <label for="{{ form.end_date.id_for_label }}" class="form-label">
+                  {% translate "End Date" %}
+                </label>
+                {{ form.end_date }}
+                {% if form.end_date.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.end_date.errors }}
+                </div>
+                {% endif %}
+                <small class="text-muted">
+                  {% translate "Leave empty for ongoing assignment" %}
+                </small>
+              </div>
+            </div>
+
+            <!-- Status -->
+            <div class="mb-4">
+              <div class="form-check">
+                {{ form.is_active }}
+                <label class="form-check-label" for="{{ form.is_active.id_for_label }}">
+                  {% translate "Active Assignment" %}
+                </label>
+              </div>
+              {% if form.is_active.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.is_active.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted d-block mt-1">
+                {% translate "Inactive assignments free up the vehicle and driver" %}
+              </small>
+            </div>
+
+            <!-- Notes -->
+            <h5 class="mb-3 mt-4">
+              <i class="bi bi-journal-text"></i> {% translate "Additional Notes" %}
+            </h5>
+
+            <div class="mb-4">
+              <label for="{{ form.notes.id_for_label }}" class="form-label">
+                {% translate "Notes" %}
+              </label>
+              {{ form.notes }}
+              {% if form.notes.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.notes.errors }}
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- Form Actions -->
+            <div class="d-flex justify-content-between mt-4">
+              <a href="{% url 'fleet:assignment_list' %}" class="btn btn-outline-secondary">
+                <i class="bi bi-x-circle"></i> {% translate "Cancel" %}
+              </a>
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-check-circle"></i>
+                {% if object %}
+                {% translate "Update Assignment" %}
+                {% else %}
+                {% translate "Create Assignment" %}
+                {% endif %}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Info Card -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="bi bi-info-circle"></i> {% translate "Important" %}
+          </h6>
+          <ul class="mb-0 small text-muted">
+            <li>{% translate "Only active drivers with valid licenses can be assigned" %}</li>
+            <li>{% translate "Only available vehicles can be assigned" %}</li>
+            <li>{% translate "Each driver and vehicle can have only one active assignment at a time" %}</li>
+            <li>{% translate "Ending an assignment will automatically free up the vehicle and driver" %}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}
+
+{% if object %}
+{% translate 'Edit Brand' %} - {{ object.name }}
+{% else %}
+{% translate 'Add Brand' %}
+{% endif %} - TMS
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <!-- Page Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2>
+            <i class="bi bi-award"></i>
+            {% if object %}
+            {% translate "Edit Brand" %}
+            {% else %}
+            {% translate "Add New Brand" %}
+            {% endif %}
+          </h2>
+          <p class="text-muted">
+            {% if object %}
+            {% translate "Update brand information" %}
+            {% else %}
+            {% translate "Add a new vehicle brand" %}
+            {% endif %}
+          </p>
+        </div>
+        <div>
+          <a href="{% url 'fleet:brand_list' %}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> {% translate "Back" %}
+          </a>
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            <!-- Display form errors -->
+            {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+              {{ form.non_field_errors }}
+            </div>
+            {% endif %}
+
+            <!-- Brand Information -->
+            <h5 class="mb-3">
+              <i class="bi bi-info-circle"></i> {% translate "Brand Information" %}
+            </h5>
+
+            <div class="mb-3">
+              <label for="{{ form.name.id_for_label }}" class="form-label">
+                {% translate "Brand Name" %} <span class="text-danger">*</span>
+              </label>
+              {{ form.name }}
+              {% if form.name.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.name.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted">{% translate "e.g., Volvo, Mercedes-Benz" %}</small>
+            </div>
+
+            <div class="mb-3">
+              <label for="{{ form.country.id_for_label }}" class="form-label">
+                {% translate "Country of Origin" %}
+              </label>
+              {{ form.country }}
+              {% if form.country.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.country.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted">{% translate "e.g., Sweden, Germany" %}</small>
+            </div>
+
+            <div class="mb-3">
+              <label for="{{ form.logo.id_for_label }}" class="form-label">
+                {% translate "Logo" %}
+              </label>
+
+              <!-- Show current logo if editing -->
+              {% if object and object.logo %}
+              <div class="mb-2">
+                <img src="{{ object.logo.url }}" alt="{{ object.name }}" class="img-thumbnail"
+                  style="max-width: 100px;">
+                <p class="small text-muted mt-1">{% translate "Current logo" %}</p>
+              </div>
+              {% endif %}
+
+              {{ form.logo }}
+              {% if form.logo.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.logo.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted">{% translate "Upload brand logo (optional)" %}</small>
+            </div>
+
+            <div class="mb-3">
+              <div class="form-check">
+                {{ form.is_active }}
+                <label class="form-check-label" for="{{ form.is_active.id_for_label }}">
+                  {% translate "Active" %}
+                </label>
+              </div>
+              {% if form.is_active.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.is_active.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted d-block mt-1">
+                {% translate "Inactive brands won't appear in vehicle selection" %}
+              </small>
+            </div>
+
+            <!-- Notes -->
+            <h5 class="mb-3 mt-4">
+              <i class="bi bi-journal-text"></i> {% translate "Additional Information" %}
+            </h5>
+
+            <div class="mb-4">
+              <label for="{{ form.notes.id_for_label }}" class="form-label">
+                {% translate "Notes" %}
+              </label>
+              {{ form.notes }}
+              {% if form.notes.errors %}
+              <div class="invalid-feedback d-block">
+                {{ form.notes.errors }}
+              </div>
+              {% endif %}
+              <small class="text-muted">{% translate "Any additional information about this brand" %}</small>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="d-flex justify-content-between mt-4">
+              <a href="{% url 'fleet:brand_list' %}" class="btn btn-outline-secondary">
+                <i class="bi bi-x-circle"></i> {% translate "Cancel" %}
+              </a>
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-check-circle"></i>
+                {% if object %}
+                {% translate "Update Brand" %}
+                {% else %}
+                {% translate "Create Brand" %}
+                {% endif %}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Info Card -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="bi bi-lightbulb"></i> {% translate "Tip" %}
+          </h6>
+          <p class="text-muted small mb-0">
+          {% translate "After creating brands, you'll be able to select them when adding new vehicles to your fleet."%}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

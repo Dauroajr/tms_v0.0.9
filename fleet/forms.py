@@ -21,13 +21,13 @@ class VehicleBrandForm(forms.ModelForm):
             "name": forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": _("e.g., Volvo, Mercedes"),
+                    # "placeholder": _("e.g., Volvo, Mercedes"),
                 }
             ),
             "country": forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": _("e.g., Sweden, Germany"),
+                    # "placeholder": _("e.g., Sweden, Germany"),
                 }
             ),
             "logo": forms.FileInput(attrs={"class": "form-control"}),
@@ -42,6 +42,7 @@ class VehicleForm(forms.ModelForm):
     class Meta:
         model = Vehicle
         fields = [
+            "photo",
             "brand",
             "model",
             "plate",
@@ -60,8 +61,9 @@ class VehicleForm(forms.ModelForm):
             "notes",
         ]
         widgets = {
+            "photo": forms.FileInput(attrs={"class": "form-control"}),
             "plate": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "ABC1D23"}
+                attrs={"class": "form-control"}
             ),
             "type": forms.Select(attrs={"class": "form-control"}),
             "brand": forms.Select(attrs={"class": "form-control"}),
@@ -81,6 +83,11 @@ class VehicleForm(forms.ModelForm):
             "current_km": forms.NumberInput(attrs={"class": "form-control"}),
             "notes": forms.Textarea(attrs={"class": "form-control", "rows": 3}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Filtrar apenas marcas ativas
+        self.fields['brand'].queryset = VehicleBrand.objects.filter(is_active=True)
 
 
 class VehicleDocumentForm(forms.ModelForm):
@@ -163,6 +170,12 @@ class VehicleAssignmentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Filter for showing only available vehicles/drivers
-        if 'instance' not in kwargs or not kwargs['instance'].pk:
+        # Só filtra se for criação (instance é None ou não tem pk)
+        if not self.instance or not self.instance.pk:
             self.fields['vehicle'].queryset = Vehicle.objects.filter(status='active')
-            self.fields['driver'].queryset = Employee.objects.filter(status='active')
+            # Employee ao invés de Driver
+            # from personnel.models import Employee
+            self.fields['driver'].queryset = Employee.objects.filter(
+                employee_type='driver',
+                status='active'
+            )

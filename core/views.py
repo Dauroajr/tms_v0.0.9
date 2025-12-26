@@ -7,7 +7,12 @@ from django.views.generic import (
     UpdateView
 )
 
-from .mixins import TenantAwareViewMixin
+from .mixins import (
+    TenantAwareViewMixin,
+    TenantAwareDeleteMixin,
+    TenantAwareQuerysetMixin,
+    TenantRequiredMixin,
+)
 
 
 class TenantAwareListView(TenantAwareViewMixin, ListView):
@@ -28,5 +33,10 @@ class TenantAwareUpdateView(TenantAwareViewMixin, UpdateView):
     pass
 
 
-class TenantAwareDeleteView(TenantAwareViewMixin, DeleteView):
+class TenantAwareDeleteView(
+    TenantRequiredMixin,
+    TenantAwareQuerysetMixin,
+    TenantAwareDeleteMixin,  # ← Usa o mixin específico
+    DeleteView
+):
     pass

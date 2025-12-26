@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Vehicle Assignments' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-person-check"></i> {% translate "Vehicle Assignments" %}
+      </h2>
+      <p class="text-muted">
+        {% translate "Manage driver assignments to vehicles" %}
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="{% url 'fleet:assignment_create' %}" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> {% translate "New Assignment" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-list-check display-4 text-primary"></i>
+          <h3 class="mt-2 mb-0">{{ total_assignments }}</h3>
+          <p class="text-muted mb-0">{% translate "Total" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-check-circle display-4 text-success"></i>
+          <h3 class="mt-2 mb-0">{{ active_assignments }}</h3>
+          <p class="text-muted mb-0">{% translate "Active" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-x-circle display-4 text-secondary"></i>
+          <h3 class="mt-2 mb-0">{{ ended_assignments }}</h3>
+          <p class="text-muted mb-0">{% translate "Ended" %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <form method="get" class="row g-3">
+        <div class="col-md-3">
+          <label class="form-label">{% translate "Status" %}</label>
+          <select name="active" class="form-control">
+            <option value="">{% translate "All" %}</option>
+            <option value="true" {% if current_active == 'true' %}selected{% endif %}>
+              {% translate "Active" %}
+            </option>
+            <option value="false" {% if current_active == 'false' %}selected{% endif %}>
+              {% translate "Ended" %}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">{% translate "Vehicle" %}</label>
+          <select name="vehicle" class="form-control">
+            <option value="">{% translate "All Vehicles" %}</option>
+            {% for vehicle in vehicles %}
+            <option value="{{ vehicle.id }}" {% if current_vehicle == vehicle.id|stringformat:"s" %}selected{% endif %}>
+              {{ vehicle.plate }} - {{ vehicle.brand.name }} {{ vehicle.model }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">{% translate "Driver" %}</label>
+          <select name="driver" class="form-control">
+            <option value="">{% translate "All Drivers" %}</option>
+            {% for driver in drivers %}
+            <option value="{{ driver.id }}" {% if current_driver == driver.id|stringformat:"s" %}selected{% endif %}>
+              {{ driver.full_name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-search"></i> {% translate "Filter" %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Assignments List -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-white">
+      <h6 class="mb-0">
+        <i class="bi bi-list"></i> {% translate "Assignment List" %}
+      </h6>
+    </div>
+    <div class="card-body p-0">
+      {% if assignments %}
+      <div class="table-responsive">
+        <table class="table table-hover mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>{% translate "Driver" %}</th>
+              <th>{% translate "Vehicle" %}</th>
+              <th>{% translate "Start Date" %}</th>
+              <th>{% translate "End Date" %}</th>
+              <th>{% translate "Duration" %}</th>
+              <th>{% translate "Status" %}</th>
+              <th class="text-end">{% translate "Actions" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for assignment in assignments %}
+            <tr>
+              <td>
+                <strong>{{ assignment.driver.full_name }}</strong>
+              </td>
+              <td>
+                <a href="{% url 'fleet:vehicle_detail' assignment.vehicle.pk %}">
+                  {{ assignment.vehicle.plate }}
+                </a>
+                <small class="text-muted d-block">
+                  {{ assignment.vehicle.brand.name }} {{ assignment.vehicle.model }}
+                </small>
+              </td>
+              <td>{{ assignment.start_date|date:"SHORT_DATE_FORMAT" }}</td>
+              <td>
+                {% if assignment.end_date %}
+                {{ assignment.end_date|date:"SHORT_DATE_FORMAT" }}
+                {% else %}
+                <span class="text-muted">-</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if assignment.end_date %}
+                {% widthratio assignment.end_date|date:"U"|add:assignment.start_date|date:"U"|add:"-" 86400 1 %} {%
+                translate "days" %}
+                {% else %}
+                {% now "U" as current_timestamp %}
+                {% widthratio current_timestamp|add:assignment.start_date|date:"U"|add:"-" 86400 1 %} {% translate
+                "days" %}
+                {% endif %}
+              </td>
+              <td>
+                {% if assignment.is_active %}
+                <span class="badge bg-success">{% translate "Active" %}</span>
+                {% else %}
+                <span class="badge bg-secondary">{% translate "Ended" %}</span>
+                {% endif %}
+              </td>
+              <td class="text-end">
+                <div class="btn-group btn-group-sm">
+                  <a href="{% url 'fleet:assignment_detail' assignment.pk %}" class="btn btn-outline-primary"
+                    title="{% translate 'View Details' %}">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  {% if assignment.is_active %}
+                  <a href="{% url 'fleet:assignment_end' assignment.pk %}" class="btn btn-outline-warning"
+                    title="{% translate 'End Assignment' %}">
+                    <i class="bi bi-stop-circle"></i>
+                  </a>
+                  {% endif %}
+                  <a href="{% url 'fleet:assignment_update' assignment.pk %}" class="btn btn-outline-secondary"
+                    title="{% translate 'Edit' %}">
+                    <i class="bi bi-pencil"></i>
+                  </a>
+                  <a href="{% url 'fleet:assignment_delete' assignment.pk %}" class="btn btn-outline-danger"
+                    title="{% translate 'Delete' %}">
+                    <i class="bi bi-trash"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      {% if is_paginated %}
+      <div class="card-footer bg-white">
+        <nav>
+          <ul class="pagination justify-content-center mb-0">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link"
+                href="?page=1{% if current_active %}&active={{ current_active }}{% endif %}{% if current_vehicle %}&vehicle={{ current_vehicle }}{% endif %}{% if current_driver %}&driver={{ current_driver }}{% endif %}">
+                {% translate "First" %}
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link"
+                href="?page={{ page_obj.previous_page_number }}{% if current_active %}&active={{ current_active }}{% endif %}{% if current_vehicle %}&vehicle={{ current_vehicle }}{% endif %}{% if current_driver %}&driver={{ current_driver }}{% endif %}">
+                {% translate "Previous" %}
+              </a>
+            </li>
+            {% endif %}
+
+            <li class="page-item active">
+              <span class="page-link">
+                {% translate "Page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}
+              </span>
+            </li>
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link"
+                href="?page={{ page_obj.next_page_number }}{% if current_active %}&active={{ current_active }}{% endif %}{% if current_vehicle %}&vehicle={{ current_vehicle }}{% endif %}{% if current_driver %}&driver={{ current_driver }}{% endif %}">
+                {% translate "Next" %}
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link"
+                href="?page={{ page_obj.paginator.num_pages }}{% if current_active %}&active={{ current_active }}{% endif %}{% if current_vehicle %}&vehicle={{ current_vehicle }}{% endif %}{% if current_driver %}&driver={{ current_driver }}{% endif %}">
+                {% translate "Last" %}
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      {% endif %}
+
+      {% else %}
+      <div class="text-center py-5">
+        <i class="bi bi-inbox display-1 text-muted"></i>
+        <p class="mt-3 text-muted">{% translate "No assignments found" %}</p>
+        <a href="{% url 'fleet:assignment_create' %}" class="btn btn-primary">
+          <i class="bi bi-plus-circle"></i> {% translate "Create First Assignment" %}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

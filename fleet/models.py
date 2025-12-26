@@ -1,3 +1,6 @@
+from datetime import datetime, timedelta
+from decimal import Decimal
+
 from django.core.validators import RegexValidator
 from django.db import models
 from django.utils.html import format_html
@@ -53,7 +56,6 @@ class VehicleBrand(TenantAwareModel):
         ("toyota", "Toyota"),
         ("volkswagen", "Volkswagen"),
         ("volvo", "Volvo"),
-
         # Caminhões e ônibus
         ("ashok_leyland", "Ashok Leyland"),
         ("caio", "Caio"),
@@ -73,7 +75,6 @@ class VehicleBrand(TenantAwareModel):
         ("tata", "Tata Motors"),
         ("volvo_trucks", "Volvo Trucks"),
         ("yutong", "Yutong"),
-
         # Motocicletas
         ("aprilia", "Aprilia"),
         ("bajaj", "Bajaj"),
@@ -97,7 +98,6 @@ class VehicleBrand(TenantAwareModel):
 
     name = models.CharField(
         max_length=100,
-        choices=BRAND_CHOICES,
         help_text=_("Brand name (e.g., Jeep, Mercedes)"),
     )
     country = models.CharField(
@@ -120,12 +120,95 @@ class VehicleBrand(TenantAwareModel):
     def __str__(self):
         return self.name
 
-    def get_vehicles_count(self):
-        return self.vehicles.filter(status="active").count()
+    def save(self, *args, **kwargs):
+        if self.name:
+            self.name = self.name.upper()
+        super().save(*args, **kwargs)
+
+    """ def get_vehicles_count(self):
+        return self.vehicles.filter(status="active").count() """
 
 
 class Vehicle(TenantAwareModel):
     """Vehicle model for fleet management."""
+
+    BRAND_CHOICES = [
+        # Carros
+        ("alfa_romeo", "Alfa Romeo"),
+        ("aston_martin", "Aston Martin"),
+        ("audi", "Audi"),
+        ("bentley", "Bentley"),
+        ("bmw", "BMW"),
+        ("bugatti", "Bugatti"),
+        ("byd", "BYD"),
+        ("chery", "Chery"),
+        ("chevrolet", "Chevrolet"),
+        ("citroen", "Citroën"),
+        ("dacia", "Dacia"),
+        ("ferrari", "Ferrari"),
+        ("fiat", "Fiat"),
+        ("ford", "Ford"),
+        ("geely", "Geely"),
+        ("great_wall", "Great Wall"),
+        ("honda", "Honda"),
+        ("hyundai", "Hyundai"),
+        ("jaguar", "Jaguar"),
+        ("kia", "Kia"),
+        ("lamborghini", "Lamborghini"),
+        ("land_rover", "Land Rover"),
+        ("maserati", "Maserati"),
+        ("mazda", "Mazda"),
+        ("mercedes_benz", "Mercedes-Benz"),
+        ("mitsubishi", "Mitsubishi"),
+        ("nissan", "Nissan"),
+        ("peugeot", "Peugeot"),
+        ("porsche", "Porsche"),
+        ("renault", "Renault"),
+        ("rolls_royce", "Rolls-Royce"),
+        ("saab", "Saab"),
+        ("seat", "SEAT"),
+        ("skoda", "Škoda"),
+        ("subaru", "Subaru"),
+        ("suzuki", "Suzuki"),
+        ("tesla", "Tesla"),
+        ("toyota", "Toyota"),
+        ("volkswagen", "Volkswagen"),
+        ("volvo", "Volvo"),
+        # Caminhões e ônibus
+        ("ashok_leyland", "Ashok Leyland"),
+        ("caio", "Caio"),
+        ("daf", "DAF"),
+        ("freightliner", "Freightliner"),
+        ("hino", "Hino"),
+        ("international", "International"),
+        ("iveco", "Iveco"),
+        ("kenworth", "Kenworth"),
+        ("mack", "Mack"),
+        ("man", "MAN"),
+        ("marcopolo", "Marcopolo"),
+        ("mercedes_trucks", "Mercedes-Benz Trucks"),
+        ("neobus", "Neobus"),
+        ("peterbilt", "Peterbilt"),
+        ("scania", "Scania"),
+        ("tata", "Tata Motors"),
+        ("volvo_trucks", "Volvo Trucks"),
+        ("yutong", "Yutong"),
+        # Motocicletas
+        ("aprilia", "Aprilia"),
+        ("bajaj", "Bajaj"),
+        ("ducati", "Ducati"),
+        ("harley_davidson", "Harley-Davidson"),
+        ("honda_moto", "Honda (Motos)"),
+        ("kawasaki", "Kawasaki"),
+        ("ktm", "KTM"),
+        ("mv_agusta", "MV Agusta"),
+        ("piaggio", "Piaggio"),
+        ("royal_enfield", "Royal Enfield"),
+        ("suzuki_moto", "Suzuki (Motos)"),
+        ("triumph", "Triumph"),
+        ("vespa", "Vespa"),
+        ("yamaha", "Yamaha"),
+    ]
 
     TYPE_CHOICES = [
         ("truck", _("Truck")),
@@ -181,6 +264,18 @@ class Vehicle(TenantAwareModel):
         ("yellow", _("Yellow")),
         ("other", _("Other")),
     ]
+
+    def vehicle_photo_path(instance, filename):
+        """Generate upload path for vehicle photos."""
+        return f"fleet/vehicles/{instance.tenant.id}/{filename}"
+
+    # ADICIONE ESTE CAMPO (de preferência logo após os campos básicos)
+    photo = models.ImageField(
+        upload_to=vehicle_photo_path,
+        blank=True,
+        null=True,
+        help_text=_("Vehicle photo"),
+    )
 
     type = models.CharField(max_length=20, choices=TYPE_CHOICES, default=None)
     brand = models.ForeignKey(VehicleBrand, on_delete=models.PROTECT)
@@ -491,3 +586,133 @@ class VehicleAssignment(TenantAwareModel):
         self.is_active = False
         self.end_date = end_date or timezone.now().date()
         self.save()
+
+
+class VehicleAssignmentWorkday(TenantAwareModel):
+    """Daily workday record for vehicle assignment."""
+
+    WORKDAY_TYPE_CHOICES = [
+        ("daily_8h", _("Daily 8 hours")),
+        ("daily_10h", _("Daily 10 hours")),
+        ("daily_12h", _("Daily 12 hours")),
+        ("transfer", _("Transfer")),
+        ("custom", _("Custom")),
+    ]
+
+    STATUS_CHOICES = [
+        ("pending", _("Pending")),
+        ("approved", _("Approved")),
+        ("rejected", _("Rejected")),
+        ("paid", _("Paid")),
+    ]
+
+    assignment = models.ForeignKey(
+        VehicleAssignment,
+        on_delete=models.CASCADE,
+        related_name="workdays",
+        verbose_name=_("Assignment"),
+    )
+
+    # Date and Time
+    date = models.DateField(
+        verbose_name=_("Work Date"), help_text=_("Date of the workday")
+    )
+    start_time = models.TimeField(
+        verbose_name=_("Start Time"), help_text=_("Work start time")
+    )
+    end_time = models.TimeField(
+        blank=True,
+        null=True,
+        verbose_name=_("End Time"),
+        help_text=_("Work end time (leave emepty if ongoing)"),
+    )
+    break_minutes = models.PositiveIntegerField(
+        default=0,
+        blank=True,
+        verbose_name=_("Break Minutes"),
+        help_text=_("Total break time in minutes"),
+    )
+
+    # Workday configuration
+    workday_type = models.CharField(
+        max_length=30,
+        choices=WORKDAY_TYPE_CHOICES,
+        default="daily_10h",
+        verbose_name=_("Workday Type"),
+    )
+    standard_hours = models.DecimalField(
+        max_length=4,
+        decimal_places=2,
+        default=Decimal("10.00"),
+        verbose_name=_("Standard Hours"),
+        help_text=_("Standard Workday hours (8, 10 or 12h)"),
+    )
+
+    # Payment Values (set by manager)
+    daily_rate = models.DecimalField(
+        max_length=10,
+        decimal_places=2,
+        verbose_name=_("Daily Rate"),
+        help_text=_("Value for the complete daily"),
+    )
+    # NOTE: Overtime rate is auto-calculated as 10% of daily_rate
+    # No need for separate field - calculated in get_overtime_hourly_rate()
+
+    # Calculated fields (auto-calculated on save)
+    total_hours = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Total Hours"),
+        help_text=_("Total hours worked"),
+    )
+    overtime_hours = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Overtime Hours"),
+        help_text=_("Overtime hours (after 15min tolerance)"),
+    )
+    daily_amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Daily Amount"),
+        help_text=_("Amount for daily rate"),
+    )
+    overtime_amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Overtime Amount"),
+        help_text=_("Amount for overtime hours"),
+    )
+    total_amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Total Amount"),
+        help_text=_("Total amount to pay"),
+    )
+
+    # Status and Notes
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default="pending",
+        verbose_name=_("Status"),
+    )
+    notes = models.TextField(blank=True, verbose_name=_("Notes"))
+
+    # Approval
+    approved_by = models.ForeignKey(
+        "accounts.CustomUser",
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name="approved_workdays",
+        verbose_name=_("Approved By"),
+    )
+    approved_at = models.DateTimeField(
+        blank=True, null=True, verbose_name=_("Approved At")
+    )

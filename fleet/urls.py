@@ -6,18 +6,28 @@ from django.views.i18n import set_language
 
 from . import views
 
-app_name = 'fleet'
+app_name = "fleet"
 
 urlpatterns = [
-    path('vehicles/', views.VehicleListView.as_view(), name='vehicle_list'),
-    path('vehicles/create/', views.VehicleCreateView.as_view(), name='vehicle_create'),
-    path('vehicles/<uuid:pk>/', views.VehicleDetailView.as_view(), name='vehicle_detail'),
-    path('vehicles/<uuid:pk>/edit', views.VehicleUpdateView.as_view(), name='vehicle_update'),
-    path('vehicles/<uuid:pk>/delete', views.VehicleDeleteView.as_view(), name='vehicle_delete'),
+    path("", views.FleetDashboardView.as_view(), name="dashboard"),
 
-    path('brands/', views.VehicleBrandListView.as_view(), name='brand_list'),
-    path('brands/create', views.VehicleBrandCreateView.as_view(), name='brand_create'),
-    path('brands/<uuid:pk>/edit', views.VehicleBrandUpdateView.as_view(), name='brand_update'),
+    path("vehicles/", views.VehicleListView.as_view(), name="vehicle_list"),
+    path("vehicles/create/", views.VehicleCreateView.as_view(), name="vehicle_create"),
+    path("vehicles/<uuid:pk>/", views.VehicleDetailView.as_view(), name="vehicle_detail"),
+    path("vehicles/<uuid:pk>/edit", views.VehicleUpdateView.as_view(), name="vehicle_update",),
+    path("vehicles/<uuid:pk>/delete", views.VehicleDeleteView.as_view(), name="vehicle_delete",),
+
+    path("brands/", views.VehicleBrandListView.as_view(), name="brand_list"),
+    path("brands/create", views.VehicleBrandCreateView.as_view(), name="brand_create"),
+    path("brands/<uuid:pk>/edit", views.VehicleBrandUpdateView.as_view(), name="brand_update"),
+
+    # Vehicle Assignment URLs
+    path('assignments/', views.VehicleAssignmentListView.as_view(), name='assignment_list'),
+    path('assignments/create/', views.VehicleAssignmentCreateView.as_view(), name='assignment_create'),
+    path('assignments/<uuid:pk>/', views.VehicleAssignmentDetailView.as_view(), name='assignment_detail'),
+    path('assignments/<uuid:pk>/edit/', views.VehicleAssignmentUpdateView.as_view(), name='assignment_update'),
+    path('assignments/<uuid:pk>/end/', views.VehicleAssignmentEndView.as_view(), name='assignment_end'),
+    path('assignments/<uuid:pk>/delete/', views.VehicleAssignmentDeleteView.as_view(), name='assignment_delete'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

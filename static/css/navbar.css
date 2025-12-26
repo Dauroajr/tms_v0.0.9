@@ -82,6 +82,97 @@ li a.dropdown-item:not(li.nav-item.welcome):hover {
   margin: 0 10px 0 0;
 }
 
+.navbar-top {
+    background: color-mix(in srgb, black 50%, #13436c 50%);
+    color: aliceblue;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    height: 50px;
+    border-top: 1px solid #075f8c;
+    position: sticky;
+    opacity: 98%;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-top a {
+    color: aliceblue;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.navbar-top a:hover {
+    color: #90ebff;
+}
+
+li.nav-item:not(.welcome):hover {
+    color: #90ebff;
+    transition: 0.2s;
+    background-color: rgba(25, 66, 90, 0.7);
+    border-radius: 6px;
+}
+
+li a.dropdown-item {
+    color: #f2f2f2;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+li a.dropdown-item:not(li.nav-item.welcome):hover {
+    color: #ffffff;
+    background-color: rgba(20, 76, 108, 0.8);
+    transition: 0.2s;
+}
+
+.dropdown-menu.show {
+    background-color: #0d3146;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+}
+
+/* Tenant badge mais elegante */
+.tenant-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.tenant-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Ícones mais refinados */
+.bi {
+    margin-right: 0.4rem;
+    font-size: 1rem;
+}
+
+/* Welcome message mais sutil */
+.welcome {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 400;
+}
+
+.welcome a {
+    color: #fff780;
+    font-weight: 500;
+}
+
+.welcome a:hover {
+    text-decoration: none;
+    color: #ffff9d !important;
+}
+
 /* Adicione no seu navbar.css */
 /* .dropdown-item-logout {
     display: block;

@@ -1,0 +1,480 @@
+/* ============================================
+   FLEET MANAGEMENT - PROFESSIONAL THEME
+   Preserving original navy/petrol color scheme
+   ============================================ */
+
+:root {
+    /* Paleta Original Preservada */
+    --primary-navy: #13436c;
+    --primary-dark: #0d3146;
+    --primary-hover: #19425a;
+    --accent-light: #144c6c;
+    --gradient-start: #000000;
+    --gradient-end: #17445f;
+    
+    /* Tons Neutros Profissionais */
+    --gray-50: #f8f9fa;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    
+    /* Cores de Status (mais suaves) */
+    --success: #2d6a4f;
+    --success-light: #40916c;
+    --warning: #b7791f;
+    --warning-light: #f4a261;
+    --danger: #9b2226;
+    --danger-light: #c9404d;
+    --info: #14539f;
+    --info-light: #2a7fc1;
+    
+    /* Shadows profissionais */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Borders */
+    --border-light: 1px solid var(--gray-200);
+    --border-medium: 1px solid var(--gray-300);
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+}
+
+/* ============================================
+   AJUSTES GLOBAIS PARA FLEET
+   ============================================ */
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--gray-800);
+    background-color: var(--gray-50);
+}
+
+/* Main container para Fleet */
+main {
+    background: var(--gray-50);
+}
+
+.container {
+    max-width: 1400px;
+}
+
+/* ============================================
+   TIPOGRAFIA PROFISSIONAL
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--gray-900);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-muted {
+    color: var(--gray-600) !important;
+}
+
+/* ============================================
+   CARDS PROFISSIONAIS
+   ============================================ */
+
+.card {
+    border: var(--border-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: var(--border-light);
+    padding: 1rem 1.25rem;
+}
+
+.card-header h5,
+.card-header h6 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card.shadow-sm {
+    box-shadow: var(--shadow) !important;
+}
+
+/* Cards de estatísticas */
+.card .display-4 {
+    font-size: 2.5rem;
+    opacity: 0.15;
+}
+
+.card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+/* ============================================
+   BADGES PROFISSIONAIS (menos chamativos)
+   ============================================ */
+
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-navy) !important;
+    color: white;
+}
+
+.badge.bg-success {
+    background-color: var(--success) !important;
+    color: white;
+}
+
+.badge.bg-warning {
+    background-color: var(--warning) !important;
+    color: white;
+}
+
+.badge.bg-danger {
+    background-color: var(--danger) !important;
+    color: white;
+}
+
+.badge.bg-info {
+    background-color: var(--info) !important;
+    color: white;
+}
+
+.badge.bg-secondary {
+    background-color: var(--gray-500) !important;
+    color: white;
+}
+
+/* ============================================
+   BOTÕES PROFISSIONAIS
+   ============================================ */
+
+.btn {
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-navy);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline-primary {
+    border: 1px solid var(--primary-navy);
+    color: var(--primary-navy);
+    background: white;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-navy);
+    color: white;
+}
+
+.btn-outline-secondary {
+    border: 1px solid var(--gray-400);
+    color: var(--gray-700);
+    background: white;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--gray-100);
+    border-color: var(--gray-500);
+    color: var(--gray-800);
+}
+
+.btn-outline-success {
+    border: 1px solid var(--success);
+    color: var(--success);
+    background: white;
+}
+
+.btn-outline-success:hover {
+    background-color: var(--success);
+    color: white;
+}
+
+.btn-outline-danger {
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    background: white;
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--danger);
+    color: white;
+}
+
+/* ============================================
+   TABELAS PROFISSIONAIS
+   ============================================ */
+
+.table {
+    font-size: 0.9375rem;
+}
+
+.table thead {
+    background-color: var(--gray-50);
+    border-bottom: 2px solid var(--gray-300);
+}
+
+.table thead th {
+    font-weight: 600;
+    color: var(--gray-700);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 0.75rem;
+    border-bottom: 2px solid var(--gray-300);
+}
+
+.table tbody tr {
+    border-bottom: var(--border-light);
+}
+
+.table tbody tr:hover {
+    background-color: var(--gray-50);
+}
+
+.table tbody td {
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+}
+
+/* ============================================
+   ALERTS PROFISSIONAIS
+   ============================================ */
+
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+    border-left: 4px solid;
+    box-shadow: var(--shadow-sm);
+}
+
+.alert-danger {
+    background-color: #fef2f2;
+    border-left-color: var(--danger);
+    color: var(--danger);
+}
+
+.alert-warning {
+    background-color: #fffbeb;
+    border-left-color: var(--warning);
+    color: #92400e;
+}
+
+.alert-success {
+    background-color: #f0fdf4;
+    border-left-color: var(--success);
+    color: var(--success);
+}
+
+.alert-info {
+    background-color: #eff6ff;
+    border-left-color: var(--info);
+    color: var(--info);
+}
+
+.alert-heading {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   FORMULÁRIOS PROFISSIONAIS
+   ============================================ */
+
+.form-label {
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
+}
+
+.form-control,
+.form-select {
+    border: var(--border-medium);
+    border-radius: var(--border-radius-sm);
+    padding: 0.625rem 0.875rem;
+    font-size: 0.9375rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-navy);
+    box-shadow: 0 0 0 3px rgba(19, 67, 108, 0.1);
+}
+
+/* ============================================
+   LIST GROUPS PROFISSIONAIS
+   ============================================ */
+
+.list-group-item {
+    border: none;
+    border-bottom: var(--border-light);
+    padding: 0.875rem 1rem;
+}
+
+.list-group-item:hover {
+    background-color: var(--gray-50);
+}
+
+.list-group-item-action:hover {
+    background-color: var(--gray-50);
+    color: var(--primary-navy);
+}
+
+/* ============================================
+   PAGINAÇÃO PROFISSIONAL
+   ============================================ */
+
+.pagination .page-link {
+    color: var(--primary-navy);
+    border: var(--border-light);
+    padding: 0.5rem 0.75rem;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--gray-50);
+    color: var(--primary-hover);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-navy);
+    border-color: var(--primary-navy);
+}
+
+/* ============================================
+   DROPDOWN MENU
+   ============================================ */
+
+.dropdown-menu {
+    border: var(--border-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 0.5rem;
+}
+
+.dropdown-item {
+    border-radius: var(--border-radius-sm);
+    padding: 0.5rem 0.75rem;
+    transition: all 0.15s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--gray-100);
+    color: var(--primary-navy);
+}
+
+/* ============================================
+   IMAGENS E THUMBNAILS
+   ============================================ */
+
+.img-thumbnail {
+    border: var(--border-light);
+    border-radius: var(--border-radius);
+    padding: 0.25rem;
+}
+
+.rounded {
+    border-radius: var(--border-radius-sm) !important;
+}
+
+/* ============================================
+   DASHBOARD ESPECÍFICO
+   ============================================ */
+
+/* Cabeçalho da página */
+.container .row.mb-4 h2 {
+    color: var(--gray-900);
+    font-weight: 700;
+}
+
+/* Cards de estatísticas com ícones */
+.card-body.text-center i {
+    opacity: 0.12;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-body.text-center {
+    position: relative;
+}
+
+/* Small text mais sutil */
+small {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+small.text-success {
+    color: var(--success-light) !important;
+}
+
+small.text-warning {
+    color: var(--warning-light) !important;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .card-body.text-center h3 {
+        font-size: 1.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem !important;
+    }
+}
+
+/* ============================================
+   DARK MODE (para futuro)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    /* Preparado para dark mode futuro */
+}

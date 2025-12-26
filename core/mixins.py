@@ -66,11 +66,12 @@ class TenantAwareCreateMixin:
 
     def form_valid(self, form):
         """Set tenant and created_by before saving."""
-        if hasattr(self.request, "tenant") and self.request.tenant:
-            form.instance.tenant = self.request.tenant
+        if hasattr(form, 'instance'):
+            if hasattr(self.request, "tenant") and self.request.tenant:
+                form.instance.tenant = self.request.tenant
 
-        if not form.instance.created_by:
-            form.instance.created_by = self.request.user
+            if not form.instance.created_by:
+                form.instance.created_by = self.request.user
 
         return super().form_valid(form)
 
@@ -86,6 +87,13 @@ class TenantAwareUpdateMixin:
             form.instance.updated_by = self.request.user
 
         return super().form_valid(form)
+
+
+class TenantAwareDeleteMixin:
+    """
+    Mixin for DeleteView - não precisa fazer nada especial com form.
+    """
+    pass  # DeleteView já herda de TenantAwareQuerysetMixin que filtra por tenant
 
 
 class TenantAwareQuerysetMixin:
