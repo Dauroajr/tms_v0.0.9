@@ -523,6 +523,110 @@ class VehicleAssignment(TenantAwareModel):
     end_date = models.DateField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
 
+    estimated_days = models.PositiveIntegerField(
+        default=1,
+        verbose_name=_("Estimated Days"),
+        help_text=_("Estimated duration in days (can be adjusted later)"),
+    )
+
+    workday_type = models.CharField(
+        max_length=20,
+        choices=[
+            ("daily_8h", _("Daily 8 hours")),
+            ("daily_10h", _("Daily 10 hours")),
+            ("daily_12h", _("Daily 12 hours")),
+            ("transfer", _("Transfer")),
+            ("custom", _("Custom")),
+        ],
+        default="daily_10h",
+        verbose_name=_("Default Workday Type"),
+        help_text=_("Default type of workday for this assignment"),
+    )
+
+    # Payment Configuration
+    daily_rate = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name=_("Daily Rate"),
+        help_text=_("Agreed daily rate value for this assignment"),
+    )
+
+    # Calculated/Summary Fields
+    total_days_worked = models.PositiveIntegerField(
+        default=0,
+        verbose_name=_("Total Days Worked"),
+        help_text=_("Total number of days actually worked"),
+    )
+
+    total_amount = models.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Total Amount"),
+        help_text=_("Total amount to pay for this assignment"),
+    )
+
+    payment_status = models.CharField(
+        max_length=20,
+        choices=[
+            ("pending", _("Pending")),
+            ("approved", _("Approved")),
+            ("paid", _("Paid")),
+        ],
+        default="pending",
+        verbose_name=_("Payment Status"),
+    )
+
+    # Methods to add to VehicleAssignment class:
+
+    def calculate_totals(self):
+        """Calculate total days worked and total amount from workdays."""
+        workdays = self.workdays.filter(status__in=["approved", "paid"])
+
+        self.total_days_worked = workdays.count()
+        self.total_amount = workdays.aggregate(total=models.Sum("total_amount"))[
+            "total"
+        ] or Decimal("0.00")
+
+        self.save(update_fields=["total_days_worked", "total_amount"])
+
+    def get_workday_summary(self):
+        """Get summary statistics for workdays."""
+        workdays = self.workdays.all()
+
+        return {
+            "total_days": workdays.count(),
+            "pending": workdays.filter(status="pending").count(),
+            "approved": workdays.filter(status="approved").count(),
+            "paid": workdays.filter(status="paid").count(),
+            "total_hours": workdays.aggregate(total=models.Sum("total_hours"))["total"]
+            or 0,
+            "total_overtime": workdays.aggregate(total=models.Sum("overtime_hours"))[
+                "total"
+            ]
+            or 0,
+            "total_amount": workdays.aggregate(total=models.Sum("total_amount"))[
+                "total"
+            ]
+            or 0,
+        }
+
+    def can_add_workday(self, date):
+        """Check if a workday can be added for this date."""
+        # Can't add workday before assignment start
+        if date < self.start_date:
+            return False
+
+        # Can't add workday after assignment end (if set)
+        if self.end_date and date > self.end_date:
+            return False
+
+        # Can't add duplicate workday
+        if self.workdays.filter(date=date).exists():
+            return False
+
+        return True
+
     notes = models.TextField(blank=True)
 
     class Meta:
@@ -716,3 +820,149 @@ class VehicleAssignmentWorkday(TenantAwareModel):
     approved_at = models.DateTimeField(
         blank=True, null=True, verbose_name=_("Approved At")
     )
+
+    # Payment
+    paid_at = models.DateTimeField(blank=True, null=True, verbose_name=_("Paid At"))
+    payment_reference = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name=_("Payment Reference"),
+        help_text=_("Payment transaction reference"),
+    )
+
+    class Meta:
+        ordering = ["-date", "-start_time"]
+        verbose_name = _("Workday")
+        verbose_name_plural = _("Workdays")
+        unique_together = ["assignment", "date"]
+        indexes = [
+            models.Index(fields=["tenant", "date"]),
+            models.Index(fields=["assignment", "status"]),
+            models.Index(fields=["status"]),
+        ]
+
+    def __str__(self):
+        return f"{self.assignment.driver.full_name} - {self.date}"
+
+    def get_overtime_hourly_rate(self):
+        """
+        Calculate overtime hourly rate as 10% of daily rate.
+        Business Rule: Each overtime hour = 10% of agreed daily rate.
+        """
+        return self.daily_rate * Decimal("0.10")
+
+    def calculate_hours_and_amounts(self):
+        """
+        Calculate total hours, overtime, and amounts based on business rules.
+
+        Business Rules:
+        1. If workday < 8h → pays full daily rate (minimum guarantee)
+        2. Transfer → pays 50% of daily rate, no overtime
+        3. Overtime starts after: standard_hours + 15 minutes tolerance
+        4. Overtime counted in full hours (1h, 2h, 3h...)
+        """
+        if not self.end_time:
+            # Ongoing workday, can't calculate yet
+            return
+
+        # Calculate total worked time
+        start_datetime = datetime.combine(self.date, self.start_time)
+        end_datetime = datetime.combine(self.date, self.end_time)
+
+        # Handle overnight shifts
+        if end_datetime < start_datetime:
+            end_datetime += timedelta(days=1)
+
+        # Total minutes worked (minus break)
+        total_minutes = (end_datetime - start_datetime).total_seconds() / 60
+        total_minutes -= self.break_minutes
+
+        # Convert to hours
+        self.total_hours = Decimal(str(round(total_minutes / 60, 2)))
+
+        # Calculate amounts based on workday type
+        if self.workday_type == "transfer":
+            # Transfer = 50% of daily rate, no overtime
+            self.daily_amount = self.daily_rate * Decimal("0.5")
+            self.overtime_hours = Decimal("0.00")
+            self.overtime_amount = Decimal("0.00")
+
+        elif self.total_hours < 8:
+            # Short service: pays full daily rate anyway
+            self.daily_amount = self.daily_rate
+            self.overtime_hours = Decimal("0.00")
+            self.overtime_amount = Decimal("0.00")
+
+        else:
+            # Normal daily: pays full rate
+            self.daily_amount = self.daily_rate
+
+            # Calculate overtime with 15min tolerance
+            overtime_threshold_hours = self.standard_hours + Decimal(
+                "0.25"
+            )  # +15 minutes
+
+            if self.total_hours > overtime_threshold_hours:
+                # Calculate raw overtime
+                raw_overtime = self.total_hours - self.standard_hours
+
+                # Round DOWN to full hours (business rule: count full hours only)
+                # Example: 1h14min = 1h, 2h45min = 2h
+                self.overtime_hours = Decimal(str(int(raw_overtime)))
+
+                # Calculate overtime amount (10% of daily rate per hour)
+                overtime_rate = self.get_overtime_hourly_rate()
+                self.overtime_amount = self.overtime_hours * overtime_rate
+            else:
+                self.overtime_hours = Decimal("0.00")
+                self.overtime_amount = Decimal("0.00")
+
+        # Total amount
+        self.total_amount = self.daily_amount + self.overtime_amount
+
+    def save(self, *args, **kwargs):
+        """Auto-calculate before saving."""
+        # Set standard hours based on workday type if not custom
+        if self.workday_type == "daily_8h":
+            self.standard_hours = Decimal("8.00")
+        elif self.workday_type == "daily_10h":
+            self.standard_hours = Decimal("10.00")
+        elif self.workday_type == "daily_12h":
+            self.standard_hours = Decimal("12.00")
+        elif self.workday_type == "transfer":
+            self.standard_hours = Decimal("0.00")  # No standard hours for transfer
+
+        # Calculate if end_time is set
+        if self.end_time:
+            self.calculate_hours_and_amounts()
+
+        super().save(*args, **kwargs)
+
+    def approve(self, user):
+        """Approve this workday."""
+        self.status = "approved"
+        self.approved_by = user
+        self.approved_at = timezone.now()
+        self.save()
+
+    def reject(self, user):
+        """Reject this workday."""
+        self.status = "rejected"
+        self.approved_by = user
+        self.approved_at = timezone.now()
+        self.save()
+
+    def mark_as_paid(self, payment_reference=""):
+        """Mark workday as paid."""
+        self.status = "paid"
+        self.paid_at = timezone.now()
+        self.payment_reference = payment_reference
+        self.save()
+
+    def can_edit(self):
+        """Check if workday can be edited."""
+        return self.status in ["pending", "rejected"]
+
+    def can_approve(self):
+        """Check if workday can be approved."""
+        return self.status == "pending"
