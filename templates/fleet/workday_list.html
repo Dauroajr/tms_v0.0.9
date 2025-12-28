@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Workdays' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-calendar-check"></i> {% translate "Workdays" %}
+      </h2>
+      <p class="text-muted">
+        {% translate "Manage daily workday records" %}
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="{% url 'fleet:workday_create' %}" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> {% translate "New Workday" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-list-check display-4 text-primary"></i>
+          <h3 class="mt-2 mb-0">{{ total_workdays }}</h3>
+          <p class="text-muted mb-0">{% translate "Total" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-clock-history display-4 text-warning"></i>
+          <h3 class="mt-2 mb-0">{{ pending_workdays }}</h3>
+          <p class="text-muted mb-0">{% translate "Pending" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-check-circle display-4 text-success"></i>
+          <h3 class="mt-2 mb-0">{{ approved_workdays }}</h3>
+          <p class="text-muted mb-0">{% translate "Approved" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-cash-stack display-4 text-info"></i>
+          <h3 class="mt-2 mb-0">{{ paid_workdays }}</h3>
+          <p class="text-muted mb-0">{% translate "Paid" %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Totals Summary -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm border-primary">
+        <div class="card-body">
+          <h6 class="text-muted">{% translate "Total Hours Worked" %}</h6>
+          <h3 class="mb-0">{{ total_hours|default:0 }}h</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm border-warning">
+        <div class="card-body">
+          <h6 class="text-muted">{% translate "Total Overtime" %}</h6>
+          <h3 class="mb-0">{{ total_overtime|default:0 }}h</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm border-success">
+        <div class="card-body">
+          <h6 class="text-muted">{% translate "Total Amount" %}</h6>
+          <h3 class="mb-0 text-success">R$ {{ total_amount|default:0|localize }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <form method="get" class="row g-3">
+        <div class="col-md-3">
+          <label class="form-label">{% translate "Assignment" %}</label>
+          <select name="assignment" class="form-control">
+            <option value="">{% translate "All Assignments" %}</option>
+            {% for assignment in assignments %}
+            <option value="{{ assignment.id }}" {% if current_assignment == assignment.id|stringformat:"s" %}selected{% endif %}>
+              {{ assignment.driver.full_name }} → {{ assignment.vehicle.plate }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">{% translate "Status" %}</label>
+          <select name="status" class="form-control">
+            <option value="">{% translate "All" %}</option>
+            <option value="pending" {% if current_status == 'pending' %}selected{% endif %}>
+              {% translate "Pending" %}
+            </option>
+            <option value="approved" {% if current_status == 'approved' %}selected{% endif %}>
+              {% translate "Approved" %}
+            </option>
+            <option value="paid" {% if current_status == 'paid' %}selected{% endif %}>
+              {% translate "Paid" %}
+            </option>
+            <option value="rejected" {% if current_status == 'rejected' %}selected{% endif %}>
+              {% translate "Rejected" %}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">{% translate "From Date" %}</label>
+          <input type="date" name="date_from" class="form-control" value="{{ current_date_from }}">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">{% translate "To Date" %}</label>
+          <input type="date" name="date_to" class="form-control" value="{{ current_date_to }}">
+        </div>
+        <div class="col-md-1 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Workdays List -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-white">
+      <h6 class="mb-0">
+        <i class="bi bi-list"></i> {% translate "Workday List" %}
+      </h6>
+    </div>
+    <div class="card-body p-0">
+      {% if workdays %}
+      <div class="table-responsive">
+        <table class="table table-hover mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>{% translate "Date" %}</th>
+              <th>{% translate "Driver" %}</th>
+              <th>{% translate "Vehicle" %}</th>
+              <th>{% translate "Start" %}</th>
+              <th>{% translate "End" %}</th>
+              <th>{% translate "Hours" %}</th>
+              <th>{% translate "Overtime" %}</th>
+              <th>{% translate "Amount" %}</th>
+              <th>{% translate "Status" %}</th>
+              <th class="text-end">{% translate "Actions" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for workday in workdays %}
+            <tr>
+              <td>
+                <strong>{{ workday.date|date:"SHORT_DATE_FORMAT" }}</strong>
+              </td>
+              <td>{{ workday.assignment.driver.full_name }}</td>
+              <td>
+                <a href="{% url 'fleet:vehicle_detail' workday.assignment.vehicle.pk %}">
+                  {{ workday.assignment.vehicle.plate }}
+                </a>
+              </td>
+              <td>{{ workday.start_time|time:"H:i" }}</td>
+              <td>
+                {% if workday.end_time %}
+                {{ workday.end_time|time:"H:i" }}
+                {% else %}
+                <span class="text-muted">-</span>
+                {% endif %}
+              </td>
+              <td>{{ workday.total_hours }}h</td>
+              <td>
+                {% if workday.overtime_hours > 0 %}
+                <span class="text-warning">{{ workday.overtime_hours }}h</span>
+                {% else %}
+                -
+                {% endif %}
+              </td>
+              <td><strong>R$ {{ workday.total_amount|localize }}</strong></td>
+              <td>
+                {% if workday.status == 'pending' %}
+                <span class="badge bg-warning">{{ workday.get_status_display }}</span>
+                {% elif workday.status == 'approved' %}
+                <span class="badge bg-success">{{ workday.get_status_display }}</span>
+                {% elif workday.status == 'paid' %}
+                <span class="badge bg-primary">{{ workday.get_status_display }}</span>
+                {% elif workday.status == 'rejected' %}
+                <span class="badge bg-danger">{{ workday.get_status_display }}</span>
+                {% endif %}
+              </td>
+              <td class="text-end">
+                <div class="btn-group btn-group-sm">
+                  <a href="{% url 'fleet:workday_detail' workday.pk %}" 
+                     class="btn btn-outline-primary"
+                     title="{% translate 'View Details' %}">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  {% if workday.can_edit %}
+                  <a href="{% url 'fleet:workday_update' workday.pk %}" 
+                     class="btn btn-outline-secondary"
+                     title="{% translate 'Edit' %}">
+                    <i class="bi bi-pencil"></i>
+                  </a>
+                  {% endif %}
+                  {% if workday.status != 'paid' %}
+                  <a href="{% url 'fleet:workday_delete' workday.pk %}" 
+                     class="btn btn-outline-danger"
+                     title="{% translate 'Delete' %}">
+                    <i class="bi bi-trash"></i>
+                  </a>
+                  {% endif %}
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      {% if is_paginated %}
+      <div class="card-footer bg-white">
+        <nav>
+          <ul class="pagination justify-content-center mb-0">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link" href="?page=1{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
+                {% translate "First" %}
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
+                {% translate "Previous" %}
+              </a>
+            </li>
+            {% endif %}
+
+            <li class="page-item active">
+              <span class="page-link">
+                {% translate "Page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}
+              </span>
+            </li>
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
+                {% translate "Next" %}
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
+                {% translate "Last" %}
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      {% endif %}
+
+      {% else %}
+      <div class="text-center py-5">
+        <i class="bi bi-calendar-x display-1 text-muted"></i>
+        <p class="mt-3 text-muted">{% translate "No workdays found" %}</p>
+        <a href="{% url 'fleet:workday_create' %}" class="btn btn-primary">
+          <i class="bi bi-plus-circle"></i> {% translate "Register First Workday" %}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

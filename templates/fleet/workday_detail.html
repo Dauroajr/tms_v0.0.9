@@ -1,0 +1,373 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Workday Details' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-calendar-check"></i> {% translate "Workday Details" %}
+      </h2>
+      <p class="text-muted">
+        {{ workday.assignment.driver.full_name }} - {{ workday.date|date:"SHORT_DATE_FORMAT" }}
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="{% url 'fleet:workday_list' %}" class="btn btn-outline-secondary me-2">
+        <i class="bi bi-arrow-left"></i> {% translate "Back" %}
+      </a>
+      {% if workday.can_edit %}
+      <a href="{% url 'fleet:workday_update' workday.pk %}" class="btn btn-primary">
+        <i class="bi bi-pencil"></i> {% translate "Edit" %}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-8">
+      <!-- Workday Information -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-info-circle"></i> {% translate "Workday Information" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Date" %}</label>
+              <p class="mb-0"><strong>{{ workday.date|date:"l, F j, Y" }}</strong></p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Status" %}</label>
+              <p class="mb-0">
+                {% if workday.status == 'pending' %}
+                <span class="badge bg-warning">{{ workday.get_status_display }}</span>
+                {% elif workday.status == 'approved' %}
+                <span class="badge bg-success">{{ workday.get_status_display }}</span>
+                {% elif workday.status == 'paid' %}
+                <span class="badge bg-primary">{{ workday.get_status_display }}</span>
+                {% elif workday.status == 'rejected' %}
+                <span class="badge bg-danger">{{ workday.get_status_display }}</span>
+                {% endif %}
+              </p>
+            </div>
+            <div class="col-md-4">
+              <label class="text-muted small">{% translate "Start Time" %}</label>
+              <p class="mb-0">{{ workday.start_time|time:"H:i" }}</p>
+            </div>
+            <div class="col-md-4">
+              <label class="text-muted small">{% translate "End Time" %}</label>
+              <p class="mb-0">
+                {% if workday.end_time %}
+                {{ workday.end_time|time:"H:i" }}
+                {% else %}
+                <span class="text-muted">{% translate "Ongoing" %}</span>
+                {% endif %}
+              </p>
+            </div>
+            <div class="col-md-4">
+              <label class="text-muted small">{% translate "Break Time" %}</label>
+              <p class="mb-0">{{ workday.break_minutes }} {% translate "minutes" %}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Assignment Information -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-person-badge"></i> {% translate "Assignment" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Driver" %}</label>
+              <p class="mb-0">
+                <a href="{% url 'personnel:employee_detail' workday.assignment.driver.pk %}">
+                  <strong>{{ workday.assignment.driver.full_name }}</strong>
+                </a>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Vehicle" %}</label>
+              <p class="mb-0">
+                <a href="{% url 'fleet:vehicle_detail' workday.assignment.vehicle.pk %}">
+                  <strong>{{ workday.assignment.vehicle.plate }}</strong>
+                </a>
+                <small class="text-muted d-block">
+                  {{ workday.assignment.vehicle.brand.name }} {{ workday.assignment.vehicle.model }}
+                </small>
+              </p>
+            </div>
+            <div class="col-md-12">
+              <label class="text-muted small">{% translate "Assignment" %}</label>
+              <p class="mb-0">
+                <a href="{% url 'fleet:assignment_detail' workday.assignment.pk %}">
+                  {% translate "View Full Assignment" %} <i class="bi bi-arrow-right"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hours Calculation -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-clock-history"></i> {% translate "Hours Worked" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="text-muted small">{% translate "Workday Type" %}</label>
+              <p class="mb-0">
+                <span class="badge bg-info">{{ workday.get_workday_type_display }}</span>
+              </p>
+            </div>
+            <div class="col-md-4">
+              <label class="text-muted small">{% translate "Standard Hours" %}</label>
+              <p class="mb-0">{{ workday.standard_hours }}h</p>
+            </div>
+            <div class="col-md-4">
+              <label class="text-muted small">{% translate "Total Hours Worked" %}</label>
+              <p class="mb-0"><strong>{{ workday.total_hours }}h</strong></p>
+            </div>
+            <div class="col-md-12">
+              <label class="text-muted small">{% translate "Overtime Hours" %}</label>
+              <p class="mb-0">
+                {% if workday.overtime_hours > 0 %}
+                <span class="text-warning"><strong>{{ workday.overtime_hours }}h</strong></span>
+                {% else %}
+                <span class="text-muted">{% translate "No overtime" %}</span>
+                {% endif %}
+              </p>
+              {% if workday.overtime_hours > 0 %}
+              <small class="text-muted">
+                {% translate "Calculated after" %} {{ workday.standard_hours }}h + 15 {% translate "minutes tolerance" %}
+              </small>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Information -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-cash-stack"></i> {% translate "Payment" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Daily Rate" %}</label>
+              <p class="mb-0"><strong>R$ {{ workday.daily_rate|localize }}</strong></p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Daily Amount" %}</label>
+              <p class="mb-0">R$ {{ workday.daily_amount|localize }}</p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Overtime Rate" %}</label>
+              <p class="mb-0">R$ {{ workday.get_overtime_hourly_rate|localize }} / {% translate "hour" %}</p>
+              <small class="text-muted">{% translate "10% of daily rate" %}</small>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Overtime Amount" %}</label>
+              <p class="mb-0">
+                {% if workday.overtime_amount > 0 %}
+                R$ {{ workday.overtime_amount|localize }}
+                {% else %}
+                <span class="text-muted">-</span>
+                {% endif %}
+              </p>
+            </div>
+            <div class="col-md-12">
+              <hr>
+              <label class="text-muted small">{% translate "Total Amount to Pay" %}</label>
+              <h3 class="mb-0 text-success">R$ {{ workday.total_amount|localize }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      {% if workday.notes %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-journal-text"></i> {% translate "Notes" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-0">{{ workday.notes|linebreaks }}</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-4">
+      <!-- Status Card -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-check-circle"></i> {% translate "Status" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label class="text-muted small">{% translate "Current Status" %}</label>
+            <p class="mb-0">
+              {% if workday.status == 'pending' %}
+              <span class="badge bg-warning fs-6">{{ workday.get_status_display }}</span>
+              {% elif workday.status == 'approved' %}
+              <span class="badge bg-success fs-6">{{ workday.get_status_display }}</span>
+              {% elif workday.status == 'paid' %}
+              <span class="badge bg-primary fs-6">{{ workday.get_status_display }}</span>
+              {% elif workday.status == 'rejected' %}
+              <span class="badge bg-danger fs-6">{{ workday.get_status_display }}</span>
+              {% endif %}
+            </p>
+          </div>
+
+          {% if workday.approved_by %}
+          <div class="mb-3">
+            <label class="text-muted small">{% translate "Approved/Rejected By" %}</label>
+            <p class="mb-0">{{ workday.approved_by.get_full_name }}</p>
+            <small class="text-muted">{{ workday.approved_at|date:"SHORT_DATETIME_FORMAT" }}</small>
+          </div>
+          {% endif %}
+
+          {% if workday.paid_at %}
+          <div class="mb-3">
+            <label class="text-muted small">{% translate "Paid At" %}</label>
+            <p class="mb-0">{{ workday.paid_at|date:"SHORT_DATETIME_FORMAT" }}</p>
+            {% if workday.payment_reference %}
+            <small class="text-muted">{% translate "Reference" %}: {{ workday.payment_reference }}</small>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-lightning"></i> {% translate "Actions" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <div class="d-grid gap-2">
+            {% if workday.can_approve %}
+            <form method="post" action="{% url 'fleet:workday_approve' workday.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-success w-100">
+                <i class="bi bi-check-circle"></i> {% translate "Approve" %}
+              </button>
+            </form>
+            <form method="post" action="{% url 'fleet:workday_reject' workday.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger w-100">
+                <i class="bi bi-x-circle"></i> {% translate "Reject" %}
+              </button>
+            </form>
+            {% endif %}
+
+            {% if workday.can_edit %}
+            <a href="{% url 'fleet:workday_update' workday.pk %}" class="btn btn-outline-secondary">
+              <i class="bi bi-pencil"></i> {% translate "Edit" %}
+            </a>
+            {% endif %}
+
+            {% if workday.status != 'paid' %}
+            <a href="{% url 'fleet:workday_delete' workday.pk %}" class="btn btn-outline-danger">
+              <i class="bi bi-trash"></i> {% translate "Delete" %}
+            </a>
+            {% endif %}
+
+            <a href="{% url 'fleet:assignment_detail' workday.assignment.pk %}" class="btn btn-outline-primary">
+              <i class="bi bi-arrow-right"></i> {% translate "View Assignment" %}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculation Details -->
+      <div class="card shadow-sm mb-4 border-info">
+        <div class="card-header bg-info text-white">
+          <h6 class="mb-0">
+            <i class="bi bi-calculator"></i> {% translate "How it was calculated" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <small>
+            {% if workday.workday_type == 'transfer' %}
+            <p class="mb-2">
+              <strong>{% translate "Transfer:" %}</strong>
+              <br>{% translate "50% of daily rate, no overtime" %}
+            </p>
+            <p class="mb-0">
+              R$ {{ workday.daily_rate|localize }} × 0.5 = <strong>R$ {{ workday.total_amount|localize }}</strong>
+            </p>
+            {% elif workday.total_hours < 8 %}
+            <p class="mb-2">
+              <strong>{% translate "Short service (< 8h):" %}</strong>
+              <br>{% translate "Full daily rate guaranteed" %}
+            </p>
+            <p class="mb-0">
+              {% translate "Total" %}: <strong>R$ {{ workday.total_amount|localize }}</strong>
+            </p>
+            {% else %}
+            <p class="mb-2">
+              <strong>{% translate "Daily:" %}</strong> R$ {{ workday.daily_amount|localize }}
+            </p>
+            {% if workday.overtime_hours > 0 %}
+            <p class="mb-2">
+              <strong>{% translate "Overtime:" %}</strong>
+              <br>{{ workday.overtime_hours }}h × R$ {{ workday.get_overtime_hourly_rate|localize }} = R$ {{ workday.overtime_amount|localize }}
+            </p>
+            {% endif %}
+            <hr>
+            <p class="mb-0">
+              <strong>{% translate "Total:" %}</strong> R$ {{ workday.total_amount|localize }}
+            </p>
+            {% endif %}
+          </small>
+        </div>
+      </div>
+
+      <!-- Metadata -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-clock-history"></i> {% translate "Metadata" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <small class="text-muted d-block mb-2">
+            <strong>{% translate "Created" %}:</strong><br>
+            {{ workday.created_at|date:"SHORT_DATETIME_FORMAT" }}
+          </small>
+          <small class="text-muted d-block">
+            <strong>{% translate "Last Updated" %}:</strong><br>
+            {{ workday.updated_at|date:"SHORT_DATETIME_FORMAT" }}
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
