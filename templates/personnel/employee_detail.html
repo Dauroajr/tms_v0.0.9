@@ -1,0 +1,391 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{{ employee.full_name }} - {% translate 'Employee Details' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-person"></i> {{ employee.full_name }}
+      </h2>
+      <p class="text-muted">
+        {% translate "Employee Number" %}: <strong>{{ employee.employee_number }}</strong>
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="{% url 'personnel:employee_list' %}" class="btn btn-outline-secondary me-2">
+        <i class="bi bi-arrow-left"></i> {% translate "Back" %}
+      </a>
+      <a href="{% url 'personnel:employee_update' employee.pk %}" class="btn btn-primary">
+        <i class="bi bi-pencil"></i> {% translate "Edit" %}
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-8">
+      <!-- Personal Information -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-person-badge"></i> {% translate "Personal Information" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Type" %}</label>
+              <p class="mb-0">
+                {% if employee.employee_type == 'driver' %}
+                <span class="badge bg-info">
+                  <i class="bi bi-person-badge"></i> {% translate "Driver" %}
+                </span>
+                {% elif employee.employee_type == 'security' %}
+                <span class="badge bg-warning">
+                  <i class="bi bi-shield-check"></i> {% translate "Security" %}
+                </span>
+                {% else %}
+                <span class="badge bg-secondary">{{ employee.get_employee_type_display }}</span>
+                {% endif %}
+              </p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Status" %}</label>
+              <p class="mb-0">
+                {% if employee.status == 'active' %}
+                <span class="badge bg-success">{{ employee.get_status_display }}</span>
+                {% elif employee.status == 'on_leave' %}
+                <span class="badge bg-warning">{{ employee.get_status_display }}</span>
+                {% elif employee.status == 'terminated' %}
+                <span class="badge bg-danger">{{ employee.get_status_display }}</span>
+                {% else %}
+                <span class="badge bg-secondary">{{ employee.get_status_display }}</span>
+                {% endif %}
+              </p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "CPF" %}</label>
+              <p class="mb-0">{{ employee.cpf }}</p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "RG" %}</label>
+              <p class="mb-0">{{ employee.rg|default:"-" }}</p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Birth Date" %}</label>
+              <p class="mb-0">{{ employee.birth_date|date:"SHORT_DATE_FORMAT"|default:"-" }}</p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Gender" %}</label>
+              <p class="mb-0">{{ employee.get_gender_display|default:"-" }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-telephone"></i> {% translate "Contact Information" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Phone" %}</label>
+              <p class="mb-0">{{ employee.phone }}</p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Email" %}</label>
+              <p class="mb-0">{{ employee.email|default:"-" }}</p>
+            </div>
+            <div class="col-md-12">
+              <label class="text-muted small">{% translate "Address" %}</label>
+              <p class="mb-0">{{ employee.address|default:"-" }}</p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "City/State" %}</label>
+              <p class="mb-0">{{ employee.city|default:"-" }}{% if employee.state %}, {{ employee.state }}{% endif %}
+              </p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "ZIP Code" %}</label>
+              <p class="mb-0">{{ employee.zip_code|default:"-" }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employment Information -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-briefcase"></i> {% translate "Employment Information" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Hire Date" %}</label>
+              <p class="mb-0">{{ employee.hire_date|date:"SHORT_DATE_FORMAT" }}</p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Termination Date" %}</label>
+              <p class="mb-0">{{ employee.termination_date|date:"SHORT_DATE_FORMAT"|default:"-" }}</p>
+            </div>
+            <div class="col-md-12">
+              <label class="text-muted small">{% translate "Payment" %}</label>
+              <p class="mb-0">
+                {% if employee.salary %}
+                R$ {{ employee.salary|localize }} - {{ employee.get_payment_cycle_display }} - 
+                {{ employee.get_payment_method_display }}
+                {% else %}
+                -
+                {% endif %}
+              </p>
+            </div>
+            {% if employee.bank_name %}
+            <div class="col-md-12">
+              <label class="text-muted small">{% translate "Bank Account" %}</label>
+              <p class="mb-0">
+                {{ employee.bank_name }} - {% translate "Branch" %}: {{ employee.bank_branch }} - 
+                {% translate "Account" %}: {{ employee.bank_account }}
+              </p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Driver Profile -->
+      {% if employee.employee_type == 'driver' and driver_profile %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">
+            <i class="bi bi-card-text"></i> {% translate "Driver License (CNH)" %}
+          </h5>
+          <a href="{% url 'personnel:driver_profile_update' driver_profile.pk %}"
+            class="btn btn-sm btn-outline-primary">
+            <i class="bi bi-pencil"></i> {% translate "Edit" %}
+          </a>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "License Number" %}</label>
+              <p class="mb-0"><strong>{{ driver_profile.license_number }}</strong></p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Category" %}</label>
+              <p class="mb-0"><span class="badge bg-primary">{{ driver_profile.get_license_category_display }}</span>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Issue Date" %}</label>
+              <p class="mb-0">{{ driver_profile.license_issue_date|date:"SHORT_DATE_FORMAT" }}</p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Expiry Date" %}</label>
+              <p class="mb-0">
+                {{ driver_profile.license_expiry_date|date:"SHORT_DATE_FORMAT" }}
+                {% if not driver_profile.license_is_valid %}
+                <span class="badge bg-danger ms-2">{% translate "Expired" %}</span>
+                {% endif %}
+              </p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "MOPP" %}</label>
+              <p class="mb-0">
+                {% if driver_profile.has_mopp %}
+                <span class="badge bg-success">{% translate "Yes" %}</span>
+                {% if driver_profile.mopp_expiry_date %}
+                - {% translate "Expires" %}: {{ driver_profile.mopp_expiry_date|date:"SHORT_DATE_FORMAT" }}
+                {% endif %}
+                {% else %}
+                <span class="badge bg-secondary">{% translate "No" %}</span>
+                {% endif %}
+              </p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Medical Exam" %}</label>
+              <p class="mb-0">
+                {% if driver_profile.medical_exam_is_valid %}
+                <span class="badge bg-success">{% translate "Valid" %}</span>
+                {% else %}
+                <span class="badge bg-danger">{% translate "Expired" %}</span>
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% elif employee.employee_type == 'driver' %}
+      <div class="alert alert-warning">
+        <i class="bi bi-exclamation-triangle"></i>
+        {% translate "Driver profile not created yet." %}
+        <a href="{% url 'personnel:driver_profile_create' employee_pk=employee.pk %}"
+          class="btn btn-sm btn-warning ms-2">
+          {% translate "Create Now" %}
+        </a>
+      </div>
+      {% endif %}
+
+      <!-- Vehicle Assignments (for drivers) -->
+      {% if employee.employee_type == 'driver' and vehicle_assignments %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-truck"></i> {% translate "Vehicle Assignments" %}
+          </h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-sm mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th>{% translate "Vehicle" %}</th>
+                  <th>{% translate "Start Date" %}</th>
+                  <th>{% translate "End Date" %}</th>
+                  <th>{% translate "Status" %}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for assignment in vehicle_assignments %}
+                <tr>
+                  <td>
+                    <a href="{% url 'fleet:vehicle_detail' assignment.vehicle.pk %}">
+                      {{ assignment.vehicle.plate }}
+                    </a>
+                    <small class="text-muted d-block">
+                      {{ assignment.vehicle.brand.name }} {{ assignment.vehicle.model }}
+                    </small>
+                  </td>
+                  <td>{{ assignment.start_date|date:"SHORT_DATE_FORMAT" }}</td>
+                  <td>{{ assignment.end_date|date:"SHORT_DATE_FORMAT"|default:"-" }}</td>
+                  <td>
+                    {% if assignment.is_active %}
+                    <span class="badge bg-success">{% translate "Active" %}</span>
+                    {% else %}
+                    <span class="badge bg-secondary">{% translate "Ended" %}</span>
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Notes -->
+      {% if employee.notes %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-journal-text"></i> {% translate "Notes" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-0">{{ employee.notes|linebreaks }}</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-4">
+      <!-- Photo -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body text-center">
+          {% if employee.photo %}
+          <img src="{{ employee.photo.url }}" alt="{{ employee.full_name }}" class="img-thumbnail mb-3"
+            style="max-width: 200px;">
+          {% else %}
+          <div class="bg-light rounded d-flex align-items-center justify-content-center mb-3" style="height: 200px;">
+            <i class="bi bi-person display-1 text-muted"></i>
+          </div>
+          {% endif %}
+          <h5>{{ employee.full_name }}</h5>
+          <p class="text-muted mb-0">{{ employee.get_employee_type_display }}</p>
+        </div>
+      </div>
+
+      <!-- Emergency Contact -->
+      {% if employee.emergency_contact_name %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-exclamation-triangle"></i> {% translate "Emergency Contact" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <p class="mb-1"><strong>{{ employee.emergency_contact_name }}</strong></p>
+          <p class="text-muted small mb-1">{{ employee.emergency_contact_relationship }}</p>
+          <p class="mb-0">
+            <i class="bi bi-telephone"></i> {{ employee.emergency_contact_phone }}
+          </p>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Quick Actions -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-lightning"></i> {% translate "Quick Actions" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <div class="d-grid gap-2">
+            <a href="{% url 'personnel:employee_update' employee.pk %}" class="btn btn-outline-primary">
+              <i class="bi bi-pencil"></i> {% translate "Edit Employee" %}
+            </a>
+
+            {% if employee.employee_type == 'driver' %}
+            {% if driver_profile %}
+            <a href="{% url 'personnel:driver_profile_update' driver_profile.pk %}" class="btn btn-outline-secondary">
+              <i class="bi bi-card-text"></i> {% translate "Edit Driver Profile" %}
+            </a>
+            {% else %}
+            <a href="{% url 'personnel:driver_profile_create' employee_pk=employee.pk %}"
+              class="btn btn-outline-warning">
+              <i class="bi bi-plus-circle"></i> {% translate "Create Driver Profile" %}
+            </a>
+            {% endif %}
+            {% endif %}
+
+            <a href="{% url 'personnel:employee_delete' employee.pk %}" class="btn btn-outline-danger">
+              <i class="bi bi-trash"></i> {% translate "Delete Employee" %}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metadata -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-clock-history"></i> {% translate "Metadata" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <small class="text-muted d-block mb-2">
+            <strong>{% translate "Created" %}:</strong><br>
+            {{ employee.created_at|date:"SHORT_DATETIME_FORMAT" }}
+          </small>
+          <small class="text-muted d-block">
+            <strong>{% translate "Last Updated" %}:</strong><br>
+            {{ employee.updated_at|date:"SHORT_DATETIME_FORMAT" }}
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

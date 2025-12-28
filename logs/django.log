@@ -2963,7 +2963,7 @@ Traceback (most recent call last):
            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 334, in __new__
     raise FieldError(message)
-django.core.exceptions.FieldError: Unknown field(s) (payment_type, phone, full_name) specified for Employee
+django.core.exceptions.FieldError: Unknown field(s) (payment_cycle, phone, full_name) specified for Employee
 
 During handling of the above exception, another exception occurred:
 
@@ -3003,7 +3003,7 @@ Traceback (most recent call last):
     raise FieldError(
     ...<2 lines>...
     )
-django.core.exceptions.FieldError: Unknown field(s) (payment_type, phone, full_name) specified for Employee. Check fields/fieldsets/exclude attributes of class EmployeeAdmin.
+django.core.exceptions.FieldError: Unknown field(s) (payment_cycle, phone, full_name) specified for Employee. Check fields/fieldsets/exclude attributes of class EmployeeAdmin.
 ERROR 2025-12-04 19:04:20,975 basehttp 14120 31300 "GET /admin/personnel/employee/add/ HTTP/1.1" 500 163193
 INFO 2025-12-04 19:05:48,364 autoreload 14120 18488 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\admin.py changed, reloading.
 INFO 2025-12-04 19:05:49,796 autoreload 31348 20356 Watching for file changes with StatReloader
@@ -7208,7 +7208,7 @@ Traceback (most recent call last):
     raise FieldError(
     ...<2 lines>...
     )
-django.core.exceptions.FieldError: Cannot resolve keyword 'is_active' into field. Choices are: address, bank_account, bank_branch, bank_name, birth_date, city, cpf, created_at, created_by, created_by_id, documents, driver_profile, email, emergency_contact_name, emergency_contact_phone, emergency_contact_relationship, employee_number, employee_type, full_name, gender, hire_date, id, notes, payment_type, phone, photo, rg, salary, security_profile, state, status, tenant, tenant_id, termination_date, updated_at, updated_by, updated_by_id, vehicle_assignments, zip_code
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_active' into field. Choices are: address, bank_account, bank_branch, bank_name, birth_date, city, cpf, created_at, created_by, created_by_id, documents, driver_profile, email, emergency_contact_name, emergency_contact_phone, emergency_contact_relationship, employee_number, employee_type, full_name, gender, hire_date, id, notes, payment_cycle, phone, photo, rg, salary, security_profile, state, status, tenant, tenant_id, termination_date, updated_at, updated_by, updated_by_id, vehicle_assignments, zip_code
 ERROR 2025-12-23 19:58:18,872 basehttp 25748 25972 "GET /fleet/assignments/ HTTP/1.1" 500 145899
 INFO 2025-12-24 16:23:08,611 autoreload 25748 40408 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
 INFO 2025-12-24 16:23:16,015 autoreload 30864 17512 Watching for file changes with StatReloader
@@ -7516,3 +7516,576 @@ INFO 2025-12-25 22:17:13,046 autoreload 46024 43916 C:\DAJ\PROGRAMMING\Projects\
 INFO 2025-12-25 22:17:14,417 autoreload 26392 42252 Watching for file changes with StatReloader
 INFO 2025-12-25 22:17:23,589 autoreload 26392 42252 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
 INFO 2025-12-25 22:17:24,975 autoreload 40072 45264 Watching for file changes with StatReloader
+INFO 2025-12-26 22:33:12,882 autoreload 20836 47072 Watching for file changes with StatReloader
+INFO 2025-12-26 22:33:19,198 basehttp 20836 12120 "GET /fleet/assignments/ HTTP/1.1" 200 17669
+INFO 2025-12-26 22:33:19,314 basehttp 20836 12120 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2025-12-26 22:33:19,323 basehttp 20836 12120 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2025-12-26 22:33:29,832 basehttp 20836 28796 "GET /fleet/assignments/create/ HTTP/1.1" 200 19839
+INFO 2025-12-26 22:33:44,365 basehttp 20836 45908 "GET /fleet/assignments/ HTTP/1.1" 200 17669
+INFO 2025-12-26 22:33:50,744 basehttp 20836 44960 "GET /tenants/b34ce3be-4df2-4b36-aea3-e8fefdb60b34/members/ HTTP/1.1" 200 15369
+INFO 2025-12-26 22:33:53,434 basehttp 20836 44960 "GET /tenants/b34ce3be-4df2-4b36-aea3-e8fefdb60b34/invite/ HTTP/1.1" 200 15902
+ERROR 2025-12-26 22:34:01,087 log 20836 44172 Internal Server Error: /tenants/b34ce3be-4df2-4b36-aea3-e8fefdb60b34/invite/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\views.py", line 226, in invite_user
+    invitation.full_clean()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1679, in full_clean
+    raise ValidationError(errors)
+django.core.exceptions.ValidationError: {'role': ["Value 'user' is not a valid choice."], 'expires_at': ['This field cannot be null.']}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\decorators.py", line 24, in wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\decorators.py", line 52, in wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tenants\views.py", line 233, in invite_user
+    messages.error(request, str(e.message))
+                                ^^^^^^^^^
+AttributeError: 'ValidationError' object has no attribute 'message'. Did you mean: 'messages'?
+ERROR 2025-12-26 22:34:01,101 basehttp 20836 44172 "POST /tenants/b34ce3be-4df2-4b36-aea3-e8fefdb60b34/invite/ HTTP/1.1" 500 99486
+INFO 2025-12-26 22:34:22,681 basehttp 20836 44348 "GET /tenants/b34ce3be-4df2-4b36-aea3-e8fefdb60b34/details/ HTTP/1.1" 200 16858
+INFO 2025-12-26 22:34:26,122 basehttp 20836 44348 "GET /tenants/b34ce3be-4df2-4b36-aea3-e8fefdb60b34/members/ HTTP/1.1" 200 15369
+INFO 2025-12-26 22:34:30,000 basehttp 20836 44348 "GET /fleet/ HTTP/1.1" 200 22304
+INFO 2025-12-26 22:34:53,436 basehttp 20836 32076 "GET /fleet/assignments/ HTTP/1.1" 200 17669
+INFO 2025-12-26 22:34:57,719 basehttp 20836 47292 "GET /fleet/assignments/create/ HTTP/1.1" 200 19839
+INFO 2025-12-27 11:32:49,247 autoreload 43992 32924 Watching for file changes with StatReloader
+INFO 2025-12-27 11:35:29,400 autoreload 43992 32924 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\models.py changed, reloading.
+INFO 2025-12-27 11:35:31,838 autoreload 31920 26492 Watching for file changes with StatReloader
+INFO 2025-12-27 23:41:16,399 autoreload 13252 49560 Watching for file changes with StatReloader
+INFO 2025-12-27 23:41:23,888 basehttp 13252 47184 "GET / HTTP/1.1" 200 12692
+INFO 2025-12-27 23:41:24,022 basehttp 13252 47184 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2025-12-27 23:41:24,023 basehttp 13252 34564 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+ERROR 2025-12-27 23:41:31,608 log 13252 45160 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\core\mixins.py", line 19, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\views.py", line 39, in get_queryset
+    employee_type = self.requet.GET.get("type")
+                    ^^^^^^^^^^^
+AttributeError: 'EmployeeListView' object has no attribute 'requet'. Did you mean: 'request'?
+ERROR 2025-12-27 23:41:31,618 basehttp 13252 45160 "GET /personnel/employees/ HTTP/1.1" 500 96303
+INFO 2025-12-27 23:41:55,749 autoreload 13252 49560 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\views.py changed, reloading.
+INFO 2025-12-27 23:41:57,785 autoreload 29572 29508 Watching for file changes with StatReloader
+ERROR 2025-12-27 23:41:58,497 log 29572 49224 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: personnel/employee_list.html, personnel/employee_list.html
+ERROR 2025-12-27 23:41:58,506 basehttp 29572 49224 "GET /personnel/employees/ HTTP/1.1" 500 89668
+ERROR 2025-12-28 06:29:04,522 log 29572 44184 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_type=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from 'current_type=='driver''
+ERROR 2025-12-28 06:29:04,558 basehttp 29572 44184 "GET /personnel/employees/ HTTP/1.1" 500 309952
+ERROR 2025-12-28 06:30:12,317 log 29572 15568 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from '=='driver''
+ERROR 2025-12-28 06:30:12,326 basehttp 29572 15568 "GET /personnel/employees/ HTTP/1.1" 500 309101
+ERROR 2025-12-28 06:30:18,233 log 29572 11388 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from '=='driver''
+ERROR 2025-12-28 06:30:18,244 basehttp 29572 11388 "GET /personnel/employees/ HTTP/1.1" 500 309101
+ERROR 2025-12-28 06:30:20,588 log 29572 11388 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from '=='driver''
+ERROR 2025-12-28 06:30:20,593 basehttp 29572 11388 "GET /personnel/employees/ HTTP/1.1" 500 309229
+WARNING 2025-12-28 06:30:20,708 basehttp 29572 11388 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2025-12-28 06:31:14,530 basehttp 29572 46296 "GET /personnel/employees/ HTTP/1.1" 200 13592
+INFO 2025-12-28 06:31:18,454 basehttp 29572 46296 "GET /personnel/employees/ HTTP/1.1" 200 13592
+INFO 2025-12-28 06:31:20,197 basehttp 29572 46296 "GET /personnel/employees/ HTTP/1.1" 200 13592
+INFO 2025-12-28 06:31:21,383 basehttp 29572 46296 "GET /personnel/employees/ HTTP/1.1" 200 13592
+ERROR 2025-12-28 06:31:32,921 log 29572 25376 Internal Server Error: /personnel/employees/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: personnel/employee_form.html
+ERROR 2025-12-28 06:31:32,924 basehttp 29572 25376 "GET /personnel/employees/create/ HTTP/1.1" 500 87787
+INFO 2025-12-28 06:53:46,517 basehttp 29572 44536 "GET /personnel/employees/create/ HTTP/1.1" 200 21854
+INFO 2025-12-28 06:55:05,452 autoreload 29572 29508 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\models.py changed, reloading.
+INFO 2025-12-28 06:55:15,401 autoreload 35144 35048 Watching for file changes with StatReloader
+INFO 2025-12-28 06:55:22,407 basehttp 35144 32844 "GET /personnel/employees/create/ HTTP/1.1" 200 21854
+INFO 2025-12-28 06:55:42,836 autoreload 35144 35048 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\forms.py changed, reloading.
+INFO 2025-12-28 06:55:44,194 autoreload 2648 48000 Watching for file changes with StatReloader
+INFO 2025-12-28 06:55:47,037 autoreload 2648 48000 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\forms.py changed, reloading.
+INFO 2025-12-28 06:55:48,057 autoreload 41648 38704 Watching for file changes with StatReloader
+INFO 2025-12-28 06:55:54,643 basehttp 41648 34968 "GET /personnel/employees/create/ HTTP/1.1" 200 21833
+INFO 2025-12-28 06:56:58,037 basehttp 41648 42032 "GET /personnel/employees/create/ HTTP/1.1" 200 21755
+INFO 2025-12-28 06:57:01,863 basehttp 41648 42032 "GET /personnel/employees/create/ HTTP/1.1" 200 21755
+INFO 2025-12-28 06:57:02,539 basehttp 41648 49508 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-12-28 06:57:02,545 basehttp 41648 49508 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-12-28 06:57:02,561 basehttp 41648 42032 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-12-28 06:57:02,565 basehttp 41648 36156 "GET /static/css/navbar.css HTTP/1.1" 200 3810
+INFO 2025-12-28 06:57:02,572 basehttp 41648 49508 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-12-28 06:57:02,782 basehttp 41648 38384 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2025-12-28 06:57:02,823 basehttp 41648 24080 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-12-28 06:57:02,824 basehttp 41648 30812 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2025-12-28 06:57:04,037 basehttp 41648 30812 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2025-12-28 06:57:34,293 basehttp 41648 33984 "GET /personnel/employees/create/ HTTP/1.1" 200 21836
+INFO 2025-12-28 06:57:49,454 autoreload 41648 38704 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\forms.py changed, reloading.
+INFO 2025-12-28 06:57:50,738 autoreload 7220 45464 Watching for file changes with StatReloader
+INFO 2025-12-28 06:57:59,362 basehttp 7220 46992 "GET /personnel/employees/create/ HTTP/1.1" 200 21857
+INFO 2025-12-28 07:01:04,986 basehttp 7220 48456 "POST /personnel/employees/create/ HTTP/1.1" 200 22306
+ERROR 2025-12-28 07:01:42,297 log 7220 48456 Internal Server Error: /personnel/employees/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\core\mixins.py", line 19, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\views.py", line 121, in form_valid
+    _("Employee {} created successfully").format(name=employee.full_name),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\functional.py", line 188, in __wrapper__
+    return getattr(result, __method_name)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+IndexError: Replacement index 0 out of range for positional args tuple
+ERROR 2025-12-28 07:01:42,306 basehttp 7220 48456 "POST /personnel/employees/create/ HTTP/1.1" 500 111528
+WARNING 2025-12-28 07:01:42,422 basehttp 7220 48456 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2025-12-28 08:14:14,947 autoreload 7220 45464 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\personnel\views.py changed, reloading.
+INFO 2025-12-28 08:14:18,167 autoreload 43068 41760 Watching for file changes with StatReloader
+INFO 2025-12-28 08:15:53,383 basehttp 43068 24620 "POST /personnel/employees/create/ HTTP/1.1" 200 22329
+INFO 2025-12-28 08:16:06,046 signals 43068 33668 Employee DAJ DAJDAJ (101) created
+INFO 2025-12-28 08:16:06,051 basehttp 43068 33668 "POST /personnel/employees/create/ HTTP/1.1" 302 0
+INFO 2025-12-28 08:16:06,154 basehttp 43068 33668 "GET /personnel/driver-profile/create/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 200 18097
+INFO 2025-12-28 08:16:54,181 signals 43068 34328 Driver profile for DAJ DAJDAJ created
+INFO 2025-12-28 08:16:54,195 basehttp 43068 34328 "POST /personnel/driver-profile/create/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 302 0
+ERROR 2025-12-28 08:16:54,416 log 43068 34328 Internal Server Error: /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: personnel/employee_detail.html
+ERROR 2025-12-28 08:16:54,430 basehttp 43068 34328 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 500 88736
+INFO 2025-12-28 08:23:35,391 basehttp 43068 44812 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 200 18518
+INFO 2025-12-28 08:24:29,445 basehttp 43068 39136 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/edit/ HTTP/1.1" 200 22151
+INFO 2025-12-28 08:24:37,556 basehttp 43068 34788 "GET /personnel/employees/ HTTP/1.1" 200 15651
+INFO 2025-12-28 08:24:44,501 basehttp 43068 34788 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 200 18518
+INFO 2025-12-28 08:26:51,452 basehttp 43068 48632 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 200 18517
+INFO 2025-12-28 08:27:54,844 basehttp 43068 46932 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 200 18483
+INFO 2025-12-28 08:28:22,097 basehttp 43068 45284 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 200 18457
+INFO 2025-12-28 08:28:58,799 basehttp 43068 45284 "GET /personnel/employees/ HTTP/1.1" 200 15651
+INFO 2025-12-28 08:29:03,873 basehttp 43068 15148 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-12-28 08:29:03,906 basehttp 43068 15148 "GET / HTTP/1.1" 200 9233
+INFO 2025-12-28 08:29:05,880 basehttp 43068 15148 "GET /accounts/login/ HTTP/1.1" 200 7630
+INFO 2025-12-28 08:29:09,262 basehttp 43068 15148 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-28 08:29:09,292 basehttp 43068 15148 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-28 08:29:09,354 basehttp 43068 15148 "GET /tenants/ HTTP/1.1" 200 11981
+INFO 2025-12-28 08:29:12,098 basehttp 43068 15148 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-28 08:29:12,148 basehttp 43068 15148 "GET /tenants/ HTTP/1.1" 200 11981
+INFO 2025-12-28 08:29:14,988 basehttp 43068 15148 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-28 08:29:15,042 basehttp 43068 15148 "GET /tenants/ HTTP/1.1" 200 11981
+INFO 2025-12-28 08:29:24,867 basehttp 43068 15148 "GET /fleet/ HTTP/1.1" 200 17684
+INFO 2025-12-28 08:29:31,127 basehttp 43068 15148 "GET /fleet/vehicles/ HTTP/1.1" 200 16141
+INFO 2025-12-28 08:29:33,783 basehttp 43068 15148 "GET /fleet/assignments/ HTTP/1.1" 200 13176
+INFO 2025-12-28 08:29:35,751 basehttp 43068 15148 "GET /fleet/assignments/create/ HTTP/1.1" 200 15301
+INFO 2025-12-28 08:30:04,848 basehttp 43068 24148 "POST /fleet/assignments/create/ HTTP/1.1" 200 15513
+INFO 2025-12-28 08:30:11,692 basehttp 43068 24148 "GET /personnel/drivers/ HTTP/1.1" 200 15651
+INFO 2025-12-28 08:30:14,766 basehttp 43068 46932 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/edit/ HTTP/1.1" 200 22151
+INFO 2025-12-28 08:30:25,824 signals 43068 31736 Employee DAJ DAJDAJ (101) updated
+INFO 2025-12-28 08:30:25,838 basehttp 43068 31736 "POST /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/edit/ HTTP/1.1" 302 0
+INFO 2025-12-28 08:30:25,916 basehttp 43068 31736 "GET /personnel/employees/ HTTP/1.1" 200 15651
+INFO 2025-12-28 08:30:29,959 basehttp 43068 31736 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/edit/ HTTP/1.1" 200 22151
+INFO 2025-12-28 08:30:39,405 basehttp 43068 33556 "GET /personnel/employees/ HTTP/1.1" 200 15651
+INFO 2025-12-28 08:30:59,976 basehttp 43068 33556 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 200 18457
+INFO 2025-12-28 08:31:04,163 basehttp 43068 33556 "GET /personnel/driver-profile/4bc94e70-2ccb-44ee-83bd-325573a584bc/edit/ HTTP/1.1" 200 18149
+INFO 2025-12-28 08:31:24,204 signals 43068 33556 Driver profile for DAJ DAJDAJ updated
+INFO 2025-12-28 08:31:24,218 basehttp 43068 33556 "POST /personnel/driver-profile/4bc94e70-2ccb-44ee-83bd-325573a584bc/edit/ HTTP/1.1" 302 0
+INFO 2025-12-28 08:31:24,301 basehttp 43068 33556 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/ HTTP/1.1" 200 18456
+INFO 2025-12-28 08:31:34,854 basehttp 43068 33556 "GET /fleet/assignments/ HTTP/1.1" 200 13176
+INFO 2025-12-28 08:31:36,132 basehttp 43068 33556 "GET /fleet/assignments/create/ HTTP/1.1" 200 15301
+INFO 2025-12-28 08:31:49,414 basehttp 43068 33556 "POST /fleet/assignments/create/ HTTP/1.1" 200 15320
+INFO 2025-12-28 08:32:12,239 basehttp 43068 33556 "POST /fleet/assignments/create/ HTTP/1.1" 200 15310
+INFO 2025-12-28 08:32:14,750 basehttp 43068 33556 "GET /fleet/assignments/ HTTP/1.1" 200 13176
+INFO 2025-12-28 08:32:17,782 basehttp 43068 33556 "GET /fleet/assignments/create/ HTTP/1.1" 200 15301
+INFO 2025-12-28 08:35:03,156 basehttp 43068 2480 "POST /fleet/assignments/create/ HTTP/1.1" 200 15310

@@ -75,7 +75,7 @@ class EmployeeAdmin(TenantAwareAdmin):
     list_filter = [
         "employee_type",
         "status",
-        "payment_type",
+        "payment_cycle",
         "gender",
         "hire_date",
     ] + TenantAwareAdmin.list_filter
@@ -110,7 +110,7 @@ class EmployeeAdmin(TenantAwareAdmin):
             {
                 "fields": (
                     "salary",
-                    "payment_type",
+                    "payment_cycle",
                     "bank_name",
                     "bank_branch",
                     "bank_account",

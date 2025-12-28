@@ -43,7 +43,7 @@ class Employee(TenantAwareModel):
         help_text=_("CPF number"),
     )
     rg = models.CharField(max_length=20, blank=True, help_text=_("RG (Identity card)"))
-    birth_date = models.DateField()
+    birth_date = models.DateField(verbose_name=_('Date of Birth'))
     gender = models.CharField(
         max_length=10,
         choices=[
@@ -78,7 +78,7 @@ class Employee(TenantAwareModel):
         null=True,
         help_text=_("Monthly salary"),
     )
-    payment_type = models.CharField(
+    payment_cycle = models.CharField(
         max_length=20,
         choices=[
             ("monthly", _("Monthly")),
@@ -87,6 +87,21 @@ class Employee(TenantAwareModel):
             ("commission", _("Commission")),
         ],
         default="monthly",
+        blank=True,
+        null=True,
+    )
+    payment_method = models.CharField(
+        max_length=20,
+        choices=[
+            ("bank_transfer", _("Bank Transfer")),
+            ('cash', _('Cash')),
+            ('check', _('Check')),
+            ('other', _('Other'))
+        ],
+        default="bank_transfer",
+        verbose_name=_("Payment Method"),
+        blank=True,
+        null=True,
     )
     bank_name = models.CharField(max_length=100, blank=True)
     bank_branch = models.CharField(max_length=10, blank=True)

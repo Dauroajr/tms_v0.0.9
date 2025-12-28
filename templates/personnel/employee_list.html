@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Employee' %} - TMS{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-4">
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-people"></i> {% translate 'Employees' %}
+      </h2>
+      <p class="text-muted">
+        {% translate 'Manage your personnel' %}
+      </p>
+    </div>
+
+    <div class="col-md-4 text-end">
+      <a href="" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> {% translate 'Add Employee' %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body tet-center">
+          <i class="bi bi-people display-4 text-primary"></i>
+          <h3 class="mt-2 mb-0">{{ total_employees }}</h3>
+          <p class="text-muted mb-0">{% translate 'Total' %}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-check-circle display-4 text-success"></i>
+          <h3 class="mt-2 mb-0">{{ active_employees }}</h3>
+          <p class="text-muted mb-0">{% translate "Active" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-person-badge display-4 text-info"></i>
+          <h3 class="mt-2 mb-0">{{ total_drivers }}</h3>
+          <p class="text-muted mb-0">{% translate "Drivers" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-shield-check display-4 text-warning"></i>
+          <h3 class="mt-2 mb-0">{{ total_security }}</h3>
+          <p class="text-muted mb-0">{% translate "Security" %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <form method="get" class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label">{% translate "Search" %}</label>
+          <input type="text" name="search" class="form-control" placeholder="{% translate 'Name, number, or CPF' %}"
+            value="{{ current_search }}">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">{% translate "Type" %}</label>
+          <select name="type" class="form-control">
+            <option value="">{% translate "All Types" %}</option>
+            <option value="driver" {% if current_type == 'driver' %}selected{% endif %}>
+              {% translate "Driver" %}
+            </option>
+            <option value="security" {% if current_type == 'security' %}selected{% endif %}>
+              {% translate "Security" %}
+            </option>
+            <option value="administrative" {% if current_type == 'administrative' %}selected{% endif %}>
+              {% translate "Administrative" %}
+            </option>
+            <option value="other" {% if current_type == 'other' %}selected{% endif %}>
+              {% translate "Other" %}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">{% translate "Status" %}</label>
+          <select name="status" class="form-control">
+            <option value="">{% translate "All Status" %}</option>
+            <option value="active" {% if current_status == 'active' %}selected{% endif %}>
+              {% translate "Active" %}
+            </option>
+            <option value="inactive" {% if current_status == 'inactive' %}selected{% endif %}>
+              {% translate "Inactive" %}
+            </option>
+            <option value="on_leave" {% if current_status == 'on_leave' %}selected{% endif %}>
+              {% translate "On Leave" %}
+            </option>
+            <option value="terminated" {% if current_status == 'terminated' %}selected{% endif %}>
+              {% translate "Terminated" %}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-search"></i> {% translate "Filter" %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Employee List -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-white">
+      <h6 class="mb-0">
+        <i class="bi bi-list"></i> {% translate "Employee List" %}
+      </h6>
+    </div>
+    <div class="card-body p-0">
+      {% if employees %}
+      <div class="table-responsive">
+        <table class="table table-hover mb-0">
+          <thead class="table-light">
+            <tr>
+              <th style="width: 60px;">{% translate "Photo" %}</th>
+              <th>{% translate "Name" %}</th>
+              <th>{% translate "Number" %}</th>
+              <th>{% translate "Type" %}</th>
+              <th>{% translate "Phone" %}</th>
+              <th>{% translate "Hire Date" %}</th>
+              <th>{% translate "Status" %}</th>
+              <th class="text-end">{% translate "Actions" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for employee in employees %}
+            <tr>
+              <td>
+                {% if employee.photo %}
+                <img src="{{ employee.photo.url }}" alt="{{ employee.full_name }}" class="rounded-circle"
+                  style="width: 40px; height: 40px; object-fit: cover;">
+                {% else %}
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px;">
+                  <i class="bi bi-person text-muted"></i>
+                </div>
+                {% endif %}
+              </td>
+              <td>
+                <strong>{{ employee.full_name }}</strong>
+                {% if employee.email %}
+                <small class="text-muted d-block">{{ employee.email }}</small>
+                {% endif %}
+              </td>
+              <td>{{ employee.employee_number }}</td>
+              <td>
+                {% if employee.employee_type == 'driver' %}
+                <span class="badge bg-info">
+                  <i class="bi bi-person-badge"></i> {% translate "Driver" %}
+                </span>
+                {% elif employee.employee_type == 'security' %}
+                <span class="badge bg-warning">
+                  <i class="bi bi-shield-check"></i> {% translate "Security" %}
+                </span>
+                {% elif employee.employee_type == 'administrative' %}
+                <span class="badge bg-secondary">
+                  <i class="bi bi-briefcase"></i> {% translate "Administrative" %}
+                </span>
+                {% else %}
+                <span class="badge bg-secondary">{{ employee.get_employee_type_display }}</span>
+                {% endif %}
+              </td>
+              <td>{{ employee.phone|default:"-" }}</td>
+              <td>{{ employee.hire_date|date:"SHORT_DATE_FORMAT" }}</td>
+              <td>
+                {% if employee.status == 'active' %}
+                <span class="badge bg-success">{{ employee.get_status_display }}</span>
+                {% elif employee.status == 'on_leave' %}
+                <span class="badge bg-warning">{{ employee.get_status_display }}</span>
+                {% elif employee.status == 'terminated' %}
+                <span class="badge bg-danger">{{ employee.get_status_display }}</span>
+                {% else %}
+                <span class="badge bg-secondary">{{ employee.get_status_display }}</span>
+                {% endif %}
+              </td>
+              <td class="text-end">
+                <div class="btn-group btn-group-sm">
+                  <a href="{% url 'personnel:employee_detail' employee.pk %}" class="btn btn-outline-primary"
+                    title="{% translate 'View Details' %}">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  <a href="{% url 'personnel:employee_update' employee.pk %}" class="btn btn-outline-secondary"
+                    title="{% translate 'Edit' %}">
+                    <i class="bi bi-pencil"></i>
+                  </a>
+                  <a href="{% url 'personnel:employee_delete' employee.pk %}" class="btn btn-outline-danger"
+                    title="{% translate 'Delete' %}">
+                    <i class="bi bi-trash"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      {% if is_paginated %}
+      <div class="card-footer bg-white">
+        <nav>
+          <ul class="pagination justify-content-center mb-0">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link"
+                href="?page=1{% if current_search %}&search={{ current_search }}{% endif %}{% if current_type %}&type={{ current_type }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}">
+                {% translate "First" %}
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link"
+                href="?page={{ page_obj.previous_page_number }}{% if current_search %}&search={{ current_search }}{% endif %}{% if current_type %}&type={{ current_type }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}">
+                {% translate "Previous" %}
+              </a>
+            </li>
+            {% endif %}
+
+            <li class="page-item active">
+              <span class="page-link">
+                {% translate "Page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}
+              </span>
+            </li>
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link"
+                href="?page={{ page_obj.next_page_number }}{% if current_search %}&search={{ current_search }}{% endif %}{% if current_type %}&type={{ current_type }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}">
+                {% translate "Next" %}
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link"
+                href="?page={{ page_obj.paginator.num_pages }}{% if current_search %}&search={{ current_search }}{% endif %}{% if current_type %}&type={{ current_type }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}">
+                {% translate "Last" %}
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      {% endif %}
+
+      {% else %}
+      <div class="text-center py-5">
+        <i class="bi bi-inbox display-1 text-muted"></i>
+        <p class="mt-3 text-muted">{% translate "No employees found" %}</p>
+        <a href="{% url 'personnel:employee_create' %}" class="btn btn-primary">
+          <i class="bi bi-plus-circle"></i> {% translate "Add First Employee" %}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

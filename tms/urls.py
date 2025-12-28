@@ -19,6 +19,7 @@ urlpatterns = [
     path("audit/", include("audit.urls")),
     path("core/", include("core.urls")),
     path("fleet/", include("fleet.urls")),
+    path("personnel/", include("personnel.urls")),
     path("tenants/", include("tenants.urls")),
 
     path("i18n/", set_language, name="set_language"),

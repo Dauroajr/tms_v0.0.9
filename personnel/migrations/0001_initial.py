@@ -12,185 +12,610 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('tenants', '0001_initial'),
+        ("tenants", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Employee',
+            name="Employee",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('employee_type', models.CharField(choices=[('driver', 'Driver'), ('security', 'Security Guard'), ('mechanic', 'Mechanic'), ('admin', 'Administrative'), ('helper', 'Helper'), ('other', 'Other')], help_text='Type of employee', max_length=20)),
-                ('full_name', models.CharField(max_length=200)),
-                ('cpf', models.CharField(help_text='CPF number', max_length=14, unique=True, validators=[django.core.validators.RegexValidator('^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$', 'Enter a valid CPF (000.000.000-00)')])),
-                ('rg', models.CharField(blank=True, help_text='RG (Identity card)', max_length=20)),
-                ('birth_date', models.DateField()),
-                ('gender', models.CharField(blank=True, choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')], max_length=10)),
-                ('phone', models.CharField(max_length=20)),
-                ('email', models.EmailField(blank=True, max_length=254)),
-                ('address', models.TextField()),
-                ('city', models.CharField(blank=True, max_length=100)),
-                ('state', models.CharField(blank=True, max_length=2)),
-                ('zip_code', models.CharField(blank=True, max_length=10)),
-                ('employee_number', models.CharField(help_text='Internal employee ID/number', max_length=20, unique=True)),
-                ('hire_date', models.DateField()),
-                ('termination_date', models.DateField(blank=True, null=True)),
-                ('status', models.CharField(choices=[('active', 'Active'), ('on_leave', 'On Leave'), ('vacation', 'Vacation'), ('suspended', 'Suspended'), ('terminated', 'Terminated')], default='active', max_length=20)),
-                ('salary', models.DecimalField(blank=True, decimal_places=2, help_text='Monthly salary', max_digits=10, null=True)),
-                ('payment_type', models.CharField(choices=[('monthly', 'Monthly'), ('hourly', 'Hourly'), ('daily', 'Daily'), ('commission', 'Commission')], default='monthly', max_length=20)),
-                ('bank_name', models.CharField(blank=True, max_length=100)),
-                ('bank_branch', models.CharField(blank=True, max_length=10)),
-                ('bank_account', models.CharField(blank=True, max_length=20)),
-                ('emergency_contact_name', models.CharField(blank=True, max_length=200)),
-                ('emergency_contact_relationship', models.CharField(blank=True, max_length=50)),
-                ('emergency_contact_phone', models.CharField(blank=True, max_length=20)),
-                ('photo', models.ImageField(blank=True, help_text='Employee photo', null=True, upload_to='personnel/photos/')),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "employee_type",
+                    models.CharField(
+                        choices=[
+                            ("driver", "Driver"),
+                            ("security", "Security Guard"),
+                            ("mechanic", "Mechanic"),
+                            ("admin", "Administrative"),
+                            ("helper", "Helper"),
+                            ("other", "Other"),
+                        ],
+                        help_text="Type of employee",
+                        max_length=20,
+                    ),
+                ),
+                ("full_name", models.CharField(max_length=200)),
+                (
+                    "cpf",
+                    models.CharField(
+                        help_text="CPF number",
+                        max_length=14,
+                        unique=True,
+                        validators=[
+                            django.core.validators.RegexValidator(
+                                "^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$",
+                                "Enter a valid CPF (000.000.000-00)",
+                            )
+                        ],
+                    ),
+                ),
+                (
+                    "rg",
+                    models.CharField(
+                        blank=True, help_text="RG (Identity card)", max_length=20
+                    ),
+                ),
+                ("birth_date", models.DateField()),
+                (
+                    "gender",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("male", "Male"),
+                            ("female", "Female"),
+                            ("other", "Other"),
+                        ],
+                        max_length=10,
+                    ),
+                ),
+                ("phone", models.CharField(max_length=20)),
+                ("email", models.EmailField(blank=True, max_length=254)),
+                ("address", models.TextField()),
+                ("city", models.CharField(blank=True, max_length=100)),
+                ("state", models.CharField(blank=True, max_length=2)),
+                ("zip_code", models.CharField(blank=True, max_length=10)),
+                (
+                    "employee_number",
+                    models.CharField(
+                        help_text="Internal employee ID/number",
+                        max_length=20,
+                        unique=True,
+                    ),
+                ),
+                ("hire_date", models.DateField()),
+                ("termination_date", models.DateField(blank=True, null=True)),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[
+                            ("active", "Active"),
+                            ("on_leave", "On Leave"),
+                            ("vacation", "Vacation"),
+                            ("suspended", "Suspended"),
+                            ("terminated", "Terminated"),
+                        ],
+                        default="active",
+                        max_length=20,
+                    ),
+                ),
+                (
+                    "salary",
+                    models.DecimalField(
+                        blank=True,
+                        decimal_places=2,
+                        help_text="Monthly salary",
+                        max_digits=10,
+                        null=True,
+                    ),
+                ),
+                (
+                    "payment_cycle",
+                    models.CharField(
+                        choices=[
+                            ("monthly", "Monthly"),
+                            ("hourly", "Hourly"),
+                            ("daily", "Daily"),
+                            ("commission", "Commission"),
+                        ],
+                        default="monthly",
+                        max_length=20,
+                    ),
+                ),
+                ("bank_name", models.CharField(blank=True, max_length=100)),
+                ("bank_branch", models.CharField(blank=True, max_length=10)),
+                ("bank_account", models.CharField(blank=True, max_length=20)),
+                (
+                    "emergency_contact_name",
+                    models.CharField(blank=True, max_length=200),
+                ),
+                (
+                    "emergency_contact_relationship",
+                    models.CharField(blank=True, max_length=50),
+                ),
+                (
+                    "emergency_contact_phone",
+                    models.CharField(blank=True, max_length=20),
+                ),
+                (
+                    "photo",
+                    models.ImageField(
+                        blank=True,
+                        help_text="Employee photo",
+                        null=True,
+                        upload_to="personnel/photos/",
+                    ),
+                ),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Employee',
-                'verbose_name_plural': 'Employees',
-                'ordering': ['full_name'],
+                "verbose_name": "Employee",
+                "verbose_name_plural": "Employees",
+                "ordering": ["full_name"],
             },
         ),
         migrations.CreateModel(
-            name='DriverProfile',
+            name="DriverProfile",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('license_number', models.CharField(help_text='CNH number', max_length=20, unique=True)),
-                ('license_category', models.CharField(choices=[('A', 'A - Motorcycle'), ('B', 'B - Car'), ('C', 'C - Truck'), ('D', 'D - Bus'), ('E', 'E - Truck with Trailer'), ('AB', 'AB - Motorcycle and Car'), ('AC', 'AC - Motorcycle and Truck'), ('AD', 'AD - Motorcycle and Bus'), ('AE', 'AE - Motorcycle and Truck with Trailer')], max_length=5)),
-                ('license_issue_date', models.DateField()),
-                ('license_expiry_date', models.DateField()),
-                ('license_first_issue_date', models.DateField(blank=True, help_text='Date of first CNH issue', null=True)),
-                ('has_mopp', models.BooleanField(default=False, help_text='Has MOPP certification (hazardous materials)')),
-                ('mopp_expiry_date', models.DateField(blank=True, null=True)),
-                ('has_defensive_driving', models.BooleanField(default=False, help_text='Has defensive driving course')),
-                ('defensive_driving_date', models.DateField(blank=True, null=True)),
-                ('last_medical_exam_date', models.DateField(blank=True, null=True)),
-                ('next_medical_exam_date', models.DateField(blank=True, null=True)),
-                ('blood_type', models.CharField(blank=True, choices=[('A+', 'A+'), ('A-', 'A-'), ('B+', 'B+'), ('B-', 'B-'), ('AB+', 'AB+'), ('AB-', 'AB-'), ('O+', 'O+'), ('O-', 'O-')], max_length=5)),
-                ('total_trips', models.PositiveIntegerField(default=0)),
-                ('total_km_driven', models.PositiveIntegerField(default=0)),
-                ('accidents_count', models.PositiveIntegerField(default=0)),
-                ('violations_count', models.PositiveIntegerField(default=0)),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
-                ('employee', models.OneToOneField(limit_choices_to={'employee_type': 'driver'}, on_delete=django.db.models.deletion.CASCADE, related_name='driver_profile', to='personnel.employee')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "license_number",
+                    models.CharField(
+                        help_text="CNH number", max_length=20, unique=True
+                    ),
+                ),
+                (
+                    "license_category",
+                    models.CharField(
+                        choices=[
+                            ("A", "A - Motorcycle"),
+                            ("B", "B - Car"),
+                            ("C", "C - Truck"),
+                            ("D", "D - Bus"),
+                            ("E", "E - Truck with Trailer"),
+                            ("AB", "AB - Motorcycle and Car"),
+                            ("AC", "AC - Motorcycle and Truck"),
+                            ("AD", "AD - Motorcycle and Bus"),
+                            ("AE", "AE - Motorcycle and Truck with Trailer"),
+                        ],
+                        max_length=5,
+                    ),
+                ),
+                ("license_issue_date", models.DateField()),
+                ("license_expiry_date", models.DateField()),
+                (
+                    "license_first_issue_date",
+                    models.DateField(
+                        blank=True, help_text="Date of first CNH issue", null=True
+                    ),
+                ),
+                (
+                    "has_mopp",
+                    models.BooleanField(
+                        default=False,
+                        help_text="Has MOPP certification (hazardous materials)",
+                    ),
+                ),
+                ("mopp_expiry_date", models.DateField(blank=True, null=True)),
+                (
+                    "has_defensive_driving",
+                    models.BooleanField(
+                        default=False, help_text="Has defensive driving course"
+                    ),
+                ),
+                ("defensive_driving_date", models.DateField(blank=True, null=True)),
+                ("last_medical_exam_date", models.DateField(blank=True, null=True)),
+                ("next_medical_exam_date", models.DateField(blank=True, null=True)),
+                (
+                    "blood_type",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("A+", "A+"),
+                            ("A-", "A-"),
+                            ("B+", "B+"),
+                            ("B-", "B-"),
+                            ("AB+", "AB+"),
+                            ("AB-", "AB-"),
+                            ("O+", "O+"),
+                            ("O-", "O-"),
+                        ],
+                        max_length=5,
+                    ),
+                ),
+                ("total_trips", models.PositiveIntegerField(default=0)),
+                ("total_km_driven", models.PositiveIntegerField(default=0)),
+                ("accidents_count", models.PositiveIntegerField(default=0)),
+                ("violations_count", models.PositiveIntegerField(default=0)),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "employee",
+                    models.OneToOneField(
+                        limit_choices_to={"employee_type": "driver"},
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="driver_profile",
+                        to="personnel.employee",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Driver Profile',
-                'verbose_name_plural': 'Driver Profiles',
+                "verbose_name": "Driver Profile",
+                "verbose_name_plural": "Driver Profiles",
             },
         ),
         migrations.CreateModel(
-            name='EmployeeDocument',
+            name="EmployeeDocument",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('document_type', models.CharField(choices=[('rg', 'RG (Identity Card)'), ('cpf', 'CPF'), ('ctps', 'CTPS (Work Card)'), ('voter_id', 'Voter Registration'), ('military_id', 'Military ID'), ('birth_cert', 'Birth Certificate'), ('marriage_cert', 'Marriage Certificate'), ('cnh', 'CNH (Driver License)'), ('aso', 'ASO (Medical Exam)'), ('mopp', 'MOPP Certificate'), ('defensive_driving', 'Defensive Driving Certificate'), ('security_license', 'Security Guard License'), ('firearms_license', 'Firearms License'), ('vigilant_course', 'Vigilant Course Certificate'), ('recycling_course', 'Recycling Course Certificate'), ('contract', 'Work Contract'), ('termination', 'Termination Letter'), ('reference', 'Reference Letter'), ('criminal_record', 'Criminal Record'), ('photo', 'Photo'), ('other', 'Other')], max_length=30)),
-                ('document_number', models.CharField(blank=True, max_length=50)),
-                ('issue_date', models.DateField()),
-                ('expiry_date', models.DateField(blank=True, help_text='Leave blank if document does not expire', null=True)),
-                ('issuing_authority', models.CharField(blank=True, max_length=100)),
-                ('file', models.FileField(blank=True, null=True, upload_to='personnel/employee_documents/')),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('employee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='documents', to='personnel.employee')),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "document_type",
+                    models.CharField(
+                        choices=[
+                            ("rg", "RG (Identity Card)"),
+                            ("cpf", "CPF"),
+                            ("ctps", "CTPS (Work Card)"),
+                            ("voter_id", "Voter Registration"),
+                            ("military_id", "Military ID"),
+                            ("birth_cert", "Birth Certificate"),
+                            ("marriage_cert", "Marriage Certificate"),
+                            ("cnh", "CNH (Driver License)"),
+                            ("aso", "ASO (Medical Exam)"),
+                            ("mopp", "MOPP Certificate"),
+                            ("defensive_driving", "Defensive Driving Certificate"),
+                            ("security_license", "Security Guard License"),
+                            ("firearms_license", "Firearms License"),
+                            ("vigilant_course", "Vigilant Course Certificate"),
+                            ("recycling_course", "Recycling Course Certificate"),
+                            ("contract", "Work Contract"),
+                            ("termination", "Termination Letter"),
+                            ("reference", "Reference Letter"),
+                            ("criminal_record", "Criminal Record"),
+                            ("photo", "Photo"),
+                            ("other", "Other"),
+                        ],
+                        max_length=30,
+                    ),
+                ),
+                ("document_number", models.CharField(blank=True, max_length=50)),
+                ("issue_date", models.DateField()),
+                (
+                    "expiry_date",
+                    models.DateField(
+                        blank=True,
+                        help_text="Leave blank if document does not expire",
+                        null=True,
+                    ),
+                ),
+                ("issuing_authority", models.CharField(blank=True, max_length=100)),
+                (
+                    "file",
+                    models.FileField(
+                        blank=True, null=True, upload_to="personnel/employee_documents/"
+                    ),
+                ),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "employee",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="documents",
+                        to="personnel.employee",
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Employee Document',
-                'verbose_name_plural': 'Employee Documents',
-                'ordering': ['-issue_date'],
+                "verbose_name": "Employee Document",
+                "verbose_name_plural": "Employee Documents",
+                "ordering": ["-issue_date"],
             },
         ),
         migrations.CreateModel(
-            name='SecurityProfile',
+            name="SecurityProfile",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('security_license_number', models.CharField(help_text='Security guard license number', max_length=20, unique=True)),
-                ('security_license_issue_date', models.DateField()),
-                ('security_license_expiry_date', models.DateField()),
-                ('has_firearms_license', models.BooleanField(default=False, help_text='Has firearms license')),
-                ('firearms_license_number', models.CharField(blank=True, max_length=20)),
-                ('firearms_license_expiry', models.DateField(blank=True, null=True)),
-                ('has_vigilant_course', models.BooleanField(default=False, help_text='Has vigilant security course')),
-                ('vigilant_course_date', models.DateField(blank=True, null=True)),
-                ('has_recycling_course', models.BooleanField(default=False, help_text='Has security recycling course (required every 2 years)')),
-                ('recycling_course_date', models.DateField(blank=True, null=True)),
-                ('next_recycling_date', models.DateField(blank=True, null=True)),
-                ('last_medical_exam_date', models.DateField(blank=True, null=True)),
-                ('next_medical_exam_date', models.DateField(blank=True, null=True)),
-                ('shifts_worked', models.PositiveIntegerField(default=0)),
-                ('incidents_reported', models.PositiveIntegerField(default=0)),
-                ('specializations', models.TextField(blank=True, help_text='Security specializations (e.g., personal security, event security)')),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('employee', models.OneToOneField(limit_choices_to={'employee_type': 'security'}, on_delete=django.db.models.deletion.CASCADE, related_name='security_profile', to='personnel.employee')),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "security_license_number",
+                    models.CharField(
+                        help_text="Security guard license number",
+                        max_length=20,
+                        unique=True,
+                    ),
+                ),
+                ("security_license_issue_date", models.DateField()),
+                ("security_license_expiry_date", models.DateField()),
+                (
+                    "has_firearms_license",
+                    models.BooleanField(
+                        default=False, help_text="Has firearms license"
+                    ),
+                ),
+                (
+                    "firearms_license_number",
+                    models.CharField(blank=True, max_length=20),
+                ),
+                ("firearms_license_expiry", models.DateField(blank=True, null=True)),
+                (
+                    "has_vigilant_course",
+                    models.BooleanField(
+                        default=False, help_text="Has vigilant security course"
+                    ),
+                ),
+                ("vigilant_course_date", models.DateField(blank=True, null=True)),
+                (
+                    "has_recycling_course",
+                    models.BooleanField(
+                        default=False,
+                        help_text="Has security recycling course (required every 2 years)",
+                    ),
+                ),
+                ("recycling_course_date", models.DateField(blank=True, null=True)),
+                ("next_recycling_date", models.DateField(blank=True, null=True)),
+                ("last_medical_exam_date", models.DateField(blank=True, null=True)),
+                ("next_medical_exam_date", models.DateField(blank=True, null=True)),
+                ("shifts_worked", models.PositiveIntegerField(default=0)),
+                ("incidents_reported", models.PositiveIntegerField(default=0)),
+                (
+                    "specializations",
+                    models.TextField(
+                        blank=True,
+                        help_text="Security specializations (e.g., personal security, event security)",
+                    ),
+                ),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "employee",
+                    models.OneToOneField(
+                        limit_choices_to={"employee_type": "security"},
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="security_profile",
+                        to="personnel.employee",
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Security Profile',
-                'verbose_name_plural': 'Security Profiles',
+                "verbose_name": "Security Profile",
+                "verbose_name_plural": "Security Profiles",
             },
         ),
         migrations.AddIndex(
-            model_name='employee',
-            index=models.Index(fields=['tenant', 'status'], name='personnel_e_tenant__c45d0c_idx'),
+            model_name="employee",
+            index=models.Index(
+                fields=["tenant", "status"], name="personnel_e_tenant__c45d0c_idx"
+            ),
         ),
         migrations.AddIndex(
-            model_name='employee',
-            index=models.Index(fields=['tenant', 'employee_type'], name='personnel_e_tenant__ab2604_idx'),
+            model_name="employee",
+            index=models.Index(
+                fields=["tenant", "employee_type"],
+                name="personnel_e_tenant__ab2604_idx",
+            ),
         ),
         migrations.AddIndex(
-            model_name='employee',
-            index=models.Index(fields=['cpf'], name='personnel_e_cpf_e406f3_idx'),
+            model_name="employee",
+            index=models.Index(fields=["cpf"], name="personnel_e_cpf_e406f3_idx"),
         ),
         migrations.AddIndex(
-            model_name='employee',
-            index=models.Index(fields=['employee_number'], name='personnel_e_employe_9b1503_idx'),
+            model_name="employee",
+            index=models.Index(
+                fields=["employee_number"], name="personnel_e_employe_9b1503_idx"
+            ),
         ),
         migrations.AddIndex(
-            model_name='employee',
-            index=models.Index(fields=['full_name'], name='personnel_e_full_na_07439c_idx'),
+            model_name="employee",
+            index=models.Index(
+                fields=["full_name"], name="personnel_e_full_na_07439c_idx"
+            ),
         ),
         migrations.AddIndex(
-            model_name='driverprofile',
-            index=models.Index(fields=['license_number'], name='personnel_d_license_8517cd_idx'),
+            model_name="driverprofile",
+            index=models.Index(
+                fields=["license_number"], name="personnel_d_license_8517cd_idx"
+            ),
         ),
         migrations.AddIndex(
-            model_name='driverprofile',
-            index=models.Index(fields=['license_expiry_date'], name='personnel_d_license_e34257_idx'),
+            model_name="driverprofile",
+            index=models.Index(
+                fields=["license_expiry_date"], name="personnel_d_license_e34257_idx"
+            ),
         ),
         migrations.AddIndex(
-            model_name='employeedocument',
-            index=models.Index(fields=['employee', 'document_type'], name='personnel_e_employe_3416cc_idx'),
+            model_name="employeedocument",
+            index=models.Index(
+                fields=["employee", "document_type"],
+                name="personnel_e_employe_3416cc_idx",
+            ),
         ),
         migrations.AddIndex(
-            model_name='employeedocument',
-            index=models.Index(fields=['expiry_date'], name='personnel_e_expiry__23c30f_idx'),
+            model_name="employeedocument",
+            index=models.Index(
+                fields=["expiry_date"], name="personnel_e_expiry__23c30f_idx"
+            ),
         ),
         migrations.AddIndex(
-            model_name='securityprofile',
-            index=models.Index(fields=['security_license_number'], name='personnel_s_securit_c6112f_idx'),
+            model_name="securityprofile",
+            index=models.Index(
+                fields=["security_license_number"],
+                name="personnel_s_securit_c6112f_idx",
+            ),
         ),
         migrations.AddIndex(
-            model_name='securityprofile',
-            index=models.Index(fields=['security_license_expiry_date'], name='personnel_s_securit_272740_idx'),
+            model_name="securityprofile",
+            index=models.Index(
+                fields=["security_license_expiry_date"],
+                name="personnel_s_securit_272740_idx",
+            ),
         ),
     ]

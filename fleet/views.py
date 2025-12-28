@@ -1,10 +1,11 @@
 from django.contrib import messages
 from django.db import models
 from django.db.models import Count, Q, Avg, Sum
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from django.views import View
 from django.views.generic import TemplateView
 
 from core.mixins import TenantAdminRequiredMixin
@@ -19,6 +20,7 @@ from core.views import (
 from .models import (
     Vehicle,
     VehicleAssignment,
+    VehicleAssignmentWorkday,
     VehicleBrand,
     VehicleDocument,
     MaintenanceRecord,
@@ -28,6 +30,7 @@ from .forms import (
     VehicleBrandForm,
     VehicleDocumentForm,
     VehicleAssignmentForm,
+    VehicleAssignmentWorkdayForm,
     MaintenanceRecordForm,
 )
 
@@ -523,3 +526,234 @@ class VehicleAssignmentDeleteView(TenantAdminRequiredMixin, TenantAwareDeleteVie
             ),
         )
         return super().delete(request, *args, **kwargs)
+
+
+# ==================== WORKDAY VIEWS ====================
+
+
+class WorkdayListView(TenantAwareListView):
+    """List all workdays."""
+
+    model = VehicleAssignmentWorkday
+    template_name = "fleet/workday_list.html"
+    context_object_name = "workdays"
+    paginate_by = 30
+
+    def get_queryset(self):
+        """Get filtered queryset."""
+        queryset = super().get_queryset()
+
+        # Filter by assignment
+        assignment_id = self.request.GET.get("assignment")
+        if assignment_id:
+            queryset = queryset.filter(assignment_id=assignment_id)
+
+        # Filter by status
+        status = self.request.GET.get("status")
+        if status:
+            queryset = queryset.filter(status=status)
+
+        # Filter by date range
+        date_from = self.request.GET.get("date_from")
+        if date_from:
+            queryset = queryset.filter(date__gte=date_from)
+
+        date_to = self.request.GET.get("date_to")
+        if date_to:
+            queryset = queryset.filter(date__lte=date_to)
+
+        return queryset.select_related(
+            "assignment", "assignment__vehicle", "assignment__driver", "approved_by"
+        ).order_by("-date")
+
+    def get_context_data(self, **kwargs):
+        """Add filter options and statistics."""
+        context = super().get_context_data(**kwargs)
+
+        # Get all assignments for filter
+        context["assignments"] = VehicleAssignment.objects.filter(
+            tenant=self.request.tenant
+        ).select_related("vehicle", "driver")
+
+        # Current filters
+        context["current_assignment"] = self.request.GET.get("assignment", "")
+        context["current_status"] = self.request.GET.get("status", "")
+        context["current_date_from"] = self.request.GET.get("date_from", "")
+        context["current_date_to"] = self.request.GET.get("date_to", "")
+
+        # Statistics
+        queryset = self.get_queryset()
+        context["total_workdays"] = queryset.count()
+        context["pending_workdays"] = queryset.filter(status="pending").count()
+        context["approved_workdays"] = queryset.filter(status="approved").count()
+        context["paid_workdays"] = queryset.filter(status="paid").count()
+
+        # Calculate totals
+        from django.db.models import Sum
+
+        totals = queryset.aggregate(
+            total_hours=Sum("total_hours"),
+            total_overtime=Sum("overtime_hours"),
+            total_amount=Sum("total_amount"),
+        )
+        context.update(totals)
+
+        return context
+
+
+class WorkdayCreateView(TenantAdminRequiredMixin, TenantAwareCreateView):
+    """Create a new workday."""
+
+    model = VehicleAssignmentWorkday
+    form_class = VehicleAssignmentWorkdayForm
+    template_name = "fleet/workday_form.html"
+
+    def get_success_url(self):
+        """Redirect to assignment detail or workday list."""
+        if self.object.assignment:
+            return reverse_lazy(
+                "fleet:assignment_detail", kwargs={"pk": self.object.assignment.pk}
+            )
+        return reverse_lazy("fleet:workday_list")
+
+    def get_form_kwargs(self):
+        """Pass assignment to form if provided."""
+        kwargs = super().get_form_kwargs()
+
+        # Get assignment from URL parameter
+        assignment_id = self.request.GET.get("assignment")
+        if assignment_id:
+            try:
+                assignment = VehicleAssignment.objects.get(
+                    pk=assignment_id, tenant=self.request.tenant
+                )
+                kwargs["assignment"] = assignment
+            except VehicleAssignment.DoesNotExist:
+                pass
+
+        return kwargs
+
+    def form_valid(self, form):
+        """Handle successful form submission."""
+        workday = form.instance
+        messages.success(
+            self.request,
+            _("Workday for {driver} on {date} registered successfully.").format(
+                driver=workday.assignment.driver.full_name, date=workday.date
+            ),
+        )
+        return super().form_valid(form)
+
+
+class WorkdayDetailView(TenantAwareDetailView):
+    """View workday details."""
+
+    model = VehicleAssignmentWorkday
+    template_name = "fleet/workday_detail.html"
+    context_object_name = "workday"
+
+
+class WorkdayUpdateView(TenantAdminRequiredMixin, TenantAwareUpdateView):
+    """Update a workday."""
+
+    model = VehicleAssignmentWorkday
+    form_class = VehicleAssignmentWorkdayForm
+    template_name = "fleet/workday_form.html"
+
+    def get_success_url(self):
+        """Redirect back to assignment detail."""
+        return reverse_lazy(
+            "fleet:assignment_detail", kwargs={"pk": self.object.assignment.pk}
+        )
+
+    def dispatch(self, request, *args, **kwargs):
+        """Check if workday can be edited."""
+        workday = self.get_object()
+        if not workday.can_edit():
+            messages.error(
+                request,
+                _("This workday cannot be edited (status: {status}).").format(
+                    status=workday.get_status_display()
+                ),
+            )
+            return redirect("fleet:workday_detail", pk=workday.pk)
+        return super().dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        """Handle successful form submission."""
+        messages.success(self.request, _("Workday updated successfully."))
+        return super().form_valid(form)
+
+
+class WorkdayDeleteView(TenantAdminRequiredMixin, TenantAwareDeleteView):
+    """Delete a workday."""
+
+    model = VehicleAssignmentWorkday
+    template_name = "fleet/workday_confirm_delete.html"
+
+    def get_success_url(self):
+        """Redirect to workday list."""
+        return reverse_lazy("fleet:workday_list")
+
+    def dispatch(self, request, *args, **kwargs):
+        """Check if workday can be deleted."""
+        workday = self.get_object()
+        if workday.status == "paid":
+            messages.error(request, _("Cannot delete a paid workday."))
+            return redirect("fleet:workday_detail", pk=workday.pk)
+        return super().dispatch(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        """Handle delete with message."""
+        workday = self.get_object()
+        assignment = workday.assignment
+
+        response = super().delete(request, *args, **kwargs)
+
+        # Recalculate assignment totals
+        assignment.calculate_totals()
+
+        messages.success(request, _("Workday deleted successfully."))
+        return response
+
+
+class WorkdayApproveView(TenantAdminRequiredMixin, View):
+    """Approve a workday."""
+
+    def post(self, request, pk):
+        """Approve the workday."""
+        workday = get_object_or_404(
+            VehicleAssignmentWorkday, pk=pk, tenant=request.tenant
+        )
+
+        if not workday.can_approve():
+            messages.error(
+                request,
+                _("This workday cannot be approved (status: {status}).").format(
+                    status=workday.get_status_display()
+                ),
+            )
+        else:
+            workday.approve(request.user)
+            workday.assignment.calculate_totals()
+            messages.success(request, _("Workday approved successfully."))
+
+        return redirect("fleet:workday_detail", pk=pk)
+
+
+class WorkdayRejectView(TenantAdminRequiredMixin, View):
+    """Reject a workday."""
+
+    def post(self, request, pk):
+        """Reject the workday."""
+        workday = get_object_or_404(
+            VehicleAssignmentWorkday, pk=pk, tenant=request.tenant
+        )
+
+        if workday.status != "pending":
+            messages.error(request, _("Only pending workdays can be rejected."))
+        else:
+            workday.reject(request.user)
+            messages.warning(request, _("Workday rejected."))
+
+        return redirect("fleet:workday_detail", pk=pk)

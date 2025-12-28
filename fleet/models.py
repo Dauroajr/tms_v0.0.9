@@ -746,6 +746,7 @@ class VehicleAssignmentWorkday(TenantAwareModel):
     )
     standard_hours = models.DecimalField(
         max_length=4,
+        max_digits=10,
         decimal_places=2,
         default=Decimal("10.00"),
         verbose_name=_("Standard Hours"),
@@ -755,7 +756,10 @@ class VehicleAssignmentWorkday(TenantAwareModel):
     # Payment Values (set by manager)
     daily_rate = models.DecimalField(
         max_length=10,
+        max_digits=10,
         decimal_places=2,
+        blank=True,
+        null=True,
         verbose_name=_("Daily Rate"),
         help_text=_("Value for the complete daily"),
     )
