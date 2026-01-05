@@ -8089,3 +8089,844 @@ INFO 2025-12-28 08:32:12,239 basehttp 43068 33556 "POST /fleet/assignments/creat
 INFO 2025-12-28 08:32:14,750 basehttp 43068 33556 "GET /fleet/assignments/ HTTP/1.1" 200 13176
 INFO 2025-12-28 08:32:17,782 basehttp 43068 33556 "GET /fleet/assignments/create/ HTTP/1.1" 200 15301
 INFO 2025-12-28 08:35:03,156 basehttp 43068 2480 "POST /fleet/assignments/create/ HTTP/1.1" 200 15310
+INFO 2025-12-28 10:11:44,442 autoreload 43068 41760 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-28 10:11:54,448 autoreload 5592 5232 Watching for file changes with StatReloader
+INFO 2025-12-28 10:12:00,900 basehttp 5592 16944 "GET /fleet/ HTTP/1.1" 200 17684
+INFO 2025-12-28 10:14:15,363 autoreload 5592 5232 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-28 10:14:17,900 autoreload 24828 35264 Watching for file changes with StatReloader
+INFO 2025-12-28 10:14:22,398 autoreload 24828 35264 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-28 10:14:24,848 autoreload 46192 24276 Watching for file changes with StatReloader
+INFO 2025-12-28 10:14:28,910 autoreload 46192 24276 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-28 10:14:31,226 autoreload 49808 39332 Watching for file changes with StatReloader
+INFO 2025-12-28 10:14:45,388 autoreload 49808 39332 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-28 10:14:47,388 autoreload 29480 31520 Watching for file changes with StatReloader
+INFO 2025-12-28 10:14:50,970 autoreload 29480 31520 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-28 10:14:54,120 autoreload 10252 23180 Watching for file changes with StatReloader
+INFO 2025-12-28 10:19:12,433 autoreload 10252 23180 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-28 10:19:15,152 autoreload 48184 23292 Watching for file changes with StatReloader
+INFO 2025-12-28 10:19:23,926 autoreload 48184 23292 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-28 10:19:26,886 autoreload 50064 43656 Watching for file changes with StatReloader
+INFO 2025-12-28 10:19:33,762 autoreload 50064 43656 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\tms\settings.py changed, reloading.
+INFO 2025-12-29 18:23:57,890 autoreload 44572 44440 Watching for file changes with StatReloader
+INFO 2025-12-29 18:25:10,632 basehttp 44572 33892 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-29 18:25:10,928 basehttp 44572 33892 "GET /tenants/ HTTP/1.1" 200 11991
+INFO 2025-12-29 18:25:10,968 basehttp 44572 33892 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2025-12-29 18:25:10,968 basehttp 44572 24984 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2025-12-29 18:25:16,057 basehttp 44572 24984 "GET /fleet/assignments/ HTTP/1.1" 200 13194
+INFO 2025-12-29 18:25:18,428 basehttp 44572 24984 "GET /fleet/assignments/create/ HTTP/1.1" 200 15334
+INFO 2025-12-29 18:25:37,700 basehttp 44572 24984 "POST /fleet/assignments/create/ HTTP/1.1" 200 15353
+INFO 2025-12-29 18:25:43,074 basehttp 44572 24984 "GET /fleet/assignments/ HTTP/1.1" 200 13194
+INFO 2025-12-29 18:25:45,779 basehttp 44572 24984 "GET /fleet/assignments/create/ HTTP/1.1" 200 15334
+ERROR 2025-12-30 09:02:08,160 log 44572 47760 Internal Server Error: /fleet/assignments/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\core\mixins.py", line 46, in dispatch
+    response = super().dispatch(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\core\mixins.py", line 19, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 339, in full_clean
+    self._post_clean()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 498, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1654, in full_clean
+    self.clean()
+    ~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py", line 651, in clean
+    if self.driver.employee_type != "driver":
+       ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 271, in __get__
+    raise self.RelatedObjectDoesNotExist(
+        "%s has no %s." % (self.field.model.__name__, self.field.name)
+    )
+fleet.models.VehicleAssignment.driver.RelatedObjectDoesNotExist: VehicleAssignment has no driver.. Did you mean: 'driver_id'?
+ERROR 2025-12-30 09:02:08,171 log 44572 13236 Internal Server Error: /fleet/assignments/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\core\mixins.py", line 46, in dispatch
+    response = super().dispatch(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\core\mixins.py", line 19, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 339, in full_clean
+    self._post_clean()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 498, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1654, in full_clean
+    self.clean()
+    ~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py", line 651, in clean
+    if self.driver.employee_type != "driver":
+       ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 271, in __get__
+    raise self.RelatedObjectDoesNotExist(
+        "%s has no %s." % (self.field.model.__name__, self.field.name)
+    )
+fleet.models.VehicleAssignment.driver.RelatedObjectDoesNotExist: VehicleAssignment has no driver.. Did you mean: 'driver_id'?
+ERROR 2025-12-30 09:02:08,313 basehttp 44572 47760 "POST /fleet/assignments/create/ HTTP/1.1" 500 134296
+INFO 2025-12-30 09:02:08,347 basehttp 44572 13236 - Broken pipe from ('127.0.0.1', 60989)
+INFO 2025-12-30 13:15:01,860 basehttp 44572 52292 "POST /fleet/assignments/create/ HTTP/1.1" 200 15343
+INFO 2025-12-30 13:15:04,773 basehttp 44572 52292 "GET /fleet/assignments/ HTTP/1.1" 200 13194
+INFO 2025-12-30 13:15:07,165 basehttp 44572 52292 "GET /fleet/assignments/create/ HTTP/1.1" 200 15334
+INFO 2025-12-30 13:16:05,688 basehttp 44572 18876 "POST /fleet/assignments/create/ HTTP/1.1" 200 15623
+INFO 2025-12-30 13:16:11,963 basehttp 44572 50760 "POST /fleet/assignments/create/ HTTP/1.1" 200 15333
+INFO 2025-12-30 13:16:56,061 basehttp 44572 34468 "POST /fleet/assignments/create/ HTTP/1.1" 200 15343
+INFO 2025-12-30 13:17:06,758 basehttp 44572 12720 "POST /fleet/assignments/create/ HTTP/1.1" 200 15343
+INFO 2025-12-30 13:17:16,257 basehttp 44572 50852 "POST /fleet/assignments/create/ HTTP/1.1" 200 15344
+INFO 2025-12-30 13:17:22,404 basehttp 44572 51108 "POST /fleet/assignments/create/ HTTP/1.1" 200 15343
+ERROR 2025-12-31 00:52:41,093 log 44572 34168 Internal Server Error: /fleet/assignments/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'assignment_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['fleet/assignments/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/\\Z']
+ERROR 2025-12-31 00:52:41,124 basehttp 44572 34168 "POST /fleet/assignments/create/ HTTP/1.1" 500 179583
+ERROR 2025-12-31 00:53:24,361 log 44572 54200 Internal Server Error: /fleet/assignments/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'assignment_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['fleet/assignments/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/\\Z']
+ERROR 2025-12-31 00:53:24,368 basehttp 44572 54200 "GET /fleet/assignments/create/ HTTP/1.1" 500 177882
+INFO 2025-12-31 00:53:26,652 basehttp 44572 54200 "GET /fleet/assignments/ HTTP/1.1" 200 13194
+ERROR 2025-12-31 00:53:31,383 log 44572 53216 Internal Server Error: /fleet/assignments/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'assignment_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['fleet/assignments/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/\\Z']
+ERROR 2025-12-31 00:53:31,389 basehttp 44572 53216 "GET /fleet/assignments/create/ HTTP/1.1" 500 177882
+ERROR 2025-12-31 00:53:46,093 log 44572 47996 Internal Server Error: /fleet/assignments/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'assignment_detail' with no arguments not found. 1 pattern(s) tried: ['fleet/assignments/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/\\Z']
+ERROR 2025-12-31 00:53:46,096 basehttp 44572 47996 "GET /fleet/assignments/create/ HTTP/1.1" 500 176566
+ERROR 2025-12-31 00:53:51,743 log 44572 53928 Internal Server Error: /fleet/assignments/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'assignment_detail' with no arguments not found. 1 pattern(s) tried: ['fleet/assignments/(?P<pk>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/\\Z']
+ERROR 2025-12-31 00:53:51,747 basehttp 44572 53928 "GET /fleet/assignments/create/ HTTP/1.1" 500 176429
+INFO 2025-12-31 00:55:31,536 basehttp 44572 29436 "GET /fleet/assignments/create/ HTTP/1.1" 200 15342
+INFO 2025-12-31 00:55:31,574 basehttp 44572 29436 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2025-12-31 00:55:31,574 basehttp 44572 48868 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2025-12-31 00:55:49,414 basehttp 44572 43912 "POST /fleet/assignments/create/ HTTP/1.1" 200 15351
+INFO 2025-12-31 00:56:36,846 basehttp 44572 46812 "POST /fleet/assignments/create/ HTTP/1.1" 200 15431
+INFO 2025-12-31 00:56:43,452 basehttp 44572 46812 "GET /fleet/assignments/ HTTP/1.1" 200 13194
+INFO 2025-12-31 00:56:45,415 basehttp 44572 46812 "GET /fleet/assignments/create/ HTTP/1.1" 200 15422
+INFO 2025-12-31 01:01:48,123 basehttp 44572 46096 "GET /fleet/assignments/create/ HTTP/1.1" 200 15422
+INFO 2025-12-31 01:02:50,282 basehttp 44572 28400 "GET /fleet/assignments/create/ HTTP/1.1" 200 15334
+INFO 2025-12-31 01:10:45,555 autoreload 44572 44440 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2025-12-31 01:10:55,574 autoreload 9288 37736 Watching for file changes with StatReloader
+INFO 2025-12-31 01:11:03,839 autoreload 9288 37736 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2025-12-31 01:11:04,891 autoreload 6772 53884 Watching for file changes with StatReloader
+INFO 2025-12-31 01:11:08,137 autoreload 6772 53884 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2025-12-31 01:11:09,013 autoreload 10472 44744 Watching for file changes with StatReloader
+INFO 2025-12-31 01:12:22,879 autoreload 10472 44744 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\forms.py changed, reloading.
+INFO 2025-12-31 01:12:23,880 autoreload 49636 51424 Watching for file changes with StatReloader
+INFO 2025-12-31 01:12:25,653 autoreload 49636 51424 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\forms.py changed, reloading.
+INFO 2025-12-31 01:12:27,395 autoreload 53992 18508 Watching for file changes with StatReloader
+INFO 2025-12-31 01:12:36,813 basehttp 53992 52596 "GET /fleet/assignments/create/ HTTP/1.1" 200 17211
+INFO 2025-12-31 01:13:18,159 basehttp 53992 10404 "POST /fleet/assignments/create/ HTTP/1.1" 302 0
+INFO 2025-12-31 01:13:18,386 basehttp 53992 10404 "GET /fleet/assignments/ HTTP/1.1" 200 15358
+ERROR 2025-12-31 01:14:59,106 log 53992 380 Internal Server Error: /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '='pending'.count' from 'assignment.workdays.filter.status='pending'.count'
+ERROR 2025-12-31 01:14:59,117 basehttp 53992 380 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/ HTTP/1.1" 500 277662
+ERROR 2025-12-31 01:16:00,496 log 53992 18576 Internal Server Error: /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' = 'pending'.count' from 'assignment.workdays.filter.status = 'pending'.count'
+ERROR 2025-12-31 01:16:00,502 basehttp 53992 18576 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/ HTTP/1.1" 500 277837
+ERROR 2025-12-31 01:19:29,061 log 53992 41676 Internal Server Error: /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' == 'pending'.count' from 'assignment.workdays.filter.status == 'pending'.count'
+ERROR 2025-12-31 01:19:29,066 basehttp 53992 41676 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/ HTTP/1.1" 500 277856
+INFO 2025-12-31 09:40:41,211 autoreload 53992 18508 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2025-12-31 09:40:50,855 autoreload 54976 55252 Watching for file changes with StatReloader
+INFO 2025-12-31 09:43:12,214 basehttp 54976 56048 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/edit/ HTTP/1.1" 200 17215
+INFO 2025-12-31 09:43:19,771 basehttp 54976 53536 "GET /fleet/assignments/ HTTP/1.1" 200 15358
+INFO 2025-12-31 09:43:21,983 basehttp 54976 53536 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/ HTTP/1.1" 200 18032
+INFO 2025-12-31 09:43:35,637 basehttp 54976 52668 "GET /fleet/workdays/create?assignment=2237a9e2-919f-4223-b528-828985c598b1 HTTP/1.1" 200 17874
+INFO 2025-12-31 09:47:14,644 basehttp 54976 9620 "POST /fleet/workdays/create?assignment=2237a9e2-919f-4223-b528-828985c598b1 HTTP/1.1" 302 0
+INFO 2025-12-31 09:47:14,721 basehttp 54976 9620 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/ HTTP/1.1" 200 18951
+INFO 2025-12-31 09:47:46,837 basehttp 54976 54744 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/edit/ HTTP/1.1" 200 17215
+INFO 2025-12-31 09:48:02,932 basehttp 54976 53816 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2025-12-31 09:48:03,000 basehttp 54976 53816 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/edit/ HTTP/1.1" 200 17141
+INFO 2025-12-31 09:48:22,281 basehttp 54976 55796 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2025-12-31 09:48:22,331 basehttp 54976 55796 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/edit/ HTTP/1.1" 200 17215
+INFO 2025-12-31 09:48:28,941 basehttp 54976 55796 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2025-12-31 09:48:28,997 basehttp 54976 55796 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/edit/ HTTP/1.1" 200 17141
+INFO 2025-12-31 09:48:31,581 basehttp 54976 55796 "GET /fleet/assignments/ HTTP/1.1" 200 15340
+INFO 2025-12-31 09:48:34,710 basehttp 54976 55796 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/end/ HTTP/1.1" 200 13452
+INFO 2025-12-31 09:49:25,675 basehttp 54976 43924 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/end/ HTTP/1.1" 200 13452
+INFO 2025-12-31 09:49:27,290 basehttp 54976 43924 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/end/ HTTP/1.1" 200 13452
+INFO 2025-12-31 09:49:35,201 basehttp 54976 53212 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/end/ HTTP/1.1" 200 13420
+INFO 2025-12-31 09:49:49,885 basehttp 54976 50736 "POST /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/end/ HTTP/1.1" 302 0
+INFO 2025-12-31 09:49:49,964 basehttp 54976 50736 "GET /fleet/assignments/ HTTP/1.1" 200 15040
+INFO 2025-12-31 09:50:32,714 basehttp 54976 48488 "GET /fleet/assignments/ HTTP/1.1" 200 15006
+INFO 2025-12-31 09:50:53,994 basehttp 54976 56224 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/edit/ HTTP/1.1" 200 17152
+INFO 2025-12-31 09:51:00,627 basehttp 54976 56224 "POST /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/edit/ HTTP/1.1" 302 0
+INFO 2025-12-31 09:51:00,686 basehttp 54976 56224 "GET /fleet/assignments/ HTTP/1.1" 200 15266
+INFO 2025-12-31 09:51:07,207 basehttp 54976 56224 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-12-31 09:51:07,243 basehttp 54976 56224 "GET /tenants/ HTTP/1.1" 200 11991
+INFO 2025-12-31 09:51:11,939 basehttp 54976 56224 "GET /fleet/ HTTP/1.1" 200 17694
+INFO 2025-12-31 09:51:29,760 basehttp 54976 56224 "GET /fleet/assignments/ HTTP/1.1" 200 15266
+INFO 2025-12-31 09:51:33,319 basehttp 54976 56224 "GET /personnel/employees/ HTTP/1.1" 200 15661
+INFO 2025-12-31 09:51:40,064 basehttp 54976 56224 "GET /fleet/assignments/ HTTP/1.1" 200 15266
+ERROR 2025-12-31 09:51:41,558 log 54976 56224 Internal Server Error: /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/delete/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: fleet/assignment_confirm_delete.html
+ERROR 2025-12-31 09:51:41,566 basehttp 54976 56224 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/delete/ HTTP/1.1" 500 89294
+INFO 2025-12-31 09:58:08,510 basehttp 54976 41896 "GET /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/delete/ HTTP/1.1" 200 15059
+INFO 2025-12-31 09:58:13,578 basehttp 54976 53488 "POST /fleet/assignments/2237a9e2-919f-4223-b528-828985c598b1/delete/ HTTP/1.1" 302 0
+INFO 2025-12-31 09:58:13,749 basehttp 54976 53488 "GET /fleet/assignments/ HTTP/1.1" 200 13186
+INFO 2025-12-31 09:58:16,138 basehttp 54976 44616 "GET / HTTP/1.1" 200 12702
+INFO 2025-12-31 09:58:19,379 basehttp 54976 44616 "GET /fleet/vehicles/ HTTP/1.1" 200 16151
+INFO 2025-12-31 09:58:21,321 basehttp 54976 44616 "GET /fleet/vehicles/f68615d0-12c5-4373-97aa-5bbf2f3458ad/delete HTTP/1.1" 200 13049
+INFO 2025-12-31 09:58:23,927 basehttp 54976 44616 "POST /fleet/vehicles/f68615d0-12c5-4373-97aa-5bbf2f3458ad/delete HTTP/1.1" 302 0
+INFO 2025-12-31 09:58:23,956 basehttp 54976 44616 "GET /fleet/vehicles/ HTTP/1.1" 200 14149
+INFO 2025-12-31 09:58:28,979 basehttp 54976 44616 "GET /personnel/employees/ HTTP/1.1" 200 15661
+INFO 2025-12-31 09:58:30,871 basehttp 54976 44616 "GET /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/delete/ HTTP/1.1" 200 13475
+INFO 2025-12-31 09:58:40,400 basehttp 54976 44616 "POST /personnel/employees/8445a7e1-db2f-46a2-a03a-572307d40f7f/delete/ HTTP/1.1" 302 0
+INFO 2025-12-31 09:58:40,446 basehttp 54976 44616 "GET /personnel/employees/ HTTP/1.1" 200 13602
+INFO 2025-12-31 09:58:44,564 basehttp 54976 44616 "GET /fleet/brands/ HTTP/1.1" 200 16787
+INFO 2025-12-31 09:58:44,912 basehttp 54976 55468 "GET /media/fleet/logos/brands/car-logos-citroen_6EOq3jC.jpg HTTP/1.1" 200 28395
+INFO 2025-12-31 09:58:44,955 basehttp 54976 44616 "GET /media/fleet/logos/brands/car-logos-bmw.jpg HTTP/1.1" 200 67104
+INFO 2025-12-31 09:58:44,958 basehttp 54976 2488 "GET /media/fleet/logos/brands/car-logos-jeep.png HTTP/1.1" 200 6687
+INFO 2025-12-31 09:58:44,960 basehttp 54976 56156 "GET /media/fleet/logos/brands/car-logos-porsche.webp HTTP/1.1" 200 41418
+INFO 2025-12-31 09:58:44,962 basehttp 54976 45724 "GET /media/fleet/logos/brands/car-logos-mercedes-benz.jpg HTTP/1.1" 200 74609
+INFO 2025-12-31 09:58:53,702 basehttp 54976 45724 "GET /fleet/brands/create HTTP/1.1" 200 14031
+INFO 2025-12-31 10:00:38,202 basehttp 54976 51936 "POST /fleet/brands/create HTTP/1.1" 302 0
+INFO 2025-12-31 10:00:38,240 basehttp 54976 51936 "GET /fleet/brands/ HTTP/1.1" 200 17819
+INFO 2025-12-31 10:00:38,280 basehttp 54976 51936 "GET /media/fleet/logos/brands/car-logos-lexus.png HTTP/1.1" 200 2780
+INFO 2025-12-31 10:01:30,184 basehttp 54976 51936 "GET /fleet/brands/create HTTP/1.1" 200 14031
+INFO 2025-12-31 10:01:46,974 basehttp 54976 51936 "POST /fleet/brands/create HTTP/1.1" 302 0
+INFO 2025-12-31 10:01:47,012 basehttp 54976 51936 "GET /fleet/brands/ HTTP/1.1" 200 18854
+INFO 2025-12-31 10:01:47,049 basehttp 54976 51936 "GET /media/fleet/logos/brands/images.png HTTP/1.1" 200 7591
+INFO 2025-12-31 10:01:47,067 basehttp 54976 51936 "GET /media/fleet/logos/brands/car-logos-lexus.png HTTP/1.1" 304 0
+INFO 2025-12-31 10:03:11,230 basehttp 54976 728 "GET /fleet/brands/241d5652-adb6-4ec1-921b-3abafaf7849b/edit HTTP/1.1" 200 14361
+INFO 2025-12-31 10:03:11,263 basehttp 54976 728 "GET /media/fleet/logos/brands/images.png HTTP/1.1" 304 0
+INFO 2025-12-31 10:03:23,237 basehttp 54976 50180 "POST /fleet/brands/241d5652-adb6-4ec1-921b-3abafaf7849b/edit HTTP/1.1" 302 0
+INFO 2025-12-31 10:03:23,281 basehttp 54976 50180 "GET /fleet/brands/ HTTP/1.1" 200 18868
+INFO 2025-12-31 10:03:23,344 basehttp 54976 55944 "GET /media/fleet/logos/brands/car-logos-lexus.png HTTP/1.1" 304 0
+INFO 2025-12-31 10:03:23,355 basehttp 54976 50180 "GET /media/fleet/logos/brands/car-logos-land-rover.png HTTP/1.1" 200 414707
+INFO 2025-12-31 10:03:46,745 basehttp 54976 50180 "GET /fleet/brands/c27a4eb7-7a0b-47cd-a4e4-f633f6a47f09/edit HTTP/1.1" 200 14371
+INFO 2025-12-31 10:04:19,188 basehttp 54976 39880 "POST /fleet/brands/c27a4eb7-7a0b-47cd-a4e4-f633f6a47f09/edit HTTP/1.1" 302 0
+INFO 2025-12-31 10:04:19,230 basehttp 54976 39880 "GET /fleet/brands/ HTTP/1.1" 200 18875
+INFO 2025-12-31 10:04:19,300 basehttp 54976 39880 "GET /media/fleet/logos/brands/79e2eaf85e3cff997557b65a74db561b.jpg HTTP/1.1" 200 85469
+INFO 2025-12-31 10:04:19,322 basehttp 54976 39880 "GET /media/fleet/logos/brands/car-logos-lexus.png HTTP/1.1" 200 2780
+INFO 2025-12-31 10:04:19,327 basehttp 54976 10460 "GET /media/fleet/logos/brands/car-logos-land-rover.png HTTP/1.1" 200 414707
+INFO 2025-12-31 10:04:20,658 basehttp 54976 10460 "GET /fleet/brands/c27a4eb7-7a0b-47cd-a4e4-f633f6a47f09/edit HTTP/1.1" 200 14378
+INFO 2025-12-31 10:04:20,699 basehttp 54976 10460 "GET /media/fleet/logos/brands/79e2eaf85e3cff997557b65a74db561b.jpg HTTP/1.1" 304 0
+INFO 2025-12-31 10:05:06,031 basehttp 54976 54912 "POST /fleet/brands/c27a4eb7-7a0b-47cd-a4e4-f633f6a47f09/edit HTTP/1.1" 302 0
+INFO 2025-12-31 10:05:06,068 basehttp 54976 54912 "GET /fleet/brands/ HTTP/1.1" 200 18860
+INFO 2025-12-31 10:05:06,109 basehttp 54976 54912 "GET /media/fleet/logos/brands/Citroen-logo-2009.png HTTP/1.1" 200 88685
+INFO 2025-12-31 10:05:06,115 basehttp 54976 26828 "GET /media/fleet/logos/brands/car-logos-land-rover.png HTTP/1.1" 200 414707
+INFO 2025-12-31 10:05:06,131 basehttp 54976 26828 "GET /media/fleet/logos/brands/car-logos-lexus.png HTTP/1.1" 200 2780
+INFO 2025-12-31 10:05:11,677 basehttp 54976 52368 "GET /fleet/brands/e047275e-9687-4114-b7c8-8016811490c0/edit HTTP/1.1" 200 14347
+INFO 2025-12-31 10:05:49,027 basehttp 54976 28960 "POST /fleet/brands/e047275e-9687-4114-b7c8-8016811490c0/edit HTTP/1.1" 302 0
+INFO 2025-12-31 10:05:49,062 basehttp 54976 28960 "GET /fleet/brands/ HTTP/1.1" 200 18868
+INFO 2025-12-31 10:05:49,106 basehttp 54976 28960 "GET /media/fleet/logos/brands/car-logos-bmw_LT5y8lv.jpg HTTP/1.1" 200 7414
+INFO 2025-12-31 10:05:49,132 basehttp 54976 10952 "GET /media/fleet/logos/brands/Citroen-logo-2009.png HTTP/1.1" 200 88685
+INFO 2025-12-31 10:05:49,156 basehttp 54976 10952 "GET /media/fleet/logos/brands/car-logos-lexus.png HTTP/1.1" 200 2780
+INFO 2025-12-31 10:05:49,161 basehttp 54976 28960 "GET /media/fleet/logos/brands/car-logos-land-rover.png HTTP/1.1" 200 414707
+INFO 2025-12-31 10:05:54,502 basehttp 54976 31796 "GET /fleet/brands/ba0b8805-cc98-4e17-9a05-b641528ae7e1/edit HTTP/1.1" 200 14387
+INFO 2025-12-31 10:06:34,792 basehttp 54976 31796 "POST /fleet/brands/ba0b8805-cc98-4e17-9a05-b641528ae7e1/edit HTTP/1.1" 302 0
+INFO 2025-12-31 10:06:34,824 basehttp 54976 31796 "GET /fleet/brands/ HTTP/1.1" 200 18922
+INFO 2025-12-31 10:06:34,867 basehttp 54976 31796 "GET /media/fleet/logos/brands/car-logos-bmw_LT5y8lv.jpg HTTP/1.1" 200 7414
+INFO 2025-12-31 10:06:34,902 basehttp 54976 27848 "GET /media/fleet/logos/brands/Citroen-logo-2009.png HTTP/1.1" 200 88685
+INFO 2025-12-31 10:06:34,914 basehttp 54976 41048 "GET /media/fleet/logos/brands/Custom-Fabricated-Polished-Stainless-Steel-Mercedes-Logo-with-LED-Ill_unVqeak.png HTTP/1.1" 200 210688
+INFO 2025-12-31 10:06:34,935 basehttp 54976 27848 "GET /media/fleet/logos/brands/car-logos-lexus.png HTTP/1.1" 200 2780
+INFO 2025-12-31 10:06:34,943 basehttp 54976 31796 "GET /media/fleet/logos/brands/car-logos-land-rover.png HTTP/1.1" 200 414707
+INFO 2025-12-31 10:06:59,454 basehttp 54976 31796 "GET /fleet/brands/ba0b8805-cc98-4e17-9a05-b641528ae7e1/edit HTTP/1.1" 200 14441
+INFO 2025-12-31 10:06:59,492 basehttp 54976 31796 "GET /media/fleet/logos/brands/Custom-Fabricated-Polished-Stainless-Steel-Mercedes-Logo-with-LED-Ill_unVqeak.png HTTP/1.1" 304 0
+INFO 2025-12-31 10:07:10,741 basehttp 54976 31796 "POST /fleet/brands/ba0b8805-cc98-4e17-9a05-b641528ae7e1/edit HTTP/1.1" 302 0
+INFO 2025-12-31 10:07:10,776 basehttp 54976 31796 "GET /fleet/brands/ HTTP/1.1" 200 18863
+INFO 2025-12-31 10:07:10,849 basehttp 54976 31796 "GET /media/fleet/logos/brands/car-logos-bmw_LT5y8lv.jpg HTTP/1.1" 200 7414
+INFO 2025-12-31 10:07:10,856 basehttp 54976 44024 "GET /media/fleet/logos/brands/car-logos-lexus.png HTTP/1.1" 200 2780
+INFO 2025-12-31 10:07:10,858 basehttp 54976 41048 "GET /media/fleet/logos/brands/Citroen-logo-2009.png HTTP/1.1" 200 88685
+INFO 2025-12-31 10:07:10,865 basehttp 54976 27848 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo.png HTTP/1.1" 200 273733
+INFO 2025-12-31 10:07:10,868 basehttp 54976 47388 "GET /media/fleet/logos/brands/car-logos-land-rover.png HTTP/1.1" 200 414707
+INFO 2025-12-31 10:07:15,881 basehttp 54976 47388 "GET /fleet/brands/c85c7130-ff60-45c0-8357-4ff78362a9ed/edit HTTP/1.1" 200 14353
+INFO 2025-12-31 10:07:55,531 basehttp 54976 47388 "POST /fleet/brands/c85c7130-ff60-45c0-8357-4ff78362a9ed/edit HTTP/1.1" 302 0
+INFO 2025-12-31 10:07:55,564 basehttp 54976 47388 "GET /fleet/brands/ HTTP/1.1" 200 18859
+INFO 2025-12-31 10:07:55,632 basehttp 54976 47388 "GET /media/fleet/logos/brands/car-logos-bmw_LT5y8lv.jpg HTTP/1.1" 200 7414
+INFO 2025-12-31 10:07:55,648 basehttp 54976 27848 "GET /media/fleet/logos/brands/Lexus_logo.webp HTTP/1.1" 200 42406
+INFO 2025-12-31 10:07:55,653 basehttp 54976 41048 "GET /media/fleet/logos/brands/Citroen-logo-2009.png HTTP/1.1" 200 88685
+INFO 2025-12-31 10:07:55,661 basehttp 54976 31796 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo.png HTTP/1.1" 200 273733
+INFO 2025-12-31 10:07:55,667 basehttp 54976 44024 "GET /media/fleet/logos/brands/car-logos-land-rover.png HTTP/1.1" 200 414707
+INFO 2025-12-31 10:10:23,970 autoreload 54976 55252 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2025-12-31 10:10:26,772 autoreload 45660 54844 Watching for file changes with StatReloader
+INFO 2025-12-31 10:10:29,155 autoreload 45660 54844 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2025-12-31 10:10:30,464 autoreload 9572 33448 Watching for file changes with StatReloader
+INFO 2025-12-31 10:10:44,338 basehttp 9572 55372 "GET /fleet/assignments/ HTTP/1.1" 200 12918
+INFO 2025-12-31 10:10:46,769 basehttp 9572 55372 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12918
+INFO 2025-12-31 10:10:48,080 basehttp 9572 55372 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12918
+INFO 2025-12-31 10:12:20,751 basehttp 9572 9520 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12918
+INFO 2025-12-31 10:12:40,189 basehttp 9572 52624 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12923
+INFO 2025-12-31 10:12:42,766 basehttp 9572 44724 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12923
+INFO 2025-12-31 10:12:49,546 basehttp 9572 44724 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12924
+INFO 2025-12-31 10:12:54,921 basehttp 9572 32352 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12923
+INFO 2025-12-31 10:12:55,731 basehttp 9572 32352 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12923
+INFO 2025-12-31 10:12:57,639 basehttp 9572 32352 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12923
+INFO 2025-12-31 10:12:58,192 basehttp 9572 35456 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-12-31 10:12:58,199 basehttp 9572 35456 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-12-31 10:12:58,215 basehttp 9572 35456 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-12-31 10:12:58,223 basehttp 9572 36808 "GET /static/css/navbar.css HTTP/1.1" 200 3810
+INFO 2025-12-31 10:12:58,232 basehttp 9572 32352 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-12-31 10:12:58,469 basehttp 9572 17692 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2025-12-31 10:12:58,493 basehttp 9572 55984 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2025-12-31 10:12:58,525 basehttp 9572 4060 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-12-31 10:12:58,647 basehttp 9572 4060 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2025-12-31 10:13:09,726 basehttp 9572 16768 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12917
+INFO 2025-12-31 10:13:13,930 basehttp 9572 55364 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12918
+INFO 2025-12-31 10:13:43,769 basehttp 9572 52676 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12938
+INFO 2025-12-31 10:13:45,252 basehttp 9572 52676 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12938
+INFO 2025-12-31 10:13:45,278 basehttp 9572 32624 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-12-31 10:13:45,279 basehttp 9572 52676 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-12-31 10:13:45,279 basehttp 9572 51356 "GET /static/css/navbar.css HTTP/1.1" 200 3810
+INFO 2025-12-31 10:13:45,288 basehttp 9572 32624 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-12-31 10:13:45,288 basehttp 9572 52676 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2025-12-31 10:13:45,295 basehttp 9572 32624 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-12-31 10:13:45,296 basehttp 9572 51356 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2025-12-31 10:13:45,305 basehttp 9572 52676 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-12-31 10:13:45,515 basehttp 9572 52676 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2025-12-31 10:13:54,364 basehttp 9572 52676 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12938
+INFO 2025-12-31 10:13:56,471 basehttp 9572 52676 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12938
+INFO 2025-12-31 10:13:56,503 basehttp 9572 54332 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2025-12-31 10:13:56,503 basehttp 9572 50820 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2025-12-31 10:13:56,504 basehttp 9572 52676 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-12-31 10:13:56,504 basehttp 9572 54440 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-12-31 10:13:56,505 basehttp 9572 32624 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-12-31 10:13:56,507 basehttp 9572 51356 "GET /static/css/navbar.css HTTP/1.1" 200 3810
+INFO 2025-12-31 10:13:56,514 basehttp 9572 54332 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-12-31 10:13:56,523 basehttp 9572 54440 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-12-31 10:13:56,964 basehttp 9572 40996 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2025-12-31 10:14:12,156 basehttp 9572 40996 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12950
+INFO 2025-12-31 10:14:30,708 basehttp 9572 40996 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12950
+INFO 2025-12-31 10:15:32,457 basehttp 9572 32968 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12982
+INFO 2025-12-31 10:15:55,002 basehttp 9572 55652 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12982
+INFO 2025-12-31 10:15:56,417 basehttp 9572 55652 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12982
+INFO 2025-12-31 10:15:56,443 basehttp 9572 54508 "GET /static/css/navbar.css HTTP/1.1" 200 3810
+INFO 2025-12-31 10:15:56,443 basehttp 9572 55652 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2025-12-31 10:15:56,446 basehttp 9572 7844 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2025-12-31 10:15:56,450 basehttp 9572 54508 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2025-12-31 10:15:56,451 basehttp 9572 55652 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2025-12-31 10:15:56,455 basehttp 9572 7844 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2025-12-31 10:15:56,456 basehttp 9572 54508 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2025-12-31 10:15:56,465 basehttp 9572 55652 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2025-12-31 10:15:56,638 basehttp 9572 55652 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-02 10:35:51,121 basehttp 9572 24248 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12976
+INFO 2026-01-02 10:35:51,213 basehttp 9572 24248 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-02 10:35:51,216 basehttp 9572 49644 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-01-02 10:35:53,480 basehttp 9572 50972 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12976
+INFO 2026-01-02 10:35:55,268 basehttp 9572 50972 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12976
+INFO 2026-01-02 10:35:57,036 basehttp 9572 50972 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 12976
+INFO 2026-01-02 10:35:57,075 basehttp 9572 50972 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-02 10:35:57,075 basehttp 9572 46576 "GET /static/css/navbar.css HTTP/1.1" 200 3810
+INFO 2026-01-02 10:35:57,075 basehttp 9572 45064 "GET /static/css/header.css HTTP/1.1" 200 1627
+INFO 2026-01-02 10:35:57,083 basehttp 9572 46576 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-02 10:35:57,083 basehttp 9572 50972 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-02 10:35:57,085 basehttp 9572 45064 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-02 10:35:57,093 basehttp 9572 46576 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-02 10:35:57,099 basehttp 9572 50972 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-02 10:35:57,234 basehttp 9572 50972 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-02 10:40:45,465 basehttp 9572 53612 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 13039
+INFO 2026-01-02 10:42:01,889 basehttp 9572 52096 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 13102
+INFO 2026-01-02 10:43:24,538 basehttp 9572 56180 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 13102
+INFO 2026-01-02 10:43:26,543 basehttp 9572 56180 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 13102
+INFO 2026-01-02 10:43:26,582 basehttp 9572 25788 "GET /static/css/navbar.css HTTP/1.1" 200 3810
+INFO 2026-01-02 10:43:26,583 basehttp 9572 56180 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-02 10:43:26,584 basehttp 9572 54484 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-02 10:43:26,590 basehttp 9572 25788 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-02 10:43:26,592 basehttp 9572 56180 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-02 10:43:26,593 basehttp 9572 54484 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-02 10:43:26,601 basehttp 9572 25788 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-02 10:43:26,607 basehttp 9572 56180 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-02 10:43:26,763 basehttp 9572 56180 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-02 10:43:33,587 basehttp 9572 46312 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-01-02 10:43:33,736 basehttp 9572 46312 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 13110
+INFO 2026-01-02 10:43:33,815 basehttp 9572 46312 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-01-02 10:44:47,509 autoreload 50620 52296 Watching for file changes with StatReloader
+INFO 2026-01-02 10:44:51,629 basehttp 50620 10516 "GET /fleet/assignments/?active=&vehicle=&driver= HTTP/1.1" 200 13110
+INFO 2026-01-02 10:44:51,649 basehttp 50620 10516 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-01-02 10:51:47,531 autoreload 15496 27464 Watching for file changes with StatReloader
+INFO 2026-01-02 11:35:51,298 autoreload 38248 19268 Watching for file changes with StatReloader
+INFO 2026-01-04 21:15:29,426 autoreload 49796 59828 Watching for file changes with StatReloader

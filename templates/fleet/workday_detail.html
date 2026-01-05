@@ -153,7 +153,8 @@
               </p>
               {% if workday.overtime_hours > 0 %}
               <small class="text-muted">
-                {% translate "Calculated after" %} {{ workday.standard_hours }}h + 15 {% translate "minutes tolerance" %}
+                {% translate "Calculated after" %} {{ workday.standard_hours }}h + 15 {% translate "minutes tolerance"
+                %}
               </small>
               {% endif %}
             </div>
@@ -322,29 +323,29 @@
             <p class="mb-0">
               R$ {{ workday.daily_rate|localize }} × 0.5 = <strong>R$ {{ workday.total_amount|localize }}</strong>
             </p>
-            {% elif workday.total_hours < 8 %}
-            <p class="mb-2">
+            {% elif workday.total_hours < 8 %} <p class="mb-2">
               <strong>{% translate "Short service (< 8h):" %}</strong>
-              <br>{% translate "Full daily rate guaranteed" %}
-            </p>
-            <p class="mb-0">
-              {% translate "Total" %}: <strong>R$ {{ workday.total_amount|localize }}</strong>
-            </p>
-            {% else %}
-            <p class="mb-2">
-              <strong>{% translate "Daily:" %}</strong> R$ {{ workday.daily_amount|localize }}
-            </p>
-            {% if workday.overtime_hours > 0 %}
-            <p class="mb-2">
-              <strong>{% translate "Overtime:" %}</strong>
-              <br>{{ workday.overtime_hours }}h × R$ {{ workday.get_overtime_hourly_rate|localize }} = R$ {{ workday.overtime_amount|localize }}
-            </p>
-            {% endif %}
-            <hr>
-            <p class="mb-0">
-              <strong>{% translate "Total:" %}</strong> R$ {{ workday.total_amount|localize }}
-            </p>
-            {% endif %}
+                  <br>{% translate "Full daily rate guaranteed" %}
+                  </p>
+                  <p class="mb-0">
+                    {% translate "Total" %}: <strong>R$ {{ workday.total_amount|localize }}</strong>
+                  </p>
+                  {% else %}
+                  <p class="mb-2">
+                    <strong>{% translate "Daily:" %}</strong> R$ {{ workday.daily_amount|localize }}
+                  </p>
+                  {% if workday.overtime_hours > 0 %}
+                  <p class="mb-2">
+                    <strong>{% translate "Overtime:" %}</strong>
+                    <br>{{ workday.overtime_hours }}h × R$ {{ workday.get_overtime_hourly_rate|localize }} = R$ {{
+                    workday.overtime_amount|localize }}
+                  </p>
+                  {% endif %}
+                  <hr>
+                  <p class="mb-0">
+                    <strong>{% translate "Total:" %}</strong> R$ {{ workday.total_amount|localize }}
+                  </p>
+                  {% endif %}
           </small>
         </div>
       </div>

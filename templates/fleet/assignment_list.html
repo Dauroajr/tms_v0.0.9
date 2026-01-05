@@ -16,7 +16,7 @@
       </p>
     </div>
     <div class="col-md-4 text-end">
-      <a href="{% url 'fleet:assignment_create' %}" class="btn btn-primary">
+      <a href="{% url 'fleet:assignment_create' %}" class="btn btn-primary" style="background: linear-gradient(to bottom, #284378,black);">
         <i class="bi bi-plus-circle"></i> {% translate "New Assignment" %}
       </a>
     </div>
@@ -92,7 +92,7 @@
           </select>
         </div>
         <div class="col-md-2 d-flex align-items-end">
-          <button type="submit" class="btn btn-primary w-100">
+          <button type="submit" class="btn btn-primary" style="background: linear-gradient(to bottom, #284378, black);">
             <i class="bi bi-search"></i> {% translate "Filter" %}
           </button>
         </div>
@@ -146,8 +146,7 @@
               </td>
               <td>
                 {% if assignment.end_date %}
-                {% widthratio assignment.end_date|date:"U"|add:assignment.start_date|date:"U"|add:"-" 86400 1 %} {%
-                translate "days" %}
+                {% widthratio assignment.end_date|date:"U"|add:assignment.start_date|date:"U"|add:"-" 86400 1 %} {%translate "days" %}
                 {% else %}
                 {% now "U" as current_timestamp %}
                 {% widthratio current_timestamp|add:assignment.start_date|date:"U"|add:"-" 86400 1 %} {% translate
@@ -238,7 +237,7 @@
       <div class="text-center py-5">
         <i class="bi bi-inbox display-1 text-muted"></i>
         <p class="mt-3 text-muted">{% translate "No assignments found" %}</p>
-        <a href="{% url 'fleet:assignment_create' %}" class="btn btn-primary">
+        <a href="{% url 'fleet:assignment_create' %}" class="btn btn-primary" style="background: linear-gradient(to bottom, #284378,black);">
           <i class="bi bi-plus-circle"></i> {% translate "Create First Assignment" %}
         </a>
       </div>

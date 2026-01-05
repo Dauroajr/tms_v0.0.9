@@ -103,7 +103,7 @@ class VehicleAdmin(TenantAwareAdmin):
             _("Basic Information"),
             {"fields": ("plate", "type", "brand", "model", "year", "color", "status")},
         ),
-        (_("Specifications"), {"fields": ("capacity_kg", "capacity_m3", "fuel_type")}),
+        (_("Specifications"), {"fields": ("capacity_kg", "capacity_m3_or_liters_or_liters", "fuel_type")}),
         (_("Identification"), {"fields": ("chassis_number", "renavam")}),
         (
             _("Purchase Information"),

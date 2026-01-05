@@ -17,7 +17,7 @@
         {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'dashboard' %}">
-            <i class="bi bi-speedometer2"></i> Dashboard
+            <i class="bi bi-speedometer2"></i> {% translate 'Dashboard' %}
           </a>
         </li>
 
@@ -25,12 +25,12 @@
         {% if current_tenant %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-truck"></i> Fleet
+            <i class="bi bi-truck"></i> {% translate 'Fleet' %}
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
               <a class="dropdown-item" href="{% url 'fleet:dashboard' %}">
-                <i class="bi bi-speedometer2"></i> Dashboard
+                <i class="bi bi-speedometer2"></i> {% translate 'Dashboard' %}
               </a>
             </li>
             <li>
@@ -38,17 +38,17 @@
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'fleet:vehicle_list' %}">
-                <i class="bi bi-truck"></i> Vehicles
+                <i class="bi bi-truck"></i> {% translate 'Vehicles' %}
               </a>
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'fleet:assignment_list' %}">
-                <i class="bi bi-person-check"></i> Assignments
+                <i class="bi bi-person-check"></i> {% translate 'Assignments' %}
               </a>
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'fleet:brand_list' %}">
-                <i class="bi bi-award"></i> Brands
+                <i class="bi bi-award"></i> {% translate 'Brands' %}
               </a>
             </li>
           </ul>
@@ -57,12 +57,12 @@
         <!-- Personnel Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            <i class="bi bi-people"></i> Personnel
+            <i class="bi bi-people"></i> {% translate 'Personnel' %}
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
               <a class="dropdown-item" href="{% url 'personnel:employee_list' %}">
-                <i class="bi bi-person-lines-fill"></i> All Employees
+                <i class="bi bi-person-lines-fill"></i> {% translate 'All Employees' %}
               </a>
             </li>
             <li>
@@ -70,12 +70,12 @@
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'personnel:driver_list' %}">
-                <i class="bi bi-person-badge"></i> Drivers
+                <i class="bi bi-person-badge"></i> {% translate 'Drivers' %}
               </a>
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'personnel:security_list' %}">
-                <i class="bi bi-shield-check"></i> Security
+                <i class="bi bi-shield-check"></i> {% translate 'Security' %}
               </a>
             </li>
             <li>
@@ -83,7 +83,7 @@
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'personnel:employee_create' %}">
-                <i class="bi bi-person-plus"></i> Add Employee
+                <i class="bi bi-person-plus"></i> {% translate 'Add Employee' %}
               </a>
             </li>
           </ul>
@@ -106,12 +106,12 @@
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
               <a class="dropdown-item" href="{% url 'tenants:detail' current_tenant.id %}">
-                <i class="bi bi-info-circle"></i> Tenant Details
+                <i class="bi bi-info-circle"></i> {% translate 'Tenant Details' %}
               </a>
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'tenants:members' current_tenant.id %}">
-                <i class="bi bi-people"></i> Members
+                <i class="bi bi-people"></i> {% translate 'Members' %}
               </a>
             </li>
             <li>
@@ -119,7 +119,7 @@
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'tenants:select' %}">
-                <i class="bi bi-arrow-left-right"></i> Switch Tenant
+                <i class="bi bi-arrow-left-right"></i> {% translate 'Switch Tenant' %}
               </a>
             </li>
           </ul>
@@ -127,7 +127,7 @@
         {% else %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'tenants:select' %}">
-            <i class="bi bi-building"></i> Select Tenant
+            <i class="bi bi-building"></i> {% translate 'Select Tenant' %}
           </a>
         </li>
         {% endif %}
@@ -139,12 +139,12 @@
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
               <a class="dropdown-item" href="{% url 'accounts:profile' %}">
-                <i class="bi bi-person"></i> My Profile
+                <i class="bi bi-person"></i> {% translate 'My Profile' %}
               </a>
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'accounts:password_change' %}">
-                <i class="bi bi-key"></i> Change Password
+                <i class="bi bi-key"></i> {% translate 'Change Password' %}
               </a>
             </li>
             <li>
@@ -152,7 +152,7 @@
             </li>
             <li>
               <a class="dropdown-item" href="{% url 'accounts:logout' %}">
-                <i class="bi bi-box-arrow-right"></i> Logout
+                <i class="bi bi-box-arrow-right"></i> {% translate 'Logout' %}
               </a>
             </li>
           </ul>
@@ -160,12 +160,12 @@
         {% else %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'accounts:login' %}">
-            <i class="bi bi-box-arrow-in-right"></i> Login
+            <i class="bi bi-box-arrow-in-right"></i> {% translate 'Login' %}
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'accounts:register' %}">
-            <i class="bi bi-person-plus"></i> Register
+            <i class="bi bi-person-plus"></i> {% translate 'Register' %}
           </a>
         </li>
         {% endif %}

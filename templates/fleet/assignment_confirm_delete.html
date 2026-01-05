@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Delete Assignment' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <!-- Delete Confirmation Card -->
+      <div class="card shadow-sm border-danger">
+        <div class="card-header bg-danger text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-exclamation-triangle"></i> {% translate "Delete Assignment" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <!-- Assignment Info -->
+          <div class="text-center mb-4">
+            <i class="bi bi-person-x display-1 text-danger"></i>
+            <h4 class="mt-3">{{ object.driver.full_name }}</h4>
+            <p class="text-muted mb-1">
+              <i class="bi bi-arrow-right"></i>
+            </p>
+            <h5 class="text-muted">{{ object.vehicle.plate }}</h5>
+            <small class="text-muted">
+              {{ object.vehicle.brand.name }} {{ object.vehicle.model }}
+            </small>
+          </div>
+
+          <!-- Warning Message -->
+          <div class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">
+              <i class="bi bi-exclamation-triangle-fill"></i> {% translate "Warning" %}
+            </h6>
+            <p class="mb-0">
+              {% translate "Are you sure you want to delete this assignment? This action cannot be undone." %}
+            </p>
+          </div>
+
+          <!-- Assignment Summary -->
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+              <h6 class="card-title">{% translate "Assignment Summary" %}</h6>
+              <div class="row g-2">
+                <div class="col-6">
+                  <small class="text-muted">{% translate "Start Date" %}:</small>
+                  <p class="mb-0">{{ object.start_date|date:"SHORT_DATE_FORMAT" }}</p>
+                </div>
+                <div class="col-6">
+                  <small class="text-muted">{% translate "End Date" %}:</small>
+                  <p class="mb-0">
+                    {% if object.end_date %}
+                    {{ object.end_date|date:"SHORT_DATE_FORMAT" }}
+                    {% else %}
+                    <span class="text-muted">{% translate "Ongoing" %}</span>
+                    {% endif %}
+                  </p>
+                </div>
+                <div class="col-6">
+                  <small class="text-muted">{% translate "Status" %}:</small>
+                  <p class="mb-0">
+                    {% if object.is_active %}
+                    <span class="badge bg-success">{% translate "Active" %}</span>
+                    {% else %}
+                    <span class="badge bg-secondary">{% translate "Ended" %}</span>
+                    {% endif %}
+                  </p>
+                </div>
+                <div class="col-6">
+                  <small class="text-muted">{% translate "Workday Type" %}:</small>
+                  <p class="mb-0">{{ object.get_workday_type_display }}</p>
+                </div>
+                <div class="col-6">
+                  <small class="text-muted">{% translate "Days Worked" %}:</small>
+                  <p class="mb-0"><strong>{{ object.total_days_worked }}</strong></p>
+                </div>
+                <div class="col-6">
+                  <small class="text-muted">{% translate "Daily Rate" %}:</small>
+                  <p class="mb-0">R$ {{ object.daily_rate|localize }}</p>
+                </div>
+                <div class="col-12">
+                  <hr class="my-2">
+                  <small class="text-muted">{% translate "Total Amount" %}:</small>
+                  <h5 class="mb-0 text-danger">R$ {{ object.total_amount|localize }}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workdays Warning -->
+          {% if object.workdays.exists %}
+          <div class="alert alert-warning" role="alert">
+            <h6 class="alert-heading">
+              <i class="bi bi-exclamation-circle"></i> {% translate "Attention" %}
+            </h6>
+            <p class="mb-2">
+              {% translate "This assignment has" %} <strong>{{ object.workdays.count }}</strong>
+              {% translate "registered workday(s)." %}
+            </p>
+            <p class="mb-0 small">
+              <strong>{% translate "What will happen:" %}</strong>
+            </p>
+            <ul class="mb-0 small">
+              <li>{% translate "All associated workdays will also be deleted" %}</li>
+              <li>{% translate "Payment records will be lost" %}</li>
+              <li>{% translate "This cannot be undone" %}</li>
+            </ul>
+          </div>
+          {% endif %}
+
+          <!-- Paid Workdays Block -->
+          {% if paid_workdays > 0 %}
+          <div class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">
+              <i class="bi bi-ban"></i> {% translate "Cannot Delete" %}
+            </h6>
+            <p class="mb-0">
+              {% translate "This assignment has " %} <strong>{{ paid_workdays }}</strong>
+              {% translate "paid workday(s) and cannot be deleted. Please contact your administrator." %}
+            </p>
+          </div>
+          {% else %}
+          <!-- Delete Form -->
+          <form method="post">
+            {% csrf_token %}
+
+            <div class="alert alert-info" role="alert">
+              <small>
+                <strong>{% translate "Note:" %}</strong>
+                {% translate "After deletion, the vehicle and driver will be available for new assignments." %}
+              </small>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <a href="{% url 'fleet:assignment_detail' object.pk %}" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> {% translate "Cancel" %}
+              </a>
+              <button type="submit" class="btn btn-danger" 
+                style="background: linear-gradient(to bottom, #284378,black);">
+                <i class="bi bi-trash"></i> {% translate "Yes, Delete Assignment" %}
+              </button>
+            </div>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Info Card -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="bi bi-info-circle"></i> {% translate "What happens after deletion?" %}
+          </h6>
+          <ul class="mb-0 small text-muted">
+            <li>{% translate "The assignment record will be permanently removed" %}</li>
+            <li>{% translate "All associated workdays will be deleted" %}</li>
+            <li>{% translate "The vehicle will become available for new assignments" %}</li>
+            <li>{% translate "The driver will become available for new assignments" %}</li>
+            <li>{% translate "This action cannot be undone" %}</li>
+            <li>{% translate "An audit log entry will be created" %}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

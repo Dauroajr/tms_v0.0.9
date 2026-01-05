@@ -52,7 +52,7 @@ class VehicleForm(forms.ModelForm):
             "year",
             "color",
             "capacity_kg",
-            "capacity_m3",
+            "capacity_m3_or_liters",
             "fuel_type",
             "chassis_number",
             "renavam",
@@ -71,7 +71,7 @@ class VehicleForm(forms.ModelForm):
             "year": forms.NumberInput(attrs={"class": "form-control"}),
             "color": forms.Select(attrs={"class": "form-control"}),
             "capacity_kg": forms.NumberInput(attrs={"class": "form-control"}),
-            "capacity_m3": forms.NumberInput(attrs={"class": "form-control"}),
+            "capacity_m3_or_liters": forms.NumberInput(attrs={"class": "form-control"}),
             "fuel_type": forms.Select(attrs={"class": "form-control"}),
             "chassis_number": forms.TextInput(attrs={"class": "form-control"}),
             "renavam": forms.TextInput(attrs={"class": "form-control"}),
@@ -227,13 +227,70 @@ class VehicleAssignmentForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
         # Só filtra se for criação (instance é None ou não tem pk)
         if not self.instance or not self.instance.pk:
-            self.fields["vehicle"].queryset = Vehicle.objects.filter(status="active")
+            # Filtros serão aplicados pela view
+            pass
 
-            self.fields["driver"].queryset = Employee.objects.filter(
-                employee_type="driver", status="active"
-            )
+        # Adiciona classes de validação do Bootstrap
+        for field_name, field in self.fields.items():
+            if field.required:
+                field.widget.attrs["required"] = True
+
+    def clean(self):
+        """Validate assignment data."""
+        cleaned_data = super().clean()
+        vehicle = cleaned_data.get("vehicle")
+        driver = cleaned_data.get("driver")
+        start_date = cleaned_data.get("start_date")
+        end_date = cleaned_data.get("end_date")
+        is_active = cleaned_data.get("is_active", True)
+
+        # Validate end_date is after start_date
+        if start_date and end_date:
+            if end_date < start_date:
+                raise forms.ValidationError(_("End date cannot be before start date."))
+
+        # Only validate conflicts for new assignments or active assignments
+        if is_active and not (self.instance and self.instance.pk):
+            # Check if vehicle has active assignment
+            if vehicle:
+                existing_vehicle = VehicleAssignment.objects.filter(
+                    vehicle=vehicle, is_active=True
+                ).exclude(pk=self.instance.pk if self.instance else None)
+
+                if existing_vehicle.exists():
+                    raise forms.ValidationError(
+                        _("This vehicle already has an active assignment.")
+                    )
+
+            # Check if driver has active assignment
+            if driver:
+                existing_driver = VehicleAssignment.objects.filter(
+                    driver=driver, is_active=True
+                ).exclude(pk=self.instance.pk if self.instance else None)
+
+                if existing_driver.exists():
+                    raise forms.ValidationError(
+                        _("This driver already has an active assignment.")
+                    )
+
+        return cleaned_data
+
+    def clean_daily_rate(self):
+        """Validate daily rate."""
+        daily_rate = self.cleaned_data.get("daily_rate")
+        if daily_rate and daily_rate <= 0:
+            raise forms.ValidationError(_("Daily rate must be greater than zero."))
+        return daily_rate
+
+    def clean_estimated_days(self):
+        """Validate estimated days."""
+        estimated_days = self.cleaned_data.get("estimated_days")
+        if estimated_days and estimated_days < 1:
+            raise forms.ValidationError(_("Estimated days must be at least 1."))
+        return estimated_days
 
 
 # Adicione este form no fleet/forms.py

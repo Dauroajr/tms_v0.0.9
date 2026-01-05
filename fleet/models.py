@@ -302,12 +302,12 @@ class Vehicle(TenantAwareModel):
         help_text=_("Load capacity in kilograms"),
     )
 
-    capacity_m3 = models.DecimalField(
+    capacity_m3_or_liters = models.DecimalField(
         max_digits=10,
         decimal_places=2,
         blank=True,
         null=True,
-        help_text=_("Volume capacity in cubic meters"),
+        help_text=_("Volume capacity in cubic meters or liters"),
     )
 
     fuel_type = models.CharField(

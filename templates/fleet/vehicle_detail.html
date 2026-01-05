@@ -113,8 +113,8 @@
             <div class="col-md-6">
               <label class="text-muted small">{% translate "Volume Capacity" %}</label>
               <p class="mb-0">
-                {% if vehicle.capacity_m3 %}
-                {{ vehicle.capacity_m3|localize }} m³
+                {% if vehicle.capacity_m3_or_liters %}
+                {{ vehicle.capacity_m3_or_liters|localize }} m³
                 {% else %}
                 <span class="text-muted">-</span>
                 {% endif %}

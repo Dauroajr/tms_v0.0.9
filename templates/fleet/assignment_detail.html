@@ -122,9 +122,8 @@
             <div class="col-md-12">
               <small class="text-muted">
                 <i class="bi bi-info-circle"></i>
-                {% translate "Overtime rate" %}: <strong>R$ {{
-                  assignment.daily_rate|floatformat:2|add:"0"|mul:"0.10"|floatformat:2 }}</strong> {% translate "per
-                hour (10% of daily rate)" %}
+                {% translate "Overtime rate" %}: <strong>R$ {{ assignment.daily_rate|floatformat:2 }}</strong> × 10% =
+                <strong>R$ {% widthratio assignment.daily_rate 10 1 %}</strong> {% translate "per hour" %}
               </small>
             </div>
           </div>
@@ -151,13 +150,13 @@
             </div>
             <div class="col-md-3">
               <div class="text-center">
-                <h3 class="mb-0">{{ assignment.workdays.filter.status='pending'.count }}</h3>
+                <h3 class="mb-0">{{ pending_workdays }}</h3>
                 <small class="text-muted">{% translate "Pending" %}</small>
               </div>
             </div>
             <div class="col-md-3">
               <div class="text-center">
-                <h3 class="mb-0">{{ assignment.workdays.filter.status='approved'.count }}</h3>
+                <h3 class="mb-0">{{ approved_workdays }}</h3>
                 <small class="text-muted">{% translate "Approved" %}</small>
               </div>
             </div>

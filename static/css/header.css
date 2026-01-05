@@ -29,6 +29,7 @@ header {
   flex-grow: 1;
   /* Allow the title to take up available space */
   text-align: center;
+  color: aliceblue
 }
 
 h1.header-title {

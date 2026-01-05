@@ -13,169 +13,634 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('personnel', '0001_initial'),
-        ('tenants', '0001_initial'),
+        ("personnel", "0001_initial"),
+        ("tenants", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='VehicleBrand',
+            name="VehicleBrand",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(help_text='Brand name (e.g., Jeep, Mercedes)', max_length=100)),
-                ('country', models.CharField(blank=True, help_text='Country of origin', max_length=50)),
-                ('logo', models.ImageField(blank=True, null=True, upload_to='fleet/logos/brands')),
-                ('is_active', models.BooleanField(default=True, help_text='Is this brand active?')),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "name",
+                    models.CharField(
+                        help_text="Brand name (e.g., Jeep, Mercedes)", max_length=100
+                    ),
+                ),
+                (
+                    "country",
+                    models.CharField(
+                        blank=True, help_text="Country of origin", max_length=50
+                    ),
+                ),
+                (
+                    "logo",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="fleet/logos/brands"
+                    ),
+                ),
+                (
+                    "is_active",
+                    models.BooleanField(
+                        default=True, help_text="Is this brand active?"
+                    ),
+                ),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Vehicle Brand',
-                'verbose_name_plural': 'Vehicle Brands',
-                'ordering': ['name'],
+                "verbose_name": "Vehicle Brand",
+                "verbose_name_plural": "Vehicle Brands",
+                "ordering": ["name"],
             },
         ),
         migrations.CreateModel(
-            name='Vehicle',
+            name="Vehicle",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('type', models.CharField(choices=[('truck', 'Truck'), ('van', 'Van'), ('trailer', 'Trailer'), ('semi_trailer', 'Semi Trailer'), ('pickup', 'Pickup'), ('motorcycle', 'Motorcycle'), ('SUV', 'SUV'), ('minivan', 'Minivan'), ('sedan', 'Sedan'), ('other', 'Other')], default=None, max_length=20)),
-                ('model', models.CharField(help_text='Vehicle Model', max_length=100)),
-                ('plate', models.CharField(help_text='Vehicle plate (e.g ABC1D23)', max_length=10, unique=True, validators=[django.core.validators.RegexValidator('^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$', 'Enter a valid plate (ABC1D23 format).')])),
-                ('year', models.PositiveIntegerField(help_text='Manufacturing Year')),
-                ('color', models.CharField(blank=True, choices=[('black', 'Black'), ('blue', 'Blue'), ('brown', 'Brown'), ('carbon', 'Carbon'), ('darkblue', 'Dark Blue'), ('darkgreen', 'Dark Green'), ('gold', 'Gold'), ('grafite', 'Grafite'), ('green', 'Green'), ('grey', 'Grey'), ('indigo', 'Indigo'), ('maroon', 'Maroon'), ('orange', 'Orange'), ('pink', 'Pink'), ('purple', 'Purple'), ('red', 'Red'), ('silver', 'Silver'), ('violet', 'Violet'), ('white', 'White'), ('yellow', 'Yellow'), ('other', 'Other')], max_length=30)),
-                ('capacity_kg', models.DecimalField(blank=True, decimal_places=2, help_text='Load capacity in kilograms', max_digits=10, null=True)),
-                ('capacity_m3', models.DecimalField(blank=True, decimal_places=2, help_text='Volume capacity in cubic meters', max_digits=10, null=True)),
-                ('fuel_type', models.CharField(choices=[('diesel', 'Diesel'), ('gasoline', 'Gasoline'), ('ethanol', 'Ethanol'), ('flex', 'Flex'), ('electric', 'Electric'), ('hybrid', 'Hybrid')], default='diesel', max_length=20)),
-                ('chassis_number', models.CharField(max_length=50, unique=True, verbose_name='Chassis Number')),
-                ('renavam', models.CharField(help_text='RENAVAM number', max_length=11, unique=True)),
-                ('status', models.CharField(choices=[('active', 'Active'), ('maintenance', 'In Maintenance'), ('inactive', 'Inactive'), ('available', 'Available'), ('unavailable', 'Unavailable'), ('sold', 'Sold')], default='active', max_length=20)),
-                ('purchase_date', models.DateField(blank=True, null=True)),
-                ('purchase_value', models.DecimalField(blank=True, decimal_places=2, max_digits=12, null=True)),
-                ('current_km', models.PositiveIntegerField(default=0, help_text='Current odometer reading')),
-                ('last_maintenance_km', models.PositiveIntegerField(blank=True, default=0, null=True)),
-                ('next_maintenance_km', models.PositiveIntegerField(blank=True, null=True)),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
-                ('brand', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='fleet.vehiclebrand')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "type",
+                    models.CharField(
+                        choices=[
+                            ("truck", "Truck"),
+                            ("van", "Van"),
+                            ("trailer", "Trailer"),
+                            ("semi_trailer", "Semi Trailer"),
+                            ("pickup", "Pickup"),
+                            ("motorcycle", "Motorcycle"),
+                            ("SUV", "SUV"),
+                            ("minivan", "Minivan"),
+                            ("sedan", "Sedan"),
+                            ("other", "Other"),
+                        ],
+                        default=None,
+                        max_length=20,
+                    ),
+                ),
+                ("model", models.CharField(help_text="Vehicle Model", max_length=100)),
+                (
+                    "plate",
+                    models.CharField(
+                        help_text="Vehicle plate (e.g ABC1D23)",
+                        max_length=10,
+                        unique=True,
+                        validators=[
+                            django.core.validators.RegexValidator(
+                                "^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$",
+                                "Enter a valid plate (ABC1D23 format).",
+                            )
+                        ],
+                    ),
+                ),
+                ("year", models.PositiveIntegerField(help_text="Manufacturing Year")),
+                (
+                    "color",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("black", "Black"),
+                            ("blue", "Blue"),
+                            ("brown", "Brown"),
+                            ("carbon", "Carbon"),
+                            ("darkblue", "Dark Blue"),
+                            ("darkgreen", "Dark Green"),
+                            ("gold", "Gold"),
+                            ("grafite", "Grafite"),
+                            ("green", "Green"),
+                            ("grey", "Grey"),
+                            ("indigo", "Indigo"),
+                            ("maroon", "Maroon"),
+                            ("orange", "Orange"),
+                            ("pink", "Pink"),
+                            ("purple", "Purple"),
+                            ("red", "Red"),
+                            ("silver", "Silver"),
+                            ("violet", "Violet"),
+                            ("white", "White"),
+                            ("yellow", "Yellow"),
+                            ("other", "Other"),
+                        ],
+                        max_length=30,
+                    ),
+                ),
+                (
+                    "capacity_kg",
+                    models.DecimalField(
+                        blank=True,
+                        decimal_places=2,
+                        help_text="Load capacity in kilograms",
+                        max_digits=10,
+                        null=True,
+                    ),
+                ),
+                (
+                    "capacity_m3_or_liters",
+                    models.DecimalField(
+                        blank=True,
+                        decimal_places=2,
+                        help_text="Volume capacity in cubic meters",
+                        max_digits=10,
+                        null=True,
+                    ),
+                ),
+                (
+                    "fuel_type",
+                    models.CharField(
+                        choices=[
+                            ("diesel", "Diesel"),
+                            ("gasoline", "Gasoline"),
+                            ("ethanol", "Ethanol"),
+                            ("flex", "Flex"),
+                            ("electric", "Electric"),
+                            ("hybrid", "Hybrid"),
+                        ],
+                        default="diesel",
+                        max_length=20,
+                    ),
+                ),
+                (
+                    "chassis_number",
+                    models.CharField(
+                        max_length=50, unique=True, verbose_name="Chassis Number"
+                    ),
+                ),
+                (
+                    "renavam",
+                    models.CharField(
+                        help_text="RENAVAM number", max_length=11, unique=True
+                    ),
+                ),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[
+                            ("active", "Active"),
+                            ("maintenance", "In Maintenance"),
+                            ("inactive", "Inactive"),
+                            ("available", "Available"),
+                            ("unavailable", "Unavailable"),
+                            ("sold", "Sold"),
+                        ],
+                        default="active",
+                        max_length=20,
+                    ),
+                ),
+                ("purchase_date", models.DateField(blank=True, null=True)),
+                (
+                    "purchase_value",
+                    models.DecimalField(
+                        blank=True, decimal_places=2, max_digits=12, null=True
+                    ),
+                ),
+                (
+                    "current_km",
+                    models.PositiveIntegerField(
+                        default=0, help_text="Current odometer reading"
+                    ),
+                ),
+                (
+                    "last_maintenance_km",
+                    models.PositiveIntegerField(blank=True, default=0, null=True),
+                ),
+                (
+                    "next_maintenance_km",
+                    models.PositiveIntegerField(blank=True, null=True),
+                ),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "brand",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        to="fleet.vehiclebrand",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Vehicle',
-                'verbose_name_plural': 'Vehicles',
-                'ordering': ['plate'],
+                "verbose_name": "Vehicle",
+                "verbose_name_plural": "Vehicles",
+                "ordering": ["plate"],
             },
         ),
         migrations.CreateModel(
-            name='VehicleDocument',
+            name="VehicleDocument",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('document_type', models.CharField(choices=[('crlv', 'CRLV (Vehicle Registration)'), ('insurance', 'Insurance'), ('antt', 'ANTT Registration'), ('inspection', 'Vehicle Inspection'), ('emission', 'Emission Certificate'), ('other', 'Other')], max_length=20)),
-                ('document_number', models.CharField(blank=True, max_length=50)),
-                ('issue_date', models.DateField(verbose_name='Issue Date')),
-                ('expiry_date', models.DateField(blank=True, null=True)),
-                ('issuing_authority', models.CharField(blank=True, max_length=100)),
-                ('file', models.FileField(blank=True, null=True, upload_to='fleet/vehicle_documents/')),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
-                ('vehicle', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='documents', to='fleet.vehicle')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "document_type",
+                    models.CharField(
+                        choices=[
+                            ("crlv", "CRLV (Vehicle Registration)"),
+                            ("insurance", "Insurance"),
+                            ("antt", "ANTT Registration"),
+                            ("inspection", "Vehicle Inspection"),
+                            ("emission", "Emission Certificate"),
+                            ("other", "Other"),
+                        ],
+                        max_length=20,
+                    ),
+                ),
+                ("document_number", models.CharField(blank=True, max_length=50)),
+                ("issue_date", models.DateField(verbose_name="Issue Date")),
+                ("expiry_date", models.DateField(blank=True, null=True)),
+                ("issuing_authority", models.CharField(blank=True, max_length=100)),
+                (
+                    "file",
+                    models.FileField(
+                        blank=True, null=True, upload_to="fleet/vehicle_documents/"
+                    ),
+                ),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "vehicle",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="documents",
+                        to="fleet.vehicle",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Vehicle Document',
-                'verbose_name_plural': 'Vehicle Documents',
-                'ordering': ['-issue_date'],
+                "verbose_name": "Vehicle Document",
+                "verbose_name_plural": "Vehicle Documents",
+                "ordering": ["-issue_date"],
             },
         ),
         migrations.CreateModel(
-            name='MaintenanceRecord',
+            name="MaintenanceRecord",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('maintenance_type', models.CharField(choices=[('preventive', 'Preventive Maintenance'), ('corrective', 'Corrective Maintenance'), ('inspection', 'Inspection'), ('tire_change', 'Tire Change'), ('oil_change', 'Oil Change'), ('brake_service', 'Brake Service'), ('other', 'Other')], max_length=30)),
-                ('status', models.CharField(choices=[('scheduled', 'Scheduled'), ('in_progress', 'In Progress'), ('completed', 'Completed'), ('cancelled', 'Cancelled')], default='scheduled', max_length=30)),
-                ('scheduled_date', models.DateTimeField()),
-                ('completed_date', models.DateTimeField()),
-                ('odometer_reading', models.PositiveIntegerField(help_text='odometer km at maintenance.')),
-                ('next_maintenance_km', models.PositiveIntegerField(blank=True, null=True)),
-                ('description', models.TextField()),
-                ('service_provider', models.CharField(blank=True, max_length=250)),
-                ('cost', models.DecimalField(blank=True, decimal_places=2, max_digits=12, null=True)),
-                ('parts_replaced', models.TextField(blank=True, help_text='List of parts replaced.')),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
-                ('vehicle', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='maintenance_records', to='fleet.vehicle')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "maintenance_type",
+                    models.CharField(
+                        choices=[
+                            ("preventive", "Preventive Maintenance"),
+                            ("corrective", "Corrective Maintenance"),
+                            ("inspection", "Inspection"),
+                            ("tire_change", "Tire Change"),
+                            ("oil_change", "Oil Change"),
+                            ("brake_service", "Brake Service"),
+                            ("other", "Other"),
+                        ],
+                        max_length=30,
+                    ),
+                ),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[
+                            ("scheduled", "Scheduled"),
+                            ("in_progress", "In Progress"),
+                            ("completed", "Completed"),
+                            ("cancelled", "Cancelled"),
+                        ],
+                        default="scheduled",
+                        max_length=30,
+                    ),
+                ),
+                ("scheduled_date", models.DateTimeField()),
+                ("completed_date", models.DateTimeField()),
+                (
+                    "odometer_reading",
+                    models.PositiveIntegerField(
+                        help_text="odometer km at maintenance."
+                    ),
+                ),
+                (
+                    "next_maintenance_km",
+                    models.PositiveIntegerField(blank=True, null=True),
+                ),
+                ("description", models.TextField()),
+                ("service_provider", models.CharField(blank=True, max_length=250)),
+                (
+                    "cost",
+                    models.DecimalField(
+                        blank=True, decimal_places=2, max_digits=12, null=True
+                    ),
+                ),
+                (
+                    "parts_replaced",
+                    models.TextField(blank=True, help_text="List of parts replaced."),
+                ),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "vehicle",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="maintenance_records",
+                        to="fleet.vehicle",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Maintenance Record',
-                'verbose_name_plural': 'Maintenance Records',
-                'ordering': ['-scheduled_date'],
-                'indexes': [models.Index(fields=['vehicle', 'status'], name='fleet_maint_vehicle_f43fe7_idx'), models.Index(fields=['scheduled_date'], name='fleet_maint_schedul_8d88d3_idx')],
+                "verbose_name": "Maintenance Record",
+                "verbose_name_plural": "Maintenance Records",
+                "ordering": ["-scheduled_date"],
+                "indexes": [
+                    models.Index(
+                        fields=["vehicle", "status"],
+                        name="fleet_maint_vehicle_f43fe7_idx",
+                    ),
+                    models.Index(
+                        fields=["scheduled_date"], name="fleet_maint_schedul_8d88d3_idx"
+                    ),
+                ],
             },
         ),
         migrations.CreateModel(
-            name='VehicleAssignment',
+            name="VehicleAssignment",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('start_date', models.DateField(default=django.utils.timezone.now)),
-                ('end_date', models.DateField(blank=True, null=True)),
-                ('is_active', models.BooleanField(default=True)),
-                ('notes', models.TextField(blank=True)),
-                ('created_by', models.ForeignKey(blank=True, help_text='User who created this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_created', to=settings.AUTH_USER_MODEL)),
-                ('driver', models.ForeignKey(limit_choices_to={'employee_type': 'driver'}, on_delete=django.db.models.deletion.CASCADE, related_name='vehicle_assignments', to='personnel.employee')),
-                ('tenant', models.ForeignKey(blank=True, help_text='Tenant that owns this record', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_set', to='tenants.tenant')),
-                ('updated_by', models.ForeignKey(blank=True, help_text='User who last updated this record', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='%(class)s_updated', to=settings.AUTH_USER_MODEL)),
-                ('vehicle', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='assignments', to='fleet.vehicle')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                ("start_date", models.DateField(default=django.utils.timezone.now)),
+                ("end_date", models.DateField(blank=True, null=True)),
+                ("is_active", models.BooleanField(default=True)),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who created this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_created",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "driver",
+                    models.ForeignKey(
+                        limit_choices_to={"employee_type": "driver"},
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="vehicle_assignments",
+                        to="personnel.employee",
+                    ),
+                ),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="Tenant that owns this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="%(class)s_set",
+                        to="tenants.tenant",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        help_text="User who last updated this record",
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="%(class)s_updated",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "vehicle",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="assignments",
+                        to="fleet.vehicle",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Vehicle Assignment',
-                'verbose_name_plural': 'Vehicle Assignments',
-                'ordering': ['-start_date'],
-                'indexes': [models.Index(fields=['vehicle', 'is_active'], name='fleet_vehic_vehicle_4a38f8_idx'), models.Index(fields=['driver', 'is_active'], name='fleet_vehic_driver__4d4c1c_idx')],
+                "verbose_name": "Vehicle Assignment",
+                "verbose_name_plural": "Vehicle Assignments",
+                "ordering": ["-start_date"],
+                "indexes": [
+                    models.Index(
+                        fields=["vehicle", "is_active"],
+                        name="fleet_vehic_vehicle_4a38f8_idx",
+                    ),
+                    models.Index(
+                        fields=["driver", "is_active"],
+                        name="fleet_vehic_driver__4d4c1c_idx",
+                    ),
+                ],
             },
         ),
         migrations.AddIndex(
-            model_name='vehiclebrand',
-            index=models.Index(fields=['tenant', 'name'], name='fleet_vehic_tenant__a963ee_idx'),
+            model_name="vehiclebrand",
+            index=models.Index(
+                fields=["tenant", "name"], name="fleet_vehic_tenant__a963ee_idx"
+            ),
         ),
         migrations.AddIndex(
-            model_name='vehiclebrand',
-            index=models.Index(fields=['is_active'], name='fleet_vehic_is_acti_1c61eb_idx'),
+            model_name="vehiclebrand",
+            index=models.Index(
+                fields=["is_active"], name="fleet_vehic_is_acti_1c61eb_idx"
+            ),
         ),
         migrations.AlterUniqueTogether(
-            name='vehiclebrand',
-            unique_together={('tenant', 'name')},
+            name="vehiclebrand",
+            unique_together={("tenant", "name")},
         ),
         migrations.AddIndex(
-            model_name='vehicle',
-            index=models.Index(fields=['tenant', 'status'], name='fleet_vehic_tenant__6f675a_idx'),
+            model_name="vehicle",
+            index=models.Index(
+                fields=["tenant", "status"], name="fleet_vehic_tenant__6f675a_idx"
+            ),
         ),
         migrations.AddIndex(
-            model_name='vehicle',
-            index=models.Index(fields=['plate'], name='fleet_vehic_plate_7d010e_idx'),
+            model_name="vehicle",
+            index=models.Index(fields=["plate"], name="fleet_vehic_plate_7d010e_idx"),
         ),
         migrations.AddIndex(
-            model_name='vehicledocument',
-            index=models.Index(fields=['vehicle', 'document_type'], name='fleet_vehic_vehicle_89df13_idx'),
+            model_name="vehicledocument",
+            index=models.Index(
+                fields=["vehicle", "document_type"],
+                name="fleet_vehic_vehicle_89df13_idx",
+            ),
         ),
         migrations.AddIndex(
-            model_name='vehicledocument',
-            index=models.Index(fields=['expiry_date'], name='fleet_vehic_expiry__020259_idx'),
+            model_name="vehicledocument",
+            index=models.Index(
+                fields=["expiry_date"], name="fleet_vehic_expiry__020259_idx"
+            ),
         ),
     ]

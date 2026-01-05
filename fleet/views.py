@@ -373,6 +373,9 @@ class VehicleAssignmentListView(TenantAwareListView):
         return context
 
 
+# Adicione/substitua esta view em fleet/views.py
+
+
 class VehicleAssignmentCreateView(TenantAdminRequiredMixin, TenantAwareCreateView):
     """Create a new vehicle assignment."""
 
@@ -392,13 +395,13 @@ class VehicleAssignmentCreateView(TenantAdminRequiredMixin, TenantAwareCreateVie
             .select_related("brand")
         )
 
-        # Filter drivers (only active drivers)
+        # Filter drivers (only active drivers without active assignments)
         from personnel.models import Employee
 
         form.fields["driver"].queryset = Employee.objects.filter(
             tenant=self.request.tenant,
             employee_type="driver",
-            status="active",  # ← Mude aqui também
+            status="active",
         ).exclude(vehicle_assignments__is_active=True)
 
         return form
@@ -406,6 +409,12 @@ class VehicleAssignmentCreateView(TenantAdminRequiredMixin, TenantAwareCreateVie
     def form_valid(self, form):
         """Handle successful form submission."""
         assignment = form.instance
+
+        # A validação e salvamento do tenant é feito pelo TenantAwareCreateView
+        # Mas vamos garantir que está setado
+        if not assignment.tenant_id:
+            assignment.tenant = self.request.tenant
+
         messages.success(
             self.request,
             _("Vehicle {vehicle} assigned to {driver} successfully.").format(
@@ -417,7 +426,17 @@ class VehicleAssignmentCreateView(TenantAdminRequiredMixin, TenantAwareCreateVie
     def form_invalid(self, form):
         """Handle invalid form submission."""
         messages.error(self.request, _("Please correct the errors below."))
+
+        # Log dos erros para debug
+        import logging
+
+        logger = logging.getLogger(__name__)
+        logger.error(f"Assignment form errors: {form.errors}")
+
         return super().form_invalid(form)
+
+
+# Substitua esta view em fleet/views.py
 
 
 class VehicleAssignmentDetailView(TenantAwareDetailView):
@@ -443,6 +462,18 @@ class VehicleAssignmentDetailView(TenantAwareDetailView):
         else:
             duration = (timezone.now().date() - assignment.start_date).days
             context["assignment_duration"] = duration
+
+        # Workday statistics - ADICIONADO
+        context["pending_workdays"] = assignment.workdays.filter(
+            status="pending"
+        ).count()
+        context["approved_workdays"] = assignment.workdays.filter(
+            status="approved"
+        ).count()
+        context["paid_workdays"] = assignment.workdays.filter(status="paid").count()
+        context["rejected_workdays"] = assignment.workdays.filter(
+            status="rejected"
+        ).count()
 
         return context
 
@@ -507,6 +538,9 @@ class VehicleAssignmentEndView(TenantAdminRequiredMixin, TenantAwareUpdateView):
         return super().form_valid(form)
 
 
+# Substitua/verifique esta view em fleet/views.py
+
+
 class VehicleAssignmentDeleteView(TenantAdminRequiredMixin, TenantAwareDeleteView):
     """Delete a vehicle assignment."""
 
@@ -514,16 +548,54 @@ class VehicleAssignmentDeleteView(TenantAdminRequiredMixin, TenantAwareDeleteVie
     template_name = "fleet/assignment_confirm_delete.html"
     success_url = reverse_lazy("fleet:assignment_list")
 
+    def dispatch(self, request, *args, **kwargs):
+        """Check if assignment can be deleted."""
+        assignment = self.get_object()
+
+        # Check if there are paid workdays
+        paid_workdays = assignment.workdays.filter(status="paid").count()
+        if paid_workdays > 0:
+            messages.error(
+                request,
+                _(
+                    "Cannot delete assignment with {count} paid workday(s). "
+                    "Please contact your administrator."
+                ).format(count=paid_workdays),
+            )
+            return redirect("fleet:assignment_detail", pk=assignment.pk)
+
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        """Add additional context."""
+        context = super().get_context_data(**kwargs)
+        assignment = self.object
+
+        # Add workday counts
+        context["total_workdays"] = assignment.workdays.count()
+        context["paid_workdays"] = assignment.workdays.filter(status="paid").count()
+        context["approved_workdays"] = assignment.workdays.filter(
+            status="approved"
+        ).count()
+        context["pending_workdays"] = assignment.workdays.filter(
+            status="pending"
+        ).count()
+
+        return context
+
     def delete(self, request, *args, **kwargs):
         """Handle delete with message."""
         assignment = self.get_object()
+        driver_name = assignment.driver.full_name
+        vehicle_plate = assignment.vehicle.plate
+        workdays_count = assignment.workdays.count()
+
         messages.success(
             request,
             _(
-                "Assignment of {driver} to vehicle {vehicle} deleted successfully."
-            ).format(
-                driver=assignment.driver.full_name, vehicle=assignment.vehicle.plate
-            ),
+                "Assignment of {driver} to vehicle {vehicle} deleted successfully. "
+                "{count} workday(s) were also removed."
+            ).format(driver=driver_name, vehicle=vehicle_plate, count=workdays_count),
         )
         return super().delete(request, *args, **kwargs)
 

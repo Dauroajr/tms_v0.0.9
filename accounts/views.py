@@ -148,7 +148,7 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         """Process valid profile update."""
-        messages.success(self.request, _("Ypur profile has been updated successfully."))
+        messages.success(self.request, _("Your profile has been updated successfully."))
         return super().form_valid(form)
 
     def form_invalid(self, form):

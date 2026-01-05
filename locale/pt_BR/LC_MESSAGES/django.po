@@ -1,0 +1,4261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-02 17:53-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\accounts\admin.py:59
+msgid "Personal Info"
+msgstr "Informações Pessoais"
+
+#: .\accounts\admin.py:67
+msgid "Document Information"
+msgstr "Informações de Documentos"
+
+#: .\accounts\admin.py:73
+msgid "Tenant Information"
+msgstr "Informações de Cliente"
+
+#: .\accounts\admin.py:79 .\tenants\admin.py:165
+msgid "Permissions"
+msgstr "Permissões"
+
+#: .\accounts\admin.py:89
+msgid "Important Dates"
+msgstr "Datas Importantes"
+
+#: .\accounts\forms.py:92
+msgid "This E-mail is already in use. Please use a different e-mail."
+msgstr "Este e-mail já está em uso. Por favor, use um e-mail diferente."
+
+#: .\accounts\forms.py:100
+msgid "This document number is already registered."
+msgstr "Este número de documento já está em uso"
+
+#: .\accounts\forms.py:112
+msgid "Both document type and number must be provided together."
+msgstr "O tipo e o número do documento devem ser informados juntos."
+
+#: .\accounts\forms.py:161
+msgid "This e-mail is already in use."
+msgstr "Este e-mail já está em uso."
+
+#: .\accounts\forms.py:171
+msgid "This document is already in use."
+msgstr "Este documento já está em uso."
+
+#: .\accounts\models.py:26
+msgid "Currently active tenant for this user"
+msgstr "Empresa ativa para este usuário."
+
+#: .\accounts\models.py:34 .\tenants\models.py:49
+msgid "Unique identifier like SSN or Tax ID, CPF or CNPJ"
+msgstr "Identificador único, como CPF ou CNPJ."
+
+#: .\accounts\models.py:129
+msgid "CPF must have 11 digits."
+msgstr "CPF deve conter 11 dígitos."
+
+#: .\accounts\models.py:133 .\accounts\models.py:140
+msgid "Invalid CPF number."
+msgstr "Número de CPF inválido."
+
+#: .\accounts\models.py:148
+msgid "CNPJ must have 14 digits."
+msgstr "CNPJ deve conter 14 dígitos."
+
+#: .\accounts\models.py:152 .\accounts\models.py:162
+msgid "Invalid CNPJ."
+msgstr "CNPJ inválido."
+
+#: .\accounts\views.py:44
+#, python-brace-format
+msgid "Registration successfull! Welcome, {name}!"
+msgstr "Cadastramento realizado com sucesso! Bem vindo, {name}"
+
+#: .\accounts\views.py:52 .\accounts\views.py:156 .\fleet\views.py:230
+#: .\fleet\views.py:249 .\fleet\views.py:428 .\personnel\views.py:143
+msgid "Please correct the errors below."
+msgstr "Por favor, corrija os erros abaixo."
+
+#: .\accounts\views.py:75
+msgid "Welcome! Please create your first organization."
+msgstr "Bem vindo! Por favor, registre sua primeira organização."
+
+#: .\accounts\views.py:83
+#, python-brace-format
+msgid "Welcome back, {name}!"
+msgstr "Bem vindo de volta, {name}!"
+
+#: .\accounts\views.py:99 .\accounts\views.py:106
+msgid "You have been logged out successfully."
+msgstr "Logoff realizado com sucesso."
+
+#: .\accounts\views.py:151
+#, fuzzy
+#| msgid "Ypur profile has been updated successfully."
+msgid "Your profile has been updated successfully."
+msgstr "Seu perfil foi atualizado com sucesso!"
+
+#: .\accounts\views.py:180
+#, python-brace-format
+msgid ""
+"Cannot delete account. You are the sole owner of: {tenants}. Please transfer "
+"opwnership or delete these organizations first."
+msgstr ""
+
+#: .\accounts\views.py:192
+msgid "Your account has been deactiveted successfully."
+msgstr "Sua empresa foi desativada com sucesso."
+
+#: .\audit\admin.py:53 .\fleet\admin.py:103 .\personnel\admin.py:93
+#: .\templates\audit\log_detail.html:27
+#: .\templates\fleet\vehicle_detail.html:41
+#: .\templates\fleet\vehicle_form.html:57 .\tenants\admin.py:59
+msgid "Basic Information"
+msgstr "Informaçoes Básicas"
+
+#: .\audit\admin.py:54
+msgid "Action Details"
+msgstr "Detalhes de Ações"
+
+#: .\audit\admin.py:55 .\audit\admin.py:118
+#: .\templates\audit\log_detail.html:74
+msgid "Changes"
+msgstr "Alterações"
+
+#: .\audit\admin.py:57 .\templates\audit\log_detail.html:89
+msgid "Request Information"
+msgstr "Informações da Requisição"
+
+#: .\audit\admin.py:77
+msgid "Tenant"
+msgstr "Empresa"
+
+#: .\audit\admin.py:83 .\templates\audit\log_detail.html:45
+#: .\templates\audit\log_list.html:127
+msgid "System"
+msgstr "Sistema"
+
+#: .\audit\admin.py:85 .\templates\audit\log_detail.html:38
+#: .\templates\audit\log_list.html:60 .\templates\audit\log_list.html:108
+#: .\tenants\admin.py:177 .\tenants\models.py:92
+msgid "User"
+msgstr "Usuário"
+
+#: .\audit\admin.py:103 .\templates\audit\log_detail.html:49
+#: .\templates\audit\log_list.html:36 .\templates\audit\log_list.html:109
+msgid "Action"
+msgstr "Ação"
+
+#: .\audit\admin.py:108
+msgid "No changes recorded."
+msgstr "Nenhuma alteração salva."
+
+#: .\audit\models.py:12
+msgid "Create"
+msgstr "Criar"
+
+#: .\audit\models.py:13
+msgid "Update"
+msgstr "Atualizar"
+
+#: .\audit\models.py:14 .\templates\fleet\assignment_detail.html:295
+#: .\templates\fleet\assignment_list.html:180
+#: .\templates\fleet\vehicle_list.html:186
+#: .\templates\fleet\workday_detail.html:298
+#: .\templates\fleet\workday_list.html:225
+#: .\templates\personnel\employee_list.html:206
+msgid "Delete"
+msgstr "Deletar"
+
+#: .\audit\models.py:15 .\templates\accounts\profile.html:115
+#: .\templates\audit\log_list.html:158
+msgid "View"
+msgstr "Visualizar"
+
+#: .\audit\models.py:16 .\templates\components\_navbar.html:163
+msgid "Login"
+msgstr "Entrar"
+
+#: .\audit\models.py:17 .\templates\components\_navbar.html:155
+msgid "Logout"
+msgstr "Sair"
+
+#: .\audit\models.py:18
+msgid "Permission Change"
+msgstr "Alteração de Permissão"
+
+#: .\audit\views.py:30 .\audit\views.py:130 .\audit\views.py:159
+msgid "Tenant required"
+msgstr "Empresa necessária"
+
+#: .\audit\views.py:40
+msgid "Only owners and admins can view audit logs."
+msgstr ""
+"Somente proprietários e administradores podem visualizar logs de auditoria."
+
+#: .\audit\views.py:42 .\audit\views.py:170 .\tenants\views.py:153
+#: .\tenants\views.py:296
+msgid "You are not a member of this tenant."
+msgstr "Você não é um membro desta empresa."
+
+#: .\audit\views.py:140
+msgid "Only owners and admins can view logs"
+msgstr "Somente proprietários e administradores podem visualizar logs."
+
+#: .\audit\views.py:142
+msgid "You are not a memebr of this tenant."
+msgstr "Você não é um membro desta empresa."
+
+#: .\audit\views.py:168
+msgid "Only owners and admins can export audit logs."
+msgstr "Somente proprietários e administradores podem exportar logs."
+
+#: .\core\mixins.py:13
+msgid "Please select an organization first."
+msgstr "Por favor, selecione uma empresa prineiro."
+
+#: .\core\mixins.py:25
+msgid "Only organitzation owners can access this page."
+msgstr "Somente proprietários de empresas podem acessar esta página."
+
+#: .\core\mixins.py:42
+msgid "Only organization owners and admins can access this page."
+msgstr ""
+"Somente proprietários de empresas e administradores podem acessar esta "
+"página."
+
+#: .\core\mixins.py:57
+msgid "You are not a member of this organization."
+msgstr "Você não é um membro desta empresa."
+
+#: .\core\models.py:46
+msgid "Tenant that owns this record"
+msgstr "Conta proprietária deste registro."
+
+#: .\core\models.py:56
+msgid "User who created this record"
+msgstr "Usuário que criou este registro."
+
+#: .\core\models.py:64
+msgid "User who last updated this record"
+msgstr "Usuário que realizou a última atualização deste registro."
+
+#: .\core\utils.py:22
+msgid "Tenant context is required for this operation."
+msgstr "Um contexto de Conta é necessário para esta operação."
+
+#: .\core\utils.py:164
+msgid "Authentication required."
+msgstr "Autenticação necessária."
+
+#: .\core\utils.py:168
+msgid "You do not have permission to access this organization."
+msgstr "Você não tem permissçao para acessar esta empresa."
+
+#: .\fleet\admin.py:29 .\templates\fleet\brand_form.html:58
+msgid "Brand Information"
+msgstr "Informações de Marca"
+
+#: .\fleet\admin.py:30
+msgid "Statistics"
+msgstr "Estatísticas"
+
+#: .\fleet\admin.py:31 .\fleet\admin.py:124 .\personnel\admin.py:133
+#: .\personnel\admin.py:302 .\personnel\admin.py:425
+#: .\templates\fleet\brand_form.html:129
+#: .\templates\personnel\employee_form.html:330
+msgid "Additional Information"
+msgstr "Informações Adicionais"
+
+#: .\fleet\admin.py:33 .\fleet\admin.py:126 .\personnel\admin.py:135
+#: .\personnel\admin.py:304 .\personnel\admin.py:429
+msgid "Tenant & Metadata"
+msgstr "COnta & Metadados"
+
+#: .\fleet\admin.py:44
+msgid "Vehicles Count"
+msgstr "Contagem de Veículos"
+
+#: .\fleet\admin.py:106 .\templates\fleet\vehicle_detail.html:98
+#: .\templates\fleet\vehicle_form.html:196
+msgid "Specifications"
+msgstr "Especificações"
+
+#: .\fleet\admin.py:107 .\templates\fleet\vehicle_form.html:239
+msgid "Identification"
+msgstr "Identificação"
+
+#: .\fleet\admin.py:109 .\templates\fleet\vehicle_detail.html:140
+#: .\templates\fleet\vehicle_form.html:270
+msgid "Purchase Information"
+msgstr "Informalçoes de Compra"
+
+#: .\fleet\admin.py:113
+msgid "Tracking"
+msgstr "Rastreamento"
+
+#: .\fleet\admin.py:123 .\templates\fleet\vehicle_detail.html:234
+msgid "Current Assignment"
+msgstr "Serviço atual "
+
+#: .\fleet\admin.py:146 .\fleet\admin.py:213 .\fleet\admin.py:254
+#: .\fleet\admin.py:287 .\fleet\models.py:811 .\personnel\admin.py:185
+#: .\personnel\admin.py:502 .\templates\fleet\assignment_confirm_delete.html:61
+#: .\templates\fleet\assignment_detail.html:86
+#: .\templates\fleet\assignment_detail.html:180
+#: .\templates\fleet\assignment_detail.html:255
+#: .\templates\fleet\assignment_list.html:61
+#: .\templates\fleet\assignment_list.html:121
+#: .\templates\fleet\brand_list.html:42
+#: .\templates\fleet\vehicle_confirm_delete.html:45
+#: .\templates\fleet\vehicle_detail.html:53
+#: .\templates\fleet\vehicle_detail.html:324
+#: .\templates\fleet\vehicle_detail.html:375
+#: .\templates\fleet\vehicle_detail.html:431
+#: .\templates\fleet\vehicle_form.html:183
+#: .\templates\fleet\vehicle_list.html:68
+#: .\templates\fleet\vehicle_list.html:118
+#: .\templates\fleet\workday_confirm_delete.html:51
+#: .\templates\fleet\workday_detail.html:47
+#: .\templates\fleet\workday_detail.html:227
+#: .\templates\fleet\workday_list.html:109
+#: .\templates\fleet\workday_list.html:164
+#: .\templates\personnel\employee_confirm_delete.html:50
+#: .\templates\personnel\employee_detail.html:57
+#: .\templates\personnel\employee_detail.html:254
+#: .\templates\personnel\employee_form.html:222
+#: .\templates\personnel\employee_list.html:95
+#: .\templates\personnel\employee_list.html:140 .\tenants\admin.py:243
+#: .\tenants\admin.py:258
+msgid "Status"
+msgstr "Status"
+
+#: .\fleet\admin.py:154 .\fleet\admin.py:166
+#: .\templates\fleet\vehicle_confirm_delete.html:55
+#: .\templates\fleet\vehicle_list.html:119
+msgid "Current Driver"
+msgstr "Motorista Atual"
+
+#: .\fleet\admin.py:177 .\templates\fleet\vehicle_detail.html:168
+msgid "Maintenance Status"
+msgstr "Status da Manutenção"
+
+#: .\fleet\forms.py:209 .\fleet\models.py:345
+#: .\templates\fleet\assignment_detail.html:54
+#: .\templates\fleet\assignment_form.html:63
+#: .\templates\fleet\assignment_list.html:73
+#: .\templates\fleet\assignment_list.html:117
+#: .\templates\fleet\workday_detail.html:100
+#: .\templates\fleet\workday_list.html:158
+#: .\templates\personnel\employee_detail.html:251
+msgid "Vehicle"
+msgstr "Veículo"
+
+#: .\fleet\forms.py:210 .\personnel\models.py:14
+#: .\templates\fleet\assignment_detail.html:46
+#: .\templates\fleet\assignment_form.html:78
+#: .\templates\fleet\assignment_list.html:84
+#: .\templates\fleet\assignment_list.html:116
+#: .\templates\fleet\vehicle_detail.html:428
+#: .\templates\fleet\workday_detail.html:92
+#: .\templates\fleet\workday_list.html:157
+#: .\templates\personnel\employee_detail.html:45
+#: .\templates\personnel\employee_list.html:81
+#: .\templates\personnel\employee_list.html:168
+msgid "Driver"
+msgstr "Motorista"
+
+#: .\fleet\forms.py:211 .\templates\fleet\assignment_confirm_delete.html:47
+#: .\templates\fleet\assignment_detail.html:65
+#: .\templates\fleet\assignment_form.html:100
+#: .\templates\fleet\assignment_list.html:118
+#: .\templates\fleet\vehicle_detail.html:429
+#: .\templates\personnel\employee_detail.html:252
+msgid "Start Date"
+msgstr "Data de Início"
+
+#: .\fleet\forms.py:212
+msgid "End Date (optional)"
+msgstr "Data de Término (opcional)"
+
+#: .\fleet\forms.py:213 .\templates\fleet\assignment_form.html:146
+msgid "Estimated Duration (days)"
+msgstr "Estimativa de duração (em dias)"
+
+#: .\fleet\forms.py:214 .\fleet\forms.py:363 .\fleet\models.py:745
+#: .\templates\fleet\assignment_confirm_delete.html:71
+#: .\templates\fleet\assignment_detail.html:109
+#: .\templates\fleet\workday_detail.html:132
+#: .\templates\fleet\workday_form.html:141
+msgid "Workday Type"
+msgstr "Tipo de Dia de Trabalho"
+
+#: .\fleet\forms.py:215 .\fleet\forms.py:365
+#: .\templates\fleet\assignment_form.html:158
+#: .\templates\fleet\workday_form.html:174
+msgid "Daily Rate (R$)"
+msgstr "Valor de Diária (R$)"
+
+#: .\fleet\forms.py:216 .\templates\fleet\assignment_form.html:177
+msgid "Active Assignment"
+msgstr "Serviço em andamento"
+
+#: .\fleet\forms.py:217 .\fleet\models.py:813
+#: .\templates\fleet\assignment_detail.html:234
+#: .\templates\fleet\assignment_form.html:197
+#: .\templates\fleet\brand_form.html:134
+#: .\templates\fleet\vehicle_detail.html:218
+#: .\templates\fleet\vehicle_form.html:325
+#: .\templates\fleet\workday_detail.html:211
+#: .\templates\fleet\workday_form.html:189
+#: .\templates\personnel\driver_profile_form.html:198
+#: .\templates\personnel\employee_detail.html:291
+#: .\templates\personnel\employee_form.html:351
+msgid "Notes"
+msgstr "Observações"
+
+#: .\fleet\forms.py:220
+msgid "Select the vehicle for this assignment"
+msgstr "Selecione o veículo para este serviço."
+
+#: .\fleet\forms.py:221
+msgid "Select the driver for this assignment"
+msgstr "Selecione o motorista para este serviço."
+
+#: .\fleet\forms.py:222
+msgid "Estimated number of days for this service"
+msgstr "Estimativa de número de dias para o serviço."
+
+#: .\fleet\forms.py:223
+msgid "Default workday duration (8h, 10h, 12h, or transfer)"
+msgstr "Duração padrão da diária (8h, 10h, 12h, ou transfer)"
+
+#: .\fleet\forms.py:224
+msgid "Agreed payment value per daily (overtime = 10% per hour)"
+msgstr "Valor da diária acordado (hora-extra = 10% por hora)"
+
+#: .\fleet\forms.py:225
+msgid "Leave empty for ongoing assignments"
+msgstr "Deixe em branco para serviços em andamento."
+
+#: .\fleet\forms.py:253
+#, fuzzy
+#| msgid "Work date cannot be before assignment start date ({start})."
+msgid "End date cannot be before start date."
+msgstr ""
+"Data do dia de trabalho não pode ser anterior à data do início do serviço "
+"({start})"
+
+#: .\fleet\forms.py:265
+msgid "This vehicle already has an active assignment."
+msgstr ""
+
+#: .\fleet\forms.py:276
+msgid "This driver already has an active assignment."
+msgstr ""
+
+#: .\fleet\forms.py:285
+msgid "Daily rate must be greater than zero."
+msgstr ""
+
+#: .\fleet\forms.py:292
+msgid "Estimated days must be at least 1."
+msgstr ""
+
+#: .\fleet\forms.py:358 .\fleet\models.py:717
+#: .\templates\fleet\workday_detail.html:86
+#: .\templates\fleet\workday_detail.html:111
+#: .\templates\fleet\workday_form.html:57
+#: .\templates\fleet\workday_form.html:62
+#: .\templates\fleet\workday_list.html:98
+msgid "Assignment"
+msgstr "Serviço"
+
+#: .\fleet\forms.py:359 .\fleet\models.py:722
+#: .\templates\fleet\workday_form.html:83
+msgid "Work Date"
+msgstr "Data do trabalho"
+
+#: .\fleet\forms.py:360 .\fleet\models.py:725
+#: .\templates\fleet\workday_detail.html:61
+#: .\templates\fleet\workday_form.html:95
+msgid "Start Time"
+msgstr "Hora Inicial"
+
+#: .\fleet\forms.py:361 .\fleet\models.py:730
+#: .\templates\fleet\workday_detail.html:65
+#: .\templates\fleet\workday_form.html:107
+msgid "End Time"
+msgstr "Hora de Término"
+
+#: .\fleet\forms.py:362 .\templates\fleet\workday_form.html:122
+msgid "Break Time (minutes)"
+msgstr "Intervalo (em minutos)"
+
+#: .\fleet\forms.py:364 .\fleet\models.py:752
+#: .\templates\fleet\workday_detail.html:138
+#: .\templates\fleet\workday_form.html:153
+msgid "Standard Hours"
+msgstr "Duração de diária padrão (em horas)"
+
+#: .\fleet\forms.py:366 .\templates\fleet\workday_form.html:194
+msgid "Notes/Observations"
+msgstr "Observações"
+
+#: .\fleet\forms.py:369
+msgid "Date of work"
+msgstr "Data do Serviço"
+
+#: .\fleet\forms.py:370
+msgid "Time the work started"
+msgstr "Hora em que o serviço se iniciou"
+
+#: .\fleet\forms.py:371
+msgid "Time the work ended (leave empty if ongoing)"
+msgstr ""
+"Hora em que o serviço terminou (deixe em branco se ainda estiver em "
+"andamento)"
+
+#: .\fleet\forms.py:372
+msgid "Total break time in minutes (optional)"
+msgstr "Tempo total de intervalo"
+
+#: .\fleet\forms.py:373
+msgid "Type of workday (8h, 10h, 12h, or transfer)"
+msgstr "Tipo de diária (8h, 10h, 12h, ou transfer)"
+
+#: .\fleet\forms.py:374
+msgid "Standard hours for this workday"
+msgstr "Quantidade de horas padrão para esta diária."
+
+#: .\fleet\forms.py:375
+msgid "Daily rate for this workday"
+msgstr "Valor da diária"
+
+#: .\fleet\forms.py:376
+msgid "Any observations about this workday"
+msgstr "Observações sobre este dia de trabalho"
+
+#: .\fleet\forms.py:421
+#, python-brace-format
+msgid "Work date cannot be before assignment start date ({start})."
+msgstr ""
+"Data do dia de trabalho não pode ser anterior à data do início do serviço "
+"({start})"
+
+#: .\fleet\forms.py:427
+#, python-brace-format
+msgid "Work date cannot be after assignment end date ({end})."
+msgstr ""
+"Data do dia de trabalho não pode ser poserior à data do término do serviço "
+"({end})"
+
+#: .\fleet\forms.py:435
+msgid "A workday already exists for this date."
+msgstr "Já existe um dia de trabalho para esta data."
+
+#: .\fleet\models.py:101
+msgid "Brand name (e.g., Jeep, Mercedes)"
+msgstr "Nome da Marca (i.e., Jeep, Mercedes)"
+
+#: .\fleet\models.py:104
+msgid "Country of origin"
+msgstr "País de Origem"
+
+#: .\fleet\models.py:107
+msgid "Is this brand active?"
+msgstr "Esta marca está ativa?"
+
+#: .\fleet\models.py:112
+msgid "Vehicle Brand"
+msgstr "Marca do Veículo"
+
+#: .\fleet\models.py:113 .\templates\fleet\brand_list.html:4
+#: .\templates\fleet\brand_list.html:12
+msgid "Vehicle Brands"
+msgstr "Marcas de Veículos"
+
+#: .\fleet\models.py:214
+msgid "Truck"
+msgstr "Caminhão"
+
+#: .\fleet\models.py:215
+msgid "Van"
+msgstr "Van"
+
+#: .\fleet\models.py:216
+msgid "Trailer"
+msgstr "Trailer"
+
+#: .\fleet\models.py:217
+msgid "Semi Trailer"
+msgstr "Semi Trailer"
+
+#: .\fleet\models.py:218
+msgid "Pickup"
+msgstr "Caminhonete"
+
+#: .\fleet\models.py:219
+msgid "Motorcycle"
+msgstr "Motocicleta"
+
+#: .\fleet\models.py:220
+msgid "SUV"
+msgstr "SUV"
+
+#: .\fleet\models.py:221
+msgid "Minivan"
+msgstr "Minivan"
+
+#: .\fleet\models.py:222
+msgid "Sedan"
+msgstr "Sedan"
+
+#: .\fleet\models.py:223 .\fleet\models.py:265 .\fleet\models.py:380
+#: .\fleet\models.py:434 .\personnel\models.py:19 .\personnel\models.py:52
+#: .\personnel\models.py:99 .\personnel\models.py:412
+#: .\templates\personnel\employee_list.html:90
+msgid "Other"
+msgstr "Outro"
+
+#: .\fleet\models.py:227 .\personnel\models.py:23
+#: .\templates\fleet\assignment_confirm_delete.html:64
+#: .\templates\fleet\assignment_detail.html:89
+#: .\templates\fleet\assignment_list.html:41
+#: .\templates\fleet\assignment_list.html:65
+#: .\templates\fleet\assignment_list.html:158
+#: .\templates\fleet\brand_form.html:114 .\templates\fleet\brand_list.html:71
+#: .\templates\fleet\vehicle_detail.html:245
+#: .\templates\fleet\vehicle_detail.html:442
+#: .\templates\fleet\vehicle_list.html:42
+#: .\templates\personnel\employee_detail.html:272
+#: .\templates\personnel\employee_list.html:43
+#: .\templates\personnel\employee_list.html:99
+msgid "Active"
+msgstr "Ativo"
+
+#: .\fleet\models.py:228 .\templates\fleet\dashboard.html:116
+#: .\templates\fleet\vehicle_list.html:52
+msgid "In Maintenance"
+msgstr "Em Manutenção"
+
+#: .\fleet\models.py:229 .\templates\fleet\brand_list.html:73
+#: .\templates\personnel\employee_list.html:102
+msgid "Inactive"
+msgstr "Inativo"
+
+#: .\fleet\models.py:230 .\templates\fleet\dashboard.html:103
+msgid "Available"
+msgstr "Disponível"
+
+#: .\fleet\models.py:231
+msgid "Unavailable"
+msgstr "Indisponível"
+
+#: .\fleet\models.py:232
+msgid "Sold"
+msgstr "Vendido"
+
+#: .\fleet\models.py:236
+msgid "Diesel"
+msgstr "Diesel"
+
+#: .\fleet\models.py:237
+msgid "Gasoline"
+msgstr "Gasolina"
+
+#: .\fleet\models.py:238
+msgid "Ethanol"
+msgstr "Etanol"
+
+#: .\fleet\models.py:239
+msgid "Flex"
+msgstr "Flex"
+
+#: .\fleet\models.py:240
+msgid "Electric"
+msgstr "Elétrico"
+
+#: .\fleet\models.py:241
+msgid "Hybrid"
+msgstr "Hpibrido"
+
+#: .\fleet\models.py:245
+msgid "Black"
+msgstr "Preto"
+
+#: .\fleet\models.py:246
+msgid "Blue"
+msgstr "Azul"
+
+#: .\fleet\models.py:247
+msgid "Brown"
+msgstr "Marrom"
+
+#: .\fleet\models.py:248
+msgid "Carbon"
+msgstr "Carbono"
+
+#: .\fleet\models.py:249
+msgid "Dark Blue"
+msgstr "Azul Escuro"
+
+#: .\fleet\models.py:250
+msgid "Dark Green"
+msgstr "Verde Escuro"
+
+#: .\fleet\models.py:251
+msgid "Gold"
+msgstr "Dourado"
+
+#: .\fleet\models.py:252
+msgid "Grafite"
+msgstr "Grafite"
+
+#: .\fleet\models.py:253
+msgid "Green"
+msgstr "Verde"
+
+#: .\fleet\models.py:254
+msgid "Grey"
+msgstr "Cinza"
+
+#: .\fleet\models.py:255
+msgid "Indigo"
+msgstr "Indigo"
+
+#: .\fleet\models.py:256
+msgid "Maroon"
+msgstr "Marrom"
+
+#: .\fleet\models.py:257
+msgid "Orange"
+msgstr "Laranja"
+
+#: .\fleet\models.py:258
+msgid "Pink"
+msgstr "Rosa"
+
+#: .\fleet\models.py:259
+msgid "Purple"
+msgstr "Roxo"
+
+#: .\fleet\models.py:260
+msgid "Red"
+msgstr "Vermelho"
+
+#: .\fleet\models.py:261
+msgid "Silver"
+msgstr "Prata"
+
+#: .\fleet\models.py:262
+msgid "Violet"
+msgstr "Violeta"
+
+#: .\fleet\models.py:263
+msgid "White"
+msgstr "Branco"
+
+#: .\fleet\models.py:264
+msgid "Yellow"
+msgstr "Amarelo"
+
+#: .\fleet\models.py:277
+msgid "Vehicle photo"
+msgstr "Foto do Veículo"
+
+#: .\fleet\models.py:282
+msgid "Vehicle Model"
+msgstr "Modelo do Veículo"
+
+#: .\fleet\models.py:289
+msgid "Enter a valid plate (ABC1D23 format)."
+msgstr "Insira uma placa válida (formato ABC1D23)"
+
+#: .\fleet\models.py:292
+msgid "Vehicle plate (e.g ABC1D23)"
+msgstr "Placa do Veículo (ABC1D23)"
+
+#: .\fleet\models.py:294
+msgid "Manufacturing Year"
+msgstr "Ano de Fabricação"
+
+#: .\fleet\models.py:302
+msgid "Load capacity in kilograms"
+msgstr "Capacidade de carga em Quilogramas"
+
+#: .\fleet\models.py:310
+#, fuzzy
+#| msgid "Volume capacity in cubic meters"
+msgid "Volume capacity in cubic meters or liters"
+msgstr "Capacidade em Litros"
+
+#: .\fleet\models.py:320 .\templates\fleet\vehicle_detail.html:124
+#: .\templates\fleet\vehicle_form.html:245
+msgid "Chassis Number"
+msgstr "Chassis"
+
+#: .\fleet\models.py:323
+msgid "RENAVAM number"
+msgstr "N° do RENAVAM"
+
+#: .\fleet\models.py:336
+msgid "Current odometer reading"
+msgstr "Leitura Atual do Odômetro"
+
+#: .\fleet\models.py:346 .\templates\components\_footer.html:12
+#: .\templates\components\_navbar.html:41 .\templates\fleet\brand_list.html:41
+#: .\templates\fleet\vehicle_list.html:4
+msgid "Vehicles"
+msgstr "Veículos"
+
+#: .\fleet\models.py:375
+msgid "CRLV (Vehicle Registration)"
+msgstr "CRLV (Registro do Veículo)"
+
+#: .\fleet\models.py:376
+msgid "Insurance"
+msgstr "Seguro"
+
+#: .\fleet\models.py:377
+msgid "ANTT Registration"
+msgstr "Registro na ANTT"
+
+#: .\fleet\models.py:378
+msgid "Vehicle Inspection"
+msgstr "Inspeção Veicular"
+
+#: .\fleet\models.py:379
+msgid "Emission Certificate"
+msgstr "Certificado de Emissão"
+
+#: .\fleet\models.py:388 .\templates\fleet\vehicle_detail.html:322
+#: .\templates\personnel\driver_profile_form.html:94
+#: .\templates\personnel\employee_detail.html:189
+msgid "Issue Date"
+msgstr "Data de Emissão"
+
+#: .\fleet\models.py:400
+msgid "Vehicle Document"
+msgstr "Documento do Veículo"
+
+#: .\fleet\models.py:401
+msgid "Vehicle Documents"
+msgstr "Documentos do Veículo"
+
+#: .\fleet\models.py:428
+msgid "Preventive Maintenance"
+msgstr "Manutenção Preventiva"
+
+#: .\fleet\models.py:429
+msgid "Corrective Maintenance"
+msgstr "Manutenção Corretiva"
+
+#: .\fleet\models.py:430
+msgid "Inspection"
+msgstr "Inspeção"
+
+#: .\fleet\models.py:431
+msgid "Tire Change"
+msgstr "Troca de Pneu"
+
+#: .\fleet\models.py:432
+msgid "Oil Change"
+msgstr "Troca de Óleo"
+
+#: .\fleet\models.py:433
+msgid "Brake Service"
+msgstr "Serviço de Freios"
+
+#: .\fleet\models.py:438
+msgid "Scheduled"
+msgstr "Agendado"
+
+#: .\fleet\models.py:439
+msgid "In Progress"
+msgstr "Em andamento"
+
+#: .\fleet\models.py:440
+msgid "Completed"
+msgstr "Finalizado"
+
+#: .\fleet\models.py:441
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#: .\fleet\models.py:462
+msgid "odometer km at maintenance."
+msgstr "Quilometragem do Odômetro na Manutenção"
+
+#: .\fleet\models.py:476
+msgid "List of parts replaced."
+msgstr "Lista de Partes Substituídas"
+
+#: .\fleet\models.py:482
+msgid "Maintenance Record"
+msgstr "Registro de Manutenção"
+
+#: .\fleet\models.py:483
+msgid "Maintenance Records"
+msgstr "Registros de Manutenções"
+
+#: .\fleet\models.py:528 .\templates\fleet\assignment_detail.html:119
+msgid "Estimated Days"
+msgstr "Previsão de Dias"
+
+#: .\fleet\models.py:529
+msgid "Estimated duration in days (can be adjusted later)"
+msgstr "Previsão de duração (pode ser alterado posteriormente)"
+
+#: .\fleet\models.py:535 .\fleet\models.py:699
+msgid "Daily 8 hours"
+msgstr "Diária de 8 horas"
+
+#: .\fleet\models.py:536 .\fleet\models.py:700
+msgid "Daily 10 hours"
+msgstr "Diária de 10 horas"
+
+#: .\fleet\models.py:537 .\fleet\models.py:701
+msgid "Daily 12 hours"
+msgstr "Diária de 12 horas"
+
+#: .\fleet\models.py:538 .\fleet\models.py:702
+msgid "Transfer"
+msgstr "Transfer"
+
+#: .\fleet\models.py:539 .\fleet\models.py:703
+msgid "Custom"
+msgstr "Personalizado"
+
+#: .\fleet\models.py:542 .\templates\fleet\assignment_form.html:134
+msgid "Default Workday Type"
+msgstr "Tipo de Diária de Trabalho Padrão"
+
+#: .\fleet\models.py:543
+msgid "Default type of workday for this assignment"
+msgstr "Tipo de Diária de Trabalho para este serviço"
+
+#: .\fleet\models.py:550 .\fleet\models.py:763
+#: .\templates\fleet\assignment_confirm_delete.html:79
+#: .\templates\fleet\assignment_detail.html:115
+#: .\templates\fleet\workday_detail.html:175
+msgid "Daily Rate"
+msgstr "Valor da Diária"
+
+#: .\fleet\models.py:551
+msgid "Agreed daily rate value for this assignment"
+msgstr "Valor de Diária acordado para este serviço"
+
+#: .\fleet\models.py:557
+msgid "Total Days Worked"
+msgstr "Total de dias trabalhados"
+
+#: .\fleet\models.py:558
+msgid "Total number of days actually worked"
+msgstr "Total de dias efetivamente trabalhados"
+
+#: .\fleet\models.py:565 .\fleet\models.py:802
+#: .\templates\fleet\assignment_confirm_delete.html:84
+#: .\templates\fleet\assignment_detail.html:166
+#: .\templates\fleet\workday_list.html:86
+msgid "Total Amount"
+msgstr "Valor Total"
+
+#: .\fleet\models.py:566
+msgid "Total amount to pay for this assignment"
+msgstr "Valor total a pagar por este serviço"
+
+#: .\fleet\models.py:572 .\fleet\models.py:707
+#: .\templates\fleet\assignment_detail.html:154
+#: .\templates\fleet\workday_list.html:41
+#: .\templates\fleet\workday_list.html:113 .\tenants\models.py:147
+msgid "Pending"
+msgstr "Pendente"
+
+#: .\fleet\models.py:573 .\fleet\models.py:708
+#: .\templates\fleet\assignment_detail.html:160
+#: .\templates\fleet\workday_list.html:50
+#: .\templates\fleet\workday_list.html:116
+msgid "Approved"
+msgstr "Aprovado"
+
+#: .\fleet\models.py:574 .\fleet\models.py:710
+#: .\templates\fleet\workday_list.html:59
+#: .\templates\fleet\workday_list.html:119
+msgid "Paid"
+msgstr "Pago"
+
+#: .\fleet\models.py:577 .\templates\fleet\assignment_detail.html:250
+msgid "Payment Status"
+msgstr "Status do Pagamento"
+
+#: .\fleet\models.py:634
+msgid "Vehicle Assignment"
+msgstr "Serviço do Veículo"
+
+#: .\fleet\models.py:635 .\templates\fleet\assignment_list.html:4
+#: .\templates\fleet\assignment_list.html:12
+#: .\templates\personnel\employee_detail.html:243
+msgid "Vehicle Assignments"
+msgstr "Serviços do Veículo"
+
+#: .\fleet\models.py:709 .\templates\fleet\workday_list.html:122
+msgid "Rejected"
+msgstr "Rejeitado"
+
+#: .\fleet\models.py:722
+msgid "Date of the workday"
+msgstr "Data do dia de trabalho"
+
+#: .\fleet\models.py:725
+msgid "Work start time"
+msgstr "Início da jornada"
+
+#: .\fleet\models.py:731
+msgid "Work end time (leave emepty if ongoing)"
+msgstr "Término da joranda (deixe em branco se ainda em andamento)"
+
+#: .\fleet\models.py:736
+msgid "Break Minutes"
+msgstr "Pausa (em minutos)"
+
+#: .\fleet\models.py:737
+msgid "Total break time in minutes"
+msgstr "Tempo total de pausa em minutos"
+
+#: .\fleet\models.py:753
+msgid "Standard Workday hours (8, 10 or 12h)"
+msgstr "Duração padrão da diária (8m 10 ou 12 horas) "
+
+#: .\fleet\models.py:764
+msgid "Value for the complete daily"
+msgstr "Valor da diária completa"
+
+#: .\fleet\models.py:774 .\templates\fleet\workday_confirm_delete.html:69
+msgid "Total Hours"
+msgstr "Total de horas"
+
+#: .\fleet\models.py:775
+msgid "Total hours worked"
+msgstr "Total de horas trabalhadas"
+
+#: .\fleet\models.py:781 .\templates\fleet\workday_detail.html:146
+msgid "Overtime Hours"
+msgstr "Horas Extras"
+
+#: .\fleet\models.py:782
+msgid "Overtime hours (after 15min tolerance)"
+msgstr "Quantidade de Horas Extras (após 15 minutos de tolerância)"
+
+#: .\fleet\models.py:788 .\templates\fleet\workday_detail.html:179
+msgid "Daily Amount"
+msgstr "Total de diárias"
+
+#: .\fleet\models.py:789
+msgid "Amount for daily rate"
+msgstr "Valor pelas diárias"
+
+#: .\fleet\models.py:795 .\templates\fleet\workday_detail.html:188
+msgid "Overtime Amount"
+msgstr "Quantidade de Horas Extras"
+
+#: .\fleet\models.py:796
+msgid "Amount for overtime hours"
+msgstr "Valor pelas Horas Extras"
+
+#: .\fleet\models.py:803
+msgid "Total amount to pay"
+msgstr "Valor Total a Pagar"
+
+#: .\fleet\models.py:822
+msgid "Approved By"
+msgstr "Aprovado por"
+
+#: .\fleet\models.py:825
+msgid "Approved At"
+msgstr "Aprovado em"
+
+#: .\fleet\models.py:829 .\templates\fleet\workday_detail.html:256
+msgid "Paid At"
+msgstr "Pago em"
+
+#: .\fleet\models.py:833
+msgid "Payment Reference"
+msgstr "Referência do pagamento"
+
+#: .\fleet\models.py:834
+msgid "Payment transaction reference"
+msgstr "Referência da transação de pagamento"
+
+#: .\fleet\models.py:839
+msgid "Workday"
+msgstr "Dia de trabalho"
+
+#: .\fleet\models.py:840 .\templates\fleet\assignment_detail.html:137
+#: .\templates\fleet\workday_list.html:4 .\templates\fleet\workday_list.html:12
+msgid "Workdays"
+msgstr "Dias de trabalho"
+
+#: .\fleet\views.py:286
+#, python-brace-format
+msgid "Brand {name} has been created successfully."
+msgstr "Marca {name} foi adicionada com sucesso."
+
+#: .\fleet\views.py:304
+#, python-brace-format
+msgid "Brand {name} has been updated successfully."
+msgstr "Marca {name} foi atualizada com sucesso."
+
+#: .\fleet\views.py:420
+#, python-brace-format
+msgid "Vehicle {vehicle} assigned to {driver} successfully."
+msgstr "Veículo {vehicle} designado a(o) motorista {driver} com sucesso"
+
+#: .\fleet\views.py:511
+msgid "Assignment updated successfully."
+msgstr "Serviço atualizado com sucesso"
+
+#: .\fleet\views.py:534
+#, python-brace-format
+msgid "Assignment ended. Vehicle {vehicle} is now available."
+msgstr "Serviço finalizado. Veículo {vehicle} já está disponível novamente."
+
+#: .\fleet\views.py:561
+#, python-brace-format
+msgid ""
+"Cannot delete assignment with {count} paid workday(s). Please contact your "
+"administrator."
+msgstr ""
+
+#: .\fleet\views.py:596
+#, fuzzy, python-brace-format
+#| msgid "Assignment of {driver} to vehicle {vehicle} deleted successfully."
+msgid ""
+"Assignment of {driver} to vehicle {vehicle} deleted successfully. {count} "
+"workday(s) were also removed."
+msgstr "Designação de {driver} para o veículo {vehicle} deletada com sucesso."
+
+#: .\fleet\views.py:713
+#, python-brace-format
+msgid "Workday for {driver} on {date} registered successfully."
+msgstr "Dia de trabalho de {driver} em {date} registrado com sucesso."
+
+#: .\fleet\views.py:747
+#, python-brace-format
+msgid "This workday cannot be edited (status: {status})."
+msgstr "Este dia de trabalho não pode ser editado (status: {status})."
+
+#: .\fleet\views.py:756
+msgid "Workday updated successfully."
+msgstr "Dia de trabalho atualizado com sucesso."
+
+#: .\fleet\views.py:774
+msgid "Cannot delete a paid workday."
+msgstr "Não é possível deletar um dia de trabalho já pago."
+
+#: .\fleet\views.py:788
+msgid "Workday deleted successfully."
+msgstr "Dia de trabalho deletado com sucesso."
+
+#: .\fleet\views.py:804
+#, python-brace-format
+msgid "This workday cannot be approved (status: {status})."
+msgstr "Este dia de trabalho não pode ser aprovado (status: {status})."
+
+#: .\fleet\views.py:811
+msgid "Workday approved successfully."
+msgstr "Dia de trabalho aprovado com sucesso."
+
+#: .\fleet\views.py:826
+msgid "Only pending workdays can be rejected."
+msgstr "Somente dias de trabalho pendentes podem ser rejeitados."
+
+#: .\fleet\views.py:829
+msgid "Workday rejected."
+msgstr "Dia de trabalho rejeitado."
+
+#: .\personnel\admin.py:97 .\templates\personnel\employee_detail.html:35
+#: .\templates\personnel\employee_form.html:82
+msgid "Personal Information"
+msgstr "Informações Pessoais"
+
+#: .\personnel\admin.py:101 .\templates\personnel\employee_detail.html:94
+#: .\templates\personnel\employee_form.html:139 .\tenants\admin.py:62
+msgid "Contact Information"
+msgstr "Informações de Contato"
+
+#: .\personnel\admin.py:105 .\templates\personnel\employee_detail.html:128
+#: .\templates\personnel\employee_form.html:206
+msgid "Employment Information"
+msgstr "Informações de Emprego"
+
+#: .\personnel\admin.py:109
+msgid "Financial Information"
+msgstr "Informações Financeiras"
+
+#: .\personnel\admin.py:122 .\templates\personnel\employee_detail.html:324
+#: .\templates\personnel\employee_form.html:293
+msgid "Emergency Contact"
+msgstr "Contatos de Emergência"
+
+#: .\personnel\admin.py:132
+msgid "Profiles"
+msgstr "Perfis"
+
+#: .\personnel\admin.py:169 .\templates\fleet\vehicle_confirm_delete.html:42
+#: .\templates\fleet\vehicle_detail.html:47
+#: .\templates\fleet\vehicle_detail.html:320
+#: .\templates\fleet\vehicle_detail.html:371
+#: .\templates\fleet\vehicle_list.html:116
+#: .\templates\fleet\workday_confirm_delete.html:65
+#: .\templates\personnel\employee_confirm_delete.html:47
+#: .\templates\personnel\employee_detail.html:41
+#: .\templates\personnel\employee_list.html:77
+#: .\templates\personnel\employee_list.html:137
+msgid "Type"
+msgstr "Tipo"
+
+#: .\personnel\admin.py:190 .\personnel\admin.py:201
+msgid "Age"
+msgstr "Idade"
+
+#: .\personnel\admin.py:196 .\personnel\admin.py:209
+msgid "Tenure"
+msgstr "Tempo de empresa"
+
+#: .\personnel\admin.py:222
+msgid "Additional Profiles"
+msgstr "Perfis Adicionais"
+
+#: .\personnel\admin.py:254 .\personnel\admin.py:391 .\personnel\models.py:126
+#: .\templates\personnel\driver_profile_form.html:48
+#: .\templates\personnel\employee_list.html:4
+msgid "Employee"
+msgstr "Funcionário"
+
+#: .\personnel\admin.py:256
+msgid "License Information"
+msgstr "Informações da Habilitação"
+
+#: .\personnel\admin.py:269
+msgid "Qualifications"
+msgstr "Qualificações"
+
+#: .\personnel\admin.py:280 .\personnel\admin.py:420
+#: .\templates\personnel\driver_profile_form.html:160
+msgid "Medical Information"
+msgstr "Informações Médicas"
+
+#: .\personnel\admin.py:291 .\personnel\admin.py:423
+msgid "Performance"
+msgstr "Desempenho"
+
+#: .\personnel\admin.py:316 .\personnel\admin.py:441
+msgid "License"
+msgstr "Habilitação"
+
+#: .\personnel\admin.py:325
+msgid "Medical"
+msgstr "Médica"
+
+#: .\personnel\admin.py:335 .\personnel\admin.py:458
+msgid "License Validity"
+msgstr "Validade da Habilitação"
+
+#: .\personnel\admin.py:346
+msgid "Medical Exam Validity"
+msgstr "Validade do Exame Médico"
+
+#: .\personnel\admin.py:358
+msgid "Performance Summary"
+msgstr "SUmário de Desempenho"
+
+#: .\personnel\admin.py:393
+msgid "Security License"
+msgstr "Registro de Segurança Pessoal"
+
+#: .\personnel\admin.py:404
+msgid "Certifications"
+msgstr "Certificações"
+
+#: .\personnel\admin.py:448
+msgid "Recycling Course"
+msgstr "Curso de Reciclagem"
+
+#: .\personnel\admin.py:472
+msgid "Recycling Status"
+msgstr "Status da Reciclagem"
+
+#: .\personnel\apps.py:11
+msgid "Personnel Management"
+msgstr "Gestão de Pessoal"
+
+#: .\personnel\forms.py:45
+msgid "Auto-generated if empty"
+msgstr "Gerado autmoaticamente, se vazio"
+
+#: .\personnel\models.py:15
+msgid "Security Guard"
+msgstr "Segurança Pessoal"
+
+#: .\personnel\models.py:16
+msgid "Mechanic"
+msgstr "Mecânico"
+
+#: .\personnel\models.py:17 .\templates\personnel\employee_list.html:87
+#: .\templates\personnel\employee_list.html:176
+msgid "Administrative"
+msgstr "Administrativo"
+
+#: .\personnel\models.py:18
+msgid "Helper"
+msgstr "Auxiliar"
+
+#: .\personnel\models.py:24 .\templates\personnel\employee_list.html:105
+msgid "On Leave"
+msgstr "Em Licença"
+
+#: .\personnel\models.py:25
+msgid "Vacation"
+msgstr "Férias"
+
+#: .\personnel\models.py:26
+msgid "Suspended"
+msgstr "Suspenso"
+
+#: .\personnel\models.py:27 .\templates\personnel\employee_list.html:108
+msgid "Terminated"
+msgstr "Desligado da empresa"
+
+#: .\personnel\models.py:32
+msgid "Type of employee"
+msgstr "Tipo de Funcionário"
+
+#: .\personnel\models.py:43
+msgid "CPF number"
+msgstr "N° do CPF"
+
+#: .\personnel\models.py:45
+msgid "RG (Identity card)"
+msgstr "RG (documento de identidade)"
+
+#: .\personnel\models.py:46
+msgid "Date of Birth"
+msgstr "Data de Nascimento"
+
+#: .\personnel\models.py:50
+msgid "Male"
+msgstr "Masculino"
+
+#: .\personnel\models.py:51
+msgid "Female"
+msgstr "Feminino"
+
+#: .\personnel\models.py:67
+msgid "Internal employee ID/number"
+msgstr "Identificação Funcional"
+
+#: .\personnel\models.py:79
+msgid "Monthly salary"
+msgstr "Salário Mensal"
+
+#: .\personnel\models.py:84
+msgid "Monthly"
+msgstr "Ao Mês"
+
+#: .\personnel\models.py:85
+msgid "Hourly"
+msgstr "Por Hora"
+
+#: .\personnel\models.py:86
+msgid "Daily"
+msgstr "Diária"
+
+#: .\personnel\models.py:87
+msgid "Commission"
+msgstr "Comissão"
+
+#: .\personnel\models.py:96
+msgid "Bank Transfer"
+msgstr "Transferência Bancária"
+
+#: .\personnel\models.py:97
+msgid "Cash"
+msgstr "Espécie"
+
+#: .\personnel\models.py:98
+msgid "Check"
+msgstr "Cheque"
+
+#: .\personnel\models.py:102 .\templates\personnel\employee_form.html:252
+msgid "Payment Method"
+msgstr "Método de Pagamento"
+
+#: .\personnel\models.py:120
+msgid "Employee photo"
+msgstr "Foto do Funcionário"
+
+#: .\personnel\models.py:127 .\templates\personnel\employee_list.html:12
+msgid "Employees"
+msgstr "Funcionários"
+
+#: .\personnel\models.py:197
+msgid "CNH number"
+msgstr "N° da CNH"
+
+#: .\personnel\models.py:203
+msgid "Date of first CNH issue"
+msgstr "Data de Emissão da 1ª CNH"
+
+#: .\personnel\models.py:208
+msgid "Has MOPP certification (hazardous materials)"
+msgstr "Possui Certificado MOPP (Materiais Perigosos)"
+
+#: .\personnel\models.py:213
+msgid "Has defensive driving course"
+msgstr "Possui curso de Condução Defensiva"
+
+#: .\personnel\models.py:245
+msgid "Driver Profile"
+msgstr "Perfil do Motorista"
+
+#: .\personnel\models.py:246
+msgid "Driver Profiles"
+msgstr "Perfis de Motoristas"
+
+#: .\personnel\models.py:303
+msgid "Security guard license number"
+msgstr "Registro de Segurança Pessoal"
+
+#: .\personnel\models.py:310
+msgid "Has firearms license"
+msgstr "Possui registr e porte de armas de fogo"
+
+#: .\personnel\models.py:316
+msgid "Has vigilant security course"
+msgstr "Possui curso de Vigilância e Segurança"
+
+#: .\personnel\models.py:322
+msgid "Has security recycling course (required every 2 years)"
+msgstr "Possui curso de reciclagem de Segurança (obrigatório a cada 2 anos)"
+
+#: .\personnel\models.py:339
+msgid "Security specializations (e.g., personal security, event security)"
+msgstr ""
+"Especializações em Segurança (segurança pessoal, segurança de eventos, etc)"
+
+#: .\personnel\models.py:345
+msgid "Security Profile"
+msgstr "Perfil de Segurança"
+
+#: .\personnel\models.py:346
+msgid "Security Profiles"
+msgstr "Perfis de Seguranças"
+
+#: .\personnel\models.py:388
+msgid "RG (Identity Card)"
+msgstr "RG (Documento de identidade)"
+
+#: .\personnel\models.py:389
+#: .\templates\personnel\employee_confirm_delete.html:53
+#: .\templates\personnel\employee_detail.html:71
+#: .\templates\personnel\employee_form.html:98
+msgid "CPF"
+msgstr "CPF"
+
+#: .\personnel\models.py:390
+msgid "CTPS (Work Card)"
+msgstr "CTPS (Carteira de Trabalho)"
+
+#: .\personnel\models.py:391
+msgid "Voter Registration"
+msgstr "Tìtulo de Eleitor"
+
+#: .\personnel\models.py:392
+msgid "Military ID"
+msgstr "Certificado de Dispensa Militar"
+
+#: .\personnel\models.py:393
+msgid "Birth Certificate"
+msgstr "Certidão de Nascimento"
+
+#: .\personnel\models.py:394
+msgid "Marriage Certificate"
+msgstr "Certidão de Casamento"
+
+#: .\personnel\models.py:396
+msgid "CNH (Driver License)"
+msgstr "CNH (Carteira Nacional de Habilitação)"
+
+#: .\personnel\models.py:397
+msgid "ASO (Medical Exam)"
+msgstr "ASO (Atestato de Saúde Ocupacional)"
+
+#: .\personnel\models.py:398
+msgid "MOPP Certificate"
+msgstr "Certificado MOPP"
+
+#: .\personnel\models.py:399
+msgid "Defensive Driving Certificate"
+msgstr "Certificado de COndução Defensiva"
+
+#: .\personnel\models.py:401
+msgid "Security Guard License"
+msgstr "Licença de Segurança"
+
+#: .\personnel\models.py:402
+msgid "Firearms License"
+msgstr "Licença para porte de armas de fogo"
+
+#: .\personnel\models.py:403
+msgid "Vigilant Course Certificate"
+msgstr "Certificado do curso de Vigilante"
+
+#: .\personnel\models.py:404
+msgid "Recycling Course Certificate"
+msgstr "Certificado do curso de reciclagem"
+
+#: .\personnel\models.py:406
+msgid "Work Contract"
+msgstr "Contrato de Trabalho"
+
+#: .\personnel\models.py:407
+msgid "Termination Letter"
+msgstr "Carta de Desligamento"
+
+#: .\personnel\models.py:408
+msgid "Reference Letter"
+msgstr "Carta de Referência"
+
+#: .\personnel\models.py:409
+msgid "Criminal Record"
+msgstr "Registro Criminal"
+
+#: .\personnel\models.py:411 .\templates\fleet\vehicle_list.html:113
+#: .\templates\personnel\employee_form.html:335
+#: .\templates\personnel\employee_list.html:134
+msgid "Photo"
+msgstr "Banco"
+
+#: .\personnel\models.py:422
+msgid "Leave blank if document does not expire"
+msgstr "Deixar em branco se não houver data de validade"
+
+#: .\personnel\models.py:432
+msgid "Employee Document"
+msgstr "Documento do funcionário"
+
+#: .\personnel\models.py:433
+msgid "Employee Documents"
+msgstr "Documentos de Funcionários"
+
+#: .\personnel\views.py:121
+#, python-brace-format
+msgid "Employee {name} created successfully"
+msgstr "Funcionário {name} adicionado com sucesso"
+
+#: .\personnel\views.py:130
+msgid "Now create the driver profile with license information."
+msgstr "Agora, crie o perfil do motorista com os dados da Habilitação"
+
+#: .\personnel\views.py:134
+msgid "Now create the security profile."
+msgstr "Agora, crie o perfil de Segurança Pessoal"
+
+#: .\personnel\views.py:157
+msgid "Employee updated successfully."
+msgstr "Funcionário atualizado com sucesso"
+
+#: .\personnel\views.py:173
+#, python-brace-format
+msgid "Employee {name} deleted successfully."
+msgstr "Funcionário {name} deletado com sucesso"
+
+#: .\personnel\views.py:213
+msgid "Driver profile created successfully."
+msgstr "Perfil do motorista adicionado com sucesso"
+
+#: .\personnel\views.py:232
+msgid "Driver profile updated successfully."
+msgstr "Perfil do motorista atualizado com sucesso"
+
+#: .\personnel\views.py:271
+msgid "Security profile created successfully."
+msgstr "Perfil do Segurança Pessoal adicionado com sucesso"
+
+#: .\personnel\views.py:290
+msgid "Security profile updated successfully."
+msgstr "Perfil do Segurança Pessoal atualizado com sucesso"
+
+#: .\templates\accounts\delete_account.html:4
+msgid "Delete Account - TMS"
+msgstr "Apagar Conta - TMS"
+
+#: .\templates\accounts\delete_account.html:12
+#: .\templates\accounts\profile.html:145
+msgid "Delete Account"
+msgstr "Aoagar Conta"
+
+#: .\templates\accounts\delete_account.html:16
+#: .\templates\fleet\assignment_confirm_delete.html:34
+#: .\templates\fleet\vehicle_confirm_delete.html:30
+#: .\templates\fleet\workday_confirm_delete.html:38
+#: .\templates\personnel\employee_confirm_delete.html:35
+msgid "Warning"
+msgstr "AVISO!"
+
+#: .\templates\accounts\delete_account.html:16
+#: .\templates\fleet\assignment_confirm_delete.html:160
+#: .\templates\fleet\workday_confirm_delete.html:135
+msgid "This action cannot be undone"
+msgstr "Esta ação NÃO PODE ser desfeita"
+
+#: .\templates\accounts\delete_account.html:18
+msgid "Are you sure you want to delete your account? This will"
+msgstr "Tem certeza de que quer apagar sua conta? Esta ação vai"
+
+#: .\templates\accounts\delete_account.html:20
+msgid "Permanently delete your profile"
+msgstr "apagar permanentemente seu perfil"
+
+#: .\templates\accounts\delete_account.html:21
+msgid "Remove you from all organizations (where you're not the sole owner)"
+msgstr ""
+"Deseja ser removido de todas as empresas (nas quais você não é o único dono)"
+
+#: .\templates\accounts\delete_account.html:22
+msgid "Delete all your personal data"
+msgstr "Apagar todos os seus dados pessoais"
+
+#: .\templates\accounts\delete_account.html:28
+msgid "Yes, Delete My Account"
+msgstr "SIm, Apagar minha Conta"
+
+#: .\templates\accounts\delete_account.html:31
+#: .\templates\accounts\password_change.html:26
+#: .\templates\accounts\profile_edit.html:111
+#: .\templates\fleet\assignment_confirm_delete.html:137
+#: .\templates\fleet\assignment_end.html:98
+#: .\templates\fleet\assignment_form.html:210
+#: .\templates\fleet\brand_form.html:148
+#: .\templates\fleet\vehicle_confirm_delete.html:99
+#: .\templates\fleet\vehicle_form.html:338
+#: .\templates\fleet\workday_confirm_delete.html:115
+#: .\templates\fleet\workday_form.html:207
+#: .\templates\personnel\driver_profile_form.html:209
+#: .\templates\personnel\employee_confirm_delete.html:81
+#: .\templates\personnel\employee_form.html:362
+#: .\templates\tenants\create.html:117 .\templates\tenants\invite.html:34
+#: .\templates\tenants\remove_member.html:28 .\templates\tenants\update.html:23
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .\templates\accounts\login.html:17
+msgid "Welcome Back"
+msgstr "Bem vindo novamente"
+
+#: .\templates\accounts\login.html:18
+msgid "Sign in to your account"
+msgstr "Entrar em sua conta"
+
+#: .\templates\accounts\login.html:25
+msgid "Username or E-mail"
+msgstr "Nome de Usuário ou E-mail"
+
+#: .\templates\accounts\login.html:38 .\templates\accounts\register.html:113
+msgid "Password"
+msgstr "Senha"
+
+#: .\templates\accounts\login.html:56 .\templates\accounts\register.html:157
+msgid "Sign In"
+msgstr "Entrar"
+
+#: .\templates\accounts\login.html:66
+msgid "Forgot your password"
+msgstr "Esqueceu sua senha"
+
+#: .\templates\accounts\login.html:70
+msgid "Don't have an account?"
+msgstr "Ainda não tem uma conta?"
+
+#: .\templates\accounts\login.html:72
+msgid "Sign Up"
+msgstr "Cadastre-se"
+
+#: .\templates\accounts\password_change.html:4
+msgid "Change Password - TMS"
+msgstr "Alterar Senha - TMS"
+
+#: .\templates\accounts\password_change.html:14
+#: .\templates\accounts\password_change.html:23
+#: .\templates\accounts\password_reset_confirm.html:57
+#: .\templates\accounts\profile.html:30 .\templates\components\_navbar.html:147
+msgid "Change Password"
+msgstr "Alterar Senha"
+
+#: .\templates\accounts\password_change_done.html:4
+msgid "Password Changed - TMS"
+msgstr "Senha Alterada - TMS"
+
+#: .\templates\accounts\password_change_done.html:11
+msgid "Password Changed!"
+msgstr "Senha Alterada!"
+
+#: .\templates\accounts\password_change_done.html:13
+msgid "Your password has been changed successfully."
+msgstr "Sua senha foi alterada com sucesso"
+
+#: .\templates\accounts\password_change_done.html:16
+msgid "Back to Profile"
+msgstr "Voltar para Perfil"
+
+#: .\templates\accounts\password_reset.html:4
+msgid "Reset Password - TMS"
+msgstr "Redefinir Senha - TMS"
+
+#: .\templates\accounts\password_reset.html:14
+msgid "Reset Password"
+msgstr "Redefinir Senha"
+
+#: .\templates\accounts\password_reset.html:15
+msgid "Enter your email to receive reset instructions"
+msgstr "Informe seu e-mail para receber instruções para redefinir sua senha"
+
+#: .\templates\accounts\password_reset.html:22
+msgid "Send Reset Link"
+msgstr "Enviar link para Redefinir"
+
+#: .\templates\accounts\password_reset.html:28
+#: .\templates\accounts\password_reset_confirm.html:79
+#: .\templates\accounts\password_reset_done.html:17
+msgid "Back to Login"
+msgstr "Voltar para Login"
+
+#: .\templates\accounts\password_reset_complete.html:4
+#: .\templates\accounts\password_reset_complete.html:13
+msgid "Password Reset Complete"
+msgstr "Redefinição de Senha completada."
+
+#: .\templates\accounts\password_reset_complete.html:21
+msgid "Log In Now"
+msgstr "Entre agora"
+
+#: .\templates\accounts\password_reset_complete.html:24
+msgid "Go to Home"
+msgstr "Ir para Home"
+
+#: .\templates\accounts\password_reset_confirm.html:4
+msgid "Set New Password - TMS"
+msgstr "Definir Nova Senha - TMS"
+
+#: .\templates\accounts\password_reset_confirm.html:15
+msgid "Set New Password"
+msgstr "Definir Nova Senha"
+
+#: .\templates\accounts\password_reset_confirm.html:16
+msgid "Please enter your new password"
+msgstr "Por favor, entre sua nova senha"
+
+#: .\templates\accounts\password_reset_confirm.html:24
+msgid "New Password"
+msgstr "Nova Senha"
+
+#: .\templates\accounts\password_reset_confirm.html:33
+#: .\templates\accounts\register.html:122
+msgid "Must be at least 8 characters"
+msgstr "Ao menos 8 caracteres"
+
+#: .\templates\accounts\password_reset_confirm.html:39
+msgid "Confirm New Password"
+msgstr "Confirmar Nova Senha"
+
+#: .\templates\accounts\password_reset_confirm.html:64
+msgid "Invalid Reset Link"
+msgstr "Link de Redefinição Inválido"
+
+#: .\templates\accounts\password_reset_confirm.html:70
+msgid "Request New Reset Link"
+msgstr "Solicitar Novo Link de Redefinição"
+
+#: .\templates\accounts\password_reset_done.html:4
+msgid "Reset Email Sent - TMS"
+msgstr "E-mail de Redefinição Enviado - TMS"
+
+#: .\templates\accounts\password_reset_done.html:11
+msgid "Check Your Email"
+msgstr "Verifique seu E-mail"
+
+#: .\templates\accounts\password_reset_done.html:13
+msgid "We've sent you instructions to reset your password."
+msgstr "Nós lhe enviamos intruções para redefinir sua senha"
+
+#: .\templates\accounts\password_reset_done.html:14
+msgid "Please check your email inbox."
+msgstr "Por favor, verifique a Caixa de Entrada do seu E-mail"
+
+#: .\templates\accounts\password_reset_email.html:5
+msgid "Hello"
+msgstr "Olá"
+
+#: .\templates\accounts\password_reset_email.html:7
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"account at"
+msgstr ""
+"Você recebeu este e-mail porque solicitou uma redefinição de senha para sua "
+"conta "
+
+#: .\templates\accounts\password_reset_email.html:9
+msgid "Please click on the link below to reset your password"
+msgstr "Clique no link abaixo para redefinir sua senha"
+
+#: .\templates\accounts\password_reset_email.html:13
+msgid "If you didn't request this password reset, please ignore this email"
+msgstr ""
+"Se você não solicitou a redefinição da sua senha, por favor, ignore este e-"
+"mail"
+
+#: .\templates\accounts\password_reset_email.html:15
+msgid "This link will expire in 24 hours"
+msgstr "Este link expira em 24 horas"
+
+#: .\templates\accounts\password_reset_email.html:17
+msgid "Thanks"
+msgstr "Obrigado"
+
+#: .\templates\accounts\password_reset_email.html:18
+msgid "The"
+msgstr "O"
+
+#: .\templates\accounts\password_reset_email.html:18
+msgid "Team"
+msgstr "Equipe"
+
+#: .\templates\accounts\profile.html:5
+msgid "My profile - TMS"
+msgstr "Meu Perfil"
+
+#: .\templates\accounts\profile.html:27
+#: .\templates\accounts\profile_edit.html:5
+#: .\templates\accounts\profile_edit.html:16
+msgid "Edit Profile"
+msgstr "Editar Perfil"
+
+#: .\templates\accounts\profile.html:38
+msgid "Account Information"
+msgstr "Informações da Conta"
+
+#: .\templates\accounts\profile.html:43
+msgid "Username"
+msgstr "Nome de Usuário"
+
+#: .\templates\accounts\profile.html:47
+#: .\templates\accounts\profile_edit.html:64
+#: .\templates\accounts\register.html:75
+#: .\templates\personnel\employee_detail.html:100
+#: .\templates\personnel\employee_form.html:145
+#: .\templates\personnel\employee_form.html:319
+#: .\templates\personnel\employee_list.html:138
+#: .\templates\tenants\create.html:82 .\templates\tenants\detail.html:44
+msgid "Phone"
+msgstr "Telefone"
+
+#: .\templates\accounts\profile.html:50 .\templates\tenants\detail.html:38
+msgid "Document"
+msgstr "Documento"
+
+#: .\templates\accounts\profile.html:55
+msgid "Not provided"
+msgstr "Não informado"
+
+#: .\templates\accounts\profile.html:59 .\templates\accounts\profile.html:109
+msgid "Joined"
+msgstr "Adicionado"
+
+#: .\templates\accounts\profile.html:64
+msgid "Last Login"
+msgstr "Último Login"
+
+#: .\templates\accounts\profile.html:69
+msgid "Never"
+msgstr "Nunca"
+
+#: .\templates\accounts\profile.html:82
+msgid "My Organizations"
+msgstr "Minhas Empresas"
+
+#: .\templates\accounts\profile.html:103 .\templates\tenants\detail.html:77
+#: .\templates\tenants\members_list.html:55 .\templates\tenants\select.html:33
+#: .\tenants\models.py:89
+msgid "Owner"
+msgstr "Proprietário"
+
+#: .\templates\accounts\profile.html:125
+msgid "You're not a member of any organization yet"
+msgstr "Você ainda não é membro de nenhum empresa"
+
+#: .\templates\accounts\profile.html:127
+msgid "Create your first organization"
+msgstr "Registre sua primeira empresa"
+
+#: .\templates\accounts\profile.html:137
+msgid "Danger Zone"
+msgstr "Alerta"
+
+#: .\templates\accounts\profile.html:142
+msgid ""
+"Once you delete your account, there is no going back. Please be certain."
+msgstr ""
+"Ao deletar sua conta, não será possível reavê-la. Certifique-se de que "
+"realmente deseja fazer isso"
+
+#: .\templates\accounts\profile_edit.html:27
+#: .\templates\accounts\register.html:25
+msgid "First Name"
+msgstr "Primeiro Nome"
+
+#: .\templates\accounts\profile_edit.html:39
+#: .\templates\accounts\register.html:38
+msgid "Last Name"
+msgstr "Sobrenome"
+
+#: .\templates\accounts\profile_edit.html:52 .\templates\tenants\detail.html:41
+msgid "E-mail"
+msgstr "E-mail"
+
+#: .\templates\accounts\profile_edit.html:108
+#: .\templates\tenants\update.html:20
+msgid "Save Changes"
+msgstr "Salvar Alterações"
+
+#: .\templates\accounts\register.html:88
+msgid "Document Type"
+msgstr "TIpo de Documento"
+
+#: .\templates\accounts\register.html:100
+msgid "Document Number"
+msgstr "Número do Documento"
+
+#: .\templates\accounts\register.html:128
+msgid "Confirm Password"
+msgstr "Confirmar Senha"
+
+#: .\templates\accounts\register.html:146
+msgid "Create Account"
+msgstr "Criar Conta"
+
+#: .\templates\accounts\register.html:155
+msgid "Already have an account?"
+msgstr "Já possui uma conta?"
+
+#: .\templates\audit\log_detail.html:5 .\templates\audit\log_detail.html:18
+msgid "Audit Log Details"
+msgstr "Detalhes de Logs de Auditoria"
+
+#: .\templates\audit\log_detail.html:14
+msgid "Back to Logs"
+msgstr "Voltar para Logs"
+
+#: .\templates\audit\log_detail.html:32 .\templates\audit\log_list.html:107
+msgid "Timestamp"
+msgstr "Registro de Data/Hora"
+
+#: .\templates\audit\log_detail.html:56 .\templates\audit\log_list.html:48
+#: .\templates\audit\log_list.html:110 .\templates\fleet\vehicle_detail.html:71
+#: .\templates\fleet\vehicle_form.html:147
+msgid "Model"
+msgstr "Modelo"
+
+#: .\templates\audit\log_detail.html:59 .\templates\audit\log_list.html:111
+msgid "Object ID"
+msgstr "ID do Objeto"
+
+#: .\templates\audit\log_detail.html:64
+msgid "N/A"
+msgstr "N/A"
+
+#: .\templates\audit\log_detail.html:94 .\templates\audit\log_list.html:112
+msgid "IP Address"
+msgstr "Endereço de IP"
+
+#: .\templates\audit\log_detail.html:99 .\templates\audit\log_detail.html:110
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: .\templates\audit\log_detail.html:103
+msgid "User Agent"
+msgstr "Identificação do Dispositivo/Navegador"
+
+#: .\templates\audit\log_detail.html:114
+msgid "Log ID"
+msgstr "ID do Log"
+
+#: .\templates\audit\log_detail.html:124
+msgid "Organization"
+msgstr "Empresa"
+
+#: .\templates\audit\log_list.html:5 .\templates\audit\log_list.html:14
+msgid "Audit Logs"
+msgstr "Logs de Auditoria"
+
+#: .\templates\audit\log_list.html:17
+msgid "Export CSV"
+msgstr "Exportar CSV"
+
+#: .\templates\audit\log_list.html:21
+msgid "Export JSON"
+msgstr "Exportar JSON"
+
+#: .\templates\audit\log_list.html:30
+msgid "Filters"
+msgstr "Filtros"
+
+#: .\templates\audit\log_list.html:38
+msgid "All actions"
+msgstr "Todas as Ações"
+
+#: .\templates\audit\log_list.html:50
+msgid "All Models"
+msgstr "Todos os Modelos"
+
+#: .\templates\audit\log_list.html:62
+msgid "All Users"
+msgstr "Todos os Usuários"
+
+#: .\templates\audit\log_list.html:72 .\templates\fleet\vehicle_list.html:62
+#: .\templates\personnel\employee_list.html:72
+msgid "Search"
+msgstr "Busca"
+
+#: .\templates\audit\log_list.html:78 .\templates\fleet\workday_list.html:127
+msgid "From Date"
+msgstr "Do Dia"
+
+#: .\templates\audit\log_list.html:84 .\templates\fleet\workday_list.html:131
+msgid "To Date"
+msgstr "Até o Dia"
+
+#: .\templates\audit\log_list.html:90
+msgid "Apply Filters"
+msgstr "Aplicar Filtros"
+
+#: .\templates\audit\log_list.html:93
+msgid "Clear"
+msgstr "Limpar"
+
+#: .\templates\audit\log_list.html:187
+#: .\templates\components\_pagination.html:9
+#: .\templates\fleet\assignment_list.html:213
+#: .\templates\fleet\brand_list.html:108
+#: .\templates\fleet\vehicle_list.html:219
+#: .\templates\fleet\workday_list.html:257
+#: .\templates\personnel\employee_list.html:239
+msgid "Page"
+msgstr "Página"
+
+#: .\templates\audit\log_list.html:187
+#: .\templates\fleet\assignment_list.html:213
+#: .\templates\fleet\brand_list.html:108
+#: .\templates\fleet\vehicle_list.html:219
+#: .\templates\fleet\workday_list.html:257
+#: .\templates\personnel\employee_list.html:239
+msgid "of"
+msgstr "de"
+
+#: .\templates\audit\log_list.html:212
+msgid "No audit logs found"
+msgstr "Logs de Auditoria não encontrados"
+
+#: .\templates\base.html:9 .\templates\old-base.html:9
+msgid "TMS - Gestão de Frotas"
+msgstr "TMS - Fleet Management"
+
+#: .\templates\components\_footer.html:7
+msgid "Site Map"
+msgstr ""
+
+#: .\templates\components\_footer.html:9
+msgid "Home"
+msgstr ""
+
+#: .\templates\components\_footer.html:10
+msgid "About Us"
+msgstr ""
+
+#: .\templates\components\_footer.html:11
+#, fuzzy
+#| msgid "Brake Service"
+msgid "Services"
+msgstr "Serviço de Freios"
+
+#: .\templates\components\_header.html:10
+msgid "TMS - Gestão de Frotas Veiculares"
+msgstr ""
+
+#: .\templates\components\_header.html:26
+msgid "Ir"
+msgstr ""
+
+#: .\templates\components\_navbar.html:20
+#: .\templates\components\_navbar.html:33 .\templates\dashboard.html:12
+msgid "Dashboard"
+msgstr "Painel"
+
+#: .\templates\components\_navbar.html:28
+msgid "Fleet"
+msgstr "Frota"
+
+#: .\templates\components\_navbar.html:46
+#, fuzzy
+#| msgid "Assignment"
+msgid "Assignments"
+msgstr "Serviço"
+
+#: .\templates\components\_navbar.html:51
+#, fuzzy
+#| msgid "Vehicle Brands"
+msgid "Brands"
+msgstr "Marcas de Veículos"
+
+#: .\templates\components\_navbar.html:60
+#, fuzzy
+#| msgid "Personal Info"
+msgid "Personnel"
+msgstr "Informações Pessoais"
+
+#: .\templates\components\_navbar.html:65
+#, fuzzy
+#| msgid "Employees"
+msgid "All Employees"
+msgstr "Todos os Funcionários"
+
+#: .\templates\components\_navbar.html:73
+#: .\templates\personnel\employee_list.html:52
+msgid "Drivers"
+msgstr "Motoristas"
+
+#: .\templates\components\_navbar.html:78
+#: .\templates\personnel\employee_detail.html:49
+#: .\templates\personnel\employee_list.html:61
+#: .\templates\personnel\employee_list.html:84
+#: .\templates\personnel\employee_list.html:172
+msgid "Security"
+msgstr "Seguranças"
+
+#: .\templates\components\_navbar.html:86
+#: .\templates\personnel\employee_form.html:8
+#: .\templates\personnel\employee_list.html:21
+msgid "Add Employee"
+msgstr "Adicionar Funcionário"
+
+#: .\templates\components\_navbar.html:109
+#, fuzzy
+#| msgid "Tenant & Metadata"
+msgid "Tenant Details"
+msgstr "Detalhes da Conta"
+
+#: .\templates\components\_navbar.html:114 .\templates\tenants\detail.html:63
+#: .\templates\tenants\members_list.html:4 .\tenants\admin.py:105
+msgid "Members"
+msgstr "Membros"
+
+#: .\templates\components\_navbar.html:122
+#, fuzzy
+#| msgid "Tenant"
+msgid "Switch Tenant"
+msgstr "Trocar Empresa"
+
+#: .\templates\components\_navbar.html:130
+#, fuzzy
+#| msgid "Tenant"
+msgid "Select Tenant"
+msgstr "Selecionar Empresa"
+
+#: .\templates\components\_navbar.html:142
+#, fuzzy
+#| msgid "Profiles"
+msgid "My Profile"
+msgstr "Meu Perfil"
+
+#: .\templates\components\_navbar.html:168
+msgid "Register"
+msgstr "Cadastrar"
+
+#: .\templates\components\_pagination.html:5
+#: .\templates\fleet\assignment_list.html:200
+#: .\templates\fleet\brand_list.html:97 .\templates\fleet\vehicle_list.html:206
+#: .\templates\fleet\workday_list.html:245
+#: .\templates\personnel\employee_list.html:226
+msgid "First"
+msgstr ""
+
+#: .\templates\components\_pagination.html:6
+#: .\templates\fleet\assignment_list.html:206
+#: .\templates\fleet\brand_list.html:101
+#: .\templates\fleet\vehicle_list.html:212
+#: .\templates\fleet\workday_list.html:250
+#: .\templates\personnel\employee_list.html:232
+msgid "Previous"
+msgstr ""
+
+#: .\templates\components\_pagination.html:9
+msgid "de"
+msgstr ""
+
+#: .\templates\components\_pagination.html:12
+#: .\templates\fleet\assignment_list.html:221
+#: .\templates\fleet\brand_list.html:115
+#: .\templates\fleet\vehicle_list.html:227
+#: .\templates\fleet\workday_list.html:264
+#: .\templates\personnel\employee_list.html:247
+msgid "Next"
+msgstr ""
+
+#: .\templates\components\_pagination.html:13
+#: .\templates\fleet\assignment_list.html:227
+#: .\templates\fleet\brand_list.html:120
+#: .\templates\fleet\vehicle_list.html:233
+#: .\templates\fleet\workday_list.html:269
+#: .\templates\personnel\employee_list.html:253
+msgid "Last"
+msgstr ""
+
+#: .\templates\dashboard.html:4
+msgid "Dashboard - TMS"
+msgstr "Painel - TMS"
+
+#: .\templates\dashboard.html:15
+msgid "Welcome back"
+msgstr "Bem vindo de volta"
+
+#: .\templates\dashboard.html:32
+msgid "Current Organization"
+msgstr "Empresa Atual"
+
+#: .\templates\dashboard.html:40 .\templates\fleet\assignment_list.html:166
+#: .\templates\fleet\vehicle_list.html:178
+#: .\templates\fleet\workday_list.html:212
+#: .\templates\personnel\employee_list.html:198
+msgid "View Details"
+msgstr "Ver Detalhes"
+
+#: .\templates\dashboard.html:56
+msgid "Team Members"
+msgstr "Membros da Equipe"
+
+#: .\templates\dashboard.html:66
+msgid "Projects"
+msgstr "Projetos"
+
+#: .\templates\dashboard.html:76
+msgid "Tasks"
+msgstr "Tarefas"
+
+#: .\templates\dashboard.html:86
+msgid "Activities"
+msgstr "Atividades"
+
+#: .\templates\dashboard.html:97 .\templates\fleet\assignment_detail.html:278
+#: .\templates\fleet\brand_list.html:148 .\templates\fleet\dashboard.html:329
+#: .\templates\fleet\vehicle_detail.html:260
+#: .\templates\personnel\employee_detail.html:341
+msgid "Quick Actions"
+msgstr "Ações Rápidas"
+
+#: .\templates\dashboard.html:104 .\templates\tenants\invite.html:4
+#: .\templates\tenants\members_list.html:12
+msgid "Invite Member"
+msgstr "Convimdar Membro"
+
+#: .\templates\dashboard.html:109
+msgid "Manage Members"
+msgstr "Gerenciar Membros"
+
+#: .\templates\dashboard.html:114
+msgid "Organization Settings"
+msgstr "Confirgurações da Empresa"
+
+#: .\templates\dashboard.html:120
+msgid "View Members"
+msgstr "Ver Membros"
+
+#: .\templates\dashboard.html:125
+msgid "Organization Info"
+msgstr "Informações da Empresa"
+
+#: .\templates\dashboard.html:140
+msgid "Recent Activity"
+msgstr "Atividade Recente"
+
+#: .\templates\dashboard.html:145
+msgid "No recent activity"
+msgstr "Nenhuma atividade recente"
+
+#: .\templates\dashboard.html:159
+msgid "No Organization Selected"
+msgstr "Nenhuma empresa selecionada"
+
+#: .\templates\dashboard.html:160
+msgid "Please select an organization to view your dashboard"
+msgstr "Selecione uma empresa para ver o seu Painel"
+
+#: .\templates\dashboard.html:163 .\templates\tenants\select.html:12
+msgid "Select Organization"
+msgstr "Selecionar Empresa"
+
+#: .\templates\dashboard.html:166 .\templates\tenants\create.html:13
+#: .\templates\tenants\select.html:68
+msgid "Create New Organization"
+msgstr "Adicionar Nova Empresa"
+
+#: .\templates\fleet\assignment_confirm_delete.html:4
+#: .\templates\fleet\assignment_confirm_delete.html:14
+msgid "Delete Assignment"
+msgstr "Apagar Serviço"
+
+#: .\templates\fleet\assignment_confirm_delete.html:37
+msgid ""
+"Are you sure you want to delete this assignment? This action cannot be "
+"undone."
+msgstr ""
+"Tem certeza de que quer apagar este serviço? Esta ação NÃO PODE ser desfeita."
+
+#: .\templates\fleet\assignment_confirm_delete.html:44
+msgid "Assignment Summary"
+msgstr "Resumo do Serviço"
+
+#: .\templates\fleet\assignment_confirm_delete.html:51
+#: .\templates\fleet\assignment_detail.html:69
+#: .\templates\fleet\assignment_end.html:68
+#: .\templates\fleet\assignment_form.html:112
+#: .\templates\fleet\assignment_list.html:119
+#: .\templates\fleet\vehicle_detail.html:430
+#: .\templates\personnel\employee_detail.html:253
+msgid "End Date"
+msgstr "Data de Término"
+
+#: .\templates\fleet\assignment_confirm_delete.html:56
+#: .\templates\fleet\workday_confirm_delete.html:30
+#: .\templates\fleet\workday_detail.html:70
+msgid "Ongoing"
+msgstr "Em Andamento"
+
+#: .\templates\fleet\assignment_confirm_delete.html:66
+#: .\templates\fleet\assignment_detail.html:91
+#: .\templates\fleet\assignment_list.html:50
+#: .\templates\fleet\assignment_list.html:68
+#: .\templates\fleet\assignment_list.html:160
+#: .\templates\fleet\vehicle_detail.html:444
+#: .\templates\personnel\employee_detail.html:274
+msgid "Ended"
+msgstr "Finalizado"
+
+#: .\templates\fleet\assignment_confirm_delete.html:75
+#: .\templates\fleet\assignment_detail.html:148
+msgid "Days Worked"
+msgstr "Dias Trabalhados"
+
+#: .\templates\fleet\assignment_confirm_delete.html:95
+msgid "Attention"
+msgstr "Atenção"
+
+#: .\templates\fleet\assignment_confirm_delete.html:98
+msgid "This assignment has"
+msgstr "Este serviço tem"
+
+#: .\templates\fleet\assignment_confirm_delete.html:99
+msgid "registered workday(s)."
+msgstr "dia(s) de trabalho registrado(s)"
+
+#: .\templates\fleet\assignment_confirm_delete.html:102
+msgid "What will happen:"
+msgstr "O que irá acontecer:"
+
+#: .\templates\fleet\assignment_confirm_delete.html:105
+msgid "All associated workdays will also be deleted"
+msgstr "Todos os dias de trabalho associados também serão apagados"
+
+#: .\templates\fleet\assignment_confirm_delete.html:106
+msgid "Payment records will be lost"
+msgstr "Registros de pagamentos serão perdidos"
+
+#: .\templates\fleet\assignment_confirm_delete.html:107
+msgid "This cannot be undone"
+msgstr "Esta ação NÃO PODE ser desfeita"
+
+#: .\templates\fleet\assignment_confirm_delete.html:116
+#: .\templates\fleet\workday_confirm_delete.html:95
+msgid "Cannot Delete"
+msgstr "Não é possível apagar"
+
+#: .\templates\fleet\assignment_confirm_delete.html:119
+msgid "This assignment has "
+msgstr "Este serviço tem"
+
+#: .\templates\fleet\assignment_confirm_delete.html:120
+msgid ""
+"paid workday(s) and cannot be deleted. Please contact your administrator."
+msgstr ""
+"dias de trabalho pagos, e não pode ser apagado. Por favor, contate seu gestor"
+
+#: .\templates\fleet\assignment_confirm_delete.html:130
+#: .\templates\fleet\workday_confirm_delete.html:108
+msgid "Note:"
+msgstr "Nota:"
+
+#: .\templates\fleet\assignment_confirm_delete.html:131
+msgid ""
+"After deletion, the vehicle and driver will be available for new assignments."
+msgstr ""
+"Após apagar, o veículo e o motorista estarão disponíveis para novos serviços"
+
+#: .\templates\fleet\assignment_confirm_delete.html:141
+msgid "Yes, Delete Assignment"
+msgstr "Sim, APAGAR o Serviço"
+
+#: .\templates\fleet\assignment_confirm_delete.html:153
+#: .\templates\fleet\workday_confirm_delete.html:130
+msgid "What happens after deletion?"
+msgstr "O que ocorre depois de apagar?"
+
+#: .\templates\fleet\assignment_confirm_delete.html:156
+msgid "The assignment record will be permanently removed"
+msgstr "O registro do serviço será PERMANENTEMETE removido"
+
+#: .\templates\fleet\assignment_confirm_delete.html:157
+msgid "All associated workdays will be deleted"
+msgstr "Todos os dias de trabalho associados serão apagados"
+
+#: .\templates\fleet\assignment_confirm_delete.html:158
+msgid "The vehicle will become available for new assignments"
+msgstr "O veículo ficará disponível para novos serviços"
+
+#: .\templates\fleet\assignment_confirm_delete.html:159
+msgid "The driver will become available for new assignments"
+msgstr "O motorista ficará disponível para novos serviços"
+
+#: .\templates\fleet\assignment_confirm_delete.html:161
+#: .\templates\fleet\workday_confirm_delete.html:136
+msgid "An audit log entry will be created"
+msgstr "Uma entrada de Log de Auditoria será criado"
+
+#: .\templates\fleet\assignment_detail.html:4
+#: .\templates\fleet\assignment_detail.html:12
+msgid "Assignment Details"
+msgstr "Detalhes do Serviço"
+
+#: .\templates\fleet\assignment_detail.html:20
+#: .\templates\fleet\brand_form.html:38
+#: .\templates\fleet\vehicle_detail.html:25
+#: .\templates\fleet\workday_detail.html:20
+#: .\templates\personnel\employee_detail.html:20
+#: .\templates\personnel\employee_form.html:37
+msgid "Back"
+msgstr "Voltar"
+
+#: .\templates\fleet\assignment_detail.html:24
+#: .\templates\fleet\workday_list.html:160
+msgid "End"
+msgstr "Fim"
+
+#: .\templates\fleet\assignment_detail.html:28
+#: .\templates\fleet\assignment_list.html:176
+#: .\templates\fleet\brand_list.html:79
+#: .\templates\fleet\vehicle_detail.html:29
+#: .\templates\fleet\vehicle_list.html:182
+#: .\templates\fleet\workday_detail.html:24
+#: .\templates\fleet\workday_detail.html:292
+#: .\templates\fleet\workday_list.html:218
+#: .\templates\personnel\employee_detail.html:23
+#: .\templates\personnel\employee_detail.html:174
+#: .\templates\personnel\employee_list.html:202
+#: .\templates\tenants\detail.html:17 .\templates\tenants\update.html:4
+msgid "Edit"
+msgstr "Editar"
+
+#: .\templates\fleet\assignment_detail.html:40
+#: .\templates\fleet\assignment_form.html:57
+msgid "Assignment Information"
+msgstr "Informações do Serviço"
+
+#: .\templates\fleet\assignment_detail.html:73
+#: .\templates\fleet\assignment_list.html:120
+msgid "Duration"
+msgstr "Duração"
+
+#: .\templates\fleet\assignment_detail.html:81
+msgid "ongoing"
+msgstr "em andamento"
+
+#: .\templates\fleet\assignment_detail.html:103
+#: .\templates\fleet\assignment_form.html:128
+msgid "Service Configuration"
+msgstr "Configurações do Serviço"
+
+#: .\templates\fleet\assignment_detail.html:125
+msgid "Overtime rate"
+msgstr "Percentual da Hora Extra"
+
+#: .\templates\fleet\assignment_detail.html:126
+msgid "per hour"
+msgstr "por hora"
+
+#: .\templates\fleet\assignment_detail.html:140
+#: .\templates\fleet\assignment_detail.html:284
+msgid "Add Workday"
+msgstr "Adicionar Dia de Trabalho"
+
+#: .\templates\fleet\assignment_detail.html:176
+#: .\templates\fleet\vehicle_detail.html:372
+#: .\templates\fleet\workday_detail.html:43
+#: .\templates\fleet\workday_list.html:156
+msgid "Date"
+msgstr "Data"
+
+#: .\templates\fleet\assignment_detail.html:177
+#: .\templates\fleet\workday_list.html:161
+msgid "Hours"
+msgstr "Horas"
+
+#: .\templates\fleet\assignment_detail.html:178
+#: .\templates\fleet\workday_confirm_delete.html:73
+#: .\templates\fleet\workday_list.html:162
+msgid "Overtime"
+msgstr "Hora Extra"
+
+#: .\templates\fleet\assignment_detail.html:179
+#: .\templates\fleet\workday_confirm_delete.html:84
+#: .\templates\fleet\workday_list.html:163
+msgid "Amount"
+msgstr "Quantidade"
+
+#: .\templates\fleet\assignment_detail.html:216
+msgid "View All Workdays"
+msgstr "Ver todos os Dias de Trabalho"
+
+#: .\templates\fleet\assignment_detail.html:223
+msgid "No workdays registered yet"
+msgstr "Nenhum dia de trabalho registrado "
+
+#: .\templates\fleet\assignment_detail.html:267
+msgid "Total to Pay"
+msgstr "Total a pagar"
+
+#: .\templates\fleet\assignment_detail.html:269
+msgid "days worked"
+msgstr "dias trabalhados"
+
+#: .\templates\fleet\assignment_detail.html:287
+#: .\templates\fleet\assignment_form.html:6
+#: .\templates\fleet\assignment_form.html:22
+msgid "Edit Assignment"
+msgstr "Editar Serviço"
+
+#: .\templates\fleet\assignment_detail.html:291
+#: .\templates\fleet\assignment_end.html:4
+#: .\templates\fleet\assignment_end.html:14
+#: .\templates\fleet\assignment_end.html:101
+#: .\templates\fleet\assignment_list.html:171
+msgid "End Assignment"
+msgstr "Finalizar Serviço"
+
+#: .\templates\fleet\assignment_detail.html:305
+#: .\templates\fleet\vehicle_detail.html:288
+#: .\templates\fleet\workday_detail.html:357
+#: .\templates\personnel\employee_detail.html:374 .\tenants\admin.py:72
+msgid "Metadata"
+msgstr "Metadados"
+
+#: .\templates\fleet\assignment_detail.html:310
+#: .\templates\fleet\vehicle_detail.html:293
+#: .\templates\fleet\workday_detail.html:362
+#: .\templates\personnel\employee_detail.html:379
+#: .\templates\tenants\detail.html:52
+msgid "Created"
+msgstr "Criado"
+
+#: .\templates\fleet\assignment_detail.html:314
+#: .\templates\fleet\vehicle_detail.html:297
+#: .\templates\fleet\workday_detail.html:366
+#: .\templates\personnel\employee_detail.html:383
+msgid "Last Updated"
+msgstr "Última Atualização"
+
+#: .\templates\fleet\assignment_end.html:27
+msgid "Started"
+msgstr "Iniciado"
+
+#: .\templates\fleet\assignment_end.html:34
+#: .\templates\fleet\assignment_form.html:229
+#: .\templates\fleet\workday_form.html:226
+#: .\templates\personnel\driver_profile_form.html:228
+msgid "Important"
+msgstr "Importante"
+
+#: .\templates\fleet\assignment_end.html:37
+msgid ""
+"Ending this assignment will mark the vehicle and driver as available for new "
+"assignments."
+msgstr ""
+"Ao encerrar esta tarefa, o veículo e o motorista ficarão disponíveis para "
+"novas atribuições."
+
+#: .\templates\fleet\assignment_end.html:44
+msgid "Assignment Duration"
+msgstr "Duração do Serviço"
+
+#: .\templates\fleet\assignment_end.html:48
+#: .\templates\fleet\assignment_list.html:149
+msgid "days"
+msgstr "dias"
+
+#: .\templates\fleet\assignment_end.html:50
+msgid "From"
+msgstr "Desde"
+
+#: .\templates\fleet\assignment_end.html:50
+msgid "until today"
+msgstr "até hoje"
+
+#: .\templates\fleet\assignment_end.html:77
+msgid "Date when the assignment ends (defaults to today)"
+msgstr "Data em que o serviço termina (padrão é o dia de hoje)"
+
+#: .\templates\fleet\assignment_end.html:83
+msgid "Final Notes"
+msgstr "Notas Finais"
+
+#: .\templates\fleet\assignment_end.html:92
+msgid "Any observations about the assignment end (optional)"
+msgstr "Observações acerda da finalização do serviço (opcional)"
+
+#: .\templates\fleet\assignment_end.html:112
+msgid "What happens next?"
+msgstr "O que acontece depois?"
+
+#: .\templates\fleet\assignment_end.html:115
+msgid "The assignment will be marked as inactive"
+msgstr "O serviço será marcado como Inativo"
+
+#: .\templates\fleet\assignment_end.html:116
+msgid "The vehicle will be available for new assignments"
+msgstr "O veículo ficará disponível para novos serviços"
+
+#: .\templates\fleet\assignment_end.html:117
+msgid "The driver will be available for new assignments"
+msgstr "O motorista ficará disponível para novos serviços"
+
+#: .\templates\fleet\assignment_end.html:118
+msgid "The assignment history will be preserved"
+msgstr "O histórico do serviço será preservado"
+
+#: .\templates\fleet\assignment_form.html:8
+#: .\templates\fleet\assignment_form.html:24
+#: .\templates\fleet\assignment_list.html:20
+msgid "New Assignment"
+msgstr "Novo serviço"
+
+#: .\templates\fleet\assignment_form.html:29
+msgid "Update assignment information"
+msgstr "Atualização de informações do serviço"
+
+#: .\templates\fleet\assignment_form.html:31
+msgid "Assign a driver to a vehicle"
+msgstr "Associe um motorista ao veículo"
+
+#: .\templates\fleet\assignment_form.html:37
+#: .\templates\fleet\vehicle_form.html:37
+#: .\templates\fleet\workday_form.html:37
+msgid "Back to List"
+msgstr "Voltar para Lista"
+
+#: .\templates\fleet\assignment_form.html:72
+msgid "Select an available vehicle"
+msgstr "Selecione um veículo disponível"
+
+#: .\templates\fleet\assignment_form.html:87
+msgid "Select an available driver"
+msgstr "Selecione um motorista disponível"
+
+#: .\templates\fleet\assignment_form.html:94
+msgid "Period"
+msgstr "Período"
+
+#: .\templates\fleet\assignment_form.html:121
+msgid "Leave empty for ongoing assignment"
+msgstr "Deixe em branco para serviços em andamento"
+
+#: .\templates\fleet\assignment_form.html:167
+#, fuzzy, python-format
+#| msgid "Agreed payment value per workday. Overtime = 10%% per hour."
+msgid "Agreed payment value per workday. Overtime = 10%% per hour."
+msgstr "Valor da diária acordado (hora-extra = 10% por hora)"
+
+#: .\templates\fleet\assignment_form.html:186
+msgid "Inactive assignments free up the vehicle and driver"
+msgstr "Serviços inativos liberam o veículo e o motorista"
+
+#: .\templates\fleet\assignment_form.html:192
+#: .\templates\fleet\vehicle_form.html:320
+msgid "Additional Notes"
+msgstr "Notas Adicionais"
+
+#: .\templates\fleet\assignment_form.html:215
+msgid "Update Assignment"
+msgstr "Atualizar Serviço"
+
+#: .\templates\fleet\assignment_form.html:217
+msgid "Create Assignment"
+msgstr "Criar um Serviço"
+
+#: .\templates\fleet\assignment_form.html:232
+msgid "Only active drivers with valid licenses can be assigned"
+msgstr ""
+"Somente motoristas ativos, e com CNH válida, podem ser vinculados/acionados."
+
+#: .\templates\fleet\assignment_form.html:233
+msgid "Only available vehicles can be assigned"
+msgstr "Somente veículos disponíveis podem ser vinculados/acionados"
+
+#: .\templates\fleet\assignment_form.html:234
+msgid "Each driver and vehicle can have only one active assignment at a time"
+msgstr ""
+"Cada motorista e veículo só podem estar em APENAS UM serviço ativo por vez"
+
+#: .\templates\fleet\assignment_form.html:235
+msgid "Ending an assignment will automatically free up the vehicle and driver"
+msgstr "Finalizar um serviço libera automaticamente o veículo e o motorista"
+
+#: .\templates\fleet\assignment_list.html:15
+msgid "Manage driver assignments to vehicles"
+msgstr "Gerenciar vinculação de motoristas a veículos"
+
+#: .\templates\fleet\assignment_list.html:32
+#: .\templates\fleet\workday_detail.html:331
+#: .\templates\fleet\workday_list.html:32
+#: .\templates\personnel\employee_list.html:33
+msgid "Total"
+msgstr "Total"
+
+#: .\templates\fleet\assignment_list.html:63
+#: .\templates\fleet\vehicle_list.html:70
+#: .\templates\fleet\vehicle_list.html:82
+#: .\templates\fleet\workday_list.html:111
+msgid "All"
+msgstr "Todos"
+
+#: .\templates\fleet\assignment_list.html:75
+msgid "All Vehicles"
+msgstr "Todos os Veículos"
+
+#: .\templates\fleet\assignment_list.html:86
+msgid "All Drivers"
+msgstr "Todos os Motoristas"
+
+#: .\templates\fleet\assignment_list.html:96
+#: .\templates\fleet\vehicle_list.html:93
+#: .\templates\personnel\employee_list.html:114
+msgid "Filter"
+msgstr "Filtrar"
+
+#: .\templates\fleet\assignment_list.html:107
+msgid "Assignment List"
+msgstr "Lista de Serviços"
+
+#: .\templates\fleet\assignment_list.html:122
+#: .\templates\fleet\brand_list.html:43 .\templates\fleet\vehicle_list.html:120
+#: .\templates\fleet\workday_detail.html:270
+#: .\templates\fleet\workday_list.html:165
+#: .\templates\personnel\employee_list.html:141
+msgid "Actions"
+msgstr "Ações"
+
+#: .\templates\fleet\assignment_list.html:239
+msgid "No assignments found"
+msgstr "Nenhum serviço encontrado"
+
+#: .\templates\fleet\assignment_list.html:241
+msgid "Create First Assignment"
+msgstr "Registrar o seu primeiro serviço"
+
+#: .\templates\fleet\brand_form.html:7 .\templates\fleet\brand_form.html:23
+msgid "Edit Brand"
+msgstr "Editar Marca"
+
+#: .\templates\fleet\brand_form.html:9 .\templates\fleet\brand_form.html:155
+#: .\templates\fleet\brand_list.html:20 .\templates\fleet\dashboard.html:339
+msgid "Add Brand"
+msgstr "Adicionar Marca"
+
+#: .\templates\fleet\brand_form.html:25
+msgid "Add New Brand"
+msgstr "Adicionar Nova Marca"
+
+#: .\templates\fleet\brand_form.html:30
+msgid "Update brand information"
+msgstr "Atualizar Informações de Marca"
+
+#: .\templates\fleet\brand_form.html:32
+msgid "Add a new vehicle brand"
+msgstr "Adicionar uma nova marca de veículos"
+
+#: .\templates\fleet\brand_form.html:63
+msgid "Brand Name"
+msgstr "Nome da Marca"
+
+#: .\templates\fleet\brand_form.html:71
+msgid "e.g., Volvo, Mercedes-Benz"
+msgstr "ex.: Volvo, Mercedes-Benz"
+
+#: .\templates\fleet\brand_form.html:76
+msgid "Country of Origin"
+msgstr "País de Origem"
+
+#: .\templates\fleet\brand_form.html:84
+msgid "e.g., Sweden, Germany"
+msgstr "ex.: Suécia, Alemanha"
+
+#: .\templates\fleet\brand_form.html:89 .\templates\fleet\brand_list.html:38
+msgid "Logo"
+msgstr "Logotipo"
+
+#: .\templates\fleet\brand_form.html:97
+msgid "Current logo"
+msgstr "Logotipo atual"
+
+#: .\templates\fleet\brand_form.html:107
+msgid "Upload brand logo (optional)"
+msgstr "Uopload de logotipo da marca"
+
+#: .\templates\fleet\brand_form.html:123
+msgid "Inactive brands won't appear in vehicle selection"
+msgstr "Marcas inativas não aparecerão na seleção de veículos"
+
+#: .\templates\fleet\brand_form.html:142
+msgid "Any additional information about this brand"
+msgstr "Informações adicionais sobre esta marca"
+
+#: .\templates\fleet\brand_form.html:153
+msgid "Update Brand"
+msgstr "Atualizar Marca"
+
+#: .\templates\fleet\brand_form.html:167
+msgid "Tip"
+msgstr "Dica"
+
+#: .\templates\fleet\brand_form.html:170
+msgid ""
+"After adding brands, you'll be able to select them when adding new vehicles "
+"to your fleet."
+msgstr ""
+"Após cadastrar Marcas, você poderá selecioná-las ao adicionar novos veículos "
+"à sua frota"
+
+#: .\templates\fleet\brand_list.html:15
+msgid "Manage vehicle brands and manufacturers"
+msgstr "Gerenciar Marcas e Fabricantes de veículos"
+
+#: .\templates\fleet\brand_list.html:29
+msgid "Brand List"
+msgstr "Lista de Marcas"
+
+#: .\templates\fleet\brand_list.html:39
+#: .\templates\personnel\employee_form.html:299
+#: .\templates\personnel\employee_list.html:135
+msgid "Name"
+msgstr "Nome"
+
+#: .\templates\fleet\brand_list.html:40
+msgid "Country"
+msgstr "País"
+
+#: .\templates\fleet\brand_list.html:66
+msgid "vehicle(s)"
+msgstr "veículo(s)"
+
+#: .\templates\fleet\brand_list.html:133
+msgid "No brands found"
+msgstr "Nenhuma marca encontrada"
+
+#: .\templates\fleet\brand_list.html:135
+msgid "Add First Brand"
+msgstr "Adicionar a primeira Marca"
+
+#: .\templates\fleet\brand_list.html:152
+msgid "View Vehicles"
+msgstr "Ver Veículos"
+
+#: .\templates\fleet\brand_list.html:155 .\templates\fleet\dashboard.html:20
+#: .\templates\fleet\dashboard.html:334 .\templates\fleet\vehicle_form.html:8
+#: .\templates\fleet\vehicle_form.html:345
+#: .\templates\fleet\vehicle_list.html:21
+msgid "Add Vehicle"
+msgstr "Adicionar Veículos"
+
+#: .\templates\fleet\dashboard.html:4 .\templates\fleet\dashboard.html:12
+msgid "Fleet Dashboard"
+msgstr "Painel de Frota"
+
+#: .\templates\fleet\dashboard.html:15
+msgid "Overview of your fleet management system"
+msgstr "Visão Geral do sistema de gestão de sua frota"
+
+#: .\templates\fleet\dashboard.html:33
+msgid "Expired Documents"
+msgstr "Documentos Expirados"
+
+#: .\templates\fleet\dashboard.html:36
+#, python-format
+msgid ""
+"\n"
+"          %(counter)s document has expired\n"
+"          "
+msgid_plural ""
+"\n"
+"          %(counter)s documents have expired\n"
+"          "
+msgstr[0] ""
+"\n"
+"documento expirou"
+msgstr[1] ""
+"\n"
+"documentos expiraram"
+
+#: .\templates\fleet\dashboard.html:47 .\templates\fleet\dashboard.html:73
+msgid "and"
+msgstr "e"
+
+#: .\templates\fleet\dashboard.html:47 .\templates\fleet\dashboard.html:73
+msgid "more..."
+msgstr "mais..."
+
+#: .\templates\fleet\dashboard.html:59
+msgid "Maintenance Required"
+msgstr "Manutenção necessária"
+
+#: .\templates\fleet\dashboard.html:62
+#, python-format
+msgid ""
+"\n"
+"          %(counter)s vehicle needs maintenance\n"
+"          "
+msgid_plural ""
+"\n"
+"          %(counter)s vehicles need maintenance\n"
+"          "
+msgstr[0] ""
+"\n"
+"veículo precisa de manutenção"
+msgstr[1] ""
+"\n"
+"veículos precisam de manutenção"
+
+#: .\templates\fleet\dashboard.html:90 .\templates\fleet\vehicle_list.html:32
+msgid "Total Vehicles"
+msgstr "Total de Veículos"
+
+#: .\templates\fleet\dashboard.html:92
+msgid "active"
+msgstr "ativo"
+
+#: .\templates\fleet\dashboard.html:105
+msgid "Ready for assignment"
+msgstr "Pronto para serviços"
+
+#: .\templates\fleet\dashboard.html:118
+msgid "scheduled"
+msgstr "agendado"
+
+#: .\templates\fleet\dashboard.html:129
+msgid "Assigned"
+msgstr "Atribuído"
+
+#: .\templates\fleet\dashboard.html:131
+msgid "Active assignments"
+msgstr "Serviços ativos"
+
+#: .\templates\fleet\dashboard.html:145
+msgid "Vehicles by Type"
+msgstr "Veículos por Tipo"
+
+#: .\templates\fleet\dashboard.html:159 .\templates\fleet\dashboard.html:184
+msgid "No data available"
+msgstr "Sem dados disponível"
+
+#: .\templates\fleet\dashboard.html:170
+msgid "Top Brands"
+msgstr "Principais Marcas"
+
+#: .\templates\fleet\dashboard.html:199
+msgid "Fleet Value"
+msgstr "Valor da Frota"
+
+#: .\templates\fleet\dashboard.html:216
+msgid "Average Age"
+msgstr "Média de Tempo de Fabricação"
+
+#: .\templates\fleet\dashboard.html:217
+msgid "years"
+msgstr "anos"
+
+#: .\templates\fleet\dashboard.html:231
+msgid "Fuel Types"
+msgstr "TIpos de Combustível"
+
+#: .\templates\fleet\dashboard.html:240
+msgid "No data"
+msgstr "Sem dados"
+
+#: .\templates\fleet\dashboard.html:254
+msgid "Recently Added"
+msgstr "Adicioando recentemente"
+
+#: .\templates\fleet\dashboard.html:277
+msgid "No recent vehicles"
+msgstr "Sem veículos recentes"
+
+#: .\templates\fleet\dashboard.html:282 .\templates\fleet\dashboard.html:344
+msgid "View All Vehicles"
+msgstr "Ver Todos os Veículos"
+
+#: .\templates\fleet\dashboard.html:293
+msgid "Upcoming Maintenance"
+msgstr "Próxima Manutenção"
+
+#: .\templates\fleet\dashboard.html:316
+msgid "No upcoming maintenance"
+msgstr "Sem manutenções próximas"
+
+#: .\templates\fleet\dashboard.html:349
+msgid "View Brands"
+msgstr "Ver Marcas"
+
+#: .\templates\fleet\dashboard.html:354
+msgid "View Assignments"
+msgstr "Ver Serviços"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:4
+#: .\templates\fleet\vehicle_detail.html:278
+msgid "Delete Vehicle"
+msgstr "Excluir Veículo"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:14
+#: .\templates\personnel\employee_confirm_delete.html:14
+msgid "Confirm Deletion"
+msgstr "Confirmar exclusão"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:23
+#: .\templates\fleet\vehicle_detail.html:15
+#: .\templates\fleet\vehicle_form.html:88
+#: .\templates\fleet\vehicle_list.html:114
+msgid "Plate"
+msgstr "Placa"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:33
+msgid ""
+"Are you sure you want to delete this vehicle? This action cannot be undone."
+msgstr ""
+"Tem certeza de que deseja excluir este veículo? Esta ação NÃO PODERÁ ser "
+"desfeita."
+
+#: .\templates\fleet\vehicle_confirm_delete.html:40
+msgid "Vehicle Information"
+msgstr "Informações do Veículo"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:48
+#: .\templates\fleet\vehicle_detail.html:75
+#: .\templates\fleet\vehicle_form.html:159
+#: .\templates\fleet\vehicle_list.html:117
+msgid "Year"
+msgstr "Ano"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:51
+#: .\templates\fleet\vehicle_detail.html:87
+#: .\templates\fleet\vehicle_detail.html:174
+msgid "Current Km"
+msgstr "Quilometragem Atual"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:70
+msgid ""
+"This vehicle has an active driver assignment. Deleting it will remove the "
+"assignment."
+msgstr ""
+"Este veículo possui um motorista com um serviço atribuído. Excluí-lo também "
+"excluirá totalmente o serviço"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:78
+msgid "This vehicle has related records:"
+msgstr "Este veículo possui registros a ele relacionados:"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:81
+msgid "document(s)"
+msgstr "documento(s)"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:84
+msgid "maintenance record(s)"
+msgstr "registro(s) de manutenções"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:88
+msgid "All related records will also be deleted."
+msgstr "Todos os registros relacionados também serão excluídos."
+
+#: .\templates\fleet\vehicle_confirm_delete.html:102
+msgid "Yes, Delete Vehicle"
+msgstr "Sim, excluir Veículo"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:113
+#: .\templates\personnel\employee_confirm_delete.html:95
+msgid "Alternative Actions"
+msgstr "Ações Alternativas"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:116
+#: .\templates\personnel\employee_confirm_delete.html:98
+msgid "Instead of deleting, you might want to:"
+msgstr "Ao invés de excluir, você talvez queira:"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:120
+#: .\templates\personnel\employee_confirm_delete.html:102
+msgid "Mark as Inactive"
+msgstr "Marcar como Inativo"
+
+#: .\templates\fleet\vehicle_confirm_delete.html:123
+msgid "Mark as Sold"
+msgstr "Marcar como Vendido"
+
+#: .\templates\fleet\vehicle_detail.html:4
+msgid "Vehicle Details"
+msgstr "Detalhes do Veículo"
+
+#: .\templates\fleet\vehicle_detail.html:67
+#: .\templates\fleet\vehicle_form.html:113
+#: .\templates\fleet\vehicle_form.html:125
+msgid "Brand"
+msgstr "Marca"
+
+#: .\templates\fleet\vehicle_detail.html:79
+#: .\templates\fleet\vehicle_form.html:171
+msgid "Color"
+msgstr "Cor"
+
+#: .\templates\fleet\vehicle_detail.html:83
+#: .\templates\fleet\vehicle_form.html:226
+msgid "Fuel Type"
+msgstr "Tipo de Combustível"
+
+#: .\templates\fleet\vehicle_detail.html:104
+msgid "Load Capacity"
+msgstr "Capacidade de Carga"
+
+#: .\templates\fleet\vehicle_detail.html:114
+msgid "Volume Capacity"
+msgstr "Capacidade de Volume"
+
+#: .\templates\fleet\vehicle_detail.html:128
+#: .\templates\fleet\vehicle_form.html:257
+msgid "RENAVAM"
+msgstr "RENAVAM"
+
+#: .\templates\fleet\vehicle_detail.html:146
+#: .\templates\fleet\vehicle_form.html:276
+msgid "Purchase Date"
+msgstr "Data de Compra"
+
+#: .\templates\fleet\vehicle_detail.html:150
+#: .\templates\fleet\vehicle_form.html:288
+msgid "Purchase Value"
+msgstr "Valor de Compra"
+
+#: .\templates\fleet\vehicle_detail.html:178
+msgid "Last Maintenance"
+msgstr "Última Manutenção"
+
+#: .\templates\fleet\vehicle_detail.html:188
+msgid "Next Maintenance"
+msgstr "Próxima Manutenção"
+
+#: .\templates\fleet\vehicle_detail.html:202
+msgid "This vehicle requires maintenance!"
+msgstr "Ete veículo necessita de Manutenção!"
+
+#: .\templates\fleet\vehicle_detail.html:207
+msgid "Maintenance is up to date"
+msgstr "Manutenção em dia"
+
+#: .\templates\fleet\vehicle_detail.html:243
+msgid "Since"
+msgstr "Desde"
+
+#: .\templates\fleet\vehicle_detail.html:250
+msgid "Not assigned"
+msgstr "Não atribuído"
+
+#: .\templates\fleet\vehicle_detail.html:266
+#: .\templates\fleet\vehicle_form.html:6 .\templates\fleet\vehicle_form.html:22
+msgid "Edit Vehicle"
+msgstr "Editar Veículo"
+
+#: .\templates\fleet\vehicle_detail.html:269
+msgid "Add Document"
+msgstr "Adicionar Documento"
+
+#: .\templates\fleet\vehicle_detail.html:272
+msgid "Schedule Maintenance"
+msgstr "Agendar Manutenção"
+
+#: .\templates\fleet\vehicle_detail.html:275
+msgid "Assign Driver"
+msgstr "Atribuir Motorista"
+
+#: .\templates\fleet\vehicle_detail.html:312
+msgid "Documents"
+msgstr "Documentos"
+
+#: .\templates\fleet\vehicle_detail.html:321
+#: .\templates\personnel\employee_list.html:136
+msgid "Number"
+msgstr "Número"
+
+#: .\templates\fleet\vehicle_detail.html:323
+#: .\templates\personnel\driver_profile_form.html:104
+#: .\templates\personnel\employee_detail.html:193
+msgid "Expiry Date"
+msgstr "Data de Validade"
+
+#: .\templates\fleet\vehicle_detail.html:337
+msgid "Expires Soon"
+msgstr "Expira em Breve"
+
+#: .\templates\fleet\vehicle_detail.html:339
+#: .\templates\personnel\employee_detail.html:218
+msgid "Valid"
+msgstr "Válido"
+
+#: .\templates\fleet\vehicle_detail.html:342
+#: .\templates\personnel\employee_detail.html:197
+#: .\templates\personnel\employee_detail.html:220 .\tenants\models.py:150
+msgid "Expired"
+msgstr "Vencido"
+
+#: .\templates\fleet\vehicle_detail.html:363
+msgid "Recent Maintenance Records"
+msgstr "Registros de Manutenção Recentes"
+
+#: .\templates\fleet\vehicle_detail.html:373
+#: .\templates\fleet\vehicle_form.html:301
+msgid "Odometer"
+msgstr "Odômetro"
+
+#: .\templates\fleet\vehicle_detail.html:374
+msgid "Cost"
+msgstr "Custo"
+
+#: .\templates\fleet\vehicle_detail.html:420
+msgid "Assignment History"
+msgstr "Histórico de Atribuição"
+
+#: .\templates\fleet\vehicle_form.html:24
+msgid "Add New Vehicle"
+msgstr "Adicionar Novo Veículo"
+
+#: .\templates\fleet\vehicle_form.html:29
+msgid "Update vehicle information"
+msgstr "Atualizar Informações do Veículo"
+
+#: .\templates\fleet\vehicle_form.html:31
+msgid "Add a new vehicle to your fleet"
+msgstr "Adicionar umnovo veículo à sua frota"
+
+#: .\templates\fleet\vehicle_form.html:62
+msgid "Vehicle Photo"
+msgstr "Foto do Veículo"
+
+#: .\templates\fleet\vehicle_form.html:70
+msgid "Current photo"
+msgstr "Foto Atual"
+
+#: .\templates\fleet\vehicle_form.html:80
+msgid "Upload a photo of the vehicle (optional)"
+msgstr "Carregar uma foto do veículo"
+
+#: .\templates\fleet\vehicle_form.html:96
+msgid "Format: ABC1D23"
+msgstr "Formato: ABC1D23"
+
+#: .\templates\fleet\vehicle_form.html:101
+msgid "Vehicle Type"
+msgstr "Tipo de Veículo"
+
+#: .\templates\fleet\vehicle_form.html:130
+msgid "Add new brand"
+msgstr "Adicionar Nova Marca"
+
+#: .\templates\fleet\vehicle_form.html:140
+msgid "Don't see your brand?"
+msgstr "Não consegue encontrar a marca?"
+
+#: .\templates\fleet\vehicle_form.html:141
+msgid "Add it here"
+msgstr "Adicione-a aqui"
+
+#: .\templates\fleet\vehicle_form.html:202
+msgid "Capacity (kg)"
+msgstr "Capacidade (kg)"
+
+#: .\templates\fleet\vehicle_form.html:214
+#, fuzzy
+#| msgid "Capacity (m³)"
+msgid "Capacity (m³ or L)"
+msgstr "Capacidade (m³ ou L)"
+
+#: .\templates\fleet\vehicle_form.html:307
+msgid "Current Kilometers"
+msgstr "Quilometragem atual"
+
+#: .\templates\fleet\vehicle_form.html:343
+msgid "Update Vehicle"
+msgstr "Atualizar Veículo"
+
+#: .\templates\fleet\vehicle_list.html:12
+msgid "Fleet Vehicles"
+msgstr "Veículos da Frota"
+
+#: .\templates\fleet\vehicle_list.html:15
+msgid "Manage your fleet vehicles"
+msgstr "Gerencie os veículos de sua frota"
+
+#: .\templates\fleet\vehicle_list.html:63
+msgid "Plate, brand or model"
+msgstr "Placa, marca ou modelo"
+
+#: .\templates\fleet\vehicle_list.html:103
+msgid "Vehicle List"
+msgstr "Lista de Veículos"
+
+#: .\templates\fleet\vehicle_list.html:115
+msgid "Brand/Model"
+msgstr "Marca/Modelo"
+
+#: .\templates\fleet\vehicle_list.html:245
+msgid "No vehicles found"
+msgstr "Nenhum veículo encontrado"
+
+#: .\templates\fleet\vehicle_list.html:247
+msgid "Add First Vehicle"
+msgstr "Adicionar seu primeiro veículo"
+
+#: .\templates\fleet\workday_confirm_delete.html:4
+#: .\templates\fleet\workday_confirm_delete.html:14
+msgid "Delete Workday"
+msgstr "Excluir Dia de Trabalho"
+
+#: .\templates\fleet\workday_confirm_delete.html:41
+msgid ""
+"Are you sure you want to delete this workday? This action cannot be undone."
+msgstr ""
+"Tem certeza de que deseja excluir este Dia de Trabalho? Esta ação não poderá "
+"ser desfeita."
+
+#: .\templates\fleet\workday_confirm_delete.html:48
+msgid "Workday Summary"
+msgstr "Resumo dos Dias de Trabalho"
+
+#: .\templates\fleet\workday_confirm_delete.html:98
+msgid ""
+"This workday has already been paid and cannot be deleted. Please contact "
+"your administrator if you need to make changes."
+msgstr ""
+"Este Dia de Trabalho já foi pago e não pode ser excluído. Por favor, entre "
+"em contato com seu gestor, caso precise realizar alterações."
+
+#: .\templates\fleet\workday_confirm_delete.html:109
+msgid ""
+"Deleting this workday will recalculate the assignment totals automatically."
+msgstr ""
+"Excluir este Dia de Trabalho implicará o recálcuo automático dos valores "
+"totais do serviço."
+
+#: .\templates\fleet\workday_confirm_delete.html:118
+msgid "Yes, Delete Workday"
+msgstr "Sim, Excluir Dia de Trabalho"
+
+#: .\templates\fleet\workday_confirm_delete.html:133
+msgid "The workday record will be permanently removed"
+msgstr "O registro deste Dia de Trabalho será permanentemente excluído."
+
+#: .\templates\fleet\workday_confirm_delete.html:134
+msgid "Assignment totals (days worked, total amount) will be recalculated"
+msgstr ""
+"Totais do serviço (dias trabalhados, valor total, etc.) serão recalculados"
+
+#: .\templates\fleet\workday_detail.html:4
+#: .\templates\fleet\workday_detail.html:12
+msgid "Workday Details"
+msgstr "Detalhes do Dia de Trabalho"
+
+#: .\templates\fleet\workday_detail.html:37
+msgid "Workday Information"
+msgstr "Informações do Dia de Trabalho"
+
+#: .\templates\fleet\workday_detail.html:75
+msgid "Break Time"
+msgstr "Intervalo"
+
+#: .\templates\fleet\workday_detail.html:76
+msgid "minutes"
+msgstr "minutos"
+
+#: .\templates\fleet\workday_detail.html:114
+msgid "View Full Assignment"
+msgstr "Visão Completa do Serviço"
+
+#: .\templates\fleet\workday_detail.html:126
+msgid "Hours Worked"
+msgstr "Horas trabalhadas"
+
+#: .\templates\fleet\workday_detail.html:142
+#: .\templates\fleet\workday_list.html:70
+msgid "Total Hours Worked"
+msgstr "Total de Horas Trabalhadas"
+
+#: .\templates\fleet\workday_detail.html:151
+msgid "No overtime"
+msgstr "Sem Horas Extras"
+
+#: .\templates\fleet\workday_detail.html:156
+msgid "Calculated after"
+msgstr "Calculado após"
+
+#: .\templates\fleet\workday_detail.html:169
+#: .\templates\fleet\workday_form.html:169
+#: .\templates\personnel\employee_detail.html:142
+msgid "Payment"
+msgstr "Pagamento"
+
+#: .\templates\fleet\workday_detail.html:183
+msgid "Overtime Rate"
+msgstr "Taxa de Horas Extras"
+
+#: .\templates\fleet\workday_detail.html:184
+msgid "hour"
+msgstr "hora"
+
+#: .\templates\fleet\workday_detail.html:185
+#, python-format
+msgid "10%% of daily rate"
+msgstr "10%% do valor de diária"
+
+#: .\templates\fleet\workday_detail.html:199
+msgid "Total Amount to Pay"
+msgstr "Valor total a pagar"
+
+#: .\templates\fleet\workday_detail.html:232
+msgid "Current Status"
+msgstr "Status atual"
+
+#: .\templates\fleet\workday_detail.html:248
+msgid "Approved/Rejected By"
+msgstr "Aprovado/Rejeitado por"
+
+#: .\templates\fleet\workday_detail.html:259
+msgid "Reference"
+msgstr "Referência"
+
+#: .\templates\fleet\workday_detail.html:279
+msgid "Approve"
+msgstr "Aprovar"
+
+#: .\templates\fleet\workday_detail.html:285
+msgid "Reject"
+msgstr "Rejeitar"
+
+#: .\templates\fleet\workday_detail.html:303
+msgid "View Assignment"
+msgstr "Visualizar Serviço"
+
+#: .\templates\fleet\workday_detail.html:313
+msgid "How it was calculated"
+msgstr "Como foi feito o cálculo"
+
+#: .\templates\fleet\workday_detail.html:320
+msgid "Transfer:"
+msgstr "Transfer:"
+
+#: .\templates\fleet\workday_detail.html:321
+#, python-format
+msgid "50%% of daily rate, no overtime"
+msgstr "50%% do valor de diária, sem horas extras"
+
+#: .\templates\fleet\workday_detail.html:327
+msgid "Short service (< 8h):"
+msgstr "Serviço curto (menos de 8h):"
+
+#: .\templates\fleet\workday_detail.html:328
+msgid "Full daily rate guaranteed"
+msgstr "Valor de diária completa assegurada"
+
+#: .\templates\fleet\workday_detail.html:335
+msgid "Daily:"
+msgstr "Diária:"
+
+#: .\templates\fleet\workday_detail.html:339
+msgid "Overtime:"
+msgstr "Horas Extras:"
+
+#: .\templates\fleet\workday_detail.html:346
+msgid "Total:"
+msgstr "Total:"
+
+#: .\templates\fleet\workday_form.html:6 .\templates\fleet\workday_form.html:22
+msgid "Edit Workday"
+msgstr "Editar Dia de Trabalho"
+
+#: .\templates\fleet\workday_form.html:8 .\templates\fleet\workday_form.html:24
+#: .\templates\fleet\workday_list.html:20
+msgid "New Workday"
+msgstr "Novo Dia de Trabalho"
+
+#: .\templates\fleet\workday_form.html:29
+msgid "Update workday information"
+msgstr "Atualizar Informações do Dia de Trabalho"
+
+#: .\templates\fleet\workday_form.html:31
+msgid "Register a new workday"
+msgstr "Registrar Novo Dia de Trabalho"
+
+#: .\templates\fleet\workday_form.html:71
+msgid "Select the driver-vehicle assignment"
+msgstr "Selecione o serviço do motorista/veículo"
+
+#: .\templates\fleet\workday_form.html:77
+msgid "Date and Time"
+msgstr "Data e Hora"
+
+#: .\templates\fleet\workday_form.html:116
+msgid "Leave empty if ongoing"
+msgstr "Deixe em branco se em andamento"
+
+#: .\templates\fleet\workday_form.html:135
+msgid "Workday Configuration"
+msgstr "Configurações de Dia de Trabalho"
+
+#: .\templates\fleet\workday_form.html:162
+msgid "Standard workday duration (8, 10, or 12 hours)"
+msgstr "Duração Padrão do Dia de Trabalho (8, 10 ou 12 horas)"
+
+#: .\templates\fleet\workday_form.html:183
+#, python-format
+msgid "Payment value for this workday. Overtime = 10%% per hour."
+msgstr "Valor a pagar por este Dia de Trabalho. Horas Extras = 10%% por hora"
+
+#: .\templates\fleet\workday_form.html:212
+msgid "Update Workday"
+msgstr "Atualizar Dia de Trabalho"
+
+#: .\templates\fleet\workday_form.html:214
+msgid "Register Workday"
+msgstr "Registrar Dia de Trabalho"
+
+#: .\templates\fleet\workday_form.html:229
+msgid "Overtime starts after standard hours + 15 minutes tolerance"
+msgstr "Contagem de Horas Extras se inicia após as horas de diária + 15 minutos de tolerância"
+
+#: .\templates\fleet\workday_form.html:230
+msgid "Overtime is counted in full hours only (1h, 2h, 3h...)"
+msgstr "Horas Extras são contabilizadas como horas completas (1h, 2h, 3h...)"
+
+#: .\templates\fleet\workday_form.html:231
+#, python-format
+msgid "Each overtime hour = 10%% of the daily rate"
+msgstr "Cada Hora Extra = 10%% do valor da diária"
+
+#: .\templates\fleet\workday_form.html:232
+msgid "Short services (under 8h) pay the full daily rate"
+msgstr "Serviços curtos (menos de 8h) pagarão a diária completa"
+
+#: .\templates\fleet\workday_form.html:233
+#, python-format
+msgid "Transfers pay 50%% of the daily rate with no overtime"
+msgstr "Transfers pagam 50%% do valor de diária, sem horas extras"
+
+#: .\templates\fleet\workday_form.html:234
+msgid "Workdays can only be edited when status is 'Pending' or 'Rejected'"
+msgstr "Somente Dias de Trabalho com status 'Pendente' ou 'Rejeitado' podem ser editados"
+
+#: .\templates\fleet\workday_list.html:15
+msgid "Manage daily workday records"
+msgstr "Gerenciar Registros dos Dias de Trabalho"
+
+#: .\templates\fleet\workday_list.html:78
+msgid "Total Overtime"
+msgstr "Total de Horas Extras"
+
+#: .\templates\fleet\workday_list.html:100
+msgid "All Assignments"
+msgstr "Todos os Serviços"
+
+#: .\templates\fleet\workday_list.html:147
+msgid "Workday List"
+msgstr "Lista de Dias de Trabalho"
+
+#: .\templates\fleet\workday_list.html:159
+msgid "Start"
+msgstr "Início"
+
+#: .\templates\fleet\workday_list.html:281
+msgid "No workdays found"
+msgstr "Dias de Trabalho não encontrados"
+
+#: .\templates\fleet\workday_list.html:283
+msgid "Register First Workday"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:6
+#: .\templates\personnel\driver_profile_form.html:22
+#: .\templates\personnel\employee_detail.html:353
+msgid "Edit Driver Profile"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:8
+#: .\templates\personnel\driver_profile_form.html:24
+#: .\templates\personnel\employee_detail.html:358
+msgid "Create Driver Profile"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:28
+msgid "Driver license and qualification information"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:58
+#: .\templates\personnel\employee_detail.html:170
+msgid "Driver License (CNH)"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:64
+#: .\templates\personnel\employee_detail.html:180
+msgid "License Number"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:74
+msgid "License Category"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:84
+msgid "First Issue Date"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:115
+msgid "Special Qualifications"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:123
+msgid "Has MOPP (Hazardous Materials)"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:130
+msgid "MOPP Expiry Date"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:142
+msgid "Has Defensive Driving Course"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:149
+msgid "Course Date"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:166
+msgid "Blood Type"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:176
+msgid "Last Medical Exam"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:186
+msgid "Next Medical Exam"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:214
+msgid "Update Profile"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:216
+msgid "Create Profile"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:231
+msgid "Valid driver license is required for vehicle assignments"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:232
+msgid "Medical exam must be up to date"
+msgstr ""
+
+#: .\templates\personnel\driver_profile_form.html:233
+msgid "MOPP is required for transporting hazardous materials"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:4
+#: .\templates\personnel\employee_detail.html:364
+msgid "Delete Employee"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:28
+#: .\templates\personnel\employee_detail.html:15
+#: .\templates\personnel\employee_form.html:71
+msgid "Employee Number"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:38
+msgid ""
+"Are you sure you want to delete this employee? This action cannot be undone."
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:45
+#: .\templates\personnel\employee_form.html:56
+msgid "Employee Information"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:56
+#: .\templates\personnel\employee_detail.html:134
+#: .\templates\personnel\employee_form.html:212
+#: .\templates\personnel\employee_list.html:139
+msgid "Hire Date"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:66
+msgid "This is a driver. Deleting will also remove:"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:68
+msgid "Driver profile and license information"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:69
+msgid "Vehicle assignment history"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:70
+msgid "All workday records"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:84
+msgid "Yes, Delete Employee"
+msgstr ""
+
+#: .\templates\personnel\employee_confirm_delete.html:105
+msgid "Mark as Terminated"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:4
+msgid "Employee Details"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:75
+#: .\templates\personnel\employee_form.html:108
+msgid "RG"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:79
+#: .\templates\personnel\employee_form.html:118
+msgid "Birth Date"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:83
+#: .\templates\personnel\employee_form.html:128
+msgid "Gender"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:104
+#: .\templates\personnel\employee_form.html:155
+#: .\templates\tenants\create.html:95
+msgid "Email"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:108
+#: .\templates\personnel\employee_form.html:165
+msgid "Address"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:112
+msgid "City/State"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:117
+#: .\templates\personnel\employee_form.html:195
+msgid "ZIP Code"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:138
+msgid "Termination Date"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:154
+msgid "Bank Account"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:156
+#: .\templates\personnel\employee_form.html:272
+msgid "Branch"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:157
+#: .\templates\personnel\employee_form.html:282
+msgid "Account"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:184
+msgid "Category"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:202
+msgid "MOPP"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:205
+msgid "Yes"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:207
+#: .\templates\tenants\members_list.html:33
+msgid "Expires"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:210
+msgid "No"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:215
+msgid "Medical Exam"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:230
+msgid "Driver profile not created yet."
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:233
+msgid "Create Now"
+msgstr ""
+
+#: .\templates\personnel\employee_detail.html:347
+#: .\templates\personnel\employee_form.html:6
+#: .\templates\personnel\employee_form.html:22
+msgid "Edit Employee"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:24
+msgid "Add New Employee"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:29
+msgid "Update employee information"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:31
+msgid "Register a new employee"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:62
+msgid "Employee Type"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:88
+msgid "Full Name"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:175
+msgid "City"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:185
+msgid "State"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:232
+msgid "Salary"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:242
+msgid "Payment Cycle"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:262
+msgid "Bank"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:309
+msgid "Relationship"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:367
+msgid "Update Employee"
+msgstr ""
+
+#: .\templates\personnel\employee_form.html:369
+msgid "Create Employee"
+msgstr ""
+
+#: .\templates\personnel\employee_list.html:15
+msgid "Manage your personnel"
+msgstr ""
+
+#: .\templates\personnel\employee_list.html:73
+msgid "Name, number, or CPF"
+msgstr ""
+
+#: .\templates\personnel\employee_list.html:79
+msgid "All Types"
+msgstr ""
+
+#: .\templates\personnel\employee_list.html:97
+msgid "All Status"
+msgstr ""
+
+#: .\templates\personnel\employee_list.html:125
+msgid "Employee List"
+msgstr ""
+
+#: .\templates\personnel\employee_list.html:265
+msgid "No employees found"
+msgstr ""
+
+#: .\templates\personnel\employee_list.html:267
+msgid "Add First Employee"
+msgstr ""
+
+#: .\templates\tenants\complete_registration.html:8
+msgid "Registrar Empresa"
+msgstr ""
+
+#: .\templates\tenants\complete_registration.html:21
+msgid "Registrar Nova Empresa"
+msgstr ""
+
+#: .\templates\tenants\create.html:4
+msgid "Create Organization - TMS"
+msgstr ""
+
+#: .\templates\tenants\create.html:18
+msgid "Create a new organization to manage your team and resources."
+msgstr ""
+
+#: .\templates\tenants\create.html:19
+msgid "You will be assigned as the owner automatically."
+msgstr ""
+
+#: .\templates\tenants\create.html:28
+msgid "Organization Name"
+msgstr ""
+
+#: .\templates\tenants\create.html:36
+msgid "The display name for your organization"
+msgstr ""
+
+#: .\templates\tenants\create.html:41
+msgid "Slug"
+msgstr ""
+
+#: .\templates\tenants\create.html:49
+msgid "Used in URLs (lowercase, no spaces)"
+msgstr ""
+
+#: .\templates\tenants\create.html:55 .\templates\tenants\detail.html:35
+msgid "Legal Name"
+msgstr ""
+
+#: .\templates\tenants\create.html:63
+msgid "Official registered company name"
+msgstr ""
+
+#: .\templates\tenants\create.html:69
+msgid "Tax ID / Document"
+msgstr ""
+
+#: .\templates\tenants\create.html:77
+msgid "CNPJ, Tax ID, or similar"
+msgstr ""
+
+#: .\templates\tenants\create.html:103
+msgid "Primary contact email for this organization"
+msgstr ""
+
+#: .\templates\tenants\create.html:114
+msgid "Create Organization"
+msgstr ""
+
+#: .\templates\tenants\detail.html:29
+msgid "Organization Details"
+msgstr ""
+
+#: .\templates\tenants\detail.html:47 .\tenants\admin.py:95
+msgid "Plan"
+msgstr ""
+
+#: .\templates\tenants\detail.html:84
+msgid "View All Members"
+msgstr ""
+
+#: .\templates\tenants\invite.html:12
+msgid "Invite New Member"
+msgstr ""
+
+#: .\templates\tenants\invite.html:18
+msgid "Email Address"
+msgstr ""
+
+#: .\templates\tenants\invite.html:22 .\templates\tenants\members_list.html:31
+#: .\tenants\admin.py:194
+msgid "Role"
+msgstr ""
+
+#: .\templates\tenants\invite.html:31
+msgid "Send Invitation"
+msgstr ""
+
+#: .\templates\tenants\members_list.html:9
+msgid "Members of"
+msgstr ""
+
+#: .\templates\tenants\members_list.html:20
+msgid "Pending Invitations"
+msgstr ""
+
+#: .\templates\tenants\members_list.html:32
+msgid "Sent"
+msgstr ""
+
+#: .\templates\tenants\members_list.html:66
+msgid "Remove"
+msgstr ""
+
+#: .\templates\tenants\members_list.html:73
+msgid "No members yet"
+msgstr ""
+
+#: .\templates\tenants\remove_member.html:4
+#: .\templates\tenants\remove_member.html:12
+msgid "Remove Member"
+msgstr ""
+
+#: .\templates\tenants\remove_member.html:15
+msgid "Are you sure you want to remove"
+msgstr ""
+
+#: .\templates\tenants\remove_member.html:17
+msgid "from"
+msgstr ""
+
+#: .\templates\tenants\remove_member.html:19
+msgid ""
+"This action cannot be undone. The user will lose access to this organization"
+msgstr ""
+
+#: .\templates\tenants\remove_member.html:25
+msgid "Yes, Remove"
+msgstr ""
+
+#: .\templates\tenants\select.html:4
+msgid "Select Organization - TMS"
+msgstr ""
+
+#: .\templates\tenants\select.html:13
+msgid "Choose which organization you want to work with"
+msgstr ""
+
+#: .\templates\tenants\select.html:57
+msgid "Select"
+msgstr ""
+
+#: .\templates\tenants\select.html:75
+msgid "No Organizations Yet"
+msgstr ""
+
+#: .\templates\tenants\select.html:76
+msgid "You're not a member of any organization. Create one to get started!"
+msgstr ""
+
+#: .\templates\tenants\select.html:78
+msgid "Create Your First Organization"
+msgstr ""
+
+#: .\templates\tenants\update.html:12
+msgid "Edit Organization"
+msgstr ""
+
+#: .\tenants\admin.py:64
+msgid "Status & Plan"
+msgstr ""
+
+#: .\tenants\admin.py:68
+msgid "Settings"
+msgstr ""
+
+#: .\tenants\admin.py:110
+msgid "No settings configured"
+msgstr ""
+
+#: .\tenants\admin.py:121
+msgid "Settings (Formatted)"
+msgstr ""
+
+#: .\tenants\admin.py:162
+msgid "Membership"
+msgstr ""
+
+#: .\tenants\admin.py:166 .\tenants\admin.py:241
+msgid "Invitation"
+msgstr ""
+
+#: .\tenants\admin.py:168
+msgid "Activity"
+msgstr ""
+
+#: .\tenants\admin.py:246
+msgid "Acceptance"
+msgstr ""
+
+#: .\tenants\apps.py:11
+msgid "Tenant Management"
+msgstr ""
+
+#: .\tenants\models.py:32
+msgid "Free"
+msgstr ""
+
+#: .\tenants\models.py:33
+msgid "Basic"
+msgstr ""
+
+#: .\tenants\models.py:34
+msgid "Premium"
+msgstr ""
+
+#: .\tenants\models.py:35
+msgid "Enterprise"
+msgstr ""
+
+#: .\tenants\models.py:42
+msgid "Unique identifier for the tenant, used ni URLs and subdomains"
+msgstr ""
+
+#: .\tenants\models.py:44
+msgid "Display name"
+msgstr ""
+
+#: .\tenants\models.py:45
+msgid "Legal company name"
+msgstr ""
+
+#: .\tenants\models.py:90
+msgid "Administrator"
+msgstr ""
+
+#: .\tenants\models.py:91
+msgid "Manager"
+msgstr ""
+
+#: .\tenants\models.py:93
+msgid "Viewer"
+msgstr ""
+
+#: .\tenants\models.py:148
+msgid "Accepted"
+msgstr ""
+
+#: .\tenants\models.py:149
+msgid "Declined"
+msgstr ""
+
+#: .\tenants\models.py:197
+msgid "This user is already a member of this tenant."
+msgstr ""
+
+#: .\tenants\models.py:213
+msgid "There is already a pending invitation for this e-mail."
+msgstr ""
+
+#: .\tenants\views.py:48
+msgid "Invalid tenant selection."
+msgstr ""
+
+#: .\tenants\views.py:109
+msgid "You do not have access to this tenant."
+msgstr ""
+
+#: .\tenants\views.py:151
+msgid "Only tenant owners can edit this tenant."
+msgstr ""
+
+#: .\tenants\views.py:158
+msgid "Tenant information updated successfully!"
+msgstr ""
+
+#: .\tenants\views.py:174
+msgid "You don't have access to this tenant."
+msgstr ""
+
+#: .\tenants\views.py:215
+msgid "Email is required."
+msgstr ""
+
+#: .\tenants\views.py:257
+msgid "This invitation was sent to a different email address."
+msgstr ""
+
+#: .\tenants\views.py:294
+msgid "Only tenant owners can remove members."
+msgstr ""
+
+#: .\tenants\views.py:313
+msgid "Cannot remove the last owner of the tenant."
+msgstr ""
+
+#: .\tms\settings.py:92
+msgid "Português Brasileiro"
+msgstr ""
+
+#: .\tms\settings.py:93
+msgid "English"
+msgstr ""
+
+#: .\tms\settings.py:94
+msgid "Español"
+msgstr ""
+
+#: .\tms\settings.py:95
+msgid "Français"
+msgstr ""
+
+#: .\tms\settings.py:96
+msgid "Deutsch"
+msgstr ""
+
+#: .\tms\settings.py:97
+msgid "Italiano"
+msgstr ""
+
+#: .\tms\views.py:22
+msgid "Please select an organization to access the dashboard."
+msgstr ""
+
+#~ msgid "minutes tolerance"
+#~ msgstr "minutops de tolerância"
+
+#~ msgid "Edit Profile - TMS"
+#~ msgstr "Editar Perfil - TMS"

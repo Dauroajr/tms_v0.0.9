@@ -210,13 +210,13 @@
                 </div>
 
                 <div class="col-md-4">
-                  <label for="{{ form.capacity_m3.id_for_label }}" class="form-label">
-                    {% translate "Capacity (m³)" %}
+                  <label for="{{ form.capacity_m3_or_liters.id_for_label }}" class="form-label">
+                    {% translate "Capacity (m³ or L)" %}
                   </label>
-                  {{ form.capacity_m3 }}
-                  {% if form.capacity_m3.errors %}
+                  {{ form.capacity_m3_or_liters }}
+                  {% if form.capacity_m3_or_liters.errors %}
                   <div class="invalid-feedback d-block">
-                    {{ form.capacity_m3.errors }}
+                    {{ form.capacity_m3_or_liters.errors }}
                   </div>
                   {% endif %}
                 </div>
@@ -342,7 +342,7 @@
                   {% if object %}
                   {% translate "Update Vehicle" %}
                   {% else %}
-                  {% translate "Create Vehicle" %}
+                  {% translate "Add Vehicle" %}
                   {% endif %}
                 </button>
               </div>
