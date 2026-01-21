@@ -22,7 +22,7 @@
 }
 
 li.nav-item:not(.welcome):hover {
-  color: rgb(144, 235, 255);
+  color: #90ebff;
   transition: 0.3s;
   background-color: #19425a;
   border-radius: 5px;

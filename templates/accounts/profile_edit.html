@@ -27,7 +27,7 @@
                   {% translate 'First Name' %}
                 </label>
                 {{ form.first_name }}
-                {% if form-first_name.errors %}
+                {% if form.first_name.errors %}
                   <div class="invalid-feedback d-block">
                     {{ form.first_name.errors }}
                   </div>
@@ -39,7 +39,7 @@
                   {% translate 'Last Name' %}
                 </label>
                 {{ form.last_name }}
-                {% if form.last_name-errors %}
+                {% if form.last_name.errors %}
                   <div class="invalid-feedback d-block">
                     {{ form.last_name.errors }}
                   </div>
