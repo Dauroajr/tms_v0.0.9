@@ -117,7 +117,7 @@ class CustomUser(AbstractUser):
         # Validate document number, if provided.
         if self.document_number and self.document_type:
             if self.document_type == 'CPF':
-                self.validade_cpf()
+                self.validate_cpf()
             elif self.document_type == 'CNPJ':
                 self.validate_cnpj()
 

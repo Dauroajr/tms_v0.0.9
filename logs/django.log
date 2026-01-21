@@ -8930,3 +8930,1576 @@ INFO 2026-01-02 10:44:51,649 basehttp 50620 10516 "GET /static/css/header.css HT
 INFO 2026-01-02 10:51:47,531 autoreload 15496 27464 Watching for file changes with StatReloader
 INFO 2026-01-02 11:35:51,298 autoreload 38248 19268 Watching for file changes with StatReloader
 INFO 2026-01-04 21:15:29,426 autoreload 49796 59828 Watching for file changes with StatReloader
+INFO 2026-01-04 21:15:30,025 basehttp 49796 26024 "GET /personnel/employees/ HTTP/1.1" 200 13642
+INFO 2026-01-04 21:15:30,158 basehttp 49796 26024 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-04 21:15:30,158 basehttp 49796 50688 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-01-04 21:15:30,177 basehttp 49796 50688 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-01-04 21:25:06,265 basehttp 49796 53184 "GET / HTTP/1.1" 200 9237
+INFO 2026-01-04 21:25:06,718 basehttp 49796 53184 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-04 21:25:06,728 basehttp 49796 53184 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-04 21:25:06,743 basehttp 49796 49528 "GET /static/css/navbar.css HTTP/1.1" 200 3810
+INFO 2026-01-04 21:25:06,745 basehttp 49796 53184 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-04 21:25:07,170 basehttp 49796 60424 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-04 21:25:07,177 basehttp 49796 32624 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-04 21:25:07,187 basehttp 49796 29508 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-04 21:25:07,192 basehttp 49796 9996 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-04 21:25:07,733 basehttp 49796 9996 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-04 21:26:51,332 basehttp 49796 63236 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-01-04 21:26:51,345 basehttp 49796 63236 "GET / HTTP/1.1" 200 9232
+INFO 2026-01-04 21:26:54,598 basehttp 49796 58160 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-01-04 21:26:54,607 basehttp 49796 58160 "GET / HTTP/1.1" 200 9237
+WARNING 2026-01-04 21:27:38,845 basehttp 49796 56796 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 21:32:30,883 basehttp 49796 56952 "GET /personnel/employees/ HTTP/1.1" 200 13705
+WARNING 2026-01-04 21:32:31,062 basehttp 49796 56952 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 21:32:33,111 basehttp 49796 32220 "GET /personnel/employees/ HTTP/1.1" 200 13705
+INFO 2026-01-04 21:32:33,183 basehttp 49796 55680 "GET /static/css/base.css HTTP/1.1" 200 439
+WARNING 2026-01-04 21:32:33,183 basehttp 49796 32220 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 21:32:33,195 basehttp 49796 32220 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-04 21:32:33,196 basehttp 49796 55680 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-04 21:32:33,213 basehttp 49796 32220 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-04 21:32:33,215 basehttp 49796 55680 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-04 21:32:33,226 basehttp 49796 32220 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-04 21:32:33,235 basehttp 49796 55680 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-04 21:32:33,251 basehttp 49796 32220 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-04 21:32:33,584 basehttp 49796 32220 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-04 21:33:28,722 basehttp 49796 62044 "GET /personnel/employees/ HTTP/1.1" 200 13695
+INFO 2026-01-04 21:33:28,770 basehttp 49796 62716 "GET /static/css/base.css HTTP/1.1" 200 439
+WARNING 2026-01-04 21:33:28,784 basehttp 49796 62044 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 21:33:28,785 basehttp 49796 62716 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-04 21:33:28,790 basehttp 49796 62044 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-04 21:33:28,791 basehttp 49796 62716 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-04 21:33:28,801 basehttp 49796 62044 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-04 21:33:28,803 basehttp 49796 62716 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-04 21:33:28,808 basehttp 49796 62044 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-04 21:33:28,820 basehttp 49796 62716 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-04 21:33:29,005 basehttp 49796 62716 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-04 21:41:33,982 basehttp 49796 56888 "GET / HTTP/1.1" 200 12754
+INFO 2026-01-04 21:41:34,606 basehttp 49796 56624 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-04 21:41:37,650 basehttp 49796 56624 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-01-04 21:41:38,098 basehttp 49796 56624 "GET /tenants/ HTTP/1.1" 200 12058
+WARNING 2026-01-04 21:41:45,930 basehttp 49796 56624 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 21:58:24,683 basehttp 49796 60764 "GET /tenants/ HTTP/1.1" 200 12058
+WARNING 2026-01-04 21:58:24,807 basehttp 49796 60764 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 21:58:24,812 basehttp 49796 28176 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-04 22:00:18,610 basehttp 49796 59544 "GET /tenants/ HTTP/1.1" 200 12049
+WARNING 2026-01-04 22:00:18,707 basehttp 49796 59544 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:01:43,848 basehttp 49796 53060 "GET /tenants/ HTTP/1.1" 200 12053
+INFO 2026-01-04 22:01:43,877 basehttp 49796 53060 "GET /static/css/navbar.css HTTP/1.1" 304 0
+WARNING 2026-01-04 22:01:43,913 basehttp 49796 53060 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:01:45,397 basehttp 49796 53060 "GET /tenants/ HTTP/1.1" 200 12053
+INFO 2026-01-04 22:01:45,446 basehttp 49796 53060 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-04 22:01:45,446 basehttp 49796 59956 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-04 22:01:45,446 basehttp 49796 59736 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-04 22:01:45,454 basehttp 49796 59956 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-04 22:01:45,454 basehttp 49796 53060 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-04 22:01:45,455 basehttp 49796 59736 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-04 22:01:45,465 basehttp 49796 53060 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+WARNING 2026-01-04 22:01:45,482 basehttp 49796 59736 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:01:45,488 basehttp 49796 59956 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-04 22:01:45,853 basehttp 49796 59736 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-04 22:02:02,418 basehttp 49796 47732 "GET /tenants/ HTTP/1.1" 200 12065
+WARNING 2026-01-04 22:02:02,494 basehttp 49796 47732 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:02:03,926 basehttp 49796 47732 "GET /tenants/ HTTP/1.1" 200 12065
+INFO 2026-01-04 22:02:03,987 basehttp 49796 58564 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-04 22:02:03,987 basehttp 49796 61092 "GET /static/css/base.css HTTP/1.1" 200 439
+WARNING 2026-01-04 22:02:03,990 basehttp 49796 47732 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:02:03,994 basehttp 49796 61092 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-04 22:02:03,994 basehttp 49796 58564 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-04 22:02:03,997 basehttp 49796 47732 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-04 22:02:04,004 basehttp 49796 58564 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-04 22:02:04,006 basehttp 49796 61092 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-04 22:02:04,012 basehttp 49796 47732 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-04 22:02:04,542 basehttp 49796 47732 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-04 22:02:29,602 basehttp 49796 59824 "GET /tenants/ HTTP/1.1" 200 12049
+WARNING 2026-01-04 22:02:29,656 basehttp 49796 59824 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:03:54,398 basehttp 49796 62164 "GET /tenants/ HTTP/1.1" 200 12071
+WARNING 2026-01-04 22:03:54,446 basehttp 49796 62164 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:04:15,302 basehttp 49796 61324 "GET /tenants/ HTTP/1.1" 200 12077
+WARNING 2026-01-04 22:04:15,351 basehttp 49796 61324 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:04:24,928 basehttp 49796 25452 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-01-04 22:04:24,958 basehttp 49796 25452 "GET /tenants/ HTTP/1.1" 200 12077
+WARNING 2026-01-04 22:04:25,063 basehttp 49796 25452 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+ERROR 2026-01-04 22:06:01,193 log 49796 59304 Internal Server Error: /fleet/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: fleet_vehicle.capacity_m3_or_liters
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\core\mixins.py", line 19, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\list.py", line 178, in get
+    context = self.get_context_data()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py", line 94, in get_context_data
+    v for v in vehicles if v.needs_maintenance()
+               ^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: fleet_vehicle.capacity_m3_or_liters
+ERROR 2026-01-04 22:06:01,233 basehttp 49796 59304 "GET /fleet/ HTTP/1.1" 500 174230
+WARNING 2026-01-04 22:06:01,315 basehttp 49796 59304 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+WARNING 2026-01-04 22:06:01,458 basehttp 49796 59304 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-01-04 22:18:16,189 autoreload 62704 61176 Watching for file changes with StatReloader
+INFO 2026-01-04 22:18:21,515 basehttp 62704 56536 "GET /fleet/ HTTP/1.1" 302 0
+INFO 2026-01-04 22:18:21,539 basehttp 62704 56536 "GET /tenants/ HTTP/1.1" 302 0
+INFO 2026-01-04 22:18:21,599 basehttp 62704 56536 "GET /accounts/login/?next=/tenants/ HTTP/1.1" 200 7700
+INFO 2026-01-04 22:18:21,701 basehttp 62704 56536 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-04 22:18:38,580 basehttp 62704 56536 "POST /accounts/login/?next=/tenants/ HTTP/1.1" 200 7714
+INFO 2026-01-04 22:18:42,062 basehttp 62704 56536 "GET /accounts/login/ HTTP/1.1" 200 7700
+INFO 2026-01-04 22:18:46,464 basehttp 62704 56536 "POST /accounts/login/ HTTP/1.1" 200 7714
+INFO 2026-01-04 22:18:52,575 basehttp 62704 56536 "POST /accounts/login/ HTTP/1.1" 200 7714
+INFO 2026-01-04 22:18:53,134 basehttp 62704 62080 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-04 22:18:53,141 basehttp 62704 62080 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-04 22:18:53,154 basehttp 62704 56536 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-04 22:18:53,162 basehttp 62704 62080 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-04 22:18:53,168 basehttp 62704 60624 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-04 22:18:53,375 basehttp 62704 19152 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-04 22:18:53,433 basehttp 62704 37252 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-04 22:18:53,447 basehttp 62704 59168 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-04 22:18:53,585 basehttp 62704 59168 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-04 22:19:03,339 basehttp 62704 61272 "GET /admin HTTP/1.1" 301 0
+INFO 2026-01-04 22:19:03,359 basehttp 62704 61360 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-01-04 22:19:03,439 basehttp 62704 61360 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 8472
+INFO 2026-01-04 22:19:03,468 basehttp 62704 61360 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2026-01-04 22:19:03,477 basehttp 62704 61360 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2026-01-04 22:19:03,482 basehttp 62704 61360 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-01-04 22:19:03,488 basehttp 62704 61360 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2026-01-04 22:19:03,492 basehttp 62704 61360 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-01-04 22:19:03,498 basehttp 62704 61360 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-01-04 22:19:03,502 basehttp 62704 61360 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-01-04 22:19:03,517 basehttp 62704 61360 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2026-01-04 22:19:03,521 basehttp 62704 61360 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-01-04 22:19:03,526 basehttp 62704 61360 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+WARNING 2026-01-04 22:19:03,594 basehttp 62704 61360 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-01-04 22:19:08,465 basehttp 62704 61360 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4398
+INFO 2026-01-04 22:19:17,230 basehttp 62704 61280 "GET / HTTP/1.1" 200 9290
+INFO 2026-01-04 22:19:21,162 basehttp 62704 61280 "GET /accounts/login/ HTTP/1.1" 200 7700
+INFO 2026-01-04 22:19:36,359 basehttp 62704 62664 "POST /accounts/login/ HTTP/1.1" 200 7720
+INFO 2026-01-04 22:19:38,614 basehttp 62704 62664 "GET / HTTP/1.1" 200 9290
+INFO 2026-01-04 22:34:35,670 autoreload 48068 59148 Watching for file changes with StatReloader
+INFO 2026-01-04 22:34:37,973 basehttp 48068 53216 "GET / HTTP/1.1" 200 9290
+INFO 2026-01-04 22:34:38,013 basehttp 48068 53216 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-04 22:34:40,048 basehttp 48068 53216 "GET /accounts/register/ HTTP/1.1" 200 10528
+ERROR 2026-01-04 22:35:25,972 log 48068 55272 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\views.py", line 31, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 339, in full_clean
+    self._post_clean()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 258, in _post_clean
+    super()._post_clean()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 498, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1654, in full_clean
+    self.clean()
+    ~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\models.py", line 120, in clean
+    self.validade_cpf()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'validade_cpf'. Did you mean: 'validate_cpf'?
+ERROR 2026-01-04 22:35:25,994 basehttp 48068 55272 "POST /accounts/register/ HTTP/1.1" 500 123347
+ERROR 2026-01-04 22:36:14,611 log 48068 54500 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\views.py", line 31, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 339, in full_clean
+    self._post_clean()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 258, in _post_clean
+    super()._post_clean()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 498, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1654, in full_clean
+    self.clean()
+    ~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\models.py", line 120, in clean
+    self.validade_cpf()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'validade_cpf'. Did you mean: 'validate_cpf'?
+ERROR 2026-01-04 22:36:14,617 basehttp 48068 54500 "POST /accounts/register/ HTTP/1.1" 500 123356
+ERROR 2026-01-04 22:36:39,532 log 48068 57356 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\views.py", line 31, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 339, in full_clean
+    self._post_clean()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 258, in _post_clean
+    super()._post_clean()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 498, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1654, in full_clean
+    self.clean()
+    ~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\models.py", line 120, in clean
+    self.validade_cpf()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'validade_cpf'. Did you mean: 'validate_cpf'?
+ERROR 2026-01-04 22:36:39,535 basehttp 48068 57356 "POST /accounts/register/ HTTP/1.1" 500 123356
+INFO 2026-01-04 22:37:43,113 basehttp 48068 1768 "POST /accounts/register/ HTTP/1.1" 200 10894
+INFO 2026-01-04 22:38:03,234 basehttp 48068 26136 "POST /accounts/register/ HTTP/1.1" 302 0
+INFO 2026-01-04 22:38:03,283 basehttp 48068 26136 "GET /tenants/ HTTP/1.1" 200 7446
+INFO 2026-01-04 22:38:08,421 basehttp 48068 26136 "GET /tenants/create/ HTTP/1.1" 200 10308
+WARNING 2026-01-04 22:38:26,804 basehttp 48068 45668 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:39:28,024 basehttp 48068 56560 "GET /tenants/create/ HTTP/1.1" 200 10308
+WARNING 2026-01-04 22:39:28,105 basehttp 48068 56560 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:39:33,728 basehttp 48068 56560 "GET /tenants/create/ HTTP/1.1" 200 10309
+WARNING 2026-01-04 22:39:33,772 basehttp 48068 56560 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-04 22:39:41,929 basehttp 48068 56560 "GET /tenants/create/ HTTP/1.1" 200 10308
+WARNING 2026-01-04 22:39:41,978 basehttp 48068 56560 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+ERROR 2026-01-05 17:51:06,622 log 48068 65640 Internal Server Error: /tenants/create/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 228, in do_block
+    raise TemplateSyntaxError(
+        "'%s' tag with name '%s' appears more than once" % (bits[0], block_name)
+    )
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'title' appears more than once
+ERROR 2026-01-05 17:51:06,678 basehttp 48068 65640 "GET /tenants/create/ HTTP/1.1" 500 271482
+WARNING 2026-01-05 17:51:06,956 basehttp 48068 65640 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-05 17:52:29,010 basehttp 48068 58144 "GET /tenants/create/ HTTP/1.1" 200 11073
+WARNING 2026-01-05 17:52:29,393 basehttp 48068 58144 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-05 17:52:29,393 basehttp 48068 57676 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-05 17:52:29,394 basehttp 48068 16004 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-01-05 17:52:36,630 basehttp 48068 57676 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-01-05 17:52:36,737 basehttp 48068 57676 "GET /tenants/ HTTP/1.1" 200 7446
+WARNING 2026-01-05 17:52:36,895 basehttp 48068 57676 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-05 17:52:39,746 basehttp 48068 56684 "GET /tenants/create/ HTTP/1.1" 200 11073
+WARNING 2026-01-05 17:52:39,937 basehttp 48068 56684 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-05 17:58:41,482 basehttp 48068 22084 "GET /tenants/create/ HTTP/1.1" 200 12635
+WARNING 2026-01-05 17:58:41,698 basehttp 48068 22084 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-05 17:58:42,197 basehttp 48068 22084 "GET /static/css/custom.css HTTP/1.1" 200 0
+INFO 2026-01-05 17:58:45,127 basehttp 48068 61108 "GET /tenants/create/ HTTP/1.1" 200 12635
+WARNING 2026-01-05 17:58:45,205 basehttp 48068 61108 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-05 17:58:45,241 basehttp 48068 59728 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-05 17:58:45,247 basehttp 48068 61108 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-05 17:58:45,279 basehttp 48068 59728 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-05 17:58:45,293 basehttp 48068 61108 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-05 17:58:45,296 basehttp 48068 59728 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-05 17:58:45,305 basehttp 48068 61108 "GET /static/css/custom.css HTTP/1.1" 200 0
+INFO 2026-01-05 17:58:45,323 basehttp 48068 59728 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-05 17:58:45,329 basehttp 48068 61108 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-05 17:58:45,350 basehttp 48068 59728 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-05 17:58:46,076 basehttp 48068 59728 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-05 18:00:18,228 basehttp 48068 30336 "GET /tenants/create/ HTTP/1.1" 200 12635
+INFO 2026-01-05 18:00:18,381 basehttp 48068 50412 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-05 18:00:18,382 basehttp 48068 30336 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-05 18:00:18,383 basehttp 48068 55720 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-05 18:00:18,396 basehttp 48068 30336 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-05 18:00:18,397 basehttp 48068 50412 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-05 18:00:18,398 basehttp 48068 55720 "GET /static/css/custom.css HTTP/1.1" 200 4519
+INFO 2026-01-05 18:00:18,412 basehttp 48068 50412 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-05 18:00:18,412 basehttp 48068 30336 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-05 18:00:18,475 basehttp 48068 55720 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+WARNING 2026-01-05 18:00:18,476 basehttp 48068 50412 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-05 18:00:18,868 basehttp 48068 50412 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-05 18:15:50,972 basehttp 48068 65612 "GET /tenants/ HTTP/1.1" 200 9008
+INFO 2026-01-05 18:15:51,278 basehttp 48068 65612 "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2026-01-05 18:15:54,154 basehttp 48068 65612 "GET /tenants/create/ HTTP/1.1" 200 13234
+INFO 2026-01-05 18:16:08,634 basehttp 48068 65612 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-01-05 18:16:08,678 basehttp 48068 65612 "GET /tenants/create/ HTTP/1.1" 200 13219
+INFO 2026-01-05 18:33:26,361 autoreload 60280 66136 Watching for file changes with StatReloader
+INFO 2026-01-05 18:33:32,751 basehttp 60280 46356 "GET /tenants/create/ HTTP/1.1" 200 10378
+INFO 2026-01-05 18:33:33,249 basehttp 60280 46356 "GET /static/css/card-fixes.css HTTP/1.1" 200 665
+INFO 2026-01-05 18:34:34,027 basehttp 60280 47732 "GET /tenants/create/ HTTP/1.1" 200 10318
+INFO 2026-01-05 18:34:34,087 basehttp 60280 47732 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-05 18:34:34,088 basehttp 60280 52256 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-05 18:34:34,097 basehttp 60280 52256 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-05 18:34:34,098 basehttp 60280 47732 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-05 18:34:34,106 basehttp 60280 52256 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-05 18:34:34,108 basehttp 60280 47732 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-05 18:34:34,115 basehttp 60280 52256 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-05 18:34:34,303 basehttp 60280 52256 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-05 18:34:34,794 basehttp 60280 52256 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-07 18:08:58,707 autoreload 31036 23548 Watching for file changes with StatReloader
+INFO 2026-01-07 18:09:04,003 basehttp 31036 3544 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-01-07 18:09:04,190 basehttp 31036 3544 "GET /tenants/create/ HTTP/1.1" 200 10319
+INFO 2026-01-07 18:09:04,299 basehttp 31036 3544 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-07 18:09:04,299 basehttp 31036 18020 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-01-07 18:09:04,302 basehttp 31036 27704 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+WARNING 2026-01-07 18:09:08,495 basehttp 31036 27704 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:10:39,087 basehttp 31036 33920 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-01-07 18:10:39,153 basehttp 31036 33920 "GET /tenants/ HTTP/1.1" 200 7446
+INFO 2026-01-07 18:10:42,893 basehttp 31036 33920 "GET /tenants/create/ HTTP/1.1" 200 10319
+INFO 2026-01-07 18:12:31,473 basehttp 31036 12476 "GET /tenants/create/ HTTP/1.1" 200 10328
+INFO 2026-01-07 18:12:33,984 basehttp 31036 12476 "GET /tenants/create/ HTTP/1.1" 200 10328
+INFO 2026-01-07 18:12:34,865 basehttp 31036 32184 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-07 18:12:34,866 basehttp 31036 3164 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-07 18:12:34,868 basehttp 31036 12476 "GET /static/css/base.css HTTP/1.1" 200 439
+INFO 2026-01-07 18:12:34,873 basehttp 31036 3164 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-07 18:12:34,883 basehttp 31036 3164 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-07 18:12:35,189 basehttp 31036 24452 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-07 18:12:35,226 basehttp 31036 18328 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-07 18:12:35,252 basehttp 31036 33444 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-07 18:12:35,745 basehttp 31036 33444 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+WARNING 2026-01-07 18:12:47,737 basehttp 31036 24856 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:16:16,948 basehttp 31036 18724 "GET /tenants/create/ HTTP/1.1" 200 10341
+WARNING 2026-01-07 18:16:17,036 basehttp 31036 18724 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:18:00,691 basehttp 31036 29572 "GET /tenants/create/ HTTP/1.1" 200 10329
+WARNING 2026-01-07 18:18:00,754 basehttp 31036 29572 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:18:36,291 basehttp 31036 19652 "GET /tenants/create/ HTTP/1.1" 200 10329
+WARNING 2026-01-07 18:18:36,349 basehttp 31036 19652 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:18:38,064 basehttp 31036 19652 "GET /tenants/create/ HTTP/1.1" 200 10329
+WARNING 2026-01-07 18:18:38,145 basehttp 31036 19652 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:18:38,150 basehttp 31036 10304 "GET /static/css/base.css HTTP/1.1" 200 458
+INFO 2026-01-07 18:18:38,153 basehttp 31036 21816 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-07 18:18:38,162 basehttp 31036 19652 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-07 18:18:38,163 basehttp 31036 10304 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-07 18:18:38,164 basehttp 31036 21816 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-07 18:18:38,176 basehttp 31036 10304 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-07 18:18:38,196 basehttp 31036 19652 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-07 18:18:38,198 basehttp 31036 10304 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-07 18:18:38,585 basehttp 31036 10304 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-07 18:19:39,677 basehttp 31036 34012 "GET /tenants/create/ HTTP/1.1" 200 10331
+INFO 2026-01-07 18:19:39,721 basehttp 31036 34012 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-07 18:19:39,744 basehttp 31036 27860 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:19:53,507 basehttp 31036 9504 "GET /tenants/create/ HTTP/1.1" 200 10329
+INFO 2026-01-07 18:19:53,549 basehttp 31036 9504 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-07 18:19:53,576 basehttp 31036 33068 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:20:43,784 basehttp 31036 29460 "GET /tenants/create/ HTTP/1.1" 200 10372
+INFO 2026-01-07 18:20:43,855 basehttp 31036 16264 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-07 18:20:43,874 basehttp 31036 29460 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:29:26,547 basehttp 31036 35888 "GET /tenants/create/ HTTP/1.1" 200 10372
+WARNING 2026-01-07 18:29:26,801 basehttp 31036 35888 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:29:26,804 basehttp 31036 35960 "GET /static/css/base.css HTTP/1.1" 200 594
+INFO 2026-01-07 18:31:21,193 basehttp 31036 34640 "GET /tenants/create/ HTTP/1.1" 200 10328
+INFO 2026-01-07 18:31:21,311 basehttp 31036 34640 "GET /static/css/base.css HTTP/1.1" 200 601
+WARNING 2026-01-07 18:31:21,338 basehttp 31036 35992 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:32:01,501 basehttp 31036 34404 "GET /tenants/create/ HTTP/1.1" 200 10332
+INFO 2026-01-07 18:32:01,545 basehttp 31036 19704 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-07 18:32:01,568 basehttp 31036 34404 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:32:14,415 basehttp 31036 34260 "GET /tenants/create/ HTTP/1.1" 200 10337
+INFO 2026-01-07 18:32:14,478 basehttp 31036 31720 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-07 18:32:14,499 basehttp 31036 34260 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:32:47,283 basehttp 31036 32636 "GET /tenants/create/ HTTP/1.1" 200 10337
+INFO 2026-01-07 18:32:47,345 basehttp 31036 35240 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-07 18:32:47,360 basehttp 31036 32636 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:32:52,405 basehttp 31036 31884 "GET /tenants/create/ HTTP/1.1" 200 10337
+WARNING 2026-01-07 18:32:52,476 basehttp 31036 31884 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:32:57,641 basehttp 31036 31884 "GET /tenants/create/ HTTP/1.1" 200 10337
+WARNING 2026-01-07 18:32:57,725 basehttp 31036 31884 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:32:59,562 basehttp 31036 17984 "GET /tenants/create/ HTTP/1.1" 200 10337
+INFO 2026-01-07 18:32:59,598 basehttp 31036 34468 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-07 18:32:59,616 basehttp 31036 17984 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:33:03,192 basehttp 31036 17984 "GET /tenants/create/ HTTP/1.1" 200 10337
+WARNING 2026-01-07 18:33:03,268 basehttp 31036 17984 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-07 18:33:03,269 basehttp 31036 34468 "GET /static/css/base.css HTTP/1.1" 200 601
+INFO 2026-01-07 18:33:03,270 basehttp 31036 17208 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-07 18:33:03,288 basehttp 31036 17208 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-07 18:33:03,289 basehttp 31036 17984 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-07 18:33:03,290 basehttp 31036 34468 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-07 18:33:03,302 basehttp 31036 34468 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-07 18:33:03,319 basehttp 31036 34468 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-07 18:33:03,324 basehttp 31036 17208 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-07 18:33:03,727 basehttp 31036 17208 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-08 19:27:11,196 basehttp 31036 30596 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-01-08 19:27:11,329 basehttp 31036 30596 "GET /tenants/create/ HTTP/1.1" 200 10336
+INFO 2026-01-08 19:27:11,440 basehttp 31036 31012 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-01-08 19:27:11,440 basehttp 31036 30596 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-01-08 19:27:11,441 basehttp 31036 13968 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-08 19:27:24,009 basehttp 31036 39700 "GET /tenants/create/ HTTP/1.1" 200 10326
+INFO 2026-01-08 19:30:19,704 basehttp 31036 31700 "GET /tenants/create/ HTTP/1.1" 200 10388
+INFO 2026-01-08 19:30:30,690 basehttp 31036 31700 "GET /tenants/create/ HTTP/1.1" 200 10377
+INFO 2026-01-08 19:30:33,051 basehttp 31036 31700 "GET /tenants/create/ HTTP/1.1" 200 10377
+INFO 2026-01-08 19:30:33,090 basehttp 31036 31788 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-08 19:30:33,091 basehttp 31036 31700 "GET /static/css/base.css HTTP/1.1" 200 601
+INFO 2026-01-08 19:30:33,095 basehttp 31036 39156 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-08 19:30:33,101 basehttp 31036 31788 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-08 19:30:33,104 basehttp 31036 39156 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-08 19:30:33,107 basehttp 31036 31788 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-08 19:30:33,111 basehttp 31036 31700 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-08 19:30:33,139 basehttp 31036 31788 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-08 19:30:33,434 basehttp 31036 31700 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-08 19:31:03,065 basehttp 31036 31700 "GET /tenants/create/ HTTP/1.1" 200 10382
+INFO 2026-01-08 19:31:04,947 basehttp 31036 31700 "GET /tenants/create/ HTTP/1.1" 200 10382
+INFO 2026-01-08 19:31:04,982 basehttp 31036 31788 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-08 19:31:04,982 basehttp 31036 35852 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-08 19:31:04,983 basehttp 31036 31700 "GET /static/css/base.css HTTP/1.1" 200 601
+INFO 2026-01-08 19:31:04,984 basehttp 31036 37872 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-08 19:31:04,984 basehttp 31036 39156 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-08 19:31:04,990 basehttp 31036 39156 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-08 19:31:04,993 basehttp 31036 27832 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-08 19:31:04,995 basehttp 31036 39156 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-08 19:31:05,235 basehttp 31036 39156 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-08 19:31:13,952 basehttp 31036 39156 "GET /tenants/create/ HTTP/1.1" 200 10366
+INFO 2026-01-08 19:31:15,813 basehttp 31036 39156 "GET /tenants/create/ HTTP/1.1" 200 10366
+INFO 2026-01-08 19:31:37,386 basehttp 31036 39156 "GET /tenants/create/ HTTP/1.1" 200 10395
+INFO 2026-01-08 19:31:53,231 basehttp 31036 26616 "GET /tenants/create/ HTTP/1.1" 200 10377
+INFO 2026-01-08 19:32:12,308 basehttp 31036 26616 "GET /tenants/create/ HTTP/1.1" 200 10406
+INFO 2026-01-08 19:32:14,044 basehttp 31036 26616 "GET /tenants/create/ HTTP/1.1" 200 10406
+INFO 2026-01-08 19:32:14,075 basehttp 31036 26616 "GET /static/css/base.css HTTP/1.1" 200 601
+INFO 2026-01-08 19:32:14,075 basehttp 31036 25592 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-08 19:32:14,076 basehttp 31036 16068 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-08 19:32:14,084 basehttp 31036 26616 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-08 19:32:14,084 basehttp 31036 25592 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-08 19:32:14,088 basehttp 31036 26616 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-08 19:32:14,093 basehttp 31036 16068 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-08 19:32:14,160 basehttp 31036 16068 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-08 19:32:14,327 basehttp 31036 16068 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-08 19:32:25,019 basehttp 31036 10924 "GET /tenants/create/ HTTP/1.1" 200 10378
+INFO 2026-01-08 19:32:33,601 basehttp 31036 10924 "GET /tenants/create/ HTTP/1.1" 200 10389
+INFO 2026-01-08 19:32:35,710 basehttp 31036 31836 "GET /tenants/create/ HTTP/1.1" 200 10389
+INFO 2026-01-08 19:32:35,733 basehttp 31036 16284 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-08 19:32:35,734 basehttp 31036 31836 "GET /static/css/base.css HTTP/1.1" 200 601
+INFO 2026-01-08 19:32:35,740 basehttp 31036 16284 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-08 19:32:35,740 basehttp 31036 31836 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-08 19:32:35,745 basehttp 31036 16284 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-08 19:32:35,749 basehttp 31036 16284 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-08 19:32:35,755 basehttp 31036 31836 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-08 19:32:35,765 basehttp 31036 31836 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-08 19:32:35,914 basehttp 31036 31836 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:09:26,794 autoreload 10460 24240 Watching for file changes with StatReloader
+INFO 2026-01-12 18:09:34,160 signals 10460 30068 Tenant 5e08ccee-fe8d-4ca4-bc16-b438acb47b58: User daj2@daj.com koined as owner
+INFO 2026-01-12 18:09:34,562 basehttp 10460 30068 "POST /tenants/create/ HTTP/1.1" 302 0
+INFO 2026-01-12 18:09:34,603 basehttp 10460 30068 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-01-12 18:09:35,173 basehttp 10460 30068 "GET /tenants/ HTTP/1.1" 200 12067
+INFO 2026-01-12 18:09:35,255 basehttp 10460 30068 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-01-12 18:09:35,256 basehttp 10460 28064 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-01-12 18:09:35,257 basehttp 10460 4996 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-01-12 18:09:35,263 basehttp 10460 30068 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-12 18:09:41,123 basehttp 10460 27452 "GET /fleet/ HTTP/1.1" 200 16726
+INFO 2026-01-12 18:09:51,577 basehttp 10460 6500 "GET /fleet/vehicles/ HTTP/1.1" 200 14206
+INFO 2026-01-12 18:09:53,630 basehttp 10460 6500 "GET /fleet/vehicles/create/ HTTP/1.1" 200 21494
+INFO 2026-01-12 18:10:02,553 basehttp 10460 13680 "GET /fleet/brands/create HTTP/1.1" 200 14083
+INFO 2026-01-12 18:10:14,151 basehttp 10460 4956 "POST /fleet/brands/create HTTP/1.1" 302 0
+INFO 2026-01-12 18:10:14,233 basehttp 10460 4956 "GET /fleet/brands/ HTTP/1.1" 200 12727
+INFO 2026-01-12 18:10:17,040 basehttp 10460 4956 "GET /fleet/brands/create HTTP/1.1" 200 14083
+INFO 2026-01-12 18:10:29,555 basehttp 10460 4956 "POST /fleet/brands/create HTTP/1.1" 302 0
+INFO 2026-01-12 18:10:29,625 basehttp 10460 4956 "GET /fleet/brands/ HTTP/1.1" 200 13813
+INFO 2026-01-12 18:10:32,588 basehttp 10460 11052 "GET /fleet/brands/fd66702b-2f99-4e98-aa6d-46a6092feb2f/edit HTTP/1.1" 200 14127
+INFO 2026-01-12 18:10:57,951 basehttp 10460 11052 "POST /fleet/brands/fd66702b-2f99-4e98-aa6d-46a6092feb2f/edit HTTP/1.1" 302 0
+INFO 2026-01-12 18:10:58,006 basehttp 10460 11052 "GET /fleet/brands/ HTTP/1.1" 200 13772
+INFO 2026-01-12 18:10:58,337 basehttp 10460 11052 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:11:09,061 basehttp 10460 36320 "GET /fleet/brands/5fc70177-549d-4a6f-a666-51aa2a1e03e8/edit HTTP/1.1" 200 14121
+INFO 2026-01-12 18:11:17,955 basehttp 10460 25184 "POST /fleet/brands/5fc70177-549d-4a6f-a666-51aa2a1e03e8/edit HTTP/1.1" 302 0
+INFO 2026-01-12 18:11:18,012 basehttp 10460 25184 "GET /fleet/brands/ HTTP/1.1" 200 13725
+INFO 2026-01-12 18:11:18,093 basehttp 10460 25184 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:11:18,094 basehttp 10460 23188 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:13:44,322 autoreload 5324 15956 Watching for file changes with StatReloader
+INFO 2026-01-12 18:13:47,639 basehttp 5324 23360 "GET /fleet/brands/ HTTP/1.1" 200 13734
+INFO 2026-01-12 18:13:47,731 basehttp 5324 37680 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:13:47,743 basehttp 5324 38708 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:13:47,762 basehttp 5324 23360 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:13:50,379 basehttp 5324 23360 "GET /fleet/brands/ HTTP/1.1" 200 13734
+WARNING 2026-01-12 18:13:50,459 basehttp 5324 23360 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:13:51,016 basehttp 5324 37680 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:13:51,025 basehttp 5324 37680 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:13:51,066 basehttp 5324 23360 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:13:51,067 basehttp 5324 38708 "GET /static/css/base.css HTTP/1.1" 200 601
+INFO 2026-01-12 18:13:51,074 basehttp 5324 37680 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:13:51,109 basehttp 5324 37680 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:13:51,124 basehttp 5324 37680 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:13:51,559 basehttp 5324 32924 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:13:51,575 basehttp 5324 14408 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:13:51,578 basehttp 5324 21500 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:13:51,963 basehttp 5324 21500 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:14:30,961 basehttp 5324 9764 "GET /fleet/brands/create HTTP/1.1" 200 14083
+WARNING 2026-01-12 18:14:31,054 basehttp 5324 9764 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:14:44,316 basehttp 5324 22856 "POST /fleet/brands/create HTTP/1.1" 302 0
+INFO 2026-01-12 18:14:44,379 basehttp 5324 22856 "GET /fleet/brands/ HTTP/1.1" 200 14786
+INFO 2026-01-12 18:14:44,459 basehttp 5324 11020 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:14:44,461 basehttp 5324 22856 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:14:44,469 basehttp 5324 22052 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:14:44,517 basehttp 5324 11020 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:15:06,568 basehttp 5324 37304 "GET /fleet/brands/ HTTP/1.1" 200 14786
+INFO 2026-01-12 18:15:06,676 basehttp 5324 2260 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:15:06,677 basehttp 5324 37304 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:15:06,739 basehttp 5324 2260 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:15:08,292 basehttp 5324 2260 "GET /fleet/brands/ HTTP/1.1" 200 14786
+INFO 2026-01-12 18:15:08,329 basehttp 5324 24916 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:15:08,329 basehttp 5324 37304 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:15:08,343 basehttp 5324 24916 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:15:08,343 basehttp 5324 37304 "GET /static/css/header.css HTTP/1.1" 200 1647
+WARNING 2026-01-12 18:15:08,363 basehttp 5324 2260 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:15:08,364 basehttp 5324 24916 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:15:08,370 basehttp 5324 24916 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:15:08,380 basehttp 5324 37304 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:15:08,431 basehttp 5324 37304 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:15:08,434 basehttp 5324 24916 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:15:08,465 basehttp 5324 37304 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:15:08,487 basehttp 5324 24916 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:15:08,765 basehttp 5324 24916 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:15:36,326 basehttp 5324 37912 "GET /fleet/brands/ HTTP/1.1" 200 14786
+INFO 2026-01-12 18:15:36,400 basehttp 5324 27740 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:15:36,422 basehttp 5324 27740 "GET /static/css/home.css HTTP/1.1" 200 976
+WARNING 2026-01-12 18:15:36,424 basehttp 5324 37912 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:15:36,430 basehttp 5324 37912 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:15:36,431 basehttp 5324 27740 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:15:36,440 basehttp 5324 37912 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:15:36,447 basehttp 5324 37912 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:15:36,465 basehttp 5324 27740 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:15:36,526 basehttp 5324 27740 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:15:36,529 basehttp 5324 37912 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:15:36,540 basehttp 5324 27740 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:15:36,576 basehttp 5324 37912 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:15:37,391 basehttp 5324 37912 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:15:41,419 basehttp 5324 37912 "GET /fleet/brands/ HTTP/1.1" 200 14786
+INFO 2026-01-12 18:15:41,497 basehttp 5324 27740 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:15:41,505 basehttp 5324 21112 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:15:41,508 basehttp 5324 6516 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:15:41,511 basehttp 5324 20960 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:15:41,514 basehttp 5324 18052 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:15:41,522 basehttp 5324 21112 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-01-12 18:15:41,556 basehttp 5324 37912 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:15:41,593 basehttp 5324 27740 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:15:41,599 basehttp 5324 21112 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:15:41,654 basehttp 5324 21112 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:15:41,655 basehttp 5324 37912 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:15:41,668 basehttp 5324 27740 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:15:41,852 basehttp 5324 27740 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:16:44,168 basehttp 5324 34924 "GET /fleet/brands/ HTTP/1.1" 200 14786
+INFO 2026-01-12 18:16:44,207 basehttp 5324 34924 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-01-12 18:16:44,247 basehttp 5324 34924 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:16:44,250 basehttp 5324 10024 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:16:44,306 basehttp 5324 34924 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:16:44,327 basehttp 5324 10024 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:17:27,385 basehttp 5324 10024 "GET /fleet/brands/ HTTP/1.1" 200 14809
+INFO 2026-01-12 18:17:27,428 basehttp 5324 10024 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-12 18:17:27,499 basehttp 5324 34924 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:17:27,518 basehttp 5324 10024 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:17:27,521 basehttp 5324 24684 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:17:27,564 basehttp 5324 34924 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:17:30,052 basehttp 5324 34924 "GET /fleet/brands/ HTTP/1.1" 200 14809
+INFO 2026-01-12 18:17:30,111 basehttp 5324 10024 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:17:30,113 basehttp 5324 2388 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:17:30,115 basehttp 5324 24684 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:17:30,134 basehttp 5324 10024 "GET /static/css/header.css HTTP/1.1" 200 1647
+WARNING 2026-01-12 18:17:30,134 basehttp 5324 34924 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:17:30,135 basehttp 5324 2388 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:17:30,145 basehttp 5324 34924 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:17:30,157 basehttp 5324 24684 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:17:30,200 basehttp 5324 24684 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:17:30,204 basehttp 5324 34924 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:17:30,231 basehttp 5324 34924 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:17:30,249 basehttp 5324 24684 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:17:31,252 basehttp 5324 35656 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:17:52,349 basehttp 5324 29460 "GET /fleet/brands/ HTTP/1.1" 200 14809
+INFO 2026-01-12 18:17:52,393 basehttp 5324 16956 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-12 18:17:52,436 basehttp 5324 29460 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:17:52,438 basehttp 5324 16956 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:17:54,459 basehttp 5324 16956 "GET /fleet/brands/ HTTP/1.1" 200 14809
+INFO 2026-01-12 18:17:54,503 basehttp 5324 28764 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:17:54,504 basehttp 5324 29460 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:17:54,523 basehttp 5324 29460 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:17:54,523 basehttp 5324 28764 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+WARNING 2026-01-12 18:17:54,524 basehttp 5324 16956 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:17:54,534 basehttp 5324 16956 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:17:54,536 basehttp 5324 28764 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:17:54,548 basehttp 5324 29460 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:17:54,588 basehttp 5324 29460 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:17:54,591 basehttp 5324 28764 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:17:54,609 basehttp 5324 29460 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:17:54,638 basehttp 5324 28764 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:17:54,968 basehttp 5324 28764 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:18:01,860 basehttp 5324 35568 "GET /fleet/brands/ HTTP/1.1" 200 14810
+WARNING 2026-01-12 18:18:01,948 basehttp 5324 35568 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:18:03,529 basehttp 5324 35568 "GET /fleet/brands/ HTTP/1.1" 200 14810
+INFO 2026-01-12 18:18:03,573 basehttp 5324 9408 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:18:03,573 basehttp 5324 35212 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:18:03,597 basehttp 5324 9408 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:18:03,602 basehttp 5324 35212 "GET /static/css/header.css HTTP/1.1" 200 1647
+WARNING 2026-01-12 18:18:03,603 basehttp 5324 35568 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:18:03,610 basehttp 5324 9408 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:18:03,619 basehttp 5324 35568 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:18:03,634 basehttp 5324 35212 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:18:03,686 basehttp 5324 35212 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:18:03,693 basehttp 5324 35568 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:18:03,741 basehttp 5324 35568 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:18:03,754 basehttp 5324 35568 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:18:04,032 basehttp 5324 35568 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:18:30,251 basehttp 5324 34064 "GET /fleet/brands/ HTTP/1.1" 200 14810
+INFO 2026-01-12 18:18:30,282 basehttp 5324 34064 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-01-12 18:18:30,330 basehttp 5324 22868 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:18:30,330 basehttp 5324 34064 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:18:31,971 basehttp 5324 13172 "GET /fleet/brands/ HTTP/1.1" 200 14810
+INFO 2026-01-12 18:18:32,021 basehttp 5324 16780 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:18:32,034 basehttp 5324 16780 "GET /static/css/home.css HTTP/1.1" 200 976
+WARNING 2026-01-12 18:18:32,052 basehttp 5324 13172 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:18:32,056 basehttp 5324 16780 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:18:32,063 basehttp 5324 13172 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:18:32,064 basehttp 5324 16780 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:18:32,071 basehttp 5324 16780 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:18:32,082 basehttp 5324 13172 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:18:32,142 basehttp 5324 13172 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:18:32,145 basehttp 5324 16780 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:18:32,192 basehttp 5324 13172 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:18:32,224 basehttp 5324 16780 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:18:32,463 basehttp 5324 16780 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:18:43,653 basehttp 5324 37160 "GET /fleet/brands/ HTTP/1.1" 200 14786
+WARNING 2026-01-12 18:18:43,741 basehttp 5324 37160 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:19:05,308 basehttp 5324 33860 "GET /fleet/brands/ HTTP/1.1" 200 14810
+INFO 2026-01-12 18:19:05,345 basehttp 5324 31120 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-12 18:19:05,387 basehttp 5324 33860 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:19:05,400 basehttp 5324 31120 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:19:12,073 basehttp 5324 25820 "GET /fleet/brands/ HTTP/1.1" 200 14809
+WARNING 2026-01-12 18:19:12,127 basehttp 5324 25820 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:19:23,448 basehttp 5324 20728 "GET /fleet/brands/ HTTP/1.1" 200 14809
+INFO 2026-01-12 18:19:23,539 basehttp 5324 20728 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:19:23,560 basehttp 5324 36196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:19:23,589 basehttp 5324 20728 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:19:42,094 basehttp 5324 23712 "GET /fleet/brands/ HTTP/1.1" 200 14834
+INFO 2026-01-12 18:19:42,149 basehttp 5324 20420 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-12 18:19:42,184 basehttp 5324 23712 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:19:42,209 basehttp 5324 20420 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:19:43,771 basehttp 5324 20420 "GET /fleet/brands/ HTTP/1.1" 200 14834
+INFO 2026-01-12 18:19:43,812 basehttp 5324 23712 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:19:43,813 basehttp 5324 20420 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:19:43,815 basehttp 5324 2596 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:19:43,823 basehttp 5324 23712 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:19:43,827 basehttp 5324 20420 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:19:43,827 basehttp 5324 23712 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:19:43,854 basehttp 5324 2596 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+WARNING 2026-01-12 18:19:43,873 basehttp 5324 20420 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:19:43,894 basehttp 5324 23712 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:19:43,897 basehttp 5324 2596 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:19:43,923 basehttp 5324 2596 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:19:43,946 basehttp 5324 23712 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:19:44,803 basehttp 5324 23712 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:20:16,632 basehttp 5324 23960 "GET /fleet/brands/ HTTP/1.1" 200 14864
+INFO 2026-01-12 18:20:16,685 basehttp 5324 23960 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-01-12 18:20:16,746 basehttp 5324 23960 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:20:16,748 basehttp 5324 34500 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:20:17,812 basehttp 5324 34500 "GET /fleet/brands/ HTTP/1.1" 200 14864
+WARNING 2026-01-12 18:20:17,904 basehttp 5324 34500 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:20:29,145 basehttp 5324 29528 "GET /fleet/brands/ HTTP/1.1" 200 14864
+INFO 2026-01-12 18:20:29,212 basehttp 5324 31060 "GET /static/css/base.css HTTP/1.1" 200 600
+WARNING 2026-01-12 18:20:29,231 basehttp 5324 29528 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:20:29,232 basehttp 5324 31060 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:20:29,237 basehttp 5324 31060 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:20:29,238 basehttp 5324 29528 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:20:29,247 basehttp 5324 31060 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:20:29,254 basehttp 5324 31060 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:20:29,272 basehttp 5324 29528 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:20:29,334 basehttp 5324 29528 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:20:29,337 basehttp 5324 31060 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:20:29,356 basehttp 5324 29528 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:20:29,404 basehttp 5324 31060 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:20:30,902 basehttp 5324 31060 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:20:47,218 basehttp 5324 28272 "GET /fleet/brands/ HTTP/1.1" 200 14888
+WARNING 2026-01-12 18:20:47,354 basehttp 5324 28272 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:21:18,944 basehttp 5324 15188 "GET /fleet/brands/ HTTP/1.1" 200 14981
+INFO 2026-01-12 18:21:19,018 basehttp 5324 37552 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-12 18:21:19,087 basehttp 5324 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:21:19,103 basehttp 5324 37552 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:21:39,505 basehttp 5324 15976 "GET /fleet/brands/ HTTP/1.1" 200 14988
+INFO 2026-01-12 18:21:39,582 basehttp 5324 34776 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:21:39,584 basehttp 5324 15976 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:21:39,610 basehttp 5324 34776 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:21:41,213 basehttp 5324 34776 "GET /fleet/brands/ HTTP/1.1" 200 14988
+INFO 2026-01-12 18:21:41,258 basehttp 5324 38580 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:21:41,259 basehttp 5324 15976 "GET /static/css/base.css HTTP/1.1" 200 600
+WARNING 2026-01-12 18:21:41,278 basehttp 5324 34776 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:21:41,281 basehttp 5324 15976 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:21:41,282 basehttp 5324 38580 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:21:41,288 basehttp 5324 34776 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:21:41,292 basehttp 5324 38580 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:21:41,304 basehttp 5324 15976 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:21:41,345 basehttp 5324 15976 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:21:41,348 basehttp 5324 38580 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:21:41,364 basehttp 5324 15976 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:21:41,395 basehttp 5324 38580 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:21:42,230 basehttp 5324 38580 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:22:02,839 basehttp 5324 38492 "GET /fleet/brands/ HTTP/1.1" 200 14979
+WARNING 2026-01-12 18:22:02,950 basehttp 5324 38492 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:22:05,025 basehttp 5324 38492 "GET /fleet/brands/ HTTP/1.1" 200 14979
+INFO 2026-01-12 18:22:05,080 basehttp 5324 38636 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:22:05,081 basehttp 5324 38140 "GET /static/css/home.css HTTP/1.1" 200 976
+WARNING 2026-01-12 18:22:05,098 basehttp 5324 38492 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:22:05,103 basehttp 5324 38636 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:22:05,106 basehttp 5324 38140 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:22:05,111 basehttp 5324 38492 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:22:05,114 basehttp 5324 38140 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:22:05,130 basehttp 5324 38636 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:22:05,178 basehttp 5324 38140 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:22:05,184 basehttp 5324 38636 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:22:05,219 basehttp 5324 38636 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:22:05,241 basehttp 5324 38140 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:22:05,889 basehttp 5324 38140 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:22:35,015 basehttp 5324 38432 "GET /fleet/brands/ HTTP/1.1" 200 14987
+WARNING 2026-01-12 18:22:35,084 basehttp 5324 38432 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:22:36,883 basehttp 5324 38432 "GET /fleet/brands/ HTTP/1.1" 200 14987
+INFO 2026-01-12 18:22:36,922 basehttp 5324 30072 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:22:36,924 basehttp 5324 25056 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:22:36,938 basehttp 5324 30072 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:22:36,940 basehttp 5324 25056 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:22:36,947 basehttp 5324 30072 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+WARNING 2026-01-12 18:22:36,962 basehttp 5324 38432 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:22:36,965 basehttp 5324 30072 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:22:36,982 basehttp 5324 25056 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:22:37,030 basehttp 5324 25056 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:22:37,031 basehttp 5324 30072 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:22:37,049 basehttp 5324 25056 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:22:37,083 basehttp 5324 30072 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:22:37,347 basehttp 5324 30072 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:22:44,137 basehttp 5324 30072 "GET /fleet/brands/ HTTP/1.1" 200 14987
+INFO 2026-01-12 18:22:44,185 basehttp 5324 20776 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:22:44,186 basehttp 5324 25056 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:22:44,187 basehttp 5324 29100 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:22:44,192 basehttp 5324 30072 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:22:44,195 basehttp 5324 38432 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:22:44,197 basehttp 5324 25056 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-01-12 18:22:44,234 basehttp 5324 20776 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:22:44,246 basehttp 5324 31656 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:22:44,251 basehttp 5324 25056 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:22:44,308 basehttp 5324 25056 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:22:44,329 basehttp 5324 31656 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:22:44,331 basehttp 5324 25056 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:22:44,641 basehttp 5324 25056 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:23:18,757 basehttp 5324 27372 "GET /fleet/brands/ HTTP/1.1" 200 14987
+WARNING 2026-01-12 18:23:18,859 basehttp 5324 27372 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:23:35,990 basehttp 5324 27372 "GET /fleet/brands/ HTTP/1.1" 200 14988
+INFO 2026-01-12 18:23:36,040 basehttp 5324 27372 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-12 18:23:36,091 basehttp 5324 28144 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:23:36,093 basehttp 5324 27372 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:23:49,104 basehttp 5324 28144 "GET /fleet/brands/ HTTP/1.1" 200 14987
+WARNING 2026-01-12 18:23:49,186 basehttp 5324 28144 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:23:50,845 basehttp 5324 28144 "GET /fleet/brands/ HTTP/1.1" 200 14987
+WARNING 2026-01-12 18:23:50,905 basehttp 5324 28144 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:23:52,661 basehttp 5324 28144 "GET /fleet/brands/ HTTP/1.1" 200 14987
+INFO 2026-01-12 18:23:52,708 basehttp 5324 27372 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:23:52,708 basehttp 5324 37424 "GET /static/css/home.css HTTP/1.1" 200 976
+WARNING 2026-01-12 18:23:52,730 basehttp 5324 28144 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:23:52,734 basehttp 5324 37424 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:23:52,734 basehttp 5324 27372 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:23:52,743 basehttp 5324 37424 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:23:52,744 basehttp 5324 27372 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:23:52,753 basehttp 5324 28144 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:23:52,798 basehttp 5324 28144 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:23:52,802 basehttp 5324 37424 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:23:52,820 basehttp 5324 28144 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:23:52,849 basehttp 5324 37424 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:23:53,126 basehttp 5324 37424 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:24:02,339 basehttp 5324 37424 "GET /fleet/brands/ HTTP/1.1" 200 14987
+WARNING 2026-01-12 18:24:02,452 basehttp 5324 37424 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:24:04,364 basehttp 5324 37424 "GET /fleet/brands/ HTTP/1.1" 200 14987
+INFO 2026-01-12 18:24:04,422 basehttp 5324 28144 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:24:04,422 basehttp 5324 36216 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:24:04,424 basehttp 5324 27372 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:24:04,428 basehttp 5324 21152 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:24:04,428 basehttp 5324 30968 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:24:04,434 basehttp 5324 27372 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-01-12 18:24:04,457 basehttp 5324 37424 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:24:04,478 basehttp 5324 36216 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:24:04,484 basehttp 5324 27372 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:24:04,562 basehttp 5324 27372 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:24:04,564 basehttp 5324 37424 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:24:04,589 basehttp 5324 36216 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:24:04,759 basehttp 5324 36216 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:24:19,372 basehttp 5324 36216 "GET /fleet/brands/ HTTP/1.1" 200 14993
+INFO 2026-01-12 18:24:19,435 basehttp 5324 37424 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:24:19,443 basehttp 5324 27372 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:24:19,443 basehttp 5324 30968 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:24:19,448 basehttp 5324 28144 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:24:19,449 basehttp 5324 21152 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:24:19,468 basehttp 5324 30968 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-01-12 18:24:19,489 basehttp 5324 36216 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:24:19,534 basehttp 5324 37424 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:24:19,545 basehttp 5324 30968 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:24:19,597 basehttp 5324 37424 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:24:19,616 basehttp 5324 30968 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:24:19,625 basehttp 5324 37424 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:24:20,111 basehttp 5324 37424 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:24:21,356 basehttp 5324 37424 "GET /fleet/brands/ HTTP/1.1" 200 14993
+INFO 2026-01-12 18:24:21,404 basehttp 5324 30968 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:24:21,405 basehttp 5324 28144 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:24:21,406 basehttp 5324 36216 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:24:21,418 basehttp 5324 21152 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:24:21,426 basehttp 5324 27372 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:24:21,427 basehttp 5324 36216 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-01-12 18:24:21,454 basehttp 5324 37424 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:24:21,481 basehttp 5324 30968 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:24:21,486 basehttp 5324 36216 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:24:21,527 basehttp 5324 36216 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:24:21,539 basehttp 5324 36216 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:24:21,545 basehttp 5324 30968 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:24:22,155 basehttp 5324 30968 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:24:35,919 basehttp 5324 30968 "GET /fleet/brands/ HTTP/1.1" 200 14993
+WARNING 2026-01-12 18:24:36,011 basehttp 5324 30968 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:24:38,039 basehttp 5324 29616 "GET /fleet/brands/ HTTP/1.1" 200 14993
+WARNING 2026-01-12 18:24:38,105 basehttp 5324 29616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:24:39,385 basehttp 5324 29616 "GET /fleet/brands/ HTTP/1.1" 200 14993
+INFO 2026-01-12 18:24:39,427 basehttp 5324 29736 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:24:39,428 basehttp 5324 34472 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:24:39,443 basehttp 5324 29736 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:24:39,444 basehttp 5324 34472 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+WARNING 2026-01-12 18:24:39,471 basehttp 5324 29616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:24:39,474 basehttp 5324 29736 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:24:39,482 basehttp 5324 29616 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:24:39,493 basehttp 5324 34472 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:24:39,543 basehttp 5324 29616 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:24:39,546 basehttp 5324 34472 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:24:39,589 basehttp 5324 29616 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:24:39,625 basehttp 5324 34472 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:24:39,816 basehttp 5324 34472 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:26:31,841 basehttp 5324 31128 "GET /fleet/brands/ HTTP/1.1" 200 14895
+INFO 2026-01-12 18:26:31,906 basehttp 5324 31128 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-01-12 18:26:31,944 basehttp 5324 37304 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:26:31,950 basehttp 5324 31128 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+WARNING 2026-01-12 18:26:32,021 basehttp 5324 37304 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:26:32,026 basehttp 5324 31128 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:29:08,452 basehttp 5324 34440 "GET /fleet/brands/ HTTP/1.1" 200 14908
+INFO 2026-01-12 18:29:08,496 basehttp 5324 34440 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-12 18:29:08,542 basehttp 5324 28072 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:29:08,555 basehttp 5324 34440 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:29:08,594 basehttp 5324 28072 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:29:08,617 basehttp 5324 34440 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 304 0
+INFO 2026-01-12 18:29:22,796 basehttp 5324 32788 "GET /fleet/brands/ HTTP/1.1" 200 14809
+WARNING 2026-01-12 18:29:22,852 basehttp 5324 32788 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:32:00,662 basehttp 5324 32400 "GET /fleet/brands/ HTTP/1.1" 200 14809
+INFO 2026-01-12 18:32:00,753 basehttp 5324 6516 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:32:00,771 basehttp 5324 27960 "GET /static/css/home.css HTTP/1.1" 200 976
+WARNING 2026-01-12 18:32:00,817 basehttp 5324 32400 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:32:00,819 basehttp 5324 6516 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:32:00,823 basehttp 5324 27960 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:32:00,830 basehttp 5324 6516 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-01-12 18:32:00,873 basehttp 5324 27960 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:32:00,926 basehttp 5324 6516 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:32:00,991 basehttp 5324 6516 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:32:01,008 basehttp 5324 27960 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:32:01,018 basehttp 5324 32400 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:32:01,063 basehttp 5324 6516 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:32:01,436 basehttp 5324 6516 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:32:34,735 basehttp 5324 21948 "GET /fleet/brands/ HTTP/1.1" 200 14796
+WARNING 2026-01-12 18:32:34,823 basehttp 5324 21948 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:32:36,912 basehttp 5324 21948 "GET /fleet/brands/ HTTP/1.1" 200 14796
+INFO 2026-01-12 18:32:36,949 basehttp 5324 18464 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-01-12 18:32:36,952 basehttp 5324 17876 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-01-12 18:32:36,967 basehttp 5324 18464 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-01-12 18:32:36,970 basehttp 5324 17876 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-01-12 18:32:36,986 basehttp 5324 18464 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+WARNING 2026-01-12 18:32:37,006 basehttp 5324 21948 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:32:37,013 basehttp 5324 18464 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-01-12 18:32:37,028 basehttp 5324 17876 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-01-12 18:32:37,081 basehttp 5324 17876 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-12 18:32:37,084 basehttp 5324 18464 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-12 18:32:37,107 basehttp 5324 17876 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-01-12 18:32:37,142 basehttp 5324 18464 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-12 18:32:38,649 basehttp 5324 18464 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-01-12 18:33:39,294 basehttp 5324 13976 "GET /fleet/vehicles/create/ HTTP/1.1" 200 21938
+WARNING 2026-01-12 18:33:39,359 basehttp 5324 13976 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+ERROR 2026-01-12 18:34:13,793 signals 5324 12680 Error logging vehicle change: Object of type VehicleBrand is not JSON serializable
+INFO 2026-01-12 18:34:13,806 basehttp 5324 12680 "POST /fleet/vehicles/create/ HTTP/1.1" 302 0
+INFO 2026-01-12 18:34:13,944 basehttp 5324 12680 "GET /fleet/vehicles/ HTTP/1.1" 200 16208
+WARNING 2026-01-12 18:34:14,048 basehttp 5324 12680 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:34:19,747 basehttp 5324 12680 "GET /fleet/vehicles/65036327-7482-481f-8508-e7a4d00b42c3/edit HTTP/1.1" 200 22042
+WARNING 2026-01-12 18:34:19,833 basehttp 5324 12680 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+ERROR 2026-01-12 18:34:28,914 signals 5324 12892 Error logging vehicle change: Object of type VehicleBrand is not JSON serializable
+INFO 2026-01-12 18:34:28,924 basehttp 5324 12892 "POST /fleet/vehicles/65036327-7482-481f-8508-e7a4d00b42c3/edit HTTP/1.1" 302 0
+INFO 2026-01-12 18:34:29,007 basehttp 5324 12892 "GET /fleet/vehicles/ HTTP/1.1" 200 16194
+INFO 2026-01-12 18:34:29,082 basehttp 5324 30920 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-01-12 18:34:29,117 basehttp 5324 12892 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-01-12 18:34:29,123 basehttp 5324 17420 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-01-13 18:30:35,363 autoreload 31428 21192 Watching for file changes with StatReloader
+INFO 2026-01-14 18:13:22,584 autoreload 27428 27472 Watching for file changes with StatReloader
+INFO 2026-01-14 18:13:27,010 basehttp 27428 24760 "GET /fleet/vehicles/create/ HTTP/1.1" 200 21938
+INFO 2026-01-14 18:13:27,062 basehttp 27428 24760 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-01-14 18:13:27,062 basehttp 27428 5088 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-01-14 18:13:27,062 basehttp 27428 3756 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-01-14 18:13:36,462 basehttp 27428 3756 "GET /fleet/brands/ HTTP/1.1" 200 14796
+INFO 2026-01-14 18:13:37,183 basehttp 27428 5088 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-01-14 18:13:37,191 basehttp 27428 3756 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-01-14 18:13:37,195 basehttp 27428 24760 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-01-14 18:13:42,192 basehttp 27428 24760 "GET /fleet/vehicles/ HTTP/1.1" 200 16194
+INFO 2026-01-14 18:13:42,244 basehttp 27428 24760 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 304 0
+INFO 2026-01-14 18:13:44,542 basehttp 27428 24760 "GET /fleet/ HTTP/1.1" 200 17751
+INFO 2026-01-14 18:13:54,448 basehttp 27428 24760 "GET /fleet/vehicles/ HTTP/1.1" 200 16194
+INFO 2026-01-14 18:13:59,786 basehttp 27428 24760 "GET /personnel/drivers/ HTTP/1.1" 200 13659
+INFO 2026-01-14 18:14:01,930 basehttp 27428 24760 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-01-14 18:14:01,990 basehttp 27428 24760 "GET /tenants/ HTTP/1.1" 200 12067
+INFO 2026-01-14 18:14:06,647 basehttp 27428 24760 "GET /personnel/employees/ HTTP/1.1" 200 13659
+INFO 2026-01-14 18:14:08,724 basehttp 27428 24760 "GET /personnel/employees/create/ HTTP/1.1" 200 21947
+INFO 2026-01-14 18:14:48,309 basehttp 27428 24760 "POST /personnel/employees/create/ HTTP/1.1" 200 22569
+INFO 2026-01-14 18:15:30,600 signals 27428 24760 Employee DAURO DE ALBUQUERQUE JUNIOR (1) created
+INFO 2026-01-14 18:15:30,603 basehttp 27428 24760 "POST /personnel/employees/create/ HTTP/1.1" 302 0
+INFO 2026-01-14 18:15:30,668 basehttp 27428 24760 "GET /personnel/employees/ HTTP/1.1" 200 15586
+INFO 2026-01-14 18:15:36,380 basehttp 27428 24760 "GET /personnel/employees/52d6a453-d47b-4cdf-8625-ae4e27cad888/edit/ HTTP/1.1" 200 22192
+INFO 2026-01-14 18:16:06,172 signals 27428 24844 Employee DAURO DE ALBUQUERQUE JUNIOR (1) updated
+INFO 2026-01-14 18:16:06,183 basehttp 27428 24844 "POST /personnel/employees/52d6a453-d47b-4cdf-8625-ae4e27cad888/edit/ HTTP/1.1" 302 0
+INFO 2026-01-14 18:16:06,256 basehttp 27428 24844 "GET /personnel/employees/ HTTP/1.1" 200 15546
+INFO 2026-01-14 18:16:06,305 basehttp 27428 24844 "GET /media/personnel/photos/bg_photo_3.webp HTTP/1.1" 200 106902
+INFO 2026-01-14 18:16:24,146 basehttp 27428 24844 "GET / HTTP/1.1" 200 12759
+INFO 2026-01-14 18:16:54,282 basehttp 27428 24844 "GET /fleet/assignments/ HTTP/1.1" 200 13300
+INFO 2026-01-14 18:16:56,559 basehttp 27428 24844 "GET /fleet/assignments/create/ HTTP/1.1" 200 17112
+INFO 2026-01-14 18:17:05,223 basehttp 27428 24844 "GET / HTTP/1.1" 200 12759
+INFO 2026-01-14 18:17:12,414 basehttp 27428 24844 "GET /accounts/profile/ HTTP/1.1" 200 13872
+ERROR 2026-01-14 18:17:18,471 log 27428 24844 Internal Server Error: /accounts/profile/edit/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'form-first_name.errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-first_name.errors' from 'form-first_name.errors'
+ERROR 2026-01-14 18:17:18,498 basehttp 27428 24844 "GET /accounts/profile/edit/ HTTP/1.1" 500 277106
+WARNING 2026-01-14 18:17:18,670 basehttp 27428 24844 "GET /favicon.ico HTTP/1.1" 404 3942
+ERROR 2026-01-14 18:17:55,137 log 27428 29580 Internal Server Error: /accounts/profile/edit/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'form.last_name-errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-errors' from 'form.last_name-errors'
+ERROR 2026-01-14 18:17:55,153 basehttp 27428 29580 "GET /accounts/profile/edit/ HTTP/1.1" 500 268968
+ERROR 2026-01-14 18:18:05,251 log 27428 29580 Internal Server Error: /accounts/profile/edit/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'form.last_name-errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-errors' from 'form.last_name-errors'
+ERROR 2026-01-14 18:18:05,271 basehttp 27428 29580 "GET /accounts/profile/edit/ HTTP/1.1" 500 269096
+WARNING 2026-01-14 18:18:05,381 basehttp 27428 29580 "GET /favicon.ico HTTP/1.1" 404 3942
+ERROR 2026-01-14 18:18:08,139 log 27428 29580 Internal Server Error: /accounts/profile/edit/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'form.last_name-errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-errors' from 'form.last_name-errors'
+ERROR 2026-01-14 18:18:08,156 basehttp 27428 29580 "GET /accounts/profile/edit/ HTTP/1.1" 500 268968
+ERROR 2026-01-14 18:18:12,548 log 27428 29580 Internal Server Error: /accounts/profile/edit/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'form.last_name-errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-errors' from 'form.last_name-errors'
+ERROR 2026-01-14 18:18:12,566 basehttp 27428 29580 "GET /accounts/profile/edit/ HTTP/1.1" 500 268831
+INFO 2026-01-14 18:18:27,132 basehttp 27428 29580 "GET /accounts/profile/edit/ HTTP/1.1" 200 12854
+ERROR 2026-01-14 18:18:39,012 log 27428 29580 Internal Server Error: /accounts/profile/edit/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 337, in full_clean
+    self._clean_fields()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 347, in _clean_fields
+    value = getattr(self, "clean_%s" % name)()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\forms.py", line 170, in clean_document_number
+    ).exclude(pk=self.instance.pk).exisits():
+                                   ^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'exisits'. Did you mean: 'exists'?
+ERROR 2026-01-14 18:18:39,038 basehttp 27428 29580 "POST /accounts/profile/edit/ HTTP/1.1" 500 114323
+INFO 2026-01-14 18:19:02,796 autoreload 27428 27472 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\forms.py changed, reloading.
+INFO 2026-01-14 18:19:06,190 autoreload 6428 29144 Watching for file changes with StatReloader
+ERROR 2026-01-14 18:19:07,452 log 6428 32608 Internal Server Error: /accounts/profile/edit/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\forms.py", line 339, in full_clean
+    self._post_clean()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 498, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\base.py", line 1654, in full_clean
+    self.clean()
+    ~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\models.py", line 120, in clean
+    self.validade_cpf()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'validade_cpf'. Did you mean: 'validate_cpf'?
+ERROR 2026-01-14 18:19:07,483 basehttp 6428 32608 "POST /accounts/profile/edit/ HTTP/1.1" 500 119675
+INFO 2026-01-14 18:19:40,097 autoreload 6428 29144 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\accounts\models.py changed, reloading.
+INFO 2026-01-14 18:19:42,654 autoreload 30528 28596 Watching for file changes with StatReloader
+INFO 2026-01-14 18:19:44,989 basehttp 30528 26780 "POST /accounts/profile/edit/ HTTP/1.1" 302 0
+INFO 2026-01-14 18:19:45,186 basehttp 30528 26780 "GET /accounts/profile/ HTTP/1.1" 200 13879

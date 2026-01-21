@@ -167,6 +167,6 @@ class UserProfileForm(forms.ModelForm):
         if document_number:
             if CustomUser.objects.filter(
                 document_number=document_number
-            ).exclude(pk=self.instance.pk).exisits():
+            ).exclude(pk=self.instance.pk).exists():
                 raise ValidationError(_('This document is already in use.'))
         return document_number
