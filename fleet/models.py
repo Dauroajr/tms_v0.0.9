@@ -1125,13 +1125,13 @@ class WorkReport(TenantAwareModel):
     approval = models.OneToOneField(
         WorkdayApproval,
         on_delete=models.CASCADE,
-        related_name='work_report'
+        related_name='work_report',
         verbose_name=_('Approval')
     )
     assignment = models.ForeignKey(
         'VehicleAssignment',
         on_delete=models.CASCADE,
-        related_name='work_reports'
+        related_name='work_reports',
         verbose_name=_('Assignment')
     )
 
@@ -1184,8 +1184,6 @@ class WorkReport(TenantAwareModel):
             models.Index(fields=['assignment', 'status']),
             models.Index(fields=['report_number']),
         ]
-
-    
 
 
 class WorkdayApproval(TenantAwareModel):
