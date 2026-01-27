@@ -692,6 +692,135 @@ class VehicleAssignment(TenantAwareModel):
         self.save()
 
 
+class WorkdayApproval(TenantAwareModel):
+    """
+    Aprovação em lote para Work Days (Dias de Trabalho)
+    Groups multiple workdays for approval
+    """
+
+    STATUS_CHOICES = [
+        ("pending", _("Pending")),
+        ("approved", _("Approved")),
+        ("rejected", _("Rejected")),
+    ]
+
+    assignment = models.ForeignKey(
+        "VehicleAssignment", on_delete=models.CASCADE, related_name="workdays_approvals"
+    )
+
+    period_start = models.DateField(
+        verbose_name=_("Period Start"),
+        help_text=_("First workday date in this approval"),
+    )
+    period_end = models.DateField(
+        verbose_name=_("Period End"), help_text=_("Last workday date in this approval")
+    )
+
+    # Totalizadores
+    total_workdays = models.PositiveIntegerField(
+        default=0, verbose_name=_("Total Workdays")
+    )
+    total_hours = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Total Hours Worked"),
+    )
+    total_overtime_hours = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Total Overtime Hours Worked"),
+    )
+    total_amount = models.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        default=Decimal("0.00"),
+        verbose_name=_("Total Amount"),
+    )
+
+    # Status e Aprovação
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default="pending",
+        verbose_name=_("Status"),
+    )
+    approved_by = models.ForeignKey(
+        "accounts.CustomUser",
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name="workday_approvals_made",
+        verbose_name=_("Approved By"),
+    )
+    approved_at = models.DateTimeField(
+        null=True, blank=True, verbose_name=_("Approved At")
+    )
+    rejection_reason = models.TextField(blank=True, verbose_name=_("Rejection Reason"))
+
+    # Observações
+    notes = models.TextField(blank=True, verbose_name=_("Notes"))
+
+    class Meta:
+        verbose_name = _("Workday Approval")
+        verbose_name_plural = _("Workday Approvals")
+        ordering = ["-created_at"]
+        indexes = [
+            models.Index(fields=["assignment", "status"]),
+            models.Index(fields=["period_start", "period_end"]),
+        ]
+
+    def __str__(self):
+        return f"Approval {self.assignment.driver.full_name} {self.period_start} to {self.period_end}"
+
+    def approve(self, user):
+        """Aprovar lote de workdays."""
+        self.status = "approved"
+        self.approved_by = user
+        self.approved_at = timezone.now()
+        self.save()
+
+        self.workdays.update(status="approved")
+
+    def reject(self, user, reason=""):
+        """Rejeitar lote de workdays."""
+        self.status = "rejected"
+        self.approved_by = user
+        self.approved_at = timezone.now()
+        self.rejection_reason = reason
+        self.save()
+
+        self.workdays.update(status="rejected")
+
+    def calculate_totals(self):
+        """Recalcular totais baseado nos workdays incluídos"""
+        workdays = self.workdays.all()
+
+        self.total_workdays = workdays.count()
+
+        self.total_hours = workdays.aggregate(total=models.Sum("total_hours"))[
+            "total"
+        ] or Decimal("0.00")
+
+        self.total_overtime_hours = workdays.aggregate(
+            total=models.Sum("overtime_hours")
+        )["total"] or Decimal("0.00")
+
+        self.total_amount = workdays.aggregate(total=models.Sum("total_amount"))[
+            "total"
+        ] or Decimal("0.00")
+
+        self.save(
+            update_fields=[
+                "total_workdays",
+                "total_hours",
+                "total_overtime_hours",
+                "total_amount",
+            ]
+        )
+
+
 class VehicleAssignmentWorkday(TenantAwareModel):
     """Daily workday record for vehicle assignment."""
 
@@ -834,6 +963,15 @@ class VehicleAssignmentWorkday(TenantAwareModel):
         help_text=_("Payment transaction reference"),
     )
 
+    approval = models.ForeignKey(
+        WorkdayApproval,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='workdays',
+        verbose_name=_('Approval Batch')
+    )
+
     class Meta:
         ordering = ["-date", "-start_time"]
         verbose_name = _("Workday")
@@ -972,349 +1110,6 @@ class VehicleAssignmentWorkday(TenantAwareModel):
         return self.status == "pending"
 
 
-class WorkdayApproval(TenantAwareModel):
-    """
-    Aprovação em lote para Work Days (Dias de Trabalho)
-    Groups multiple workdays for approval
-    """
-
-    STATUS_CHOICES = [
-        ("pending", _("Pending")),
-        ("approved", _("Approved")),
-        ("rejected", _("Rejected")),
-    ]
-
-    assignment = models.ForeignKey(
-        'VehicleAssignment',
-        on_delete=models.CASCADE,
-        related_name="workdays_approvals"
-    )
-
-    period_start = models.DateField(
-        verbose_name=_("Period Start"),
-        help_text=_("First workday date in this approval")
-    )
-    period_end = models.DateField(
-        verbose_name=_("Period End"),
-        help_text=_("Last workday date in this approval")
-    )
-
-    # Totalizadores
-    total_workdays = models.PositiveIntegerField(
-        default=0,
-        verbose_name=_("Total Workdays")
-    )
-    total_hours = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        default=Decimal("0.00"),
-        verbose_name=_("Total Hours Worked")
-    )
-    total_overtime_hours = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        default=Decimal("0.00"),
-        verbose_name=_("Total Overtime Hours Worked")
-    )
-    total_amount = models.DecimalField(
-        max_digits=12,
-        decimal_places=2,
-        default=Decimal("0.00"),
-        verbose_name=_("Total Amount")
-    )
-
-    # Status e Aprovação
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default="pending",
-        verbose_name=_("Status")
-    )
-    approved_by = models.ForeignKey(
-        'accounts.CustomUser',
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
-        related_name="workday_approvals_made",
-        verbose_name=_("Approved By")
-    )
-    approved_at = models.DateTimeField(
-        null=True,
-        blank=True,
-        verbose_name=_('Approved At')
-    )
-    rejection_reason = models.TextField(
-        blank=True,
-        verbose_name=_('Rejection Reason')
-    )
-
-    # Observações
-    notes = models.TextField(
-        blank=True,
-        verbose_name=_('Notes')
-    )
-
-    class Meta:
-        verbose_name = _('Workday Approval')
-        verbose_name_plural = _('Workday Approvals')
-        ordering = ['-created_at']
-        indexes = [
-            models.Index(fields=["assignment", "status"]),
-            models.Index(fields=["period_start", "period_end"]),
-        ]
-
-    def __str__(self):
-        return f"Approval {self.assignment.driver.full_name} {self.period_start} to {self.period_end}"
-
-    def approve(self, user):
-        """ Aprovar lote de workdays."""
-        self.status = 'approved'
-        self.approved_by = user
-        self.approved_at = timezone.now()
-        self.save()
-
-        self.workdays.update(status='approved')
-
-    def reject(self, user, reason=""):
-        """ Rejeitar lote de workdays."""
-        self.status = 'rejected'
-        self.approved_by = user
-        self.approved_at = timezone.now()
-        self.rejection_reason = reason
-        self.save()
-
-        self.workdays.update(status='rejected')
-
-    def calculate_totals(self):
-        """ Recalcular totais baseado nos workdays incluídos"""
-        workdays = self.workdays.all()
-
-        self.total_workdays = workdays.count()
-        
-        self.total_hours = workdays.aggregate(
-            total=models.Sum('total_hours')
-        )['total'] or Decimal('0.00')
-
-        self.total_overtime_hours = workdays.aggregate(
-            total=models.Sum('overtime_hours')
-        )['total'] or Decimal('0.00')
-
-        self.total_amount = workdays.aggregate(
-            total=models.Sum('total_amount')
-        )['total'] or Decimal('0.00')
-
-        self.save(update_fields=[
-            "total_workdays",
-            "total_hours",
-            "total_overtime_hours",
-            "total_amount"
-        ])
-
-
-class WorkReport(TenantAwareModel):
-    """ Relatório de trabalho gerado após aprovação dos Dias de Trabalho."""
-
-    STATUS_CHOICES = [
-        ('generated', _("Generated")),
-        ('sent', _("Sent to E-mail")),
-        ('reviewed', _("Reviewed")),
-        ('approved', _("Approved")),
-    ]
-
-    # Relacionamentos
-    approval = models.OneToOneField(
-        WorkdayApproval,
-        on_delete=models.CASCADE,
-        related_name='work_report',
-        verbose_name=_('Approval')
-    )
-    assignment = models.ForeignKey(
-        'VehicleAssignment',
-        on_delete=models.CASCADE,
-        related_name='work_reports',
-        verbose_name=_('Assignment')
-    )
-
-    # Identificação
-    report_number = models.CharField(
-        max_length=50,
-        unique=True,
-        verbose_nam=_('Report Number')
-    )
-
-    # Status
-    status = models.CharField(
-        max_length=30,
-        choices=STATUS_CHOICES,
-        default='generated',
-        verbose_name=_('Situação')
-    )
-
-    # Datas de Envio
-    sent_to_company_at = models.DateTimeField(
-        blank=True,
-        null=True,
-        verbose_name=_('Sent to Company At')
-    )
-    sent_to_driver_at = models.DateTimeField(
-        blank=True,
-        null=True,
-        verbose_name=_('Sent to Driver At')
-    )
-
-    # Arquivo PDF gerado
-    pdf_file = models.FileField(
-        upload_to='fleet/work_reports/',
-        blank=True,
-        null=True,
-        verbose_name=_('PDF Report')
-    )
-
-    # Observações
-    notes = models.TextField(
-        blank=True,
-        verbose_name=_('Notes')
-    )
-
-    class Meta:
-        verbose_name = _('Work Report')
-        verbose_name_plural = _('Work Reports')
-        ordering = ['-created_at']
-        indexes = [
-            models.Index(fields=['assignment', 'status']),
-            models.Index(fields=['report_number']),
-        ]
-
-
-class WorkdayApproval(TenantAwareModel):
-    """
-    Aprovação em lote para Work Days (Dias de Trabalho)
-    Groups multiple workdays for approval
-    """
-
-    STATUS_CHOICES = [
-        ("pending", _("Pending")),
-        ("approved", _("Approved")),
-        ("rejected", _("Rejected")),
-    ]
-
-    assignment = models.ForeignKey(
-        "VehicleAssignment", on_delete=models.CASCADE, related_name="workdays_approvals"
-    )
-
-    period_start = models.DateField(
-        verbose_name=_("Period Start"),
-        help_text=_("First workday date in this approval"),
-    )
-    period_end = models.DateField(
-        verbose_name=_("Period End"), help_text=_("Last workday date in this approval")
-    )
-
-    # Totalizadores
-    total_workdays = models.PositiveIntegerField(
-        default=0, verbose_name=_("Total Workdays")
-    )
-    total_hours = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        default=Decimal("0.00"),
-        verbose_name=_("Total Hours Worked"),
-    )
-    total_overtime_hours = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        default=Decimal("0.00"),
-        verbose_name=_("Total Overtime Hours Worked"),
-    )
-    total_amount = models.DecimalField(
-        max_digits=12,
-        decimal_places=2,
-        default=Decimal("0.00"),
-        verbose_name=_("Total Amount"),
-    )
-
-    # Status e Aprovação
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default="pending",
-        verbose_name=_("Status"),
-    )
-    approved_by = models.ForeignKey(
-        "accounts.CustomUser",
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
-        related_name="workday_approvals_made",
-        verbose_name=_("Approved By"),
-    )
-    approved_at = models.DateTimeField(
-        null=True, blank=True, verbose_name=_("Approved At")
-    )
-    rejection_reason = models.TextField(blank=True, verbose_name=_("Rejection Reason"))
-
-    # Observações
-    notes = models.TextField(blank=True, verbose_name=_("Notes"))
-
-    class Meta:
-        verbose_name = _("Workday Approval")
-        verbose_name_plural = _("Workday Approvals")
-        ordering = ["-created_at"]
-        indexes = [
-            models.Index(fields=["assignment", "status"]),
-            models.Index(fields=["period_start", "period_end"]),
-        ]
-
-    def __str__(self):
-        return f"Approval {self.assignment.driver.full_name} {self.period_start} to {self.period_end}"
-
-    def approve(self, user):
-        """Aprovar lote de workdays."""
-        self.status = "approved"
-        self.approved_by = user
-        self.approved_at = timezone.now()
-        self.save()
-
-        self.workdays.update(status="approved")
-
-    def reject(self, user, reason=""):
-        """Rejeitar lote de workdays."""
-        self.status = "rejected"
-        self.approved_by = user
-        self.approved_at = timezone.now()
-        self.rejection_reason = reason
-        self.save()
-
-        self.workdays.update(status="rejected")
-
-    def calculate_totals(self):
-        """Recalcular totais baseado nos workdays incluídos"""
-        workdays = self.workdays.all()
-
-        self.total_workdays = workdays.count()
-
-        self.total_hours = workdays.aggregate(total=models.Sum("total_hours"))[
-            "total"
-        ] or Decimal("0.00")
-
-        self.total_overtime_hours = workdays.aggregate(
-            total=models.Sum("overtime_hours")
-        )["total"] or Decimal("0.00")
-
-        self.total_amount = workdays.aggregate(total=models.Sum("total_amount"))[
-            "total"
-        ] or Decimal("0.00")
-
-        self.save(
-            update_fields=[
-                "total_workdays",
-                "total_hours",
-                "total_overtime_hours",
-                "total_amount",
-            ]
-        )
-
-
 class WorkReport(TenantAwareModel):
     """Relatório de trabalho gerado após aprovação dos Dias de Trabalho."""
 
@@ -1341,7 +1136,7 @@ class WorkReport(TenantAwareModel):
 
     # Identificação
     report_number = models.CharField(
-        max_length=50, unique=True, verbose_nam=_("Report Number")
+        max_length=50, unique=True, verbose_name=_("Report Number")
     )
 
     # Status
@@ -1560,3 +1355,98 @@ class PaymentOrder(TenantAwareModel):
         self.assignment.workdays.filter(
             approval__work_report__payment_order=self
         ).update(status="paid")
+
+
+class ExpenseReport(TenantAwareModel):
+    # Relatório de despesas enviado ao cliente.
+    # Gerado após aprovação da ordem de pagamento
+
+    STATUS_CHOICES = [
+        ("generated", _("Generated")),
+        ("sent", _("Sent")),
+        ("approved", _("Approved")),
+        ("rejected", _("Rejected")),
+    ]
+
+    # Relacionamentos
+    payment_order = models.OneToOneField(
+        PaymentOrder, on_delete=models.CASCADE, related_name="expense_report"
+    )
+    assignment = models.ForeignKey(
+        "VehicleAssignment",
+        on_delete=models.CASCADE,
+        related_name="expense_reports",
+    )
+
+    # Identificação
+    report_number = models.CharField(
+        max_length=50, unique=True, verbose_name=_("Report Number")
+    )
+
+    # Cliente (pode ser adicionado um model Cliente depois)
+    client_name = models.CharField(max_length=200, verbose_name=_("Client Name"))
+    client_email = models.EmailField(verbose_name=_("Client Email"))
+
+    # Valores
+    total_amount = models.DecimalField(
+        max_digits=12, decimal_places=2, verbose_name=_("Total Amount")
+    )
+    # Status
+    status = models.CharField(
+        max_length=20, choices=STATUS_CHOICES, default="generated"
+    )
+
+    # Datas
+    sent_at = models.DateTimeField(null=True, blank=True, verbose_name=_("Sent At"))
+    client_approved_at = models.DateTimeField(
+        null=True, blank=True, verbose_name=_("Client Approved At")
+    )
+    # Arquivo PDF
+    pdf_file = models.FileField(
+        upload_to="fleet/expense_reports/",
+        null=True,
+        blank=True,
+        verbose_name=_("PDF Report"),
+    )
+
+    # Observações
+    notes = models.TextField(blank=True, verbose_name=_("Notes"))
+    client_notes = models.TextField(blank=True, verbose_name=_("Client Notes"))
+
+    class Meta:
+        verbose_name = _("Expense Report")
+        verbose_name_plural = _("Expense Reports")
+        ordering = ["-created_at"]
+        indexes = [
+            models.Index(fields=["assignment", "status"]),
+            models.Index(fields=["report_number"]),
+        ]
+
+    def __str__(self):
+        return f"Expense Report {self.report_number} - {self.client_name}"
+
+    def generate_report_number(self):
+        """Gerar número único de relatório."""
+        date_str = timezone.now().strftime("%d%m%Y")
+        count = (
+            ExpenseReport.objects.filter(
+                report_number__startswith=f"ER{date_str}"
+            ).count()
+            + 1
+        )
+        self.report_number = f"ER{date_str}{count:04d}"
+        return self.report_number
+
+    def send_to_client(self):
+        """Enviar para cliente."""
+        # TODO: Implementar envio de e-mail
+        self.sent_at = timezone.now()
+        self.status = "sent"
+        self.save()
+
+    def approve_by_client(self, notes=""):
+        """Cliente aprova despesas."""
+        self.status = "approved"
+        self.client_approved_at = timezone.now()
+        self.client_notes = notes
+        self.save()
