@@ -1,0 +1,322 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Payment Orders' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <h2>
+        <i class="bi bi-cash-stack"></i> {% translate "Payment Orders" %}
+      </h2>
+      <p class="text-muted">{% translate "Manage driver payments" %}</p>
+    </div>
+    <div class="col-md-6 text-end">
+      <a href="{% url 'fleet:work_report_list' %}" class="btn btn-outline-primary">
+        <i class="bi bi-file-earmark-text"></i> {% translate "Work Reports" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-warning border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Pending" %}</h6>
+              <h3 class="mb-0 text-warning">{{ pending_count }}</h3>
+            </div>
+            <div class="text-warning">
+              <i class="bi bi-clock-history display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-info border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Approved" %}</h6>
+              <h3 class="mb-0 text-info">{{ approved_count }}</h3>
+            </div>
+            <div class="text-info">
+              <i class="bi bi-check-circle display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-success border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Paid" %}</h6>
+              <h3 class="mb-0 text-success">{{ paid_count }}</h3>
+            </div>
+            <div class="text-success">
+              <i class="bi bi-cash-coin display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-danger border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "To Pay" %}</h6>
+              <h3 class="mb-0 text-danger">R$ {{ total_pending_amount|floatformat:2 }}</h3>
+            </div>
+            <div class="text-danger">
+              <i class="bi bi-currency-dollar display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <form method="get" class="row g-3">
+        <div class="col-md-3">
+          <label for="status" class="form-label small text-muted">{% translate "Status" %}</label>
+          <select name="status" id="status" class="form-select">
+            <option value="">{% translate "All statuses" %}</option>
+            <option value="pending">{% translate "Pending" %}</option>
+            <option value="approved">{% translate "Approved for Payment" %}</option>
+            <option value="processing">{% translate "Processing" %}</option>
+            <option value="paid">{% translate "Paid" %}</option>
+            <option value="cancelled">{% translate "Cancelled" %}</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label for="driver" class="form-label small text-muted">{% translate "Driver" %}</label>
+          <select name="driver" id="driver" class="form-select">
+            <option value="">{% translate "All drivers" %}</option>
+            <!-- Populate with drivers -->
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label for="search" class="form-label small text-muted">{% translate "Search" %}</label>
+          <input type="text" name="search" id="search" class="form-control"
+                 placeholder="{% translate 'Payment number...' %}">
+        </div>
+
+        <div class="col-md-1 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-funnel"></i>
+          </button>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+          <a href="{% url 'fleet:payment_order_list' %}" class="btn btn-outline-secondary w-100">
+            <i class="bi bi-x-circle"></i> {% translate "Clear" %}
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Payment Orders Table -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">
+        <i class="bi bi-table"></i> {% translate "Payments List" %}
+      </h5>
+      <div>
+        <button class="btn btn-sm btn-outline-success">
+          <i class="bi bi-file-earmark-excel"></i> {% translate "Export" %}
+        </button>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th class="text-start ps-3">{% translate "Payment #" %}</th>
+              <th>{% translate "Driver" %}</th>
+              <th class="text-center">{% translate "Work Report" %}</th>
+              <th class="text-end">{% translate "Gross" %}</th>
+              <th class="text-end">{% translate "Deductions" %}</th>
+              <th class="text-end">{% translate "Net Amount" %}</th>
+              <th class="text-center">{% translate "Status" %}</th>
+              <th class="text-center">{% translate "Method" %}</th>
+              <th class="text-end pe-3">{% translate "Actions" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for payment in payment_orders %}
+            <tr>
+              <td class="text-start ps-3">
+                <strong class="text-primary">{{ payment.payment_number }}</strong>
+                <br>
+                <small class="text-muted">{{ payment.created_at|date:"d/m/Y" }}</small>
+              </td>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" 
+                       style="width: 36px; height: 36px; font-size: 14px;">
+                    {{ payment.driver.full_name|slice:":1"|upper }}
+                  </div>
+                  <div>
+                    <strong>{{ payment.driver.full_name }}</strong>
+                    <br>
+                    <small class="text-muted">{{ payment.driver.document }}</small>
+                  </div>
+                </div>
+              </td>
+              <td class="text-center">
+                <small class="text-primary">{{ payment.work_report.report_number }}</small>
+              </td>
+              <td class="text-end">
+                <strong>R$ {{ payment.gross_amount|floatformat:2 }}</strong>
+              </td>
+              <td class="text-end">
+                {% if payment.deductions > 0 %}
+                  <span class="text-danger">- R$ {{ payment.deductions|floatformat:2 }}</span>
+                {% else %}
+                  <span class="text-muted">-</span>
+                {% endif %}
+              </td>
+              <td class="text-end">
+                <strong class="text-success fs-6">R$ {{ payment.net_amount|floatformat:2 }}</strong>
+              </td>
+              <td class="text-center">
+                {% if payment.status == 'pending' %}
+                  <span class="badge bg-warning">
+                    <i class="bi bi-clock"></i> {% translate "Pending" %}
+                  </span>
+                {% elif payment.status == 'approved' %}
+                  <span class="badge bg-info">
+                    <i class="bi bi-check-circle"></i> {% translate "Approved" %}
+                  </span>
+                {% elif payment.status == 'processing' %}
+                  <span class="badge bg-primary">
+                    <i class="bi bi-arrow-repeat"></i> {% translate "Processing" %}
+                  </span>
+                {% elif payment.status == 'paid' %}
+                  <span class="badge bg-success">
+                    <i class="bi bi-cash-coin"></i> {% translate "Paid" %}
+                  </span>
+                {% elif payment.status == 'cancelled' %}
+                  <span class="badge bg-danger">
+                    <i class="bi bi-x-circle"></i> {% translate "Cancelled" %}
+                  </span>
+                {% endif %}
+              </td>
+              <td class="text-center">
+                {% if payment.payment_method %}
+                  <small class="badge bg-secondary">
+                    {{ payment.get_payment_method_display }}
+                  </small>
+                {% else %}
+                  <span class="text-muted">-</span>
+                {% endif %}
+              </td>
+              <td class="text-end pe-3">
+                <div class="btn-group btn-group-sm">
+                  <a href="{% url 'fleet:payment_order_detail' payment.pk %}" 
+                     class="btn btn-outline-primary"
+                     title="{% translate 'View Details' %}">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  
+                  {% if payment.status == 'pending' %}
+                  {% translate 'Approve this payment order?' as confirm_message_4 %}
+                  <a href="{% url 'fleet:payment_order_approve' payment.pk %}" 
+                     class="btn btn-outline-success"
+                     title="{% translate 'Approve for Payment' %}"
+                     onclick="return confirm('{{ confirm_message_4 }}')">
+                    <i class="bi bi-check-lg"></i>
+                  </a>
+                  {% endif %}
+
+                  {% if payment.status == 'approved' %}
+                  <a href="{% url 'fleet:payment_order_pay' payment.pk %}" 
+                     class="btn btn-outline-success"
+                     title="{% translate 'Process Payment' %}">
+                    <i class="bi bi-cash-coin"></i>
+                  </a>
+                  {% endif %}
+
+                  {% if payment.receipt_file %}
+                  <a href="{{ payment.receipt_file.url }}" 
+                     class="btn btn-outline-info"
+                     title="{% translate 'Download Receipt' %}"
+                     target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                  </a>
+                  {% endif %}
+                </div>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="9" class="text-center py-5">
+                <i class="bi bi-inbox display-1 text-muted"></i>
+                <p class="text-muted mt-3 mb-0">
+                  {% translate "No payment orders found" %}
+                </p>
+                <a href="{% url 'fleet:work_report_list' %}" class="btn btn-primary mt-3">
+                  <i class="bi bi-file-earmark-text"></i> {% translate "View Work Reports" %}
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <div class="card-footer bg-white">
+      <nav>
+        <ul class="pagination justify-content-center mb-0">
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page=1"><i class="bi bi-chevron-double-left"></i></a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="bi bi-chevron-left"></i></a>
+          </li>
+          {% endif %}
+
+          <li class="page-item active">
+            <span class="page-link">
+              {% translate "Page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}
+            </span>
+          </li>
+
+          {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="bi bi-chevron-right"></i></a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"><i class="bi bi-chevron-double-right"></i></a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

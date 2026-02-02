@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Approval Details' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-clipboard-check"></i> {% translate "Approval Details" %}
+      </h2>
+      <p class="text-muted">
+        {% translate "Batch approval for" %} {{ approval.assignment.driver.full_name }}
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="{% url 'fleet:approval_list' %}" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left"></i> {% translate "Back to List" %}
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-8">
+      
+      <!-- Approval Summary Card -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-info-circle"></i> {% translate "Approval Summary" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Driver" %}</label>
+              <div class="d-flex align-items-center">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" 
+                     style="width: 40px; height: 40px;">
+                  {{ approval.assignment.driver.full_name|slice:":1"|upper }}
+                </div>
+                <div>
+                  <strong>{{ approval.assignment.driver.full_name }}</strong>
+                  <br>
+                  <small class="text-muted">{{ approval.assignment.driver.document }}</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Vehicle" %}</label>
+              <p class="mb-0">
+                <strong>{{ approval.assignment.vehicle.plate }}</strong>
+                <br>
+                <small class="text-muted">
+                  {{ approval.assignment.vehicle.brand.name }} {{ approval.assignment.vehicle.model }}
+                </small>
+              </p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Period" %}</label>
+              <p class="mb-0">
+                <strong>{{ approval.period_start|date:"d/m/Y" }}</strong> 
+                {% translate "to" %} 
+                <strong>{{ approval.period_end|date:"d/m/Y" }}</strong>
+                <br>
+                <small class="text-muted">
+                  {{ approval.period_start|timesince:approval.period_end }}
+                </small>
+              </p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Status" %}</label>
+              <p class="mb-0">
+                {% if approval.status == 'pending' %}
+                  <span class="badge bg-warning fs-6">
+                    <i class="bi bi-clock"></i> {% translate "Pending Approval" %}
+                  </span>
+                {% elif approval.status == 'approved' %}
+                  <span class="badge bg-success fs-6">
+                    <i class="bi bi-check-circle"></i> {% translate "Approved" %}
+                  </span>
+                {% elif approval.status == 'rejected' %}
+                  <span class="badge bg-danger fs-6">
+                    <i class="bi bi-x-circle"></i> {% translate "Rejected" %}
+                  </span>
+                {% endif %}
+              </p>
+            </div>
+
+            {% if approval.approved_by %}
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Approved/Rejected By" %}</label>
+              <p class="mb-0">
+                <strong>{{ approval.approved_by.get_full_name }}</strong>
+                <br>
+                <small class="text-muted">{{ approval.approved_at|date:"d/m/Y H:i" }}</small>
+              </p>
+            </div>
+            {% endif %}
+
+            {% if approval.rejection_reason %}
+            <div class="col-12">
+              <label class="text-muted small">{% translate "Rejection Reason" %}</label>
+              <div class="alert alert-danger mb-0">
+                {{ approval.rejection_reason }}
+              </div>
+            </div>
+            {% endif %}
+
+            {% if approval.notes %}
+            <div class="col-12 mt-3">
+              <label class="text-muted small">{% translate "Notes" %}</label>
+              <div class="alert alert-info mb-0">
+                {{ approval.notes }}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Workdays Table -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-calendar-check"></i> {% translate "Workdays in this Batch" %}
+          </h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th class="text-start ps-3">{% translate "Date" %}</th>
+                  <th class="text-center">{% translate "Type" %}</th>
+                  <th class="text-center">{% translate "Time" %}</th>
+                  <th class="text-center">{% translate "Hours" %}</th>
+                  <th class="text-center">{% translate "Overtime" %}</th>
+                  <th class="text-end pe-3">{% translate "Amount" %}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for workday in workdays %}
+                <tr>
+                  <td class="text-start ps-3">
+                    <strong>{{ workday.date|date:"d/m/Y" }}</strong>
+                    <br>
+                    <small class="text-muted">{{ workday.date|date:"l" }}</small>
+                  </td>
+                  <td class="text-center">
+                    <span class="badge bg-info">
+                      {{ workday.get_workday_type_display }}
+                    </span>
+                  </td>
+                  <td class="text-center">
+                    <small>
+                      {{ workday.start_time|time:"H:i" }} - {{ workday.end_time|time:"H:i" }}
+                      {% if workday.break_minutes > 0 %}
+                      <br>
+                      <span class="text-muted">
+                        ({% translate "Break:" %} {{ workday.break_minutes }}min)
+                      </span>
+                      {% endif %}
+                    </small>
+                  </td>
+                  <td class="text-center">
+                    <strong>{{ workday.total_hours }}h</strong>
+                  </td>
+                  <td class="text-center">
+                    {% if workday.overtime_hours > 0 %}
+                      <span class="text-warning">
+                        <strong>{{ workday.overtime_hours }}h</strong>
+                      </span>
+                    {% else %}
+                      <span class="text-muted">-</span>
+                    {% endif %}
+                  </td>
+                  <td class="text-end pe-3">
+                    <strong class="text-success">R$ {{ workday.total_amount|floatformat:2 }}</strong>
+                    <br>
+                    <small class="text-muted">
+                      R$ {{ workday.daily_amount|floatformat:2 }}
+                      {% if workday.overtime_amount > 0 %}
+                        + R$ {{ workday.overtime_amount|floatformat:2 }}
+                      {% endif %}
+                    </small>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+              <tfoot class="table-light">
+                <tr>
+                  <td colspan="3" class="text-end pe-3">
+                    <strong>{% translate "Total:" %}</strong>
+                  </td>
+                  <td class="text-center">
+                    <strong>{{ approval.total_hours }}h</strong>
+                  </td>
+                  <td class="text-center">
+                    <strong class="text-warning">{{ approval.total_overtime_hours }}h</strong>
+                  </td>
+                  <td class="text-end pe-3">
+                    <strong class="text-success fs-5">R$ {{ approval.total_amount|floatformat:2 }}</strong>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-4">
+      
+      <!-- Totals Card -->
+      <div class="card shadow-sm mb-4 border-primary">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-calculator"></i> {% translate "Totals" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="mb-3 pb-3 border-bottom">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-muted">{% translate "Total Workdays" %}</span>
+              <span class="badge bg-info rounded-pill fs-6">{{ approval.total_workdays }}</span>
+            </div>
+          </div>
+
+          <div class="mb-3 pb-3 border-bottom">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="text-muted">{% translate "Regular Hours" %}</span>
+              <strong>{{ approval.total_hours|floatformat:2 }}h</strong>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-muted">{% translate "Overtime Hours" %}</span>
+              <strong class="text-warning">{{ approval.total_overtime_hours|floatformat:2 }}h</strong>
+            </div>
+          </div>
+
+          <div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="mb-0">{% translate "Total Amount" %}</h6>
+              <h4 class="mb-0 text-success">R$ {{ approval.total_amount|floatformat:2 }}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions Card -->
+      {% if approval.status == 'pending' %}
+      <div class="card shadow-sm mb-4 border-warning">
+        <div class="card-header bg-warning text-dark">
+          <h5 class="mb-0">
+            <i class="bi bi-exclamation-triangle"></i> {% translate "Actions Required" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-3">
+            {% translate "This approval batch is pending. Review the workdays and approve or reject." %}
+          </p>
+          
+          <form method="post" action="{% url 'fleet:approval_approve' approval.pk %}">
+            {% csrf_token %}
+            {% translate 'Approve this batch? A work report will be generated automatically.' as confirm_message_2%}
+            <button type="submit" class="btn btn-success w-100 mb-2"
+                    onclick="return confirm('{{ confirm_message_2 }}')">
+              <i class="bi bi-check-circle"></i> {% translate "Approve Batch" %}
+            </button>
+          </form>
+
+          <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#rejectModal">
+            <i class="bi bi-x-circle"></i> {% translate "Reject Batch" %}
+          </button>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if approval.status == 'approved' and approval.work_report %}
+      <!-- Work Report Link -->
+      <div class="card shadow-sm mb-4 border-success">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-file-earmark-text"></i> {% translate "Work Report" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-3">
+            {% translate "A work report was generated for this approval." %}
+          </p>
+          <a href="{% url 'fleet:work_report_detail' approval.work_report.pk %}" class="btn btn-success w-100">
+            <i class="bi bi-eye"></i> {% translate "View Work Report" %}
+          </a>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Assignment Link -->
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-link-45deg"></i> {% translate "Related" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'fleet:assignment_detail' approval.assignment.pk %}" class="btn btn-outline-primary w-100">
+            <i class="bi bi-eye"></i> {% translate "View Assignment" %}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Reject Modal -->
+<div class="modal fade" id="rejectModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="post" action="{% url 'fleet:approval_reject' approval.pk %}">
+        {% csrf_token %}
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">
+            <i class="bi bi-x-circle"></i> {% translate "Reject Approval" %}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle"></i>
+            {% translate "You are about to reject this approval batch. All workdays will be marked as rejected." %}
+          </div>
+          
+          <div class="mb-3">
+            <label for="rejection_reason" class="form-label">
+              {% translate "Rejection Reason" %} <span class="text-danger">*</span>
+            </label>
+            <textarea name="rejection_reason" id="rejection_reason" 
+                      class="form-control" rows="4" required
+                      placeholder="{% translate 'Explain why this batch is being rejected...' %}"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            {% translate "Cancel" %}
+          </button>
+          <button type="submit" class="btn btn-danger">
+            <i class="bi bi-x-circle"></i> {% translate "Reject Batch" %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -10582,3 +10582,30 @@ INFO 2026-01-27 08:19:36,086 autoreload 16004 25856 C:\DAJ\PROGRAMMING\Projects\
 INFO 2026-01-27 08:19:37,174 autoreload 23504 12072 Watching for file changes with StatReloader
 INFO 2026-01-27 08:19:56,538 autoreload 23504 12072 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\models.py changed, reloading.
 INFO 2026-01-27 08:19:57,628 autoreload 11396 28240 Watching for file changes with StatReloader
+INFO 2026-01-30 17:12:10,127 autoreload 30760 33356 Watching for file changes with StatReloader
+INFO 2026-01-30 17:12:32,332 autoreload 30760 33356 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:12:34,779 autoreload 35204 30736 Watching for file changes with StatReloader
+INFO 2026-01-30 17:12:47,979 autoreload 35204 30736 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:12:49,898 autoreload 33800 30752 Watching for file changes with StatReloader
+INFO 2026-01-30 17:12:51,393 autoreload 33800 30752 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:12:53,114 autoreload 14968 24332 Watching for file changes with StatReloader
+INFO 2026-01-30 17:12:56,846 autoreload 14968 24332 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:12:58,371 autoreload 29528 15156 Watching for file changes with StatReloader
+INFO 2026-01-30 17:13:02,366 autoreload 29528 15156 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:13:03,754 autoreload 26228 23384 Watching for file changes with StatReloader
+INFO 2026-01-30 17:13:10,354 autoreload 26228 23384 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:13:12,720 autoreload 30988 4212 Watching for file changes with StatReloader
+INFO 2026-01-30 17:13:18,046 autoreload 30988 4212 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:13:20,313 autoreload 30244 9948 Watching for file changes with StatReloader
+INFO 2026-01-30 17:13:39,055 autoreload 30244 9948 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:13:41,386 autoreload 5308 34620 Watching for file changes with StatReloader
+INFO 2026-01-30 17:13:45,132 autoreload 5308 34620 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:13:47,192 autoreload 1012 36684 Watching for file changes with StatReloader
+INFO 2026-01-30 17:13:53,413 autoreload 1012 36684 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:13:55,304 autoreload 18008 35156 Watching for file changes with StatReloader
+INFO 2026-01-30 17:13:58,317 autoreload 18008 35156 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:14:00,891 autoreload 35560 36276 Watching for file changes with StatReloader
+INFO 2026-01-30 17:14:07,282 autoreload 35560 36276 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:14:08,756 autoreload 28040 27004 Watching for file changes with StatReloader
+INFO 2026-01-30 17:14:12,389 autoreload 28040 27004 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-01-30 17:14:14,375 autoreload 24552 15396 Watching for file changes with StatReloader

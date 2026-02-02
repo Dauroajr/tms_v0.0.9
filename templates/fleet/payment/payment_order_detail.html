@@ -1,0 +1,439 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Payment Order' %} {{ payment_order.payment_number }} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-cash-stack"></i> {% translate "Payment Order" %}
+      </h2>
+      <p class="text-muted">
+        {{ payment_order.payment_number }} - {{ payment_order.driver.full_name }}
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="{% url 'fleet:payment_order_list' %}" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left"></i> {% translate "Back to List" %}
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-8">
+      
+      <!-- Payment Header -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-success text-white">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+              <i class="bi bi-cash-stack"></i> {% translate "Payment Information" %}
+            </h5>
+            <span class="badge bg-white text-success fs-6">{{ payment_order.payment_number }}</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Driver" %}</label>
+              <div class="d-flex align-items-center">
+                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2" 
+                     style="width: 48px; height: 48px; font-size: 18px;">
+                  {{ payment_order.driver.full_name|slice:":1"|upper }}
+                </div>
+                <div>
+                  <strong class="fs-5">{{ payment_order.driver.full_name }}</strong>
+                  <br>
+                  <small class="text-muted">
+                    {{ payment_order.driver.document }}
+                    {% if payment_order.driver.phone %}
+                      | {{ payment_order.driver.phone }}
+                    {% endif %}
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Work Report" %}</label>
+              <p class="mb-0">
+                <a href="{% url 'fleet:work_report_detail' payment_order.work_report.pk %}" class="text-decoration-none">
+                  <strong class="fs-5">{{ payment_order.work_report.report_number }}</strong>
+                </a>
+                <br>
+                <small class="text-muted">
+                  {{ payment_order.work_report.approval.period_start|date:"d/m/Y" }} - 
+                  {{ payment_order.work_report.approval.period_end|date:"d/m/Y" }}
+                </small>
+              </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Created At" %}</label>
+              <p class="mb-0">
+                <strong>{{ payment_order.created_at|date:"d/m/Y" }}</strong>
+                <br>
+                <small class="text-muted">{{ payment_order.created_at|time:"H:i" }}</small>
+              </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Status" %}</label>
+              <p class="mb-0">
+                {% if payment_order.status == 'pending' %}
+                  <span class="badge bg-warning fs-6">
+                    <i class="bi bi-clock"></i> {% translate "Pending" %}
+                  </span>
+                {% elif payment_order.status == 'approved' %}
+                  <span class="badge bg-info fs-6">
+                    <i class="bi bi-check-circle"></i> {% translate "Approved" %}
+                  </span>
+                {% elif payment_order.status == 'processing' %}
+                  <span class="badge bg-primary fs-6">
+                    <i class="bi bi-arrow-repeat"></i> {% translate "Processing" %}
+                  </span>
+                {% elif payment_order.status == 'paid' %}
+                  <span class="badge bg-success fs-6">
+                    <i class="bi bi-cash-coin"></i> {% translate "Paid" %}
+                  </span>
+                {% elif payment_order.status == 'cancelled' %}
+                  <span class="badge bg-danger fs-6">
+                    <i class="bi bi-x-circle"></i> {% translate "Cancelled" %}
+                  </span>
+                {% endif %}
+              </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Vehicle" %}</label>
+              <p class="mb-0">
+                <strong>{{ payment_order.assignment.vehicle.plate }}</strong>
+                <br>
+                <small class="text-muted">
+                  {{ payment_order.assignment.vehicle.brand.name }}
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Calculation -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-calculator"></i> {% translate "Payment Breakdown" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-borderless mb-0">
+            <tbody>
+              <tr>
+                <td class="ps-0">
+                  <strong>{% translate "Gross Amount" %}</strong>
+                  <br>
+                  <small class="text-muted">
+                    {{ payment_order.work_report.approval.total_workdays }} {% translate "workdays" %} × 
+                    {{ payment_order.work_report.approval.total_hours|floatformat:1 }}h
+                  </small>
+                </td>
+                <td class="text-end pe-0">
+                  <strong class="fs-5">R$ {{ payment_order.gross_amount|floatformat:2 }}</strong>
+                </td>
+              </tr>
+
+              {% if payment_order.deductions > 0 %}
+              <tr class="border-top">
+                <td class="ps-0">
+                  <strong class="text-danger">{% translate "Deductions" %}</strong>
+                  <br>
+                  <small class="text-muted">{% translate "Taxes, advances, etc" %}</small>
+                </td>
+                <td class="text-end pe-0">
+                  <strong class="text-danger fs-5">- R$ {{ payment_order.deductions|floatformat:2 }}</strong>
+                </td>
+              </tr>
+              {% endif %}
+
+              <tr class="border-top">
+                <td class="ps-0">
+                  <h5 class="mb-0">{% translate "Net Amount" %}</h5>
+                  <small class="text-muted">{% translate "Amount to be paid" %}</small>
+                </td>
+                <td class="text-end pe-0">
+                  <h3 class="mb-0 text-success">R$ {{ payment_order.net_amount|floatformat:2 }}</h3>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Payment Details (if paid) -->
+      {% if payment_order.status == 'paid' %}
+      <div class="card shadow-sm mb-4 border-success">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-check-circle-fill"></i> {% translate "Payment Completed" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Payment Method" %}</label>
+              <p class="mb-0">
+                <strong>{{ payment_order.get_payment_method_display }}</strong>
+              </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Paid By" %}</label>
+              <p class="mb-0">
+                <strong>{{ payment_order.paid_by.get_full_name }}</strong>
+              </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Paid At" %}</label>
+              <p class="mb-0">
+                <strong>{{ payment_order.paid_at|date:"d/m/Y H:i" }}</strong>
+              </p>
+            </div>
+
+            {% if payment_order.payment_reference %}
+            <div class="col-12">
+              <label class="text-muted small">{% translate "Payment Reference" %}</label>
+              <p class="mb-0">
+                <code>{{ payment_order.payment_reference }}</code>
+              </p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Approval Details (if approved/paid) -->
+      {% if payment_order.approved_by %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-person-check"></i> {% translate "Approval Details" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Approved By" %}</label>
+              <p class="mb-0">
+                <strong>{{ payment_order.approved_by.get_full_name }}</strong>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small">{% translate "Approved At" %}</label>
+              <p class="mb-0">
+                <strong>{{ payment_order.approved_at|date:"d/m/Y H:i" }}</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if payment_order.notes %}
+      <!-- Notes -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-sticky"></i> {% translate "Notes" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <p class="mb-0">{{ payment_order.notes }}</p>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-4">
+      
+      <!-- Quick Actions -->
+      {% if payment_order.status == 'pending' %}
+      <div class="card shadow-sm mb-4 border-warning">
+        <div class="card-header bg-warning text-dark">
+          <h5 class="mb-0">
+            <i class="bi bi-lightning-charge"></i> {% translate "Actions Required" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-3">
+            {% translate "This payment order is pending approval." %}
+          </p>
+          
+          <form method="post" action="{% url 'fleet:payment_order_approve' payment_order.pk %}">
+            {% csrf_token %}
+            {% translate 'Approve this payment? An expense report will be sent to the client.' as confirm_message_5 %}
+            <button type="submit" class="btn btn-success w-100"
+                    onclick="return confirm('{{ confirm_message_5 }}')">
+              <i class="bi bi-check-circle"></i> {% translate "Approve for Payment" %}
+            </button>
+          </form>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if payment_order.status == 'approved' %}
+      <div class="card shadow-sm mb-4 border-success">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-cash-coin"></i> {% translate "Process Payment" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-3">
+            {% translate "Payment is approved. Process the payment to the driver." %}
+          </p>
+          
+          <a href="{% url 'fleet:payment_order_pay' payment_order.pk %}" class="btn btn-success w-100">
+            <i class="bi bi-cash-coin"></i> {% translate "Process Payment" %}
+          </a>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if payment_order.status == 'paid' %}
+      <!-- Receipt -->
+      <div class="card shadow-sm mb-4 border-success">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-file-earmark-check"></i> {% translate "Receipt" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          {% if payment_order.receipt_file %}
+          <a href="{{ payment_order.receipt_file.url }}" class="btn btn-outline-success w-100 mb-2" target="_blank">
+            <i class="bi bi-file-pdf"></i> {% translate "Download Receipt" %}
+          </a>
+          {% else %}
+          <button class="btn btn-outline-primary w-100 mb-2">
+            <i class="bi bi-file-pdf"></i> {% translate "Generate Receipt" %}
+          </button>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Expense Report (if exists) -->
+      {% if payment_order.expense_report %}
+      <div class="card shadow-sm mb-4 border-info">
+        <div class="card-header bg-info text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-receipt"></i> {% translate "Expense Report" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-2">
+            <strong>{{ payment_order.expense_report.report_number }}</strong>
+          </p>
+          <p class="mb-3">
+            <small class="text-muted">
+              {% translate "Status:" %} 
+              <span class="badge bg-{{ payment_order.expense_report.status }}">
+                {{ payment_order.expense_report.get_status_display }}
+              </span>
+            </small>
+          </p>
+          <a href="{% url 'fleet:expense_report_detail' payment_order.expense_report.pk %}" class="btn btn-info w-100">
+            <i class="bi bi-eye"></i> {% translate "View Expense Report" %}
+          </a>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Related Links -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-link-45deg"></i> {% translate "Related" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'fleet:work_report_detail' payment_order.work_report.pk %}" class="btn btn-outline-primary w-100 mb-2">
+            <i class="bi bi-file-earmark-text"></i> {% translate "Work Report" %}
+          </a>
+          <a href="{% url 'fleet:approval_detail' payment_order.work_report.approval.pk %}" class="btn btn-outline-primary w-100 mb-2">
+            <i class="bi bi-clipboard-check"></i> {% translate "Approval Batch" %}
+          </a>
+          <a href="{% url 'fleet:assignment_detail' payment_order.assignment.pk %}" class="btn btn-outline-primary w-100">
+            <i class="bi bi-car-front"></i> {% translate "Assignment" %}
+          </a>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-clock-history"></i> {% translate "Timeline" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3">
+              <div class="d-flex">
+                <div class="me-2">
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">{% translate "Created" %}</small>
+                  <strong>{{ payment_order.created_at|date:"d/m/Y H:i" }}</strong>
+                </div>
+              </div>
+            </li>
+
+            {% if payment_order.approved_at %}
+            <li class="mb-3">
+              <div class="d-flex">
+                <div class="me-2">
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">{% translate "Approved" %}</small>
+                  <strong>{{ payment_order.approved_at|date:"d/m/Y H:i" }}</strong>
+                  <br>
+                  <small class="text-muted">{{ payment_order.approved_by.get_full_name }}</small>
+                </div>
+              </div>
+            </li>
+            {% endif %}
+
+            {% if payment_order.paid_at %}
+            <li>
+              <div class="d-flex">
+                <div class="me-2">
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">{% translate "Paid" %}</small>
+                  <strong>{{ payment_order.paid_at|date:"d/m/Y H:i" }}</strong>
+                  <br>
+                  <small class="text-muted">{{ payment_order.paid_by.get_full_name }}</small>
+                </div>
+              </div>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}

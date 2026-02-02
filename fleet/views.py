@@ -1,12 +1,14 @@
 from django.contrib import messages
-from django.db import models
+from django.db import models, transaction
 from django.db.models import Count, Q, Avg, Sum
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from django.views import View
-from django.views.generic import TemplateView
+
+# from django.views import View
+from django.views.generic import ListView, DetailView, View, TemplateView
+
 
 from core.mixins import TenantAdminRequiredMixin
 from core.views import (
@@ -24,6 +26,10 @@ from .models import (
     VehicleBrand,
     VehicleDocument,
     MaintenanceRecord,
+    WorkdayApproval,
+    WorkReport,
+    PaymentOrder,
+    ExpenseReport,
 )
 from .forms import (
     VehicleForm,
@@ -829,3 +835,486 @@ class WorkdayRejectView(TenantAdminRequiredMixin, View):
             messages.warning(request, _("Workday rejected."))
 
         return redirect("fleet:workday_detail", pk=pk)
+
+
+class WQorkdayApprovalListView(TenantAwareListView):
+
+    model = WorkdayApproval
+    template_name = "fleet/approval_list.html"
+    context_object_name = "approvals"
+    paginate_by = 20
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        # Filters
+        status = self.request.GET.get("status")
+        if status:
+            queryset = queryset.filter(status=status)
+
+        driver_id = self.request.GET.get("driver")
+        if driver_id:
+            queryset = queryset.filter(assignment__driver_id=driver_id)
+
+        return queryset.select_related(
+            "assignment",
+            "assignment__driver",
+            "assignment__vehicle",
+            "workday",
+        ).order_by("-created_at")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Statistics
+        queryset = self.get_queryset()
+        context["total_approvals"] = queryset.count()
+        context["pending_approvals"] = queryset.filter(status="pending").count()
+        context["approved_count"] = queryset.filter(status="approved").count()
+
+        # Filters
+        context["current_status"] = self.request.GET.get("status", "")
+        context["current_driver"] = self.request.GET.get("driver", "")
+
+        # Drivers for filters
+        from personnel.models import Employee
+
+        context["drivers"] = Employee.objects.filter(
+            tenant=self.request.tenant, employee_type="driver"
+        )
+
+        return context
+
+
+class WorkdayApprovalCreateView(TenantAdminRequiredMixin, View):
+    # Criar aprovação em lote de workdays
+
+    tempalte_name = "fleet/payment/approval_create.html"
+
+    def get(self, request, assignment_pk):
+        """Mostrar Workdays pendentes para aprovação."""
+        assignment = get_object_or_404(
+            VehicleAssignment, pk=assignment_pk, tenant=request.tenant
+        )
+
+        # Workdays pendentes
+        pending_workdays = assignment.workdays.filter(
+            status="pending",
+            approval__isnull=True,
+        ).order_by("date")
+
+        if not pending_workdays.exists():
+            messages.warning(request, _("No pending workdays to approve"))
+            return redirect("fleet:assignment_detail", pk=assignment_pk)
+
+        context = {
+            "assignment": assignment,
+            "workdays": pending_workdays,
+            "total_workdays": pending_workdays.count(),
+            "total_amount": sum(w.total_amount for w in pending_workdays),
+        }
+
+        return render(request, self.tempalte_name, context)
+
+    @transaction.atomic
+    def post(self, request, assignment_pk):
+        """Aprovar workdays selecionados."""
+        assignment = get_object_or_404(
+            VehicleAssignment, pk=assignment_pk, tenant=request.tenant
+        )
+
+        # IDs dos workdays selecionados
+        workday_ids = request.POST.getlist("workday_ids")
+
+        if not workday_ids:
+            messages.error(request, _("Select at least one workday."))
+            return redirect("fleet:approval_create", assignment_pk=assignment_pk)
+
+        # Buscar Workdays
+        workdays = assignment.workdays.filter(
+            id__in=workday_ids,
+            status="pending",
+            approval__isnull=True,
+        ).order_by("date")
+
+        if not workdays.exists():
+            messages.error(request, _("Invalid workdays selected."))
+            return redirect("fleet:approval_create", assignment_pk=assignment_pk)
+
+        # Criar aprovações
+        approval = WorkdayApproval.objects.create(
+            tenant=request.tenant,
+            assignment=assignment,
+            period_start=workdays.first().date,
+            period_end=workdays.last().date,
+            created_by=request.user,
+        )
+
+        # Vincular workdays à aprovação
+        workdays.update(approval=approval)
+
+        # Calcular totais
+        approval.calculate_totals()
+
+        messages.success(
+            request,
+            _("Approval batch created with {count} workdays.").format(
+                count=workdays.count()
+            ),
+        )
+
+        return redirect("fleet:approval_detail", pk=approval.pk)
+
+
+class WorkdayApprovalDetailView(TenantAwareDetailView):
+
+    model = WorkdayApproval
+    template_name = "fleet/payment/approval_detail.html"
+    context_object_name = "approval"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+
+        approval = self.object
+        context["workdays"] = approval.workdays.all().order_by("date")
+
+        return context
+
+
+class WorkdayApprovalApproveView(TenantAdminRequiredMixin, View):
+
+    @transaction.atomic
+    def post(self, request, pk):
+        approval = get_object_or_404(
+            WorkdayApproval, pk=pk, tenant=request.tenant, status="pending"
+        )
+
+        # Aprovar
+        approval.approve(request.user)
+
+        # Gerar relatório automaticamente
+        report = self._generate_work_report(approval, request.user)
+
+        messages.success(
+            request,
+            _("Workdays approved! Work report #{number} generated.").format(
+                number=report.report_number
+            ),
+        )
+
+        return redirect("fleet:work_report_detail", pk=report.pk)
+
+    def _generate_work_report(self, approval, user):
+        """Gerar relatório de trabalho após aprovação."""
+        report = WorkReport.objects.create(
+            tenant=approval.tenant,
+            approval=approval,
+            assignment=approval.assignment,
+            created_by=user,
+        )
+        report.generate_report_number()
+        report.save()
+
+        # TODO: Gerar PDF
+        # TODO: Enviar e-mails
+
+        return report
+
+
+class WorkReportListView(TenantAwareListView):
+    """Lista de relatórios de trabalho."""
+
+    model = WorkReport
+    template_name = "fleet/payment/work_report_list.html"
+    context_object_name = "reports"
+    paginate_by = 20
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        status = self.request.GET.get("status")
+        if status:
+            queryset = queryset.filter(status=status)
+
+        return queryset.select_related(
+            "assignment",
+            "assignment__driver",
+            "approval",
+        ).order_by("-created_at")
+
+
+class WorkReportDetailView(TenantAwareDetailView):
+
+    model = WorkReport
+    template_name = "fleet/payment/work_report_detail.html"
+    context_object_name = "report"
+
+
+class WorkReportApproveView(TenantAdminRequiredMixin, View):
+
+    @transaction.atomic
+    def post(self, request, pk):
+        report = get_object_or_404(
+            WorkReport,
+            pk=pk,
+            tenant=request.tenant,
+            status__in=["generated", "sent", "reviewed"],
+        )
+
+        # Aprovar Relatório
+        report.status = "approved"
+        report.save()
+
+        # Gerar Ordem de Pagamento
+        payment_order = self._genetare_payment_order(report, request.user)
+
+        messages.success(
+            request,
+            _("Report approved! Payment order #{number} generated.").format(
+                number=payment_order.payment_number
+            ),
+        )
+        return redirect("fleet:payment_orde_detail", pk=payment_order.pk)
+
+    def _generate_payment_order(self, report, user):
+        payment_order = PaymentOrder.objects.create(
+            tenant=report.tenant,
+            work_report=report,
+            assignment=report.assignment,
+            driver=report.assignment.driver,
+            gross_amount=report.approval.total_amount,
+            deductions=0,
+            created_by=user,
+        )
+        payment_order.generate_payment_number()
+        payment_order.calculate_net_amount()
+        payment_order.save()
+
+        return payment_order
+
+
+# ============= PAYMENT ORDER ================
+
+
+class PaymentOrdeListView(TenantAwareListView):
+
+    model = PaymentOrder
+    template_name = "fleet/payment/payment_order_list.html"
+    context_object_name = "payment_orders"
+    paginate_by = 20
+
+    def get_queyset(self):
+        queryset = super().get_queryset()
+
+        status = self.request.GET.get("status")
+        if status:
+            queryset = queryset.filter(status=status)
+
+        driver_id = self.request.GET.get("driver")
+        if driver_id:
+            queryset = queryset.filter(driver_id=driver_id)
+
+        return queryset.select_related(
+            "driver",
+            "assignment",
+            "workreport",
+            "approved_by",
+            "paid_by",
+        ).order_by("-created_at")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        queryset = self.get_queryset()
+        context["pending_count"] = queryset.filter(status="pending").count()
+        context["approved_count"] = queryset.filter(status="approved").count()
+        context["paid_count"] = queryset.filter(status="paid").count()
+
+        # Total a Pagar
+        from django.db.models import Sum
+
+        context["total_pending+_amount"] = (
+            queryset.filter(status__in=["pending", "approved"]).aggregate(
+                total=Sum("net_amount")
+            )["total"]
+            or 0
+        )
+
+        return context
+
+
+class PaymentOrderDetailView(TenantAwareDetailView):
+
+    model = PaymentOrder
+    template_name = "fleet/payment_order_detail.html"
+    context_object_name = "payment_order"
+
+
+class PaymentOrderApproveView(TenantAdminRequiredMixin, View):
+    """Aprovar ordem para pagamento -> Gerar nota de despesas"""
+
+    @transaction.atomic
+    def post(self, request, pk):
+        payment_order = get_object_or_404(
+            PaymentOrder,
+            pk=pk,
+            tenant=request.tenant,
+            status="pending",
+        )
+
+        # Aprovar pagamento
+        payment_order.approve_for_payment(request.user)
+
+        # Gerar nota de despesas para o cliente
+        expense_report = self._generate_expense_report(payment_order, request.user)
+
+        messages.success(
+            request,
+            _("Payment approved! Expense report #{number} generated.").format(
+                number=expense_report.report_number
+            ),
+        )
+
+        return redirect("fleet:expense_report_detail", pk=expense_report.pk)
+
+    def _generate_expense_report(self, payment_order, user):
+        """Gerar relatório de despesas para o cliente."""
+        # TODO: ('Buscar dados do cliente do Assignment')
+        client_name = "Cliente XYZ"  # Placeholder
+        client_email = "cliente@example.com"  # Placeholder
+
+        expense_report = ExpenseReport.objects.create(
+            tenant=payment_order.tenant,
+            payment_order=payment_order,
+            assignment=payment_order.assignment,
+            client_name=client_name,
+            client_email=client_email,
+            total_amount=payment_order.net_amount,
+            created_by=user,
+        )
+        expense_report.generate_report_number()
+        expense_report.save()
+
+        # TODO: ('Gerar PDF')
+        # TODO: ('Enviar para cliente')
+        expense_report.send_to_client()
+
+        return expense_report
+
+
+class PaymentOrderPayView(TenantAdminRequiredMixin, View):
+    """Efetivar pagamento ao motorista."""
+
+    def get(self, request, pk):
+        payment_order = get_object_or_404(
+            PaymentOrder, pk=pk, tenant=request.tenant, status="approved"
+        )
+
+        # Verificar se nota de despesas foi aprovada pelo cliente
+        if hasattr(payment_order, "expense_report"):
+            if payment_order.expense_report.status != "approved":
+                messages.warning(
+                    request,
+                    _("Expense report must be approved by client before payment."),
+                )
+                return redirect("fleet:payment_order_detail", pk=pk)
+
+        context = {"payment_order": payment_order}
+        return render(request, self.template_name, context)
+
+    @transaction.atomic
+    def post(self, request, pk):
+        payment_order = get_object_or_404(
+            PaymentOrder, pk=pk, tenant=request.tenant, status="approved"
+        )
+
+        payment_method = request.POST.post("payment_method")
+        payment_reference = request.POST.post("payment_reference", "")
+
+        if not payment_method:
+            messages.error(
+                request, _("Payment method is required.")
+            )
+            return redirect('fleet:payment_order_pay', pk=pk)
+
+        # Marcar como pago
+        payment_order.mark_as_paid(
+            paid_by=request.user,
+            payment_method=payment_method,
+            payment_reference=payment_reference
+        )
+
+        # TODO: ('Gerar comprovante PDF')
+
+        # Finalizar assignment se todos os pagamentos foram feitos
+        self._check_and_finalize_assignment(payment_order.assignment)
+
+        messages.success(
+            request,
+            _("Payment of R$ {amount} completed.").format(
+                amount=payment_order.net_amount
+            )
+        )
+
+        return redirect('fleet:payment_order_detail', pk=pk)
+
+    def _check_and_finalize_assignment(self, assignment):
+        """ Verifica se todos os pagamentos foram feitos, e finaliza o assignment."""
+        pending_payments = assignment.payment_orders.exclude(status='paid')
+
+        if not pending_payments.exists():  # and assignment.is_active:
+            assignment.is_active = False
+            if not assignment.end_date:
+                assignment.end_date = timezone.now().date()
+            assignment.save()
+
+
+# =========== EXPENSE REPORT =================
+
+
+class ExpenseReportListView(TenantAwareListView):
+
+    model = ExpenseReport
+    template_name = 'fleet/payment/expense_report_list.html'
+    context_object_name = 'expense_reports'
+    paginate_by = 20
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        status = self.request.GET.get()
+        if status:
+            queryset = queryset.filter(status=status)
+
+        return queryset.select_related(
+            'assignment',
+            'payment_order',
+        ).order_by('-created_at')
+
+
+class ExpenseReportDetailView(TenantAwareDetailView):
+
+    model = ExpenseReport
+    template_name = 'fleet/payment/expense_report_detail.html'
+    context_object_name = 'expense_report'
+
+
+# Simulação de aprovação do cliente (em produção, seria por link no e-mail)
+class ExpenseReportClientApproveView(View):
+    """ Cliente aprova relatório de despesas (simulação). """
+
+    def post(self, request, pk, token):
+        # TODO: ('Validar token de segurança')
+
+        expense_report = get_object_or_404(ExpenseReport, pk=pk)
+
+        notes = request.POST.get('notes', '')
+        expense_report.approve_by_client(notes)
+
+        messages.success(
+            request,
+            _("Expense report approved! Payment will be processed.")
+        )
+
+        # TODO: ('Redirecionar para página de agradecimento')
+        return redirect('fleet:expense_report_detail', pk=pk)

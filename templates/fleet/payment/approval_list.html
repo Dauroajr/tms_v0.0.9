@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Workday Approvals' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <h2>
+        <i class="bi bi-clipboard-check"></i> {% translate "Workday Approvals" %}
+      </h2>
+      <p class="text-muted">{% translate "Manage workday approval batches" %}</p>
+    </div>
+    <div class="col-md-6 text-end">
+      <a href="{% url 'fleet:assignment_list' %}" class="btn btn-outline-primary">
+        <i class="bi bi-list-ul"></i> {% translate "View Assignments" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-primary border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Total" %}</h6>
+              <h3 class="mb-0">{{ total_approvals }}</h3>
+            </div>
+            <div class="text-primary">
+              <i class="bi bi-clipboard-check display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-warning border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Pending" %}</h6>
+              <h3 class="mb-0 text-warning">{{ pending_approvals }}</h3>
+            </div>
+            <div class="text-warning">
+              <i class="bi bi-clock-history display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-success border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Approved" %}</h6>
+              <h3 class="mb-0 text-success">{{ approved_count }}</h3>
+            </div>
+            <div class="text-success">
+              <i class="bi bi-check-circle display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-info border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "This Month" %}</h6>
+              <h3 class="mb-0 text-info">
+                {{ approvals.count }}
+              </h3>
+            </div>
+            <div class="text-info">
+              <i class="bi bi-calendar-month display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <form method="get" class="row g-3">
+        <div class="col-md-3">
+          <label for="status" class="form-label small text-muted">{% translate "Status" %}</label>
+          <select name="status" id="status" class="form-select">
+            <option value="">{% translate "All statuses" %}</option>
+            <option value="pending" {% if current_status=='pending' %}selected{% endif %}>
+              {% translate "Pending" %}
+            </option>
+            <option value="approved" {% if current_status=='approved' %}selected{% endif %}>
+              {% translate "Approved" %}
+            </option>
+            <option value="rejected" {% if current_status=='rejected' %}selected{% endif %}>
+              {% translate "Rejected" %}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label for="driver" class="form-label small text-muted">{% translate "Driver" %}</label>
+          <select name="driver" id="driver" class="form-select">
+            <option value="">{% translate "All drivers" %}</option>
+            {% for driver in drivers %}
+            <option value="{{ driver.id }}" {% if current_driver==driver.id|stringformat:"s" %}selected{% endif %}>
+              {{ driver.full_name }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-funnel"></i> {% translate "Filter" %}
+          </button>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+          <a href="{% url 'fleet:approval_list' %}" class="btn btn-outline-secondary w-100">
+            <i class="bi bi-x-circle"></i> {% translate "Clear" %}
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Approvals Table -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-white">
+      <h5 class="mb-0">
+        <i class="bi bi-table"></i> {% translate "Approval List" %}
+      </h5>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th class="text-start ps-3">{% translate "Period" %}</th>
+              <th>{% translate "Driver" %}</th>
+              <th>{% translate "Vehicle" %}</th>
+              <th class="text-center">{% translate "Workdays" %}</th>
+              <th class="text-center">{% translate "Hours" %}</th>
+              <th class="text-end">{% translate "Amount" %}</th>
+              <th class="text-center">{% translate "Status" %}</th>
+              <th class="text-end pe-3">{% translate "Actions" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for approval in approvals %}
+            <tr>
+              <td class="text-start ps-3">
+                <strong>{{ approval.period_start|date:"d/m/Y" }}</strong>
+                <br>
+                <small class="text-muted">
+                  {% translate "to" %} {{ approval.period_end|date:"d/m/Y" }}
+                </small>
+              </td>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
+                    style="width: 36px; height: 36px; font-size: 14px;">
+                    {{ approval.assignment.driver.full_name|slice:":1"|upper }}
+                  </div>
+                  <div>
+                    <strong>{{ approval.assignment.driver.full_name }}</strong>
+                    <br>
+                    <small class="text-muted">{{ approval.assignment.driver.document }}</small>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <strong>{{ approval.assignment.vehicle.plate }}</strong>
+                <br>
+                <small class="text-muted">
+                  {{ approval.assignment.vehicle.brand.name }} {{ approval.assignment.vehicle.model }}
+                </small>
+              </td>
+              <td class="text-center">
+                <span class="badge bg-info rounded-pill">
+                  {{ approval.total_workdays }}
+                </span>
+              </td>
+              <td class="text-center">
+                <strong>{{ approval.total_hours }}h</strong>
+                {% if approval.total_overtime_hours > 0 %}
+                <br>
+                <small class="text-warning">
+                  +{{ approval.total_overtime_hours }}h OT
+                </small>
+                {% endif %}
+              </td>
+              <td class="text-end">
+                <strong class="text-success">R$ {{ approval.total_amount|floatformat:2 }}</strong>
+              </td>
+              <td class="text-center">
+                {% if approval.status == 'pending' %}
+                <span class="badge bg-warning">
+                  <i class="bi bi-clock"></i> {% translate "Pending" %}
+                </span>
+                {% elif approval.status == 'approved' %}
+                <span class="badge bg-success">
+                  <i class="bi bi-check-circle"></i> {% translate "Approved" %}
+                </span>
+                {% elif approval.status == 'rejected' %}
+                <span class="badge bg-danger">
+                  <i class="bi bi-x-circle"></i> {% translate "Rejected" %}
+                </span>
+                {% endif %}
+              </td>
+              <td class="text-end pe-3">
+                <div class="btn-group btn-group-sm">
+                  <a href="{% url 'fleet:approval_detail' approval.pk %}" class="btn btn-outline-primary"
+                    title="{% translate 'View Details' %}">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  {% if approval.status == 'pending' %}
+                  {% translate 'Approve this batch of workdays?' as confirm_message %}
+                  <a href="{% url 'fleet:approval_approve' approval.pk %}" class="btn btn-outline-success"
+                    title="{% translate 'Approve' %}" onclick="return confirm('{{ confirm_message }}')">
+                    <i class="bi bi-check-lg"></i>
+                  </a>
+                  {% endif %}
+                </div>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="8" class="text-center py-5">
+                <i class="bi bi-inbox display-1 text-muted"></i>
+                <p class="text-muted mt-3 mb-0">
+                  {% translate "No approvals found" %}
+                </p>
+                <a href="{% url 'fleet:assignment_list' %}" class="btn btn-primary mt-3">
+                  <i class="bi bi-plus-circle"></i> {% translate "View Assignments" %}
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <div class="card-footer bg-white">
+      <nav>
+        <ul class="pagination justify-content-center mb-0">
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link"
+              href="?page=1{% if current_status %}&status={{ current_status }}{% endif %}{% if current_driver %}&driver={{ current_driver }}{% endif %}">
+              <i class="bi bi-chevron-double-left"></i>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link"
+              href="?page={{ page_obj.previous_page_number }}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_driver %}&driver={{ current_driver }}{% endif %}">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+          </li>
+          {% endif %}
+
+          <li class="page-item active">
+            <span class="page-link">
+              {% translate "Page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}
+            </span>
+          </li>
+
+          {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link"
+              href="?page={{ page_obj.next_page_number }}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_driver %}&driver={{ current_driver }}{% endif %}">
+              <i class="bi bi-chevron-right"></i>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link"
+              href="?page={{ page_obj.paginator.num_pages }}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_driver %}&driver={{ current_driver }}{% endif %}">
+              <i class="bi bi-chevron-double-right"></i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,431 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Work Report' %} {{ report.report_number }} - TMS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2>
+        <i class="bi bi-file-earmark-text"></i> {% translate "Work Report" %}
+      </h2>
+      <p class="text-muted">
+        {{ report.report_number }} - {{ report.assignment.driver.full_name }}
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="{% url 'fleet:work_report_list' %}" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left"></i> {% translate "Back to List" %}
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-8">
+      
+      <!-- Report Header Card -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+              <i class="bi bi-file-earmark-text"></i> {% translate "Report Information" %}
+            </h5>
+            <span class="badge bg-white text-primary fs-6">{{ report.report_number }}</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Driver" %}</label>
+              <div class="d-flex align-items-center">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" 
+                     style="width: 48px; height: 48px; font-size: 18px;">
+                  {{ report.assignment.driver.full_name|slice:":1"|upper }}
+                </div>
+                <div>
+                  <strong class="fs-5">{{ report.assignment.driver.full_name }}</strong>
+                  <br>
+                  <small class="text-muted">{{ report.assignment.driver.document }}</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="text-muted small">{% translate "Vehicle" %}</label>
+              <p class="mb-0">
+                <strong class="fs-5">{{ report.assignment.vehicle.plate }}</strong>
+                <br>
+                <small class="text-muted">
+                  {{ report.assignment.vehicle.brand.name }} {{ report.assignment.vehicle.model }}
+                </small>
+              </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Work Period" %}</label>
+              <p class="mb-0">
+                <strong>{{ report.approval.period_start|date:"d/m/Y" }}</strong>
+                <br>
+                <span class="text-muted">{% translate "to" %}</span>
+                <br>
+                <strong>{{ report.approval.period_end|date:"d/m/Y" }}</strong>
+              </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Generated At" %}</label>
+              <p class="mb-0">
+                <strong>{{ report.created_at|date:"d/m/Y" }}</strong>
+                <br>
+                <small class="text-muted">{{ report.created_at|time:"H:i" }}</small>
+              </p>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label class="text-muted small">{% translate "Status" %}</label>
+              <p class="mb-0">
+                {% if report.status == 'generated' %}
+                  <span class="badge bg-info fs-6">
+                    <i class="bi bi-file-plus"></i> {% translate "Generated" %}
+                  </span>
+                {% elif report.status == 'sent' %}
+                  <span class="badge bg-warning fs-6">
+                    <i class="bi bi-envelope-check"></i> {% translate "Sent" %}
+                  </span>
+                {% elif report.status == 'reviewed' %}
+                  <span class="badge bg-primary fs-6">
+                    <i class="bi bi-eye-fill"></i> {% translate "Reviewed" %}
+                  </span>
+                {% elif report.status == 'approved' %}
+                  <span class="badge bg-success fs-6">
+                    <i class="bi bi-check-circle"></i> {% translate "Approved" %}
+                  </span>
+                {% endif %}
+              </p>
+            </div>
+          </div>
+
+          <!-- Email Status -->
+          <div class="row mt-3 pt-3 border-top">
+            <div class="col-md-6">
+              <div class="d-flex align-items-center">
+                {% if report.sent_to_company_at %}
+                  <i class="bi bi-check-circle-fill text-success fs-4 me-2"></i>
+                  <div>
+                    <small class="text-muted d-block">{% translate "Sent to Company" %}</small>
+                    <strong>{{ report.sent_to_company_at|date:"d/m/Y H:i" }}</strong>
+                  </div>
+                {% else %}
+                  <i class="bi bi-x-circle text-muted fs-4 me-2"></i>
+                  <div>
+                    <small class="text-muted">{% translate "Not sent to company yet" %}</small>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="d-flex align-items-center">
+                {% if report.sent_to_driver_at %}
+                  <i class="bi bi-check-circle-fill text-success fs-4 me-2"></i>
+                  <div>
+                    <small class="text-muted d-block">{% translate "Sent to Driver" %}</small>
+                    <strong>{{ report.sent_to_driver_at|date:"d/m/Y H:i" }}</strong>
+                  </div>
+                {% else %}
+                  <i class="bi bi-x-circle text-muted fs-4 me-2"></i>
+                  <div>
+                    <small class="text-muted">{% translate "Not sent to driver yet" %}</small>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Summary Card -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-clipboard-data"></i> {% translate "Work Summary" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row text-center">
+            <div class="col-md-3 mb-3">
+              <div class="p-3 bg-light rounded">
+                <i class="bi bi-calendar-check text-primary display-6"></i>
+                <h3 class="mt-2 mb-0">{{ report.approval.total_workdays }}</h3>
+                <small class="text-muted">{% translate "Workdays" %}</small>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <div class="p-3 bg-light rounded">
+                <i class="bi bi-clock text-info display-6"></i>
+                <h3 class="mt-2 mb-0">{{ report.approval.total_hours|floatformat:1 }}h</h3>
+                <small class="text-muted">{% translate "Total Hours" %}</small>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <div class="p-3 bg-light rounded">
+                <i class="bi bi-clock-history text-warning display-6"></i>
+                <h3 class="mt-2 mb-0">{{ report.approval.total_overtime_hours|floatformat:1 }}h</h3>
+                <small class="text-muted">{% translate "Overtime" %}</small>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <div class="p-3 bg-success bg-opacity-10 rounded border border-success">
+                <i class="bi bi-cash-coin text-success display-6"></i>
+                <h3 class="mt-2 mb-0 text-success">R$ {{ report.approval.total_amount|floatformat:2 }}</h3>
+                <small class="text-muted">{% translate "Total Amount" %}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Workdays -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">
+            <i class="bi bi-calendar-range"></i> {% translate "Workdays Detail" %}
+          </h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th class="text-start ps-3">{% translate "Date" %}</th>
+                  <th class="text-center">{% translate "Type" %}</th>
+                  <th class="text-center">{% translate "Period" %}</th>
+                  <th class="text-center">{% translate "Hours" %}</th>
+                  <th class="text-center">{% translate "Overtime" %}</th>
+                  <th class="text-end pe-3">{% translate "Amount" %}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for workday in report.approval.workdays.all %}
+                <tr>
+                  <td class="text-start ps-3">
+                    <strong>{{ workday.date|date:"d/m/Y" }}</strong>
+                    <br>
+                    <small class="text-muted">{{ workday.date|date:"l" }}</small>
+                  </td>
+                  <td class="text-center">
+                    <span class="badge bg-info">{{ workday.get_workday_type_display }}</span>
+                  </td>
+                  <td class="text-center">
+                    <small>
+                      {{ workday.start_time|time:"H:i" }} - {{ workday.end_time|time:"H:i" }}
+                      {% if workday.break_minutes > 0 %}
+                      <br>
+                      <span class="text-muted">({% translate "Break:" %} {{ workday.break_minutes }}min)</span>
+                      {% endif %}
+                    </small>
+                  </td>
+                  <td class="text-center">
+                    <strong>{{ workday.total_hours }}h</strong>
+                  </td>
+                  <td class="text-center">
+                    {% if workday.overtime_hours > 0 %}
+                      <span class="text-warning">
+                        <strong>{{ workday.overtime_hours }}h</strong>
+                      </span>
+                    {% else %}
+                      <span class="text-muted">-</span>
+                    {% endif %}
+                  </td>
+                  <td class="text-end pe-3">
+                    <strong class="text-success">R$ {{ workday.total_amount|floatformat:2 }}</strong>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+              <tfoot class="table-light">
+                <tr>
+                  <td colspan="3" class="text-end pe-3"><strong>{% translate "TOTAL:" %}</strong></td>
+                  <td class="text-center"><strong>{{ report.approval.total_hours }}h</strong></td>
+                  <td class="text-center"><strong class="text-warning">{{ report.approval.total_overtime_hours }}h</strong></td>
+                  <td class="text-end pe-3"><strong class="text-success fs-5">R$ {{ report.approval.total_amount|floatformat:2 }}</strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      {% if report.notes %}
+      <!-- Notes -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-sticky"></i> {% translate "Notes" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <p class="mb-0">{{ report.notes }}</p>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-4">
+      
+      <!-- Quick Actions -->
+      {% if report.status != 'approved' %}
+      <div class="card shadow-sm mb-4 border-warning">
+        <div class="card-header bg-warning text-dark">
+          <h5 class="mb-0">
+            <i class="bi bi-lightning-charge"></i> {% translate "Quick Actions" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          {% if report.pdf_file %}
+          <a href="{{ report.pdf_file.url }}" class="btn btn-outline-success w-100 mb-2" target="_blank">
+            <i class="bi bi-file-pdf"></i> {% translate "Download PDF" %}
+          </a>
+          {% else %}
+          <button class="btn btn-outline-primary w-100 mb-2">
+            <i class="bi bi-file-pdf"></i> {% translate "Generate PDF" %}
+          </button>
+          {% endif %}
+
+          {% if not report.sent_to_company_at or not report.sent_to_driver_at %}
+          <button class="btn btn-outline-info w-100 mb-2">
+            <i class="bi bi-envelope"></i> {% translate "Send Emails" %}
+          </button>
+          {% endif %}
+
+          <form method="post" action="{% url 'fleet:work_report_approve' report.pk %}" class="mt-3">
+            {% csrf_token %}
+            {% translate 'Approve this report? This will generate a payment order.' as confirm_message_3%}
+            <button type="submit" class="btn btn-success w-100"
+                    onclick="return confirm('{{ confirm_message_3 }}')">
+              <i class="bi bi-check-circle"></i> {% translate "Approve & Generate Payment" %}
+            </button>
+          </form>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if report.status == 'approved' and report.payment_order %}
+      <!-- Payment Order Link -->
+      <div class="card shadow-sm mb-4 border-success">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-cash-stack"></i> {% translate "Payment Order" %}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-2">
+            <strong>{% translate "Payment #:" %}</strong> {{ report.payment_order.payment_number }}
+          </p>
+          <p class="mb-3">
+            <strong>{% translate "Amount:" %}</strong> 
+            <span class="text-success fs-5">R$ {{ report.payment_order.net_amount|floatformat:2 }}</span>
+          </p>
+          <a href="{% url 'fleet:payment_order_detail' report.payment_order.pk %}" class="btn btn-success w-100">
+            <i class="bi bi-eye"></i> {% translate "View Payment Order" %}
+          </a>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Related Links -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-link-45deg"></i> {% translate "Related" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'fleet:approval_detail' report.approval.pk %}" class="btn btn-outline-primary w-100 mb-2">
+            <i class="bi bi-clipboard-check"></i> {% translate "View Approval" %}
+          </a>
+          <a href="{% url 'fleet:assignment_detail' report.assignment.pk %}" class="btn btn-outline-primary w-100">
+            <i class="bi bi-car-front"></i> {% translate "View Assignment" %}
+          </a>
+        </div>
+      </div>
+
+      <!-- Report Timeline -->
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h6 class="mb-0">
+            <i class="bi bi-clock-history"></i> {% translate "Timeline" %}
+          </h6>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3">
+              <div class="d-flex">
+                <div class="me-2">
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">{% translate "Generated" %}</small>
+                  <strong>{{ report.created_at|date:"d/m/Y H:i" }}</strong>
+                </div>
+              </div>
+            </li>
+
+            {% if report.sent_to_company_at %}
+            <li class="mb-3">
+              <div class="d-flex">
+                <div class="me-2">
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">{% translate "Sent to Company" %}</small>
+                  <strong>{{ report.sent_to_company_at|date:"d/m/Y H:i" }}</strong>
+                </div>
+              </div>
+            </li>
+            {% endif %}
+
+            {% if report.sent_to_driver_at %}
+            <li class="mb-3">
+              <div class="d-flex">
+                <div class="me-2">
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">{% translate "Sent to Driver" %}</small>
+                  <strong>{{ report.sent_to_driver_at|date:"d/m/Y H:i" }}</strong>
+                </div>
+              </div>
+            </li>
+            {% endif %}
+
+            {% if report.status == 'approved' %}
+            <li>
+              <div class="d-flex">
+                <div class="me-2">
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">{% translate "Approved" %}</small>
+                  <strong>{{ report.updated_at|date:"d/m/Y H:i" }}</strong>
+                </div>
+              </div>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}
