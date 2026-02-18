@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}
+{% translate 'Expense Report Approval' %} - {{ expense_report.report_number }}
+{% endblock title %}
+
+{% block content %}
+
+<style>
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .approval-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .header-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 16px 16px 0 0;
+    text-align: center;
+  }
+
+  .content-section {
+    padding: 30px;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .info-row:last-child {
+    border-bottom: none;
+  }
+
+  .info-label {
+    color: #6c757d;
+    font-weight: 500;
+  }
+
+  .info-value {
+    font-weight: 600;
+    color: #212529;
+  }
+
+  .workday-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .btn-approve {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+
+  .btn-approve:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+    color: white;
+  }
+
+  .btn-reject {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+
+  .btn-reject:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+    color: white;
+  }
+
+  .total-amount {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 20px 0;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="approval-card">
+    <!-- Header -->
+    <div class="header-section">
+      <i class="bi bi-receipt display-1 mb-3"></i>
+      <h2 class="mb-2">{% translate "Expense Report Approval" %}</h2>
+      <p class="mb-0">{{ expense_report.report_number }}</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content-section">
+
+      <!-- Client Info -->
+      <div class="mb-4">
+        <h5 class="mb-3">
+          <i class="bi bi-building text-primary"></i> {% translate "Client Information" %}
+        </h5>
+        <div class="info-row">
+          <span class="info-label">{% translate "Company" %}</span>
+          <span class="info-value">{{ expense_report.client_name }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">{% translate "Email" %}</span>
+          <span class="info-value">{{ expense_report.client_email }}</span>
+        </div>
+      </div>
+
+      <!-- Service Details -->
+      <div class="mb-4">
+        <h5 class="mb-3">
+          <i class="bi bi-car-front text-primary"></i> {% translate "Service Details" %}
+        </h5>
+        <div class="info-row">
+          <span class="info-label">{% translate "Driver" %}</span>
+          <span class="info-value">{{ expense_report.assignment.driver.full_name }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">{% translate "Vehicle" %}</span>
+          <span class="info-value">
+            {{ expense_report.assignment.vehicle.brand.name }} -
+            {{ expense_report.assignment.vehicle.plate }}
+          </span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">{% translate "Service Period" %}</span>
+          <span class="info-value">
+            {{ expense_report.payment_order.work_report.approval.period_start|date:"d/m/Y" }} -
+            {{ expense_report.payment_order.work_report.approval.period_end|date:"d/m/Y" }}
+          </span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">{% translate "Total Workdays" %}</span>
+          <span class="info-value">
+            <span class="badge bg-info rounded-pill">
+              {{ expense_report.payment_order.work_report.approval.total_workdays }}
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Workdays Breakdown -->
+      <div class="mb-4">
+        <h5 class="mb-3">
+          <i class="bi bi-calendar-check text-primary"></i> {% translate "Work Days" %}
+        </h5>
+        {% for workday in workdays %}
+        <div class="workday-item">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <strong>{{ workday.date|date:"d/m/Y (l)" }}</strong>
+              <br>
+              <small class="text-muted">
+                {{ workday.start_time|time:"H:i" }} - {{ workday.end_time|time:"H:i" }}
+                {% if workday.break_minutes > 0 %}
+                ({% translate "Break:" %} {{ workday.break_minutes }}min)
+                {% endif %}
+              </small>
+            </div>
+            <div class="text-end">
+              <strong>{{ workday.total_hours }}h</strong>
+              {% if workday.overtime_hours > 0 %}
+              <br>
+              <small class="text-warning">+{{ workday.overtime_hours }}h OT</small>
+              {% endif %}
+            </div>
+            <div class="text-end">
+              <strong class="text-success">R$ {{ workday.total_amount|floatformat:2 }}</strong>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Total Amount -->
+      <div class="total-amount">
+        <h6 class="mb-2">{% translate "Total Amount" %}</h6>
+        <h2 class="mb-0">R$ {{ expense_report.total_amount|floatformat:2 }}</h2>
+        <small>
+          {{ expense_report.payment_order.work_report.approval.total_hours|floatformat:1 }}h
+          {% translate "worked" %}
+        </small>
+      </div>
+
+      <!-- Approval Form -->
+      <form method="post" action="{% url 'fleet:expense_report_client_approve' expense_report.pk token %}">
+        {% csrf_token %}
+
+        <!-- Notes -->
+        <div class="mb-4">
+          <label for="client_notes" class="form-label">
+            <i class="bi bi-chat-left-text"></i> {% translate "Comments (optional)" %}
+          </label>
+          <textarea name="client_notes" id="client_notes" class="form-control" rows="3"
+            placeholder="{% translate 'Add any comments or observations...' %}"></textarea>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="d-flex gap-3 justify-content-center">
+          <button type="submit" name="action" value="approve" class="btn btn-approve">
+            <i class="bi bi-check-circle me-2"></i>
+            {% translate "Approve Report" %}
+          </button>
+          <button type="submit" name="action" value="reject" class="btn btn-reject">
+            <i class="bi bi-x-circle me-2"></i>
+            {% translate "Reject Report" %}
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Footer Info -->
+      <div class="text-center mt-4 pt-4 border-top">
+        <small class="text-muted">
+          <i class="bi bi-shield-check"></i>
+          {% translate "This is a secure link. Your decision will be recorded and the company will be notified." %}
+        </small>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Confirmação antes de enviar
+    document.querySelectorAll('button[type="submit"]').forEach(button => {
+      button.addEventListener('click', function (e) {
+        const action = this.value;
+        const message = action === 'approve'
+          ? '{% translate "Are you sure you want to approve this expense report?" %}'
+          : '{% translate "Are you sure you want to reject this expense report?" %}';
+
+        if (!confirm(message)) {
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
+
+{% endblock content %}

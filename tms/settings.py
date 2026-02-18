@@ -159,6 +159,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "tenants.context_processors.tenant_context",  # Add tenant context
+                'core.context_processors.payment_stats',  # Payment stats in navbar
             ],
         },
     },

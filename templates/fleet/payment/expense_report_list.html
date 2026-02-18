@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% translate 'Expense Reports' %} - TMS{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+  <!-- Page Header -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <h2>
+        <i class="bi bi-receipt"></i> {% translate "Expense Reports" %}
+      </h2>
+      <p class="text-muted">{% translate "Reports sent to clients for approval" %}</p>
+    </div>
+    <div class="col-md-6 text-end">
+      <a href="{% url 'fleet:payment_order_list' %}" class="btn btn-outline-primary">
+        <i class="bi bi-cash-stack"></i> {% translate "Payment Orders" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-primary border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Total" %}</h6>
+              <h3 class="mb-0">{{ total_reports }}</h3>
+            </div>
+            <div class="text-primary">
+              <i class="bi bi-receipt display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-warning border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Pending" %}</h6>
+              <h3 class="mb-0 text-warning">{{ sent_count }}</h3>
+            </div>
+            <div class="text-warning">
+              <i class="bi bi-hourglass-split display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-success border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Approved" %}</h6>
+              <h3 class="mb-0 text-success">{{ approved_count }}</h3>
+            </div>
+            <div class="text-success">
+              <i class="bi bi-check-circle display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card shadow-sm border-start border-danger border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate "Rejected" %}</h6>
+              <h3 class="mb-0 text-danger">{{ rejected_count }}</h3>
+            </div>
+            <div class="text-danger">
+              <i class="bi bi-x-circle display-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Amount Cards -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm border-info border-2">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted mb-2">{% translate "Total Amount" %}</h6>
+              <h3 class="mb-0 text-info">R$ {{ total_amount|floatformat:2 }}</h3>
+            </div>
+            <i class="bi bi-cash-coin display-4 text-info"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm border-warning border-2">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted mb-2">{% translate "Pending Approval" %}</h6>
+              <h3 class="mb-0 text-warning">R$ {{ pending_approval_amount|floatformat:2 }}</h3>
+            </div>
+            <i class="bi bi-currency-dollar display-4 text-warning"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <form method="get" class="row g-3">
+        <div class="col-md-3">
+          <label for="status" class="form-label small text-muted">{% translate "Status" %}</label>
+          <select name="status" id="status" class="form-select">
+            <option value="">{% translate "All statuses" %}</option>
+            <option value="generated">{% translate "Generated" %}</option>
+            <option value="sent">{% translate "Sent to Client" %}</option>
+            <option value="approved">{% translate "Approved" %}</option>
+            <option value="rejected">{% translate "Rejected" %}</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label for="client" class="form-label small text-muted">{% translate "Client" %}</label>
+          <input type="text" name="client" id="client" class="form-control"
+                 placeholder="{% translate 'Client name...' %}">
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-funnel"></i> {% translate "Filter" %}
+          </button>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+          <a href="{% url 'fleet:expense_report_list' %}" class="btn btn-outline-secondary w-100">
+            <i class="bi bi-x-circle"></i> {% translate "Clear" %}
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Expense Reports Table -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">
+        <i class="bi bi-table"></i> {% translate "Expense Reports" %}
+      </h5>
+      <button class="btn btn-sm btn-outline-success">
+        <i class="bi bi-file-earmark-excel"></i> {% translate "Export" %}
+      </button>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th class="text-start ps-3">{% translate "Report #" %}</th>
+              <th>{% translate "Client" %}</th>
+              <th>{% translate "Driver" %}</th>
+              <th class="text-center">{% translate "Payment" %}</th>
+              <th class="text-end">{% translate "Amount" %}</th>
+              <th class="text-center">{% translate "Status" %}</th>
+              <th class="text-center">{% translate "Sent" %}</th>
+              <th class="text-end pe-3">{% translate "Actions" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for expense_report in expense_reports %}
+            <tr>
+              <td class="text-start ps-3">
+                <strong class="text-primary">{{ expense_report.report_number }}</strong>
+                <br>
+                <small class="text-muted">{{ expense_report.created_at|date:"d/m/Y" }}</small>
+              </td>
+              <td>
+                <strong>{{ expense_report.client_name }}</strong>
+                <br>
+                <small class="text-muted">{{ expense_report.client_email }}</small>
+              </td>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" 
+                       style="width: 36px; height: 36px; font-size: 14px;">
+                    {{ expense_report.assignment.driver.full_name|slice:":1"|upper }}
+                  </div>
+                  <div>
+                    <strong>{{ expense_report.assignment.driver.full_name }}</strong>
+                  </div>
+                </div>
+              </td>
+              <td class="text-center">
+                <small class="text-muted">{{ expense_report.payment_order.payment_number }}</small>
+              </td>
+              <td class="text-end">
+                <strong class="text-success">R$ {{ expense_report.total_amount|floatformat:2 }}</strong>
+              </td>
+              <td class="text-center">
+                {% if expense_report.status == 'generated' %}
+                  <span class="badge bg-info">
+                    <i class="bi bi-file-plus"></i> {% translate "Generated" %}
+                  </span>
+                {% elif expense_report.status == 'sent' %}
+                  <span class="badge bg-warning">
+                    <i class="bi bi-envelope"></i> {% translate "Sent" %}
+                  </span>
+                {% elif expense_report.status == 'approved' %}
+                  <span class="badge bg-success">
+                    <i class="bi bi-check-circle"></i> {% translate "Approved" %}
+                  </span>
+                {% elif expense_report.status == 'rejected' %}
+                  <span class="badge bg-danger">
+                    <i class="bi bi-x-circle"></i> {% translate "Rejected" %}
+                  </span>
+                {% endif %}
+              </td>
+              <td class="text-center">
+                {% if expense_report.sent_at %}
+                  <i class="bi bi-check-circle-fill text-success" 
+                     title="{{ expense_report.sent_at|date:'d/m/Y H:i' }}"></i>
+                {% else %}
+                  <i class="bi bi-x-circle text-muted"></i>
+                {% endif %}
+              </td>
+              <td class="text-end pe-3">
+                <div class="btn-group btn-group-sm">
+                  <a href="{% url 'fleet:expense_report_detail' expense_report.pk %}" 
+                     class="btn btn-outline-primary"
+                     title="{% translate 'View Details' %}">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  {% if expense_report.pdf_file %}
+                  <a href="{{ expense_report.pdf_file.url }}" 
+                     class="btn btn-outline-success"
+                     title="{% translate 'Download PDF' %}"
+                     target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                  </a>
+                  {% endif %}
+                  {% if expense_report.status == 'sent' %}
+                  <button class="btn btn-outline-info btn-sm"
+                          title="{% translate 'Resend Email' %}">
+                    <i class="bi bi-envelope"></i>
+                  </button>
+                  {% endif %}
+                </div>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="8" class="text-center py-5">
+                <i class="bi bi-inbox display-1 text-muted"></i>
+                <p class="text-muted mt-3 mb-0">
+                  {% translate "No expense reports found" %}
+                </p>
+                <a href="{% url 'fleet:payment_order_list' %}" class="btn btn-primary mt-3">
+                  <i class="bi bi-cash-stack"></i> {% translate "View Payment Orders" %}
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <div class="card-footer bg-white">
+      <nav>
+        <ul class="pagination justify-content-center mb-0">
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page=1"><i class="bi bi-chevron-double-left"></i></a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="bi bi-chevron-left"></i></a>
+          </li>
+          {% endif %}
+
+          <li class="page-item active">
+            <span class="page-link">
+              {% translate "Page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}
+            </span>
+          </li>
+
+          {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="bi bi-chevron-right"></i></a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"><i class="bi bi-chevron-double-right"></i></a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

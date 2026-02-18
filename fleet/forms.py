@@ -9,6 +9,9 @@ from .models import (
     VehicleDocument,
     # Employee,
     MaintenanceRecord,
+    ExpenseReport,
+    WorkdayApproval,
+    PaymentOrder,
 )
 from personnel.models import Employee
 
@@ -452,3 +455,141 @@ class VehicleAssignmentWorkdayForm(forms.ModelForm):
             workday.assignment.calculate_totals()
 
         return workday
+
+
+class RejectApprovalForm(forms.Form):
+    """
+    Form para rejeitar aprovação de workdays.
+    Usado no modal de rejeição.
+    """
+
+    rejection_reason = forms.CharField(
+        label=_("Rejection Reason"),
+        widget=forms.Textarea(
+            attrs={
+                "class": "form-control",
+                "rows": 4,
+                "placeholder": _("Explain why this batch is being rejected..."),
+                "required": True,
+            }
+        ),
+        help_text=_("Provide a clear reason for rejecting this approval batch."),
+    )
+
+
+class PaymentProcessForm(forms.Form):
+    """
+    Form para processar pagamento ao motorista.
+    Usado na view payment_order_pay.
+    """
+
+    PAYMENT_METHOD_CHOICES = [
+        ("", _("Select payment method...")),
+        ("bank_transfer", _("Bank Transfer")),
+        ("pix", _("PIX")),
+        ("cash", _("Cash")),
+        ("check", _("Check")),
+    ]
+
+    payment_method = forms.ChoiceField(
+        label=_("Payment Method"),
+        choices=PAYMENT_METHOD_CHOICES,
+        required=True,
+        widget=forms.Select(
+            attrs={
+                "class": "form-select form-select-lg",
+            }
+        ),
+    )
+
+    payment_reference = forms.CharField(
+        label=_("Payment Reference"),
+        required=False,
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control form-control-lg",
+                "placeholder": _("Transaction ID, PIX key, check number, etc..."),
+            }
+        ),
+        help_text=_(
+            "Optional: Bank transaction ID, PIX key, check number, or other reference"
+        ),
+    )
+
+    confirm_payment = forms.BooleanField(
+        label=_("I confirm that the payment has been made"),
+        required=True,
+        widget=forms.CheckboxInput(
+            attrs={
+                "class": "form-check-input",
+            }
+        ),
+    )
+
+
+class ExpenseReportClientApprovalForm(forms.Form):
+    """
+    Form para cliente aprovar/rejeitar relatório de despesas.
+    View pública (sem autenticação).
+    """
+
+    ACTION_CHOICES = [
+        ("approve", _("Approve")),
+        ("reject", _("Reject")),
+    ]
+
+    action = forms.ChoiceField(
+        label=_("Action"),
+        choices=ACTION_CHOICES,
+        widget=forms.RadioSelect(
+            attrs={
+                "class": "form-check-input",
+            }
+        ),
+    )
+
+    client_notes = forms.CharField(
+        label=_("Notes"),
+        required=False,
+        widget=forms.Textarea(
+            attrs={
+                "class": "form-control",
+                "rows": 3,
+                "placeholder": _("Add any comments or observations..."),
+            }
+        ),
+    )
+
+
+class ExpenseReportInternalApprovalForm(forms.Form):
+    """
+    Form para aprovação interna de relatório de despesas.
+    Usado na view expense_report_internal_approval.
+    """
+
+    ACTION_CHOICES = [
+        ("approve", _("Approve")),
+        ("reject", _("Reject")),
+    ]
+
+    action = forms.ChoiceField(
+        label=_("Action"),
+        choices=ACTION_CHOICES,
+        widget=forms.RadioSelect(
+            attrs={
+                "class": "form-check-input",
+            }
+        ),
+    )
+
+    internal_notes = forms.CharField(
+        label=_("Internal Notes"),
+        required=False,
+        widget=forms.Textarea(
+            attrs={
+                "class": "form-control",
+                "rows": 3,
+                "placeholder": _("Add any internal comments or observations..."),
+            }
+        ),
+    )

@@ -10609,3 +10609,1205 @@ INFO 2026-01-30 17:14:07,282 autoreload 35560 36276 C:\DAJ\PROGRAMMING\Projects\
 INFO 2026-01-30 17:14:08,756 autoreload 28040 27004 Watching for file changes with StatReloader
 INFO 2026-01-30 17:14:12,389 autoreload 28040 27004 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
 INFO 2026-01-30 17:14:14,375 autoreload 24552 15396 Watching for file changes with StatReloader
+INFO 2026-02-04 18:42:08,719 autoreload 32412 23664 Watching for file changes with StatReloader
+INFO 2026-02-04 18:42:13,924 basehttp 32412 17884 "GET /accounts/profile/ HTTP/1.1" 302 0
+INFO 2026-02-04 18:42:14,028 basehttp 32412 17884 "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 7690
+INFO 2026-02-04 18:42:14,450 basehttp 32412 17884 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:18,239 basehttp 32412 17884 "POST /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 7711
+INFO 2026-02-04 18:42:18,271 basehttp 32412 25020 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:18,272 basehttp 32412 17884 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:18,273 basehttp 32412 31036 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:18,277 basehttp 32412 25020 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:18,278 basehttp 32412 17884 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:18,279 basehttp 32412 31036 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:18,280 basehttp 32412 25020 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:18,304 basehttp 32412 25020 "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2026-02-04 18:42:20,881 basehttp 32412 25020 "GET /accounts/login/ HTTP/1.1" 200 7690
+INFO 2026-02-04 18:42:30,354 basehttp 32412 30120 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-02-04 18:42:30,380 basehttp 32412 30120 "GET /dashboard/ HTTP/1.1" 302 0
+ERROR 2026-02-04 18:42:30,789 log 32412 30120 Internal Server Error: /tenants/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: fleet_workdayapproval
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\riode\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\core\context_processors.py", line 16, in payment_stats
+    ).count()
+      ~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: fleet_workdayapproval
+ERROR 2026-02-04 18:42:30,806 basehttp 32412 30120 "GET /tenants/ HTTP/1.1" 500 169359
+WARNING 2026-02-04 18:42:30,917 basehttp 32412 30120 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-02-04 18:43:05,429 autoreload 26616 9088 Watching for file changes with StatReloader
+INFO 2026-02-04 18:43:08,926 basehttp 26616 31912 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-02-04 18:43:08,951 basehttp 26616 31912 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-04 18:43:09,069 basehttp 26616 31912 "GET /tenants/ HTTP/1.1" 200 15052
+INFO 2026-02-04 18:43:25,569 basehttp 26616 31584 "GET /fleet/payments/?status=pending HTTP/1.1" 200 18758
+INFO 2026-02-04 18:43:32,556 basehttp 26616 20596 "GET /fleet/payments/?status=approved HTTP/1.1" 200 18758
+ERROR 2026-02-04 18:43:34,899 log 26616 20596 Internal Server Error: /fleet/approvals/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_status=='pending'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='pending'' from 'current_status=='pending''
+ERROR 2026-02-04 18:43:34,908 basehttp 26616 20596 "GET /fleet/approvals/ HTTP/1.1" 500 308485
+ERROR 2026-02-04 18:44:19,151 log 26616 20596 Internal Server Error: /fleet/approvals/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'current_driver==driver.id|stringformat:"s"'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 682, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: current_driver|==driver.id||stringformat:"s"
+ERROR 2026-02-04 18:44:19,157 basehttp 26616 20596 "GET /fleet/approvals/ HTTP/1.1" 500 345159
+INFO 2026-02-04 18:44:39,780 basehttp 26616 20596 "GET /fleet/approvals/ HTTP/1.1" 200 18190
+INFO 2026-02-04 18:44:46,386 basehttp 26616 25152 "GET /fleet/approvals/?status=&driver= HTTP/1.1" 200 18190
+ERROR 2026-02-04 18:44:53,661 log 26616 25152 Internal Server Error: /fleet/work-reports/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [approval] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'paginator': <django.core.paginator.Paginator object at 0x00000210E16C9D00>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <QuerySet []>, 'reports': <QuerySet []>, 'view': <fleet.views.WorkReportListView object at 0x00000210E15ADD30>}]
+ERROR 2026-02-04 18:44:53,671 basehttp 26616 25152 "GET /fleet/work-reports/ HTTP/1.1" 500 201759
+ERROR 2026-02-05 08:14:24,147 log 26616 15328 Internal Server Error: /fleet/work-reports/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [approval] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'paginator': <django.core.paginator.Paginator object at 0x00000210E19407C0>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <QuerySet []>, 'reports': <QuerySet []>, 'view': <fleet.views.WorkReportListView object at 0x00000210E17EB390>}]
+ERROR 2026-02-05 08:14:24,176 basehttp 26616 15328 "GET /fleet/work-reports/ HTTP/1.1" 500 201896
+INFO 2026-02-05 17:53:57,817 autoreload 20396 660 Watching for file changes with StatReloader
+ERROR 2026-02-05 18:00:18,308 log 20396 11940 Internal Server Error: /fleet/work-reports/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [approval] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'paginator': <django.core.paginator.Paginator object at 0x000002C7ACD90AD0>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <QuerySet []>, 'reports': <QuerySet []>, 'view': <fleet.views.WorkReportListView object at 0x000002C7ACD902F0>}]
+ERROR 2026-02-05 18:00:18,356 basehttp 20396 11940 "GET /fleet/work-reports/ HTTP/1.1" 500 201896
+WARNING 2026-02-05 18:00:18,541 basehttp 20396 11940 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-02-05 18:01:16,346 autoreload 20396 660 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:01:18,797 autoreload 8272 20808 Watching for file changes with StatReloader
+INFO 2026-02-05 18:02:28,575 autoreload 8272 20808 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:02:29,413 autoreload 7224 29560 Watching for file changes with StatReloader
+INFO 2026-02-05 18:02:36,491 autoreload 7224 29560 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:02:37,257 autoreload 25916 20960 Watching for file changes with StatReloader
+INFO 2026-02-05 18:02:38,966 autoreload 25916 20960 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:02:40,896 autoreload 29608 7268 Watching for file changes with StatReloader
+INFO 2026-02-05 18:03:39,909 autoreload 29608 7268 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:03:40,846 autoreload 27196 1420 Watching for file changes with StatReloader
+INFO 2026-02-05 18:03:50,645 autoreload 27196 1420 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:03:51,641 autoreload 29100 2960 Watching for file changes with StatReloader
+INFO 2026-02-05 18:03:53,071 autoreload 29100 2960 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:03:53,838 autoreload 28496 27136 Watching for file changes with StatReloader
+INFO 2026-02-05 18:03:55,423 autoreload 28496 27136 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:03:56,221 autoreload 2916 7128 Watching for file changes with StatReloader
+INFO 2026-02-05 18:04:16,853 autoreload 2916 7128 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:04:17,734 autoreload 30184 27900 Watching for file changes with StatReloader
+ERROR 2026-02-05 18:04:25,862 log 30184 21864 Internal Server Error: /fleet/work-reports/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [approval] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'paginator': <django.core.paginator.Paginator object at 0x0000025D49AF81A0>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <QuerySet []>, 'reports': <QuerySet []>, 'view': <fleet.views.WorkReportListView object at 0x0000025D49AF82F0>}]
+ERROR 2026-02-05 18:04:25,916 basehttp 30184 21864 "GET /fleet/work-reports/ HTTP/1.1" 500 201896
+INFO 2026-02-05 18:04:42,842 autoreload 30184 27900 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:04:43,798 autoreload 18812 27392 Watching for file changes with StatReloader
+INFO 2026-02-05 18:04:46,478 autoreload 18812 27392 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:04:48,235 autoreload 24908 17344 Watching for file changes with StatReloader
+ERROR 2026-02-05 18:04:53,463 log 24908 24032 Internal Server Error: /fleet/work-reports/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [approval] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'paginator': <django.core.paginator.Paginator object at 0x000001BE9E2601A0>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <QuerySet []>, 'reports': <QuerySet []>, 'view': <fleet.views.WorkReportListView object at 0x000001BE9E2602F0>}]
+ERROR 2026-02-05 18:04:53,528 basehttp 24908 24032 "GET /fleet/work-reports/ HTTP/1.1" 500 201896
+ERROR 2026-02-05 18:04:56,750 log 24908 24032 Internal Server Error: /fleet/work-reports/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [approval] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'paginator': <django.core.paginator.Paginator object at 0x000001BE9E452D50>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <QuerySet []>, 'reports': <QuerySet []>, 'view': <fleet.views.WorkReportListView object at 0x000001BE9E452710>}]
+ERROR 2026-02-05 18:04:56,776 basehttp 24908 24032 "GET /fleet/work-reports/ HTTP/1.1" 500 201896
+INFO 2026-02-05 18:05:24,268 autoreload 24908 17344 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:05:25,912 autoreload 11944 7200 Watching for file changes with StatReloader
+INFO 2026-02-05 18:05:37,215 autoreload 11944 7200 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:05:37,994 autoreload 12168 28040 Watching for file changes with StatReloader
+ERROR 2026-02-05 18:06:55,252 log 12168 9816 Internal Server Error: /fleet/work-reports/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'approval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [approval] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'paginator': <django.core.paginator.Paginator object at 0x000001DC217A81A0>, 'page_obj': <Page 1 of 1>, 'is_paginated': False, 'object_list': <QuerySet []>, 'reports': <QuerySet []>, 'view': <fleet.views.WorkReportListView object at 0x000001DC217A82F0>}]
+ERROR 2026-02-05 18:06:55,283 basehttp 12168 9816 "GET /fleet/work-reports/ HTTP/1.1" 500 201896
+INFO 2026-02-05 18:07:10,418 autoreload 12168 28040 C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\fleet\views.py changed, reloading.
+INFO 2026-02-05 18:07:11,510 autoreload 27524 7848 Watching for file changes with StatReloader
+INFO 2026-02-12 09:41:23,487 autoreload 24348 13632 Watching for file changes with StatReloader
+ERROR 2026-02-12 09:41:27,237 log 24348 27720 Internal Server Error: /fleet/work-reports/
+Traceback (most recent call last):
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\DAJ\PROGRAMMING\Projects\WebApps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 228, in do_block
+    raise TemplateSyntaxError(
+        "'%s' tag with name '%s' appears more than once" % (bits[0], block_name)
+    )
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'title' appears more than once
+ERROR 2026-02-12 09:41:27,254 basehttp 24348 27720 "GET /fleet/work-reports/ HTTP/1.1" 500 273110
+WARNING 2026-02-12 09:41:27,352 basehttp 24348 27720 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-02-12 09:41:53,444 basehttp 24348 29436 "GET /fleet/work-reports/ HTTP/1.1" 200 18415
+INFO 2026-02-12 09:41:53,490 basehttp 24348 29436 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-12 09:41:53,491 basehttp 24348 27248 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-02-12 09:41:53,500 basehttp 24348 27248 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-02-12 09:41:53,501 basehttp 24348 29436 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-02-12 09:42:06,250 basehttp 24348 10928 "GET /fleet/approvals/?status=pending HTTP/1.1" 200 18198
+INFO 2026-02-12 09:43:26,958 basehttp 24348 29876 "GET /fleet/approvals/?status=pending HTTP/1.1" 200 18198
+INFO 2026-02-12 09:43:40,214 basehttp 24348 29876 "GET /fleet/approvals/?status=pending HTTP/1.1" 200 18198
+INFO 2026-02-12 09:43:44,212 basehttp 24348 29876 "GET /fleet/approvals/ HTTP/1.1" 200 18190
+INFO 2026-02-12 09:43:46,613 basehttp 24348 29876 "GET /fleet/work-reports/ HTTP/1.1" 200 18415
+INFO 2026-02-12 09:43:48,827 basehttp 24348 29876 "GET /fleet/payments/ HTTP/1.1" 200 18758
+INFO 2026-02-12 09:44:19,887 basehttp 24348 27392 "GET /fleet/payments/ HTTP/1.1" 200 18758
+INFO 2026-02-12 09:44:59,845 basehttp 24348 26064 "GET /fleet/payments/ HTTP/1.1" 200 18765
+INFO 2026-02-12 09:45:32,453 basehttp 24348 26064 "GET /fleet/payments/ HTTP/1.1" 200 18765
+INFO 2026-02-12 09:45:35,070 basehttp 24348 30544 "GET /fleet/payments/ HTTP/1.1" 200 18765
+INFO 2026-02-12 09:45:47,590 basehttp 24348 30544 "GET /fleet/payments/ HTTP/1.1" 200 18765
+INFO 2026-02-12 09:45:52,924 basehttp 24348 30544 "GET /fleet/payments/?status=approved HTTP/1.1" 200 18765
+INFO 2026-02-12 09:46:00,262 basehttp 24348 30544 "GET /fleet/work-reports/ HTTP/1.1" 200 18415
+INFO 2026-02-12 09:46:05,679 basehttp 24348 30544 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-12 09:46:05,746 basehttp 24348 30544 "GET /tenants/ HTTP/1.1" 200 15052
+INFO 2026-02-12 09:46:08,443 basehttp 24348 30544 "GET /fleet/vehicles/ HTTP/1.1" 200 19179
+INFO 2026-02-12 09:46:08,725 basehttp 24348 30544 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-12 09:46:42,717 basehttp 24348 15544 "GET / HTTP/1.1" 200 15744
+INFO 2026-02-13 20:13:48,963 autoreload 14640 7132 Watching for file changes with StatReloader
+INFO 2026-02-13 20:13:55,816 basehttp 14640 13768 "GET / HTTP/1.1" 200 9298
+INFO 2026-02-13 20:13:55,992 basehttp 14640 13768 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-13 20:13:56,002 basehttp 14640 14824 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-13 20:13:56,002 basehttp 14640 5308 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-13 20:13:56,009 basehttp 14640 13768 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-13 20:13:56,033 basehttp 14640 5308 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-13 20:13:56,038 basehttp 14640 13768 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-13 20:13:56,040 basehttp 14640 14824 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-13 20:13:56,053 basehttp 14640 5308 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-13 20:13:56,258 basehttp 14640 5308 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-13 20:14:00,424 basehttp 14640 5308 "GET /accounts/login/ HTTP/1.1" 200 7708
+INFO 2026-02-13 20:14:02,543 basehttp 14640 5308 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-02-13 20:14:02,562 basehttp 14640 5308 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-13 20:14:02,696 basehttp 14640 5308 "GET /tenants/ HTTP/1.1" 200 15078
+INFO 2026-02-13 20:14:20,014 basehttp 14640 5308 "GET /personnel/employees/ HTTP/1.1" 200 18589
+INFO 2026-02-13 20:14:20,075 basehttp 14640 5308 "GET /media/personnel/photos/bg_photo_3.webp HTTP/1.1" 200 106902
+INFO 2026-02-13 20:14:30,933 basehttp 14640 5308 "GET /personnel/employees/52d6a453-d47b-4cdf-8625-ae4e27cad888/edit/ HTTP/1.1" 200 25522
+INFO 2026-02-13 20:14:57,139 basehttp 14640 5308 "GET /personnel/drivers/ HTTP/1.1" 200 16696
+INFO 2026-02-13 20:15:15,393 basehttp 14640 5308 "GET /personnel/employees/ HTTP/1.1" 200 18589
+INFO 2026-02-13 20:15:30,330 basehttp 14640 5308 "GET /personnel/employees/52d6a453-d47b-4cdf-8625-ae4e27cad888/edit/ HTTP/1.1" 200 25522
+INFO 2026-02-13 20:16:01,847 basehttp 14640 4288 "POST /personnel/employees/52d6a453-d47b-4cdf-8625-ae4e27cad888/edit/ HTTP/1.1" 200 26155
+INFO 2026-02-13 20:16:21,793 basehttp 14640 4288 "POST /personnel/employees/52d6a453-d47b-4cdf-8625-ae4e27cad888/edit/ HTTP/1.1" 200 25940
+INFO 2026-02-13 20:16:39,061 signals 14640 4288 Employee DAURO DE ALBUQUERQUE JUNIOR (1) updated
+INFO 2026-02-13 20:16:39,067 basehttp 14640 4288 "POST /personnel/employees/52d6a453-d47b-4cdf-8625-ae4e27cad888/edit/ HTTP/1.1" 302 0
+INFO 2026-02-13 20:16:39,147 basehttp 14640 4288 "GET /personnel/employees/ HTTP/1.1" 200 18589
+INFO 2026-02-13 20:16:48,548 basehttp 14640 4288 "GET /personnel/employees/52d6a453-d47b-4cdf-8625-ae4e27cad888/ HTTP/1.1" 200 19334
+INFO 2026-02-13 20:17:06,497 basehttp 14640 4288 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-13 20:17:06,542 basehttp 14640 4288 "GET /tenants/ HTTP/1.1" 200 15078
+INFO 2026-02-13 20:17:09,739 basehttp 14640 4288 "GET /fleet/vehicles/ HTTP/1.1" 200 19246
+INFO 2026-02-13 20:17:09,814 basehttp 14640 4288 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-13 20:17:16,714 basehttp 14640 4288 "GET /fleet/vehicles/65036327-7482-481f-8508-e7a4d00b42c3/edit HTTP/1.1" 200 25470
+INFO 2026-02-13 20:17:23,294 basehttp 14640 4288 "GET /fleet/vehicles/ HTTP/1.1" 200 19246
+INFO 2026-02-13 20:58:58,935 basehttp 14640 1036 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-13 20:58:58,988 basehttp 14640 1036 "GET /tenants/ HTTP/1.1" 200 15078
+INFO 2026-02-13 20:59:02,171 basehttp 14640 1036 "GET /tenants/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/details/ HTTP/1.1" 200 15329
+INFO 2026-02-13 20:59:05,224 basehttp 14640 1036 "GET /tenants/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/members/ HTTP/1.1" 200 13840
+INFO 2026-02-15 12:55:10,201 basehttp 14640 13212 "GET /tenants/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/members/ HTTP/1.1" 200 13840
+INFO 2026-02-15 12:55:10,237 basehttp 14640 13212 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-15 12:55:10,238 basehttp 14640 17056 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-02-15 12:55:10,243 basehttp 14640 13212 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-02-15 12:55:10,244 basehttp 14640 17056 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-02-15 12:55:10,252 basehttp 14640 13212 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 304 0
+INFO 2026-02-15 12:55:10,252 basehttp 14640 17056 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 304 0
+INFO 2026-02-15 12:55:10,256 basehttp 14640 13212 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-02-15 12:55:10,263 basehttp 14640 13212 "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2026-02-15 12:55:10,287 basehttp 14640 13212 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 304 0
+ERROR 2026-02-15 12:55:17,407 log 14640 13212 Internal Server Error: /fleet/expense-reports/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'expense_report_client_approve' with arguments '('', '')' not found. 1 pattern(s) tried: ['fleet/expense\\-reports/(?P<pk>[0-9]+)/approve/(?P<token>[^/]+)/\\Z']
+ERROR 2026-02-15 12:55:17,416 basehttp 14640 13212 "GET /fleet/expense-reports/ HTTP/1.1" 500 180388
+WARNING 2026-02-15 12:55:17,579 basehttp 14640 13212 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-02-15 12:55:40,508 basehttp 14640 13212 "GET /fleet/approvals/ HTTP/1.1" 200 18222
+INFO 2026-02-15 12:55:42,540 basehttp 14640 13212 "GET /fleet/approvals/?status=pending HTTP/1.1" 200 18230
+INFO 2026-02-15 12:55:44,323 basehttp 14640 13212 "GET /fleet/work-reports/ HTTP/1.1" 200 18446
+INFO 2026-02-15 12:55:48,428 basehttp 14640 13212 "GET /fleet/payments/ HTTP/1.1" 200 18786
+INFO 2026-02-15 12:55:56,647 basehttp 14640 13212 "GET /fleet/payments/?status=pending HTTP/1.1" 200 18786
+INFO 2026-02-15 12:55:58,878 basehttp 14640 13212 "GET /fleet/payments/?status=approved HTTP/1.1" 200 18786
+INFO 2026-02-15 12:56:01,984 basehttp 14640 13212 "GET /fleet/payments/?status=paid HTTP/1.1" 200 18786
+ERROR 2026-02-15 12:56:04,401 log 14640 13212 Internal Server Error: /fleet/expense-reports/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'expense_report_client_approve' with arguments '('', '')' not found. 1 pattern(s) tried: ['fleet/expense\\-reports/(?P<pk>[0-9]+)/approve/(?P<token>[^/]+)/\\Z']
+ERROR 2026-02-15 12:56:04,403 basehttp 14640 13212 "GET /fleet/expense-reports/ HTTP/1.1" 500 180362
+INFO 2026-02-15 13:02:31,064 basehttp 14640 24540 "GET /fleet/payments/?status=paid HTTP/1.1" 200 18786
+INFO 2026-02-15 13:02:33,288 basehttp 14640 24540 "GET /fleet/expense-reports/ HTTP/1.1" 200 19308
+INFO 2026-02-15 13:02:39,358 basehttp 14640 24540 "GET /fleet/expense-reports/ HTTP/1.1" 200 19308
+INFO 2026-02-15 13:02:43,298 basehttp 14640 24540 "GET /fleet/payments/ HTTP/1.1" 200 18786

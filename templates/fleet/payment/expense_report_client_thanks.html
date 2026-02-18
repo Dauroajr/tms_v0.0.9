@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}
+{% translate 'Thank You' %} - TMS
+{% endblock title %}
+
+{% block content %}
+
+<style>
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .thanks-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .icon-success {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    margin-bottom: 30px;
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  .icon-rejected {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    margin-bottom: 30px;
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    color: #212529;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .report-number {
+    display: inline-block;
+    background: #f8f9fa;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #667eea;
+    margin: 20px 0;
+  }
+
+  .info-text {
+    color: #6c757d;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+
+  .checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    stroke-width: 3;
+    stroke: #10b981;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #10b981;
+    animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+  }
+
+  .checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+    stroke: #10b981;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+
+  .checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 30px #10b981;
+    }
+  }
+</style>
+<!-- </head> -->
+
+  <div class="thanks-card">
+
+    {% if action == 'approve' %}
+    <!-- Success Icon -->
+    <div class="icon-success">
+      <i class="bi bi-check-lg"></i>
+    </div>
+
+    <h1>{% translate "Thank You!" %}</h1>
+    <p class="lead">{% translate "Expense report approved successfully" %}</p>
+
+    {% elif action == 'reject' %}
+    <!-- Rejected Icon -->
+    <div class="icon-rejected">
+      <i class="bi bi-x-lg"></i>
+    </div>
+
+    <h1>{% translate "Report Rejected" %}</h1>
+    <p class="lead">{% translate "The expense report has been rejected" %}</p>
+
+    {% endif %}
+
+    <div class="report-number">
+      {{ expense_report.report_number }}
+    </div>
+
+    <div class="info-text">
+      {% if action == 'approve' %}
+      <p>
+        <strong>{% translate "Your approval has been recorded." %}</strong>
+      </p>
+      <p>
+        {% translate "The company has been notified and will proceed with the payment to the driver." %}
+      </p>
+      {% else %}
+      <p>
+        <strong>{% translate "Your rejection has been recorded." %}</strong>
+      </p>
+      <p>
+        {% translate "The company has been notified. They will contact you for clarification." %}
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Details -->
+    <div class="border-top pt-4 mt-4">
+      <div class="row text-start">
+        <div class="col-6">
+          <small class="text-muted d-block">{% translate "Driver" %}</small>
+          <strong>{{ expense_report.assignment.driver.full_name }}</strong>
+        </div>
+        <div class="col-6 text-end">
+          <small class="text-muted d-block">{% translate "Amount" %}</small>
+          <strong class="text-success">R$ {{ expense_report.total_amount|floatformat:2 }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-5">
+      <small class="text-muted">
+        <i class="bi bi-envelope-check"></i>
+        {% translate "A confirmation email has been sent to" %} {{ expense_report.client_email }}
+      </small>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+{% endblock content %}

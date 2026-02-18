@@ -54,6 +54,105 @@
           </ul>
         </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="paymentsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-cash-stack"></i> {% translate "Payments" %}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="paymentsDropdown">
+
+            <!-- Workday Approvals -->
+            <li>
+              <h6 class="dropdown-header">
+                <i class="bi bi-clipboard-check"></i> {% translate "Approvals" %}
+              </h6>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'fleet:approval_list' %}">
+                <i class="bi bi-list-ul"></i> {% translate "All Approvals" %}
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'fleet:approval_list' %}?status=pending">
+                <i class="bi bi-clock-history text-warning"></i> {% translate "Pending Approvals" %}
+                {% if pending_approvals_count %}
+                <span class="badge bg-warning rounded-pill">{{ pending_approvals_count }}</span>
+                {% endif %}
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- Work Reports -->
+            <li>
+              <h6 class="dropdown-header">
+                <i class="bi bi-file-earmark-text"></i> {% translate "Reports" %}
+              </h6>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'fleet:work_report_list' %}">
+                <i class="bi bi-list-ul"></i> {% translate "Work Reports" %}
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- Payment Orders -->
+            <li>
+              <h6 class="dropdown-header">
+                <i class="bi bi-cash-coin"></i> {% translate "Payments" %}
+              </h6>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'fleet:payment_order_list' %}">
+                <i class="bi bi-list-ul"></i> {% translate "All Payments" %}
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'fleet:payment_order_list' %}?status=pending">
+                <i class="bi bi-clock text-warning"></i> {% translate "Pending" %}
+                {% if pending_payments_count %}
+                <span class="badge bg-warning rounded-pill">{{ pending_payments_count }}</span>
+                {% endif %}
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'fleet:payment_order_list' %}?status=approved">
+                <i class="bi bi-check-circle text-info"></i> {% translate "To Process" %}
+                {% if approved_payments_count %}
+                <span class="badge bg-info rounded-pill">{{ approved_payments_count }}</span>
+                {% endif %}
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'fleet:payment_order_list' %}?status=paid">
+                <i class="bi bi-cash-stack text-success"></i> {% translate "Paid" %}
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- Expense Reports -->
+            <li>
+              <h6 class="dropdown-header">
+                <i class="bi bi-receipt"></i> {% translate "Client Reports" %}
+              </h6>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'fleet:expense_report_list' %}">
+                <i class="bi bi-list-ul"></i> {% translate "Expense Reports" %}
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
         <!-- Personnel Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
