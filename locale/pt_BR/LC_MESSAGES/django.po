@@ -1551,7 +1551,7 @@ msgstr "Registro Criminal"
 #: .\templates\personnel\employee_form.html:335
 #: .\templates\personnel\employee_list.html:134
 msgid "Photo"
-msgstr "Banco"
+msgstr "Foto"
 
 #: .\personnel\models.py:422
 msgid "Leave blank if document does not expire"
@@ -1610,7 +1610,7 @@ msgstr "Apagar Conta - TMS"
 #: .\templates\accounts\delete_account.html:12
 #: .\templates\accounts\profile.html:145
 msgid "Delete Account"
-msgstr "Aoagar Conta"
+msgstr "Apagar Conta"
 
 #: .\templates\accounts\delete_account.html:16
 #: .\templates\fleet\assignment_confirm_delete.html:34

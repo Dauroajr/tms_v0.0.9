@@ -11811,3 +11811,507 @@ INFO 2026-02-15 13:02:31,064 basehttp 14640 24540 "GET /fleet/payments/?status=p
 INFO 2026-02-15 13:02:33,288 basehttp 14640 24540 "GET /fleet/expense-reports/ HTTP/1.1" 200 19308
 INFO 2026-02-15 13:02:39,358 basehttp 14640 24540 "GET /fleet/expense-reports/ HTTP/1.1" 200 19308
 INFO 2026-02-15 13:02:43,298 basehttp 14640 24540 "GET /fleet/payments/ HTTP/1.1" 200 18786
+INFO 2026-02-18 23:38:41,543 autoreload 3364 12520 Watching for file changes with StatReloader
+INFO 2026-02-18 23:38:49,339 basehttp 3364 8944 "GET / HTTP/1.1" 200 15755
+INFO 2026-02-18 23:38:49,383 basehttp 3364 13572 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-02-18 23:38:49,383 basehttp 3364 8944 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-18 23:38:49,389 basehttp 3364 8944 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-02-18 23:38:49,393 basehttp 3364 13572 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-02-18 23:38:49,393 basehttp 3364 8944 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 304 0
+INFO 2026-02-18 23:38:49,394 basehttp 3364 11424 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 304 0
+INFO 2026-02-18 23:38:49,396 basehttp 3364 13572 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-02-18 23:38:49,412 basehttp 3364 13572 "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2026-02-18 23:38:55,952 basehttp 3364 13572 "GET /accounts/profile/ HTTP/1.1" 200 16939
+INFO 2026-02-19 00:11:14,747 autoreload 13432 13752 Watching for file changes with StatReloader
+INFO 2026-02-19 00:11:22,440 basehttp 13432 16024 "GET /accounts/profile/ HTTP/1.1" 200 16939
+INFO 2026-02-19 00:11:22,531 basehttp 13432 16024 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 304 0
+INFO 2026-02-19 00:11:30,848 basehttp 13432 16024 "GET /accounts/profile/ HTTP/1.1" 200 16939
+INFO 2026-02-19 00:11:34,837 basehttp 13432 16024 "GET /accounts/profile/ HTTP/1.1" 200 16939
+INFO 2026-02-19 00:11:39,568 basehttp 13432 16024 "GET /tenants/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/members/ HTTP/1.1" 200 13840
+INFO 2026-02-19 00:11:41,550 basehttp 13432 16024 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-19 00:11:41,595 basehttp 13432 16024 "GET /tenants/ HTTP/1.1" 200 15078
+INFO 2026-02-19 00:11:43,746 basehttp 13432 16024 "POST /tenants/ HTTP/1.1" 302 0
+INFO 2026-02-19 00:11:43,771 basehttp 13432 16024 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-19 00:11:43,816 basehttp 13432 16024 "GET /tenants/ HTTP/1.1" 200 15078
+INFO 2026-02-19 00:11:46,231 basehttp 13432 16024 "GET /fleet/ HTTP/1.1" 200 20850
+INFO 2026-02-19 00:11:57,792 basehttp 13432 16024 "GET /fleet/brands/create HTTP/1.1" 200 17148
+INFO 2026-02-19 00:12:01,529 basehttp 13432 16024 "GET /fleet/vehicles/ HTTP/1.1" 200 19246
+INFO 2026-02-19 00:12:01,707 basehttp 13432 16024 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:12:05,504 basehttp 13432 16024 "GET /fleet/vehicles/create/ HTTP/1.1" 200 25052
+INFO 2026-02-19 00:13:29,720 basehttp 13432 16024 "POST /fleet/vehicles/create/ HTTP/1.1" 200 25409
+ERROR 2026-02-19 00:13:47,237 signals 13432 16024 Error logging vehicle change: Object of type VehicleBrand is not JSON serializable
+INFO 2026-02-19 00:13:47,245 basehttp 13432 16024 "POST /fleet/vehicles/create/ HTTP/1.1" 302 0
+INFO 2026-02-19 00:13:47,330 basehttp 13432 16024 "GET /fleet/vehicles/ HTTP/1.1" 200 20986
+INFO 2026-02-19 00:15:30,828 basehttp 13432 16024 "GET /fleet/vehicles/ HTTP/1.1" 200 20991
+INFO 2026-02-19 00:15:33,032 basehttp 13432 16024 "GET /fleet/vehicles/ HTTP/1.1" 200 20991
+INFO 2026-02-19 00:15:33,061 basehttp 13432 16024 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:15:33,062 basehttp 13432 12684 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:15:33,067 basehttp 13432 12684 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:15:33,067 basehttp 13432 16024 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:15:33,070 basehttp 13432 16024 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:15:33,076 basehttp 13432 16024 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:15:33,077 basehttp 13432 12684 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:15:33,085 basehttp 13432 16024 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:15:33,094 basehttp 13432 12684 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:15:33,220 basehttp 13432 12684 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:16:27,290 basehttp 13432 12684 "GET /fleet/vehicles/ HTTP/1.1" 200 20991
+INFO 2026-02-19 00:16:28,960 basehttp 13432 12684 "GET /fleet/vehicles/ HTTP/1.1" 200 20991
+INFO 2026-02-19 00:16:28,990 basehttp 13432 12684 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:16:28,991 basehttp 13432 16024 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:16:28,991 basehttp 13432 19432 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:16:28,992 basehttp 13432 18604 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:16:28,992 basehttp 13432 5480 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:16:28,996 basehttp 13432 18312 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:16:29,001 basehttp 13432 19432 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:16:29,014 basehttp 13432 18312 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:16:29,023 basehttp 13432 19432 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:16:29,133 basehttp 13432 19432 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:16:43,674 basehttp 13432 19432 "GET /fleet/vehicles/ HTTP/1.1" 200 20990
+INFO 2026-02-19 00:16:43,707 basehttp 13432 19432 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:16:43,710 basehttp 13432 18312 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:16:43,710 basehttp 13432 16024 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:16:43,713 basehttp 13432 18604 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:16:43,713 basehttp 13432 5480 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:16:43,716 basehttp 13432 12684 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:16:43,724 basehttp 13432 18604 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:16:43,735 basehttp 13432 12684 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:16:43,749 basehttp 13432 18604 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:16:43,875 basehttp 13432 18604 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:16:58,626 basehttp 13432 18604 "GET /fleet/vehicles/ HTTP/1.1" 200 20991
+WARNING 2026-02-19 00:17:06,501 basehttp 13432 18604 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:18:30,530 basehttp 13432 18604 "GET /fleet/vehicles/ HTTP/1.1" 200 21012
+WARNING 2026-02-19 00:18:30,583 basehttp 13432 18604 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:18:32,520 basehttp 13432 18604 "GET /fleet/vehicles/ HTTP/1.1" 200 21012
+INFO 2026-02-19 00:18:32,556 basehttp 13432 18604 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:18:32,563 basehttp 13432 12684 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:18:32,565 basehttp 13432 5480 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:18:32,566 basehttp 13432 16024 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:18:32,569 basehttp 13432 18604 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:18:32,575 basehttp 13432 19432 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:18:32,580 basehttp 13432 18312 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+WARNING 2026-02-19 00:18:32,616 basehttp 13432 19432 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:18:32,621 basehttp 13432 18604 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:18:32,637 basehttp 13432 18312 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:18:32,792 basehttp 13432 18312 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:18:56,772 basehttp 13432 17616 "GET /fleet/vehicles/ HTTP/1.1" 200 21027
+WARNING 2026-02-19 00:18:56,823 basehttp 13432 17616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:18:58,007 basehttp 13432 17616 "GET /fleet/vehicles/ HTTP/1.1" 200 21027
+INFO 2026-02-19 00:18:58,055 basehttp 13432 2944 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:18:58,055 basehttp 13432 17616 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:18:58,057 basehttp 13432 21424 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:18:58,069 basehttp 13432 17616 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:18:58,074 basehttp 13432 2944 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:18:58,081 basehttp 13432 21424 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:18:58,090 basehttp 13432 17616 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-02-19 00:18:58,115 basehttp 13432 2944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:18:58,126 basehttp 13432 17616 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:18:58,139 basehttp 13432 2944 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:18:58,332 basehttp 13432 2944 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:19:09,446 basehttp 13432 2944 "GET /fleet/vehicles/ HTTP/1.1" 200 21051
+INFO 2026-02-19 00:19:09,482 basehttp 13432 2944 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:19:09,483 basehttp 13432 17616 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:19:09,485 basehttp 13432 16668 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:19:09,485 basehttp 13432 5584 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:19:09,487 basehttp 13432 21424 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:19:09,490 basehttp 13432 19240 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:19:09,502 basehttp 13432 21424 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-02-19 00:19:09,524 basehttp 13432 19240 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:19:09,546 basehttp 13432 21424 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:19:09,559 basehttp 13432 19240 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:19:09,735 basehttp 13432 19240 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:19:12,058 basehttp 13432 19240 "GET /fleet/vehicles/ HTTP/1.1" 200 21051
+WARNING 2026-02-19 00:19:12,111 basehttp 13432 19240 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:19:13,861 basehttp 13432 19240 "GET /fleet/vehicles/ HTTP/1.1" 200 21051
+INFO 2026-02-19 00:19:13,904 basehttp 13432 5584 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:19:13,905 basehttp 13432 21424 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:19:13,905 basehttp 13432 17616 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:19:13,906 basehttp 13432 16668 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:19:13,909 basehttp 13432 2944 "GET /static/css/header.css HTTP/1.1" 200 1647
+WARNING 2026-02-19 00:19:13,919 basehttp 13432 19240 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:19:13,921 basehttp 13432 16668 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:19:13,926 basehttp 13432 5584 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:19:13,947 basehttp 13432 16668 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:19:13,960 basehttp 13432 5584 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:19:14,124 basehttp 13432 5584 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:19:25,500 basehttp 13432 5584 "GET /fleet/vehicles/ HTTP/1.1" 200 21035
+WARNING 2026-02-19 00:19:25,556 basehttp 13432 5584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:19:27,652 basehttp 13432 5584 "GET /fleet/vehicles/ HTTP/1.1" 200 21035
+INFO 2026-02-19 00:19:27,689 basehttp 13432 16668 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:19:27,689 basehttp 13432 5584 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:19:27,696 basehttp 13432 19240 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:19:27,697 basehttp 13432 17616 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:19:27,697 basehttp 13432 2944 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:19:27,713 basehttp 13432 17616 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:19:27,729 basehttp 13432 19240 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+WARNING 2026-02-19 00:19:27,741 basehttp 13432 2944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:19:27,760 basehttp 13432 19240 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:19:27,775 basehttp 13432 2944 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:19:27,944 basehttp 13432 2944 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:19:38,913 basehttp 13432 2944 "GET /fleet/vehicles/ HTTP/1.1" 200 21038
+INFO 2026-02-19 00:19:38,956 basehttp 13432 2944 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:19:38,958 basehttp 13432 19240 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:19:38,959 basehttp 13432 17616 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:19:38,961 basehttp 13432 16668 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:19:38,961 basehttp 13432 5584 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:19:38,964 basehttp 13432 21424 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:19:38,968 basehttp 13432 19240 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-02-19 00:19:39,010 basehttp 13432 21424 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:19:39,026 basehttp 13432 21424 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:19:39,044 basehttp 13432 19240 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:19:39,213 basehttp 13432 19240 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:20:29,673 basehttp 13432 19240 "GET /fleet/vehicles/ HTTP/1.1" 200 20991
+WARNING 2026-02-19 00:20:29,725 basehttp 13432 19240 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:20:31,545 basehttp 13432 19240 "GET /fleet/vehicles/ HTTP/1.1" 200 20991
+INFO 2026-02-19 00:20:31,588 basehttp 13432 21424 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:20:31,589 basehttp 13432 19240 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:20:31,590 basehttp 13432 16668 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:20:31,591 basehttp 13432 5584 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:20:31,593 basehttp 13432 17616 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:20:31,594 basehttp 13432 2944 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:20:31,612 basehttp 13432 5584 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-02-19 00:20:31,646 basehttp 13432 2944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:20:31,688 basehttp 13432 5584 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:20:31,694 basehttp 13432 2944 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:20:31,915 basehttp 13432 2944 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:20:42,404 basehttp 13432 2944 "GET /fleet/vehicles/ HTTP/1.1" 200 21008
+WARNING 2026-02-19 00:20:42,450 basehttp 13432 2944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:20:44,423 basehttp 13432 2944 "GET /fleet/vehicles/ HTTP/1.1" 200 21008
+WARNING 2026-02-19 00:20:44,490 basehttp 13432 2944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:20:44,496 basehttp 13432 17616 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:20:44,498 basehttp 13432 5584 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:20:44,498 basehttp 13432 16668 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:20:44,499 basehttp 13432 19240 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:20:44,499 basehttp 13432 21424 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:20:44,508 basehttp 13432 19240 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:20:44,514 basehttp 13432 2944 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:20:44,538 basehttp 13432 19240 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:20:44,555 basehttp 13432 2944 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:20:44,720 basehttp 13432 2944 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:21:47,810 autoreload 17492 11976 Watching for file changes with StatReloader
+INFO 2026-02-19 00:21:51,673 basehttp 17492 19804 "GET /fleet/vehicles/ HTTP/1.1" 200 21007
+WARNING 2026-02-19 00:21:51,722 basehttp 17492 19804 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:27:45,369 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21021
+WARNING 2026-02-19 00:27:45,433 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:29:28,775 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21017
+WARNING 2026-02-19 00:29:28,837 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:29:45,964 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21021
+WARNING 2026-02-19 00:29:46,027 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:30:01,287 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21017
+WARNING 2026-02-19 00:30:01,340 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:30:30,941 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21021
+WARNING 2026-02-19 00:30:31,001 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:30:40,980 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21017
+WARNING 2026-02-19 00:30:41,039 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:35:31,610 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21045
+WARNING 2026-02-19 00:35:31,664 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:35:34,779 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21045
+WARNING 2026-02-19 00:35:34,832 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:35:34,922 basehttp 17492 3656 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:35:34,928 basehttp 17492 3656 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:35:34,932 basehttp 17492 3656 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:35:34,938 basehttp 17492 16448 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:35:34,939 basehttp 17492 3656 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:35:34,942 basehttp 17492 3656 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:35:34,946 basehttp 17492 16448 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:35:34,966 basehttp 17492 3656 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:35:34,983 basehttp 17492 16448 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:35:35,103 basehttp 17492 16448 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:35:54,058 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21028
+WARNING 2026-02-19 00:35:54,113 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:35:55,923 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21028
+INFO 2026-02-19 00:35:55,975 basehttp 17492 3656 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:35:55,975 basehttp 17492 10932 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:35:55,975 basehttp 17492 18216 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:35:55,976 basehttp 17492 20824 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:35:55,976 basehttp 17492 9372 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+WARNING 2026-02-19 00:35:55,992 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:35:55,993 basehttp 17492 20824 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:35:55,997 basehttp 17492 10932 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:35:56,041 basehttp 17492 20824 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:35:56,062 basehttp 17492 10932 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:35:56,205 basehttp 17492 10932 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:36:11,635 basehttp 17492 10932 "GET /fleet/vehicles/ HTTP/1.1" 200 21028
+WARNING 2026-02-19 00:36:11,743 basehttp 17492 10932 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:36:13,781 basehttp 17492 10932 "GET /fleet/vehicles/ HTTP/1.1" 200 21028
+INFO 2026-02-19 00:36:13,826 basehttp 17492 16448 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:36:13,828 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:36:13,829 basehttp 17492 3656 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:36:13,831 basehttp 17492 18216 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+WARNING 2026-02-19 00:36:13,841 basehttp 17492 10932 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:36:13,842 basehttp 17492 20824 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:36:13,848 basehttp 17492 18216 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:36:13,850 basehttp 17492 9372 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:36:13,889 basehttp 17492 18216 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:36:13,906 basehttp 17492 9372 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:36:14,060 basehttp 17492 9372 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:36:21,226 basehttp 17492 9372 "GET /fleet/vehicles/ HTTP/1.1" 200 21022
+WARNING 2026-02-19 00:36:21,283 basehttp 17492 9372 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:36:44,657 basehttp 17492 9372 "GET /fleet/vehicles/ HTTP/1.1" 200 21012
+WARNING 2026-02-19 00:36:44,709 basehttp 17492 9372 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:36:57,413 basehttp 17492 9372 "GET /fleet/vehicles/ HTTP/1.1" 200 21019
+WARNING 2026-02-19 00:36:57,467 basehttp 17492 9372 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:36:58,969 basehttp 17492 9372 "GET /fleet/vehicles/ HTTP/1.1" 200 21019
+INFO 2026-02-19 00:36:59,023 basehttp 17492 3656 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:36:59,024 basehttp 17492 18216 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:36:59,026 basehttp 17492 20824 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:36:59,026 basehttp 17492 16448 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:36:59,028 basehttp 17492 10932 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+WARNING 2026-02-19 00:36:59,040 basehttp 17492 9372 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:36:59,046 basehttp 17492 10932 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:36:59,049 basehttp 17492 18216 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:36:59,092 basehttp 17492 10932 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:36:59,107 basehttp 17492 18216 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:36:59,275 basehttp 17492 18216 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:37:10,478 basehttp 17492 18216 "GET /fleet/vehicles/ HTTP/1.1" 200 21011
+WARNING 2026-02-19 00:37:10,541 basehttp 17492 18216 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:37:29,366 basehttp 17492 18216 "GET /fleet/vehicles/ HTTP/1.1" 200 21017
+WARNING 2026-02-19 00:37:29,418 basehttp 17492 18216 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:37:47,994 basehttp 17492 18216 "GET /fleet/vehicles/ HTTP/1.1" 200 21041
+WARNING 2026-02-19 00:37:48,047 basehttp 17492 18216 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:38:08,298 basehttp 17492 18216 "GET /fleet/vehicles/ HTTP/1.1" 200 21041
+WARNING 2026-02-19 00:38:08,348 basehttp 17492 18216 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:38:09,907 basehttp 17492 18216 "GET /fleet/vehicles/ HTTP/1.1" 200 21041
+INFO 2026-02-19 00:38:09,950 basehttp 17492 16448 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:38:09,950 basehttp 17492 3656 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:38:09,950 basehttp 17492 10932 "GET /static/css/base.css HTTP/1.1" 200 600
+INFO 2026-02-19 00:38:09,950 basehttp 17492 9372 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:38:09,951 basehttp 17492 20824 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+WARNING 2026-02-19 00:38:09,967 basehttp 17492 18216 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:38:09,967 basehttp 17492 3656 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:38:09,972 basehttp 17492 16448 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:38:10,023 basehttp 17492 18216 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:38:10,027 basehttp 17492 16448 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:38:10,171 basehttp 17492 16448 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:38:23,197 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21030
+WARNING 2026-02-19 00:38:23,274 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:38:28,269 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21030
+WARNING 2026-02-19 00:38:28,337 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:38:30,392 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21034
+INFO 2026-02-19 00:38:30,463 basehttp 17492 3656 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:38:30,463 basehttp 17492 18216 "GET /static/css/base.css HTTP/1.1" 200 600
+WARNING 2026-02-19 00:38:30,463 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:38:30,464 basehttp 17492 10932 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:38:30,465 basehttp 17492 9372 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:38:30,465 basehttp 17492 20824 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:38:30,472 basehttp 17492 18216 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:38:30,481 basehttp 17492 16448 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:38:30,545 basehttp 17492 18216 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:38:30,563 basehttp 17492 16448 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:38:30,685 basehttp 17492 16448 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:38:44,653 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21004
+WARNING 2026-02-19 00:38:44,705 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:43:12,905 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21004
+WARNING 2026-02-19 00:43:12,965 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:43:15,039 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21004
+WARNING 2026-02-19 00:43:15,097 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:43:15,097 basehttp 17492 3656 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-19 00:43:15,099 basehttp 17492 10932 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-19 00:43:15,099 basehttp 17492 20824 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-19 00:43:15,099 basehttp 17492 9372 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-19 00:43:15,108 basehttp 17492 20824 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-19 00:43:15,112 basehttp 17492 16448 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-19 00:43:15,127 basehttp 17492 20824 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-19 00:43:15,149 basehttp 17492 18216 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-19 00:43:15,152 basehttp 17492 16448 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 00:43:15,358 basehttp 17492 16448 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-19 00:43:51,283 basehttp 17492 16448 "GET /fleet/ HTTP/1.1" 200 21854
+INFO 2026-02-19 00:43:51,319 basehttp 17492 18216 "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2026-02-19 00:43:51,341 basehttp 17492 16448 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-19 00:44:00,649 basehttp 17492 16448 "GET / HTTP/1.1" 200 15755
+INFO 2026-02-19 00:44:00,671 basehttp 17492 16448 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:44:04,897 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21004
+INFO 2026-02-19 00:44:06,531 basehttp 17492 16448 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 00:44:06,556 basehttp 17492 16448 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:44:12,517 basehttp 17492 16448 "GET /fleet/vehicles/ HTTP/1.1" 200 21004
+INFO 2026-02-19 00:44:12,539 basehttp 17492 16448 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:44:15,968 basehttp 17492 16448 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 00:44:17,849 basehttp 17492 16448 "GET /fleet/brands/ HTTP/1.1" 200 17838
+INFO 2026-02-19 00:44:17,909 basehttp 17492 18216 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-02-19 00:44:17,911 basehttp 17492 16448 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-02-19 00:44:17,913 basehttp 17492 20824 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-02-19 00:44:28,852 basehttp 17492 20824 "GET /fleet/approvals/ HTTP/1.1" 200 18222
+INFO 2026-02-19 00:44:28,879 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:44:31,792 basehttp 17492 20824 "GET /fleet/approvals/?status=pending HTTP/1.1" 200 18230
+INFO 2026-02-19 00:44:33,695 basehttp 17492 20824 "GET /fleet/work-reports/ HTTP/1.1" 200 18446
+INFO 2026-02-19 00:44:36,183 basehttp 17492 20824 "GET /fleet/payments/ HTTP/1.1" 200 18786
+INFO 2026-02-19 00:44:36,210 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:44:46,201 basehttp 17492 20824 "GET /fleet/payments/?status=pending HTTP/1.1" 200 18786
+INFO 2026-02-19 00:44:46,224 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:44:48,473 basehttp 17492 20824 "GET /fleet/payments/?status=approved HTTP/1.1" 200 18786
+INFO 2026-02-19 00:44:50,383 basehttp 17492 20824 "GET /fleet/payments/?status=paid HTTP/1.1" 200 18786
+INFO 2026-02-19 00:44:52,813 basehttp 17492 20824 "GET /fleet/expense-reports/ HTTP/1.1" 200 19308
+INFO 2026-02-19 00:44:56,931 basehttp 17492 20824 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 00:44:56,959 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:45:03,464 basehttp 17492 20824 "GET /personnel/employees/ HTTP/1.1" 200 18588
+INFO 2026-02-19 00:45:03,502 basehttp 17492 20824 "GET /media/personnel/photos/bg_photo_3.webp HTTP/1.1" 200 106902
+INFO 2026-02-19 00:45:05,997 basehttp 17492 20824 "GET /personnel/drivers/ HTTP/1.1" 200 16696
+INFO 2026-02-19 00:45:08,453 basehttp 17492 20824 "GET /personnel/security/ HTTP/1.1" 200 16696
+INFO 2026-02-19 00:45:08,479 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:45:19,954 basehttp 17492 20824 "GET /personnel/drivers/ HTTP/1.1" 200 16696
+INFO 2026-02-19 00:45:19,978 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:45:23,377 basehttp 17492 20824 "GET /personnel/employees/ HTTP/1.1" 200 18588
+INFO 2026-02-19 00:45:36,858 basehttp 17492 20824 "GET /personnel/employees/create/ HTTP/1.1" 200 25076
+INFO 2026-02-19 00:45:36,887 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:45:45,063 basehttp 17492 20824 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-02-19 00:45:45,072 basehttp 17492 20824 "GET / HTTP/1.1" 200 9298
+INFO 2026-02-19 00:45:49,069 basehttp 17492 20824 "GET /accounts/register/ HTTP/1.1" 200 10536
+INFO 2026-02-19 00:45:51,921 basehttp 17492 20824 "GET /accounts/login/ HTTP/1.1" 200 7708
+INFO 2026-02-19 00:45:51,951 basehttp 17492 20824 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:45:54,322 basehttp 17492 20824 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-02-19 00:45:54,339 basehttp 17492 20824 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-19 00:45:54,377 basehttp 17492 20824 "GET /tenants/ HTTP/1.1" 200 15078
+INFO 2026-02-19 00:45:57,513 basehttp 17492 20824 "GET / HTTP/1.1" 200 15755
+INFO 2026-02-19 00:53:36,997 basehttp 17492 19500 "GET /accounts/logout/ HTTP/1.1" 302 0
+ERROR 2026-02-19 00:53:37,466 log 17492 19500 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'translate'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\tms\views.py", line 11, in home_view
+    return render(request, 'home.html', context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 91: 'translate', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-02-19 00:53:37,475 basehttp 17492 19500 "GET / HTTP/1.1" 500 206553
+WARNING 2026-02-19 00:53:37,593 basehttp 17492 19500 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-02-19 00:54:01,253 basehttp 17492 19500 "GET / HTTP/1.1" 200 9186
+INFO 2026-02-19 00:54:01,286 basehttp 17492 19500 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 00:54:17,285 basehttp 17492 19500 "GET / HTTP/1.1" 200 9298
+INFO 2026-02-19 00:54:47,191 basehttp 17492 19500 "GET / HTTP/1.1" 200 9296
+INFO 2026-02-19 09:21:00,635 autoreload 24116 21808 Watching for file changes with StatReloader
+INFO 2026-02-19 09:21:07,395 basehttp 24116 3940 "GET /accounts/login/ HTTP/1.1" 200 7708
+INFO 2026-02-19 09:21:07,429 basehttp 24116 3940 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 09:21:09,031 basehttp 24116 3940 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-02-19 09:21:09,045 basehttp 24116 3940 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-19 09:21:09,092 basehttp 24116 3940 "GET /tenants/ HTTP/1.1" 200 15078
+INFO 2026-02-19 09:21:12,815 basehttp 24116 3940 "GET /fleet/vehicles/ HTTP/1.1" 200 23568
+INFO 2026-02-19 09:21:13,001 basehttp 24116 3940 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 09:21:35,402 basehttp 24116 3940 "GET /fleet/ HTTP/1.1" 200 21854
+INFO 2026-02-19 09:21:44,773 basehttp 24116 3940 "GET /fleet/brands/ HTTP/1.1" 200 17838
+INFO 2026-02-19 09:21:44,846 basehttp 24116 22912 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-02-19 09:21:44,850 basehttp 24116 3940 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-02-19 09:21:44,852 basehttp 24116 22200 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-02-19 09:21:47,022 basehttp 24116 22200 "GET /fleet/approvals/ HTTP/1.1" 200 18222
+INFO 2026-02-19 09:21:48,694 basehttp 24116 22200 "GET /fleet/work-reports/ HTTP/1.1" 200 18446
+INFO 2026-02-19 09:21:52,581 basehttp 24116 22200 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 15:15:56,212 basehttp 24116 29500 "GET /fleet/ HTTP/1.1" 200 21854
+INFO 2026-02-19 15:15:56,257 basehttp 24116 29500 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 15:15:56,257 basehttp 24116 1388 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-02-19 15:15:56,257 basehttp 24116 28536 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-02-19 15:15:56,261 basehttp 24116 29500 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-02-19 15:15:56,263 basehttp 24116 28536 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 304 0
+INFO 2026-02-19 15:15:56,263 basehttp 24116 1388 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 304 0
+INFO 2026-02-19 15:15:56,265 basehttp 24116 29500 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-02-19 15:15:56,290 basehttp 24116 29500 "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2026-02-19 15:16:08,297 basehttp 24116 29500 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-19 15:16:08,364 basehttp 24116 29500 "GET /tenants/ HTTP/1.1" 200 15078
+INFO 2026-02-19 15:16:12,547 basehttp 24116 29500 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 15:16:15,149 basehttp 24116 29500 "GET /fleet/brands/ HTTP/1.1" 200 17838
+INFO 2026-02-19 15:16:15,239 basehttp 24116 1388 "GET /media/fleet/logos/brands/car-logos-jeep_rzNtloT.png HTTP/1.1" 200 6687
+INFO 2026-02-19 15:16:15,242 basehttp 24116 29500 "GET /media/fleet/logos/brands/Citroen-logo-2009_HrWlTvQ.png HTTP/1.1" 200 88685
+INFO 2026-02-19 15:16:15,247 basehttp 24116 28536 "GET /media/fleet/logos/brands/Mercedes-Benz-Logo_W3jeN9c.png HTTP/1.1" 200 273733
+INFO 2026-02-19 15:16:20,243 basehttp 24116 28536 "GET /personnel/employees/ HTTP/1.1" 200 18588
+INFO 2026-02-19 15:16:20,313 basehttp 24116 28536 "GET /media/personnel/photos/bg_photo_3.webp HTTP/1.1" 200 106902
+INFO 2026-02-19 15:16:22,713 basehttp 24116 28536 "GET /personnel/drivers/ HTTP/1.1" 200 16696
+INFO 2026-02-19 15:16:24,732 basehttp 24116 28536 "GET /personnel/security/ HTTP/1.1" 200 16696
+INFO 2026-02-19 15:16:26,805 basehttp 24116 28536 "GET /personnel/employees/create/ HTTP/1.1" 200 25076
+INFO 2026-02-19 15:16:32,072 basehttp 24116 28536 "GET /personnel/employees/ HTTP/1.1" 200 18588
+INFO 2026-02-19 15:16:34,316 basehttp 24116 28536 "GET /fleet/approvals/?status=pending HTTP/1.1" 200 18313
+INFO 2026-02-19 15:16:42,478 basehttp 24116 28536 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 15:16:44,803 basehttp 24116 28536 "GET /fleet/assignments/create/ HTTP/1.1" 200 20348
+INFO 2026-02-19 15:16:50,264 basehttp 24116 28536 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 15:16:55,192 basehttp 24116 28536 "GET /accounts/profile/ HTTP/1.1" 200 16939
+INFO 2026-02-19 15:16:58,359 basehttp 24116 28536 "GET /fleet/vehicles/ HTTP/1.1" 200 23632
+INFO 2026-02-19 15:16:58,435 basehttp 24116 28536 "GET /media/fleet/vehicles/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/car-photos-commander.webp HTTP/1.1" 200 82108
+INFO 2026-02-19 15:17:03,975 basehttp 24116 28536 "GET /fleet/vehicles/65036327-7482-481f-8508-e7a4d00b42c3/edit HTTP/1.1" 200 25551
+ERROR 2026-02-19 15:17:11,052 signals 24116 28536 Error logging vehicle change: Object of type VehicleBrand is not JSON serializable
+INFO 2026-02-19 15:17:11,058 basehttp 24116 28536 "POST /fleet/vehicles/65036327-7482-481f-8508-e7a4d00b42c3/edit HTTP/1.1" 302 0
+INFO 2026-02-19 15:17:11,129 basehttp 24116 28536 "GET /fleet/vehicles/ HTTP/1.1" 200 23633
+INFO 2026-02-19 15:17:26,087 basehttp 24116 28536 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 15:17:27,711 basehttp 24116 28536 "GET /fleet/assignments/create/ HTTP/1.1" 200 20258
+INFO 2026-02-19 15:17:37,349 basehttp 24116 28536 "GET /fleet/vehicles/ HTTP/1.1" 200 23633
+INFO 2026-02-19 15:17:41,305 basehttp 24116 28536 "GET /fleet/vehicles/65036327-7482-481f-8508-e7a4d00b42c3/edit HTTP/1.1" 200 25551
+ERROR 2026-02-19 15:17:48,877 signals 24116 28536 Error logging vehicle change: Object of type VehicleBrand is not JSON serializable
+INFO 2026-02-19 15:17:48,882 basehttp 24116 28536 "POST /fleet/vehicles/65036327-7482-481f-8508-e7a4d00b42c3/edit HTTP/1.1" 302 0
+INFO 2026-02-19 15:17:48,951 basehttp 24116 28536 "GET /fleet/vehicles/ HTTP/1.1" 200 23632
+INFO 2026-02-19 15:17:50,478 basehttp 24116 28536 "GET /fleet/vehicles/28dc0268-5b65-4483-90e9-93985aa3f212/edit HTTP/1.1" 200 25220
+ERROR 2026-02-19 15:17:54,937 signals 24116 28536 Error logging vehicle change: Object of type VehicleBrand is not JSON serializable
+INFO 2026-02-19 15:17:54,944 basehttp 24116 28536 "POST /fleet/vehicles/28dc0268-5b65-4483-90e9-93985aa3f212/edit HTTP/1.1" 302 0
+INFO 2026-02-19 15:17:55,006 basehttp 24116 28536 "GET /fleet/vehicles/ HTTP/1.1" 200 23631
+INFO 2026-02-19 15:17:58,099 basehttp 24116 28536 "GET /fleet/assignments/ HTTP/1.1" 200 16499
+INFO 2026-02-19 15:17:59,176 basehttp 24116 28536 "GET /fleet/assignments/create/ HTTP/1.1" 200 20437
+INFO 2026-02-19 15:18:05,536 basehttp 24116 28536 "GET /personnel/drivers/ HTTP/1.1" 200 16696
+INFO 2026-02-19 15:18:06,539 basehttp 24116 28536 "GET /personnel/drivers/ HTTP/1.1" 200 16696
+INFO 2026-02-19 15:18:09,161 basehttp 24116 28536 "GET /personnel/drivers/ HTTP/1.1" 200 16696
+INFO 2026-02-19 15:18:11,641 basehttp 24116 28536 "GET /personnel/drivers/ HTTP/1.1" 200 16696
+INFO 2026-02-19 15:18:13,193 basehttp 24116 28536 "GET /personnel/employees/create/ HTTP/1.1" 200 25076
+INFO 2026-02-19 23:38:25,049 autoreload 13836 7000 Watching for file changes with StatReloader
+INFO 2026-02-19 23:38:25,669 basehttp 13836 8252 "GET /accounts/password/change/ HTTP/1.1" 200 14905
+INFO 2026-02-19 23:38:25,788 basehttp 13836 8252 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-19 23:39:06,636 basehttp 13836 8252 "GET /accounts/password/change/ HTTP/1.1" 200 15066
+INFO 2026-02-19 23:39:06,691 basehttp 13836 8252 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 304 0
+INFO 2026-02-19 23:39:11,706 basehttp 13836 8252 "GET /accounts/password/change/ HTTP/1.1" 200 14905
+INFO 2026-02-19 23:39:32,012 basehttp 13836 8252 "GET /accounts/profile/ HTTP/1.1" 200 16939
+INFO 2026-02-19 23:39:37,763 basehttp 13836 8252 "GET /accounts/profile/edit/ HTTP/1.1" 200 15978
+INFO 2026-02-19 23:40:10,607 basehttp 13836 4392 "GET /tenants/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/details/ HTTP/1.1" 200 15329
+INFO 2026-02-24 16:56:51,500 autoreload 9344 1908 Watching for file changes with StatReloader

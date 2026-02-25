@@ -275,13 +275,15 @@
             {% if workday.can_approve %}
             <form method="post" action="{% url 'fleet:workday_approve' workday.pk %}">
               {% csrf_token %}
-              <button type="submit" class="btn btn-success w-100">
+              <button type="submit" class="btn btn-success w-100" 
+              style="background: linear-gradient(to bottom, #284378, black);">
                 <i class="bi bi-check-circle"></i> {% translate "Approve" %}
               </button>
             </form>
             <form method="post" action="{% url 'fleet:workday_reject' workday.pk %}">
               {% csrf_token %}
-              <button type="submit" class="btn btn-danger w-100">
+              <button type="submit" class="btn btn-danger w-100" 
+              style="background: linear-gradient(to bottom, #284378, black);">
                 <i class="bi bi-x-circle"></i> {% translate "Reject" %}
               </button>
             </form>

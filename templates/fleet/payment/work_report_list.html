@@ -109,7 +109,8 @@
         </div>
 
         <div class="col-md-2 d-flex align-items-end">
-          <button type="submit" class="btn btn-primary w-100">
+          <button type="submit" class="btn btn-primary w-100" 
+          style="background: linear-gradient(to bottom, #284378, black);">
             <i class="bi bi-funnel"></i> {% translate "Filter" %}
           </button>
         </div>
@@ -130,7 +131,8 @@
         <i class="bi bi-table"></i> {% translate "Reports List" %}
       </h5>
       <div>
-        <button class="btn btn-sm btn-outline-success" title="{% translate 'Export to Excel' %}">
+        <button class="btn btn-sm btn-outline-success" title="{% translate 'Export to Excel' %}" 
+        style="background: linear-gradient(to bottom, #284378, black);">
           <i class="bi bi-file-earmark-excel"></i> {% translate "Export" %}
         </button>
       </div>
@@ -248,7 +250,8 @@
                     {% translate 'Approve and generate Payment' as confirm_message_7%}
                     <button type="submit" class="btn btn-outline-success btn-sm"
                       title="{% translate 'Approve & Generate Payment' %}"
-                      onclick="return confirm('{{ confirm_message_7 }}')">
+                      onclick="return confirm('{{ confirm_message_7 }}')" 
+                      style="background: linear-gradient(to bottom, #284378, black);">
                       <i class="bi bi-check-lg"></i>
                     </button>
                   </form>

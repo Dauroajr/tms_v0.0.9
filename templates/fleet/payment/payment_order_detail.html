@@ -280,7 +280,8 @@
             {% csrf_token %}
             {% translate 'Approve this payment? An expense report will be sent to the client.' as confirm_message_5 %}
             <button type="submit" class="btn btn-success w-100"
-                    onclick="return confirm('{{ confirm_message_5 }}')">
+                    onclick="return confirm('{{ confirm_message_5 }}')" 
+                    style="background: linear-gradient(to bottom, #284378, black);">
               <i class="bi bi-check-circle"></i> {% translate "Approve for Payment" %}
             </button>
           </form>
@@ -321,7 +322,8 @@
             <i class="bi bi-file-pdf"></i> {% translate "Download Receipt" %}
           </a>
           {% else %}
-          <button class="btn btn-outline-primary w-100 mb-2">
+          <button class="btn btn-outline-primary w-100 mb-2" 
+          style="background: linear-gradient(to bottom, #284378, black);">
             <i class="bi bi-file-pdf"></i> {% translate "Generate Receipt" %}
           </button>
           {% endif %}

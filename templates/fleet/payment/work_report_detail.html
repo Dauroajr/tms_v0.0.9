@@ -295,13 +295,15 @@
             <i class="bi bi-file-pdf"></i> {% translate "Download PDF" %}
           </a>
           {% else %}
-          <button class="btn btn-outline-primary w-100 mb-2">
+          <button class="btn btn-outline-primary w-100 mb-2" 
+          style="background: linear-gradient(to bottom, #284378, black);">
             <i class="bi bi-file-pdf"></i> {% translate "Generate PDF" %}
           </button>
           {% endif %}
 
           {% if not report.sent_to_company_at or not report.sent_to_driver_at %}
-          <button class="btn btn-outline-info w-100 mb-2">
+          <button class="btn btn-outline-info w-100 mb-2" 
+          style="background: linear-gradient(to bottom, #284378, black);">
             <i class="bi bi-envelope"></i> {% translate "Send Emails" %}
           </button>
           {% endif %}
@@ -310,7 +312,8 @@
             {% csrf_token %}
             {% translate 'Approve this report? This will generate a payment order.' as confirm_message_3%}
             <button type="submit" class="btn btn-success w-100"
-                    onclick="return confirm('{{ confirm_message_3 }}')">
+                    onclick="return confirm('{{ confirm_message_3 }}')" 
+                    style="background: linear-gradient(to bottom, #284378, black);">
               <i class="bi bi-check-circle"></i> {% translate "Approve & Generate Payment" %}
             </button>
           </form>

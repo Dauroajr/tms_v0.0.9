@@ -227,11 +227,15 @@
 
         <!-- Action Buttons -->
         <div class="d-flex gap-3 justify-content-center">
-          <button type="submit" name="action" value="approve" class="btn btn-approve">
+          <button type="submit" name="action" value="approve" 
+                  class="btn btn-approve" 
+                  style="background: linear-gradient(to bottom, #284378, black);">
             <i class="bi bi-check-circle me-2"></i>
             {% translate "Approve Report" %}
           </button>
-          <button type="submit" name="action" value="reject" class="btn btn-reject">
+          <button type="submit" name="action" value="reject" 
+                  class="btn btn-reject" 
+                  style="background: linear-gradient(to bottom, #284378, black);">
             <i class="bi bi-x-circle me-2"></i>
             {% translate "Reject Report" %}
           </button>

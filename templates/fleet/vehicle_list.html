@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="container mt-4">
+<div class="container-fluid mt-4">
   <div class="row mb-4">
     <div class="col-md-8">
       <h2>
@@ -23,51 +23,72 @@
     </div>
   </div>
 
+  <!-- Statistics Cards -->
   <div class="row g-3 mb-4">
     <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body text-center">
-          <i class="bi bi-truck display-4 text-primary"></i>
-          <h3 class="mt-2 mb-0">{{ total_vehicles }}</h3>
-          <p class="text-muted mb-0">{% translate 'Total Vehicles' %}</p>
+      <div class="card shadow-sm border-start border-primary border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate 'Total Vehicles' %}</h6>
+              <h3 class="mb-0">{{ total_vehicles }}</h3>
+            </div>
+            <div class="text-primary">
+              <i class="bi bi-truck display-4"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body text-center">
-          <i class="bi bi-check-circle display-4 text-success"></i>
-          <h3 class="mt-2 mb-0">{{ active_vehicles }}</h3>
-          <p class="tet-muted mb-0">{% translate 'Active' %}</p>
+      <div class="card shadow-sm border-start border-success border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate 'Active' %}</h6>
+              <h3 class="mb-0 text-success">{{ active_vehicles }}</h3>
+            </div>
+            <div class="text-success">
+              <i class="bi bi-check-circle display-4"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body text-center">
-          <i class="bi bi-tools display-4 text-warning"></i>
-          <h3 class="mt-2 mb-0">{{ maintenance_vehicles }}</h3>
-          <p class="text-muted mb-0">{% translate "In Maintenance" %}</p>
+      <div class="card shadow-sm border-start border-warning border-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="text-muted text-uppercase small mb-1">{% translate 'In Maintenance' %}</h6>
+              <h3 class="mb-0 text-warning">{{ maintenance_vehicles }}</h3>
+            </div>
+            <div class="text-warning">
+              <i class="bi bi-tools display-4"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Filters -->
   <div class="card shadow-sm mb-4">
     <div class="card-body">
       <form action="" method="get" class="row g-3">
         <div class="col-md-4">
-          <label for="" class="form-label">{% translate 'Search' %}</label>
-          <input type="text" class="form-control" placeholder="{% translate 'Plate, brand or model' %}"
-            value="{{ current_search}}">
+          <label for="search" class="form-label">{% translate 'Search' %}</label>
+          <input type="text" name="search" id="search" class="form-control" 
+                 placeholder="{% translate 'Plate, brand or model' %}"
+                 value="{{ current_search }}">
         </div>
 
         <div class="col-md-3">
-          <label for="" class="form-label">{% translate 'Status' %}</label>
-          <select name="" id="" class="form-control">
-            <option value="{% translate 'All' %}"></option>
+          <label for="status" class="form-label">{% translate 'Status' %}</label>
+          <select name="status" id="status" class="form-select">
+            <option value="">{% translate 'All' %}</option>
             {% for value, label in status_choices %}
             <option value="{{ value }}" {% if current_status == value %}selected{% endif %}>
               {{ label }}
@@ -77,9 +98,9 @@
         </div>
 
         <div class="col-md-3">
-          <label for="" class="form-label"></label>
-          <select name="type" id="" class="form-control">
-            <option value="{% translate 'All' %}"></option>
+          <label for="type" class="form-label">{% translate 'Type' %}</label>
+          <select name="type" id="type" class="form-select">
+            <option value="">{% translate 'All' %}</option>
             {% for value, label in type_choices %}
             <option value="{{ value }}" {% if current_type == value %}selected{% endif %}>
               {{ label }}
@@ -89,7 +110,7 @@
         </div>
 
         <div class="col-md-2 d-flex align-items-end">
-          <button type="submit" class="btn btn-primary w-100">
+          <button type="submit" class="btn btn-primary w-100" style="background: linear-gradient(to bottom, #284378, black);">
             <i class="bi bi-search"></i> {% translate 'Filter' %}
           </button>
         </div>
@@ -97,93 +118,127 @@
     </div>
   </div>
 
-  <div class="card shadow-sm">
+  <!-- Vehicle List -->
+  <div class="card shadow-sm mb-4">
     <div class="card-header bg-white">
-      <h6 class="mb-0">
+      <h5 class="mb-0">
         <i class="bi bi-list"></i> {% translate 'Vehicle List' %}
-      </h6>
+      </h5>
     </div>
 
     <div class="card-body p-0">
       {% if vehicles %}
       <div class="table-responsive">
-        <table class="table table-hover mb-0">
+        <table class="table table-hover align-middle mb-0">
           <thead class="table-light">
             <tr>
-              <th style="width: 60px;">{% translate "Photo" %}</th>
-              <th>{% translate 'Plate' %}</th>
-              <th>{% translate 'Brand/Model' %}</th>
-              <th>{% translate 'Type' %}</th>
-              <th>{% translate 'Year' %}</th>
-              <th>{% translate 'Status' %}</th>
-              <th>{% translate 'Current Driver' %}</th>
-              <th class="text-end">{% translate 'Actions' %}</th>
+              <th class="text-center" style="width: 80px;">{% translate "Photo" %}</th>
+              <th class="text-start">{% translate 'Plate' %}</th>
+              <th class="text-start">{% translate 'Brand/Model' %}</th>
+              <th class="text-center">{% translate 'Type' %}</th>
+              <th class="text-center">{% translate 'Year' %}</th>
+              <th class="text-center">{% translate 'Status' %}</th>
+              <th class="text-start">{% translate 'Current Driver' %}</th>
+              <th class="text-end pe-3">{% translate 'Actions' %}</th>
             </tr>
           </thead>
 
           <tbody>
             {% for vehicle in vehicles %}
             <tr>
-              <td> 
+              <!-- Photo -->
+              <td class="text-center">
                 {% if vehicle.photo %}
                 <img src="{{ vehicle.photo.url }}" alt="{{ vehicle.plate }}" class="rounded"
                   style="width: 50px; height: 50px; object-fit: cover;">
                 {% else %}
-                <div class="bg-light rounded d-flex align-items-center justify-content-center"
+                <div class="bg-light rounded d-flex align-items-center justify-content-center mx-auto"
                   style="width: 50px; height: 50px;">
                   <i class="bi bi-truck text-muted"></i>
                 </div>
                 {% endif %}
               </td>
 
-              <td>
-                <strong>{{ vehicle_plate }}</strong>
+              <!-- Plate -->
+              <td class="text-start">
+                <strong class="text-primary">{{ vehicle.plate }}</strong>
               </td>
 
-              <td>
-                {{ vehicle.brand.name }} {{ vehicle.model }}
+              <!-- Brand/Model -->
+              <td class="text-start">
+                <strong>{{ vehicle.brand.name }}</strong>
+                <br>
+                <small class="text-muted">{{ vehicle.model }}</small>
               </td>
 
-              <td>
+              <!-- Type -->
+              <td class="text-center">
                 <span class="badge bg-secondary">
-                  {{ vehicle.get_type_display}}
+                  {{ vehicle.get_type_display }}
                 </span>
               </td>
 
-              <td>{{ vehicle.year }}</td>
+              <!-- Year -->
+              <td class="text-center">
+                <strong>{{ vehicle.year }}</strong>
+              </td>
 
-              <td>
+              <!-- Status -->
+              <td class="text-center">
                 {% if vehicle.status == 'active' %}
-                <span class="badge bg-success">{{ vehicle.get_status_display }}</span>
+                <span class="badge bg-success">
+                  <i class="bi bi-check-circle"></i> {{ vehicle.get_status_display }}
+                </span>
                 {% elif vehicle.status == 'maintenance' %}
-                <span class="badge bg-warning">{{ vehicle.get_status_display }}</span>
+                <span class="badge bg-warning">
+                  <i class="bi bi-tools"></i> {{ vehicle.get_status_display }}
+                </span>
                 {% elif vehicle.status == 'inactive' %}
-                <span class="badge bg-secondary">{{ vehicle.get_status_display }}</span>
+                <span class="badge bg-secondary">
+                  <i class="bi bi-dash-circle"></i> {{ vehicle.get_status_display }}
+                </span>
                 {% else %}
-                <span class="badge bg-danger">{{ vehicle.get_status_display }}</span>
+                <span class="badge bg-danger">
+                  <i class="bi bi-x-circle"></i> {{ vehicle.get_status_display }}
+                </span>
                 {% endif %}
               </td>
 
-              <td>
+              <!-- Current Driver -->
+              <td class="text-start">
                 {% if vehicle.current_assignment %}
-                {{ vehicle.current_assignment.driver.full_name }}
+                <div class="d-flex align-items-center">
+                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
+                       style="width: 32px; height: 32px; font-size: 12px;">
+                    {{ vehicle.current_assignment.driver.full_name|slice:":1"|upper }}
+                  </div>
+                  <div>
+                    <strong>{{ vehicle.current_assignment.driver.full_name }}</strong>
+                  </div>
+                </div>
                 {% else %}
-                <span class="text-muted">-</span>
+                <span class="text-muted">
+                  <i class="bi bi-dash-circle"></i> {% translate "Available" %}
+                </span>
                 {% endif %}
               </td>
 
-              <td class="text-end">
+              <!-- Actions -->
+              <td class="text-end pe-3">
                 <div class="btn-group btn-group-sm">
-                  <a href="{% url 'fleet:vehicle_detail' vehicle.pk %}" class="btn btn-outline-primary"
-                    title="{% translate 'View Details' %}">
+                  <a href="{% url 'fleet:vehicle_detail' vehicle.pk %}" 
+                     class="btn btn-outline-primary"
+                     title="{% translate 'View Details' %}">
                     <i class="bi bi-eye"></i>
                   </a>
-                  <a href="{% url 'fleet:vehicle_update' vehicle.pk %}" class="btn btn-outline-secondary"
-                    title="{% translate 'Edit' %}">
+                  <a href="{% url 'fleet:vehicle_update' vehicle.pk %}" 
+                     class="btn btn-outline-secondary"
+                     title="{% translate 'Edit' %}">
                     <i class="bi bi-pencil"></i>
                   </a>
-                  <a href="{% url 'fleet:vehicle_delete' vehicle.pk %}" class="btn btn-outline-danger"
-                    title="{% translate 'Delete' %}">
+                  <a href="{% url 'fleet:vehicle_delete' vehicle.pk %}" 
+                     class="btn btn-outline-danger"
+                     title="{% translate 'Delete' %}">
                     <i class="bi bi-trash"></i>
                   </a>
                 </div>
@@ -203,13 +258,13 @@
             <li class="page-item">
               <a class="page-link"
                 href="?page=1{% if current_search %}&search={{ current_search }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_type %}&type={{ current_type }}{% endif %}">
-                {% translate "First" %}
+                <i class="bi bi-chevron-double-left"></i>
               </a>
             </li>
             <li class="page-item">
               <a class="page-link"
                 href="?page={{ page_obj.previous_page_number }}{% if current_search %}&search={{ current_search }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_type %}&type={{ current_type }}{% endif %}">
-                {% translate "Previous" %}
+                <i class="bi bi-chevron-left"></i>
               </a>
             </li>
             {% endif %}
@@ -224,13 +279,13 @@
             <li class="page-item">
               <a class="page-link"
                 href="?page={{ page_obj.next_page_number }}{% if current_search %}&search={{ current_search }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_type %}&type={{ current_type }}{% endif %}">
-                {% translate "Next" %}
+                <i class="bi bi-chevron-right"></i>
               </a>
             </li>
             <li class="page-item">
               <a class="page-link"
                 href="?page={{ page_obj.paginator.num_pages }}{% if current_search %}&search={{ current_search }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_type %}&type={{ current_type }}{% endif %}">
-                {% translate "Last" %}
+                <i class="bi bi-chevron-double-right"></i>
               </a>
             </li>
             {% endif %}
@@ -240,6 +295,7 @@
       {% endif %}
 
       {% else %}
+      <!-- Empty State -->
       <div class="text-center py-5">
         <i class="bi bi-inbox display-1 text-muted"></i>
         <p class="mt-3 text-muted">{% translate "No vehicles found" %}</p>

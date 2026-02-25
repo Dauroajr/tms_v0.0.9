@@ -27,9 +27,9 @@ main {
   padding: 0;
 }
 
-main * {
+/* main * {
   display: initial;
-}
+} */
 
 .card {
   display: flex !important;
