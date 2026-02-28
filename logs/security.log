@@ -1,0 +1,1 @@
+WARNING 2026-02-25 15:05:27,340 log 9692 6784 Forbidden (CSRF token missing.): /accounts/register/

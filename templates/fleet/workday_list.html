@@ -99,7 +99,8 @@
           <select name="assignment" class="form-control">
             <option value="">{% translate "All Assignments" %}</option>
             {% for assignment in assignments %}
-            <option value="{{ assignment.id }}" {% if current_assignment == assignment.id|stringformat:"s" %}selected{% endif %}>
+            <option value="{{ assignment.id }}" {% if current_assignment==assignment.id|stringformat:"s" %}selected{%
+              endif %}>
               {{ assignment.driver.full_name }} → {{ assignment.vehicle.plate }}
             </option>
             {% endfor %}
@@ -109,16 +110,16 @@
           <label class="form-label">{% translate "Status" %}</label>
           <select name="status" class="form-control">
             <option value="">{% translate "All" %}</option>
-            <option value="pending" {% if current_status == 'pending' %}selected{% endif %}>
+            <option value="pending" {% if current_status=='pending' %}selected{% endif %}>
               {% translate "Pending" %}
             </option>
-            <option value="approved" {% if current_status == 'approved' %}selected{% endif %}>
+            <option value="approved" {% if current_status=='approved' %}selected{% endif %}>
               {% translate "Approved" %}
             </option>
-            <option value="paid" {% if current_status == 'paid' %}selected{% endif %}>
+            <option value="paid" {% if current_status=='paid' %}selected{% endif %}>
               {% translate "Paid" %}
             </option>
-            <option value="rejected" {% if current_status == 'rejected' %}selected{% endif %}>
+            <option value="rejected" {% if current_status=='rejected' %}selected{% endif %}>
               {% translate "Rejected" %}
             </option>
           </select>
@@ -132,8 +133,8 @@
           <input type="date" name="date_to" class="form-control" value="{{ current_date_to }}">
         </div>
         <div class="col-md-1 d-flex align-items-end">
-          <button type="submit" class="btn btn-primary w-100" 
-          style="background: linear-gradient(to bottom, #284378, black);">
+          <button type="submit" class="btn btn-primary w-100"
+            style="background: linear-gradient(to bottom, #4374d5, black);">
             <i class="bi bi-search"></i>
           </button>
         </div>
@@ -208,22 +209,19 @@
               </td>
               <td class="text-end">
                 <div class="btn-group btn-group-sm">
-                  <a href="{% url 'fleet:workday_detail' workday.pk %}" 
-                     class="btn btn-outline-primary"
-                     title="{% translate 'View Details' %}">
+                  <a href="{% url 'fleet:workday_detail' workday.pk %}" class="btn btn-outline-primary"
+                    title="{% translate 'View Details' %}">
                     <i class="bi bi-eye"></i>
                   </a>
                   {% if workday.can_edit %}
-                  <a href="{% url 'fleet:workday_update' workday.pk %}" 
-                     class="btn btn-outline-secondary"
-                     title="{% translate 'Edit' %}">
+                  <a href="{% url 'fleet:workday_update' workday.pk %}" class="btn btn-outline-secondary"
+                    title="{% translate 'Edit' %}">
                     <i class="bi bi-pencil"></i>
                   </a>
                   {% endif %}
                   {% if workday.status != 'paid' %}
-                  <a href="{% url 'fleet:workday_delete' workday.pk %}" 
-                     class="btn btn-outline-danger"
-                     title="{% translate 'Delete' %}">
+                  <a href="{% url 'fleet:workday_delete' workday.pk %}" class="btn btn-outline-danger"
+                    title="{% translate 'Delete' %}">
                     <i class="bi bi-trash"></i>
                   </a>
                   {% endif %}
@@ -242,12 +240,14 @@
           <ul class="pagination justify-content-center mb-0">
             {% if page_obj.has_previous %}
             <li class="page-item">
-              <a class="page-link" href="?page=1{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
+              <a class="page-link"
+                href="?page=1{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
                 {% translate "First" %}
               </a>
             </li>
             <li class="page-item">
-              <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
+              <a class="page-link"
+                href="?page={{ page_obj.previous_page_number }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
                 {% translate "Previous" %}
               </a>
             </li>
@@ -261,12 +261,14 @@
 
             {% if page_obj.has_next %}
             <li class="page-item">
-              <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
+              <a class="page-link"
+                href="?page={{ page_obj.next_page_number }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
                 {% translate "Next" %}
               </a>
             </li>
             <li class="page-item">
-              <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
+              <a class="page-link"
+                href="?page={{ page_obj.paginator.num_pages }}{% if current_assignment %}&assignment={{ current_assignment }}{% endif %}{% if current_status %}&status={{ current_status }}{% endif %}{% if current_date_from %}&date_from={{ current_date_from }}{% endif %}{% if current_date_to %}&date_to={{ current_date_to }}{% endif %}">
                 {% translate "Last" %}
               </a>
             </li>

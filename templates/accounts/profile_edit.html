@@ -2,7 +2,7 @@
 {% load static i18n l10n %}
 
 {% block title %}
-  {% translate 'Edit Profile' %} - TMS
+{% translate 'Edit Profile' %} - TMS
 {% endblock title %}
 
 {% block content %}
@@ -28,9 +28,9 @@
                 </label>
                 {{ form.first_name }}
                 {% if form.first_name.errors %}
-                  <div class="invalid-feedback d-block">
-                    {{ form.first_name.errors }}
-                  </div>
+                <div class="invalid-feedback d-block">
+                  {{ form.first_name.errors }}
+                </div>
                 {% endif %}
               </div>
 
@@ -40,9 +40,9 @@
                 </label>
                 {{ form.last_name }}
                 {% if form.last_name.errors %}
-                  <div class="invalid-feedback d-block">
-                    {{ form.last_name.errors }}
-                  </div>
+                <div class="invalid-feedback d-block">
+                  {{ form.last_name.errors }}
+                </div>
                 {% endif %}
               </div>
             </div>
@@ -53,9 +53,9 @@
               </label>
               {{ form.email }}
               {% if form.email.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.email.errors }}
-                </div>
+              <div class="invalid-feedback d-block">
+                {{ form.email.errors }}
+              </div>
               {% endif %}
             </div>
 
@@ -65,9 +65,9 @@
               </label>
               {{ form.phone }}
               {% if form.phone.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ form.phone.errors }}
-                </div>
+              <div class="invalid-feedback d-block">
+                {{ form.phone.errors }}
+              </div>
               {% endif %}
             </div>
 
@@ -78,9 +78,9 @@
                 </label>
                 {{ form.document_type }}
                 {% if form.document_type.errors %}
-                  <div class="invalid-feedback d-block">
-                    {{ form.document_type.errors }}
-                  </div>
+                <div class="invalid-feedback d-block">
+                  {{ form.document_type.errors }}
+                </div>
                 {% endif %}
               </div>
 
@@ -90,22 +90,22 @@
                 </label>
                 {{ form.document_number }}
                 {% if form.document_number.errors %}
-                  <div class="invalid-feedback d-block">
-                    {{ form.document_number.errors }}
-                  </div>
+                <div class="invalid-feedback d-block">
+                  {{ form.document_number.errors }}
+                </div>
                 {% endif %}
               </div>
             </div>
 
             {% if form.non_field.errors %}
-              <div class="alert alert-danger">
-                {{ form.non_field_errors }}
-              </div>
+            <div class="alert alert-danger">
+              {{ form.non_field_errors }}
+            </div>
             {% endif %}
 
             <div class="d-flex gap-2">
-              <button type="submit" class="btn btn-primary" 
-                      style="background: linear-gradient(to bottom, #284378, black);">
+              <button type="submit" class="btn btn-primary"
+                style="background: linear-gradient(to bottom, #4374d5, black);">
                 <i class="bi bi-check-lg"></i>{% translate 'Save Changes' %}
               </button>
               <a href="{% url 'accounts:profile' %}" class="btn btn-outline-secondary">

@@ -87,7 +87,7 @@ class VehicleAdmin(TenantAwareAdmin):
 
     search_fields = [
         "plate__icontains",
-        "brand__icontains",
+        "brand__name__icontains",  # ← CORRIGIDO (brand é ForeignKey)
         "model__icontains",
         "chassis_number__icontains",
         "renavam__icontains",
@@ -103,7 +103,10 @@ class VehicleAdmin(TenantAwareAdmin):
             _("Basic Information"),
             {"fields": ("plate", "type", "brand", "model", "year", "color", "status")},
         ),
-        (_("Specifications"), {"fields": ("capacity_kg", "capacity_m3_or_liters_or_liters", "fuel_type")}),
+        (
+            _("Specifications"),
+            {"fields": ("capacity_kg", "capacity_m3_or_liters", "fuel_type")},
+        ),
         (_("Identification"), {"fields": ("chassis_number", "renavam")}),
         (
             _("Purchase Information"),
@@ -131,14 +134,17 @@ class VehicleAdmin(TenantAwareAdmin):
     inlines = [VehicleDocumentInline, MaintenanceRecordInline]
 
     def status_badge(self, obj):
+        """Display status as colored badge."""
         colors = {
             "active": "success",
             "maintenance": "warning",
             "inactive": "secondary",
+            "available": "info",
+            "unavailable": "secondary",
             "sold": "danger",
         }
         return format_html(
-            "<span class='badge bg={}'>{}</span>",
+            '<span class="badge bg-{}">{}</span>',
             colors.get(obj.status, "secondary"),
             obj.get_status_display(),
         )
@@ -146,32 +152,37 @@ class VehicleAdmin(TenantAwareAdmin):
     status_badge.short_description = _("Status")
 
     def current_driver(self, obj):
+        """Display current driver name in list."""
         assignment = obj.current_assignment
         if assignment:
-            return assignment.driver.get_full_name
+            return assignment.driver.get_full_name()
         return "-"
 
     current_driver.short_description = _("Current Driver")
 
     def current_driver_display(self, obj):
+        """Display current driver with assignment date."""
         assignment = obj.current_assignment
         if assignment:
             return format_html(
-                '<strong>{}</strong><br><small>{% translate "Since" %}: {}</small>',
-                assignment.driver.get_full_name,
-                assignment.start_date,
+                "<strong>{}</strong><br><small>{}: {}</small>",
+                assignment.driver.get_full_name(),
+                _("Since"),  # ← CORRIGIDO
+                assignment.start_date.strftime("%d/%m/%Y"),
             )
-        return format_html("<em>{% translate 'Not assigned %}</em>")
+        return format_html("<em>{}</em>", _("Not assigned"))  # ← CORRIGIDO
 
     current_driver_display.short_description = _("Current Driver")
 
     def maintenance_status(self, obj):
+        """Display maintenance status badge."""
         if obj.needs_maintenance():
             return format_html(
-                "<span class='badge bg-danger'>{% translate 'Maintenance required' %}</span>"
+                '<span class="badge bg-danger">{}</span>',
+                _("Maintenance required"),  # ← CORRIGIDO
             )
         return format_html(
-            "<span class='badge bg-success'>{% translate 'Up to date' %}</span>"
+            '<span class="badge bg-success">{}</span>', _("Up to date")  # ← CORRIGIDO
         )
 
     maintenance_status.short_description = _("Maintenance Status")
@@ -270,10 +281,7 @@ class VehicleAssignmentAdmin(TenantAwareAdmin):
         "start_date",
     ] + TenantAwareAdmin.list_filter
 
-    search_fields = [
-        "driver__driver_full_name__icontains",
-        "vehicle__plate__icontains"
-    ]
+    search_fields = ["driver__driver_full_name__icontains", "vehicle__plate__icontains"]
 
     def is_active_badge(self, obj):
         if obj.is_active:

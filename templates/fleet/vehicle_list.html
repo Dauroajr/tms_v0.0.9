@@ -17,7 +17,8 @@
     </div>
 
     <div class="col-md-4 text-end">
-      <a href="{% url 'fleet:vehicle_create' %}" class="btn btn-primary">
+      <a href="{% url 'fleet:vehicle_create' %}" class="btn btn-primary"
+        style="background: linear-gradient(to bottom, #4374d5,black);">
         <i class="bi bi-plus-circle"></i> {% translate 'Add Vehicle' %}
       </a>
     </div>
@@ -80,9 +81,8 @@
       <form action="" method="get" class="row g-3">
         <div class="col-md-4">
           <label for="search" class="form-label">{% translate 'Search' %}</label>
-          <input type="text" name="search" id="search" class="form-control" 
-                 placeholder="{% translate 'Plate, brand or model' %}"
-                 value="{{ current_search }}">
+          <input type="text" name="search" id="search" class="form-control"
+            placeholder="{% translate 'Plate, brand or model' %}" value="{{ current_search }}">
         </div>
 
         <div class="col-md-3">
@@ -110,7 +110,8 @@
         </div>
 
         <div class="col-md-2 d-flex align-items-end">
-          <button type="submit" class="btn btn-primary w-100" style="background: linear-gradient(to bottom, #284378, black);">
+          <button type="submit" class="btn btn-primary w-100"
+            style="background: linear-gradient(to bottom, #4374d5, black);">
             <i class="bi bi-search"></i> {% translate 'Filter' %}
           </button>
         </div>
@@ -208,8 +209,9 @@
               <td class="text-start">
                 {% if vehicle.current_assignment %}
                 <div class="d-flex align-items-center">
-                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
-                       style="width: 32px; height: 32px; font-size: 12px;">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
+                    style="width: 32px; height: 32px; font-size: 12px;">
                     {{ vehicle.current_assignment.driver.full_name|slice:":1"|upper }}
                   </div>
                   <div>
@@ -226,19 +228,16 @@
               <!-- Actions -->
               <td class="text-end pe-3">
                 <div class="btn-group btn-group-sm">
-                  <a href="{% url 'fleet:vehicle_detail' vehicle.pk %}" 
-                     class="btn btn-outline-primary"
-                     title="{% translate 'View Details' %}">
+                  <a href="{% url 'fleet:vehicle_detail' vehicle.pk %}" class="btn btn-outline-primary"
+                    title="{% translate 'View Details' %}">
                     <i class="bi bi-eye"></i>
                   </a>
-                  <a href="{% url 'fleet:vehicle_update' vehicle.pk %}" 
-                     class="btn btn-outline-secondary"
-                     title="{% translate 'Edit' %}">
+                  <a href="{% url 'fleet:vehicle_update' vehicle.pk %}" class="btn btn-outline-secondary"
+                    title="{% translate 'Edit' %}">
                     <i class="bi bi-pencil"></i>
                   </a>
-                  <a href="{% url 'fleet:vehicle_delete' vehicle.pk %}" 
-                     class="btn btn-outline-danger"
-                     title="{% translate 'Delete' %}">
+                  <a href="{% url 'fleet:vehicle_delete' vehicle.pk %}" class="btn btn-outline-danger"
+                    title="{% translate 'Delete' %}">
                     <i class="bi bi-trash"></i>
                   </a>
                 </div>
@@ -299,7 +298,8 @@
       <div class="text-center py-5">
         <i class="bi bi-inbox display-1 text-muted"></i>
         <p class="mt-3 text-muted">{% translate "No vehicles found" %}</p>
-        <a href="{% url 'fleet:vehicle_create' %}" class="btn btn-primary">
+        <a href="{% url 'fleet:vehicle_create' %}" class="btn btn-primary"
+          style="background: linear-gradient(to bottom, #4374d5,black);">
           <i class="bi bi-plus-circle"></i> {% translate "Add First Vehicle" %}
         </a>
       </div>

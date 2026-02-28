@@ -272,16 +272,14 @@
             {% csrf_token %}
             {% translate 'Approve
             this batch? A work report will be generated automatically.' as confirm_message_1 %}
-            <button type="submit" class="btn btn-success w-100 mb-2"
-                    onclick="return confirm('{{ confirm_message_1 }}')" 
-                    style="background: linear-gradient(to bottom, #284378, black);">
+            <button type="submit" class="btn btn-success w-100 mb-2" onclick="return confirm('{{ confirm_message_1 }}')"
+              style="background: linear-gradient(to bottom, #4374d5, black);">
               <i class="bi bi-check-circle"></i> {% translate "Approve Batch" %}
             </button>
           </form>
 
-          <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal" 
-                  data-bs-target="#rejectModal" 
-                  style="background: linear-gradient(to bottom, #284378, black);">
+          <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#rejectModal"
+            style="background: linear-gradient(to bottom, #4374d5, black);">
             <i class="bi bi-x-circle"></i> {% translate "Reject Batch" %}
           </button>
         </div>
@@ -336,9 +334,8 @@
           <h5 class="modal-title">
             <i class="bi bi-x-circle"></i> {% translate "Reject Approval" %}
           </h5>
-          <button type="button" class="btn-close btn-close-white" 
-                  data-bs-dismiss="modal" 
-                  style="background: linear-gradient(to bottom, #284378, black);">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+            style="background: linear-gradient(to bottom, #4374d5, black);">
           </button>
         </div>
         <div class="modal-body">
@@ -356,13 +353,11 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" 
-                  data-bs-dismiss="modal"
-                  style="background: linear-gradient(to bottom, #284378, black);">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="background: linear-gradient(to bottom, #4374d5, black);">
             {% translate "Cancel" %}
           </button>
-          <button type="submit" class="btn btn-danger" 
-                  style="background: linear-gradient(to bottom, #284378, black);">
+          <button type="submit" class="btn btn-danger" style="background: linear-gradient(to bottom, #4374d5, black);">
             <i class="bi bi-x-circle"></i> {% translate "Reject Batch" %}
           </button>
         </div>

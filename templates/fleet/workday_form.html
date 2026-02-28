@@ -206,8 +206,8 @@
               <a href="{% url 'fleet:workday_list' %}" class="btn btn-outline-secondary">
                 <i class="bi bi-x-circle"></i> {% translate "Cancel" %}
               </a>
-              <button type="submit" class="btn btn-primary" 
-              style="background: linear-gradient(to bottom, #284378, black);">
+              <button type="submit" class="btn btn-primary"
+                style="background: linear-gradient(to bottom, #4374d5, black);">
                 <i class="bi bi-check-circle"></i>
                 {% if object %}
                 {% translate "Update Workday" %}
@@ -242,26 +242,26 @@
 
 <!-- Auto-fill script for workday type -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const workdayTypeSelect = document.getElementById('{{ form.workday_type.id_for_label }}');
-  const standardHoursInput = document.getElementById('{{ form.standard_hours.id_for_label }}');
-  
-  if (workdayTypeSelect && standardHoursInput) {
-    workdayTypeSelect.addEventListener('change', function() {
-      const value = this.value;
-      
-      if (value === 'daily_8h') {
-        standardHoursInput.value = '8.00';
-      } else if (value === 'daily_10h') {
-        standardHoursInput.value = '10.00';
-      } else if (value === 'daily_12h') {
-        standardHoursInput.value = '12.00';
-      } else if (value === 'transfer') {
-        standardHoursInput.value = '0.00';
-      }
-      // For 'custom', leave as is
-    });
-  }
-});
+  document.addEventListener('DOMContentLoaded', function () {
+    const workdayTypeSelect = document.getElementById('{{ form.workday_type.id_for_label }}');
+    const standardHoursInput = document.getElementById('{{ form.standard_hours.id_for_label }}');
+
+    if (workdayTypeSelect && standardHoursInput) {
+      workdayTypeSelect.addEventListener('change', function () {
+        const value = this.value;
+
+        if (value === 'daily_8h') {
+          standardHoursInput.value = '8.00';
+        } else if (value === 'daily_10h') {
+          standardHoursInput.value = '10.00';
+        } else if (value === 'daily_12h') {
+          standardHoursInput.value = '12.00';
+        } else if (value === 'transfer') {
+          standardHoursInput.value = '0.00';
+        }
+        // For 'custom', leave as is
+      });
+    }
+  });
 </script>
 {% endblock %}

@@ -12315,3 +12315,2289 @@ INFO 2026-02-19 23:39:32,012 basehttp 13836 8252 "GET /accounts/profile/ HTTP/1.
 INFO 2026-02-19 23:39:37,763 basehttp 13836 8252 "GET /accounts/profile/edit/ HTTP/1.1" 200 15978
 INFO 2026-02-19 23:40:10,607 basehttp 13836 4392 "GET /tenants/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/details/ HTTP/1.1" 200 15329
 INFO 2026-02-24 16:56:51,500 autoreload 9344 1908 Watching for file changes with StatReloader
+INFO 2026-02-24 16:56:54,509 basehttp 9344 11708 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-02-24 16:56:54,621 basehttp 9344 11708 "GET / HTTP/1.1" 200 9296
+INFO 2026-02-24 16:56:54,683 basehttp 9344 29504 "GET /static/css/fleet-professional.css HTTP/1.1" 304 0
+INFO 2026-02-24 16:56:54,683 basehttp 9344 12496 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-02-24 16:56:54,683 basehttp 9344 11708 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-24 16:56:54,687 basehttp 9344 29504 "GET /static/css/header.css HTTP/1.1" 304 0
+INFO 2026-02-24 16:56:54,689 basehttp 9344 11708 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 304 0
+INFO 2026-02-24 16:56:54,690 basehttp 9344 12496 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 304 0
+INFO 2026-02-24 16:56:54,692 basehttp 9344 29504 "GET /static/css/navbar.css HTTP/1.1" 304 0
+INFO 2026-02-24 16:56:54,706 basehttp 9344 29504 "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2026-02-24 16:56:54,839 basehttp 9344 29504 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 304 0
+INFO 2026-02-25 12:51:16,490 basehttp 9344 11540 "GET /accounts/register/ HTTP/1.1" 200 10623
+INFO 2026-02-25 12:51:16,524 basehttp 9344 11540 "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-25 12:52:03,804 basehttp 9344 11540 "POST /accounts/register/ HTTP/1.1" 200 10889
+INFO 2026-02-25 12:52:29,448 basehttp 9344 11540 "POST /accounts/register/ HTTP/1.1" 200 10877
+INFO 2026-02-25 12:52:43,195 basehttp 9344 11540 "POST /accounts/register/ HTTP/1.1" 200 10874
+INFO 2026-02-25 12:52:58,651 basehttp 9344 11540 "POST /accounts/register/ HTTP/1.1" 200 10878
+INFO 2026-02-25 15:05:16,748 autoreload 9692 11300 Watching for file changes with StatReloader
+WARNING 2026-02-25 15:05:27,341 basehttp 9692 6784 "POST /accounts/register/ HTTP/1.1" 403 2492
+WARNING 2026-02-25 15:05:27,463 basehttp 9692 6784 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-02-25 15:05:32,449 basehttp 9692 6784 "GET / HTTP/1.1" 200 9384
+INFO 2026-02-25 15:05:34,210 basehttp 9692 6784 "GET /accounts/register/ HTTP/1.1" 200 10711
+INFO 2026-02-25 15:06:14,070 basehttp 9692 6784 "POST /accounts/register/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:06:14,129 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 7542
+INFO 2026-02-25 15:06:16,810 basehttp 9692 6784 "GET /tenants/create/ HTTP/1.1" 200 10478
+INFO 2026-02-25 15:07:05,543 signals 9692 6784 Tenant 6bf1a1b1-cd9c-4304-9dc2-516b66616eb8: User keke@daj.com koined as owner
+INFO 2026-02-25 15:07:05,939 basehttp 9692 6784 "POST /tenants/create/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:07:05,967 basehttp 9692 6784 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:07:06,082 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15169
+INFO 2026-02-25 15:07:11,459 basehttp 9692 6784 "GET /fleet/ HTTP/1.1" 200 19926
+INFO 2026-02-25 15:07:19,345 basehttp 9692 6784 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:07:19,357 basehttp 9692 6784 "GET / HTTP/1.1" 200 9384
+INFO 2026-02-25 15:07:20,988 basehttp 9692 6784 "GET /accounts/login/ HTTP/1.1" 200 7883
+INFO 2026-02-25 15:07:26,767 basehttp 9692 6784 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:07:26,782 basehttp 9692 6784 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:07:26,815 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15166
+INFO 2026-02-25 15:07:31,994 basehttp 9692 6784 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:07:32,003 basehttp 9692 6784 "GET / HTTP/1.1" 200 9384
+INFO 2026-02-25 15:07:33,541 basehttp 9692 6784 "GET /accounts/login/ HTTP/1.1" 200 7883
+INFO 2026-02-25 15:07:39,172 basehttp 9692 6784 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:07:39,193 basehttp 9692 6784 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:07:39,232 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15169
+INFO 2026-02-25 15:07:42,270 basehttp 9692 6784 "GET /fleet/approvals/ HTTP/1.1" 200 18394
+INFO 2026-02-25 15:07:45,151 basehttp 9692 6784 "GET /fleet/vehicles/ HTTP/1.1" 200 18334
+INFO 2026-02-25 15:08:34,779 basehttp 9692 6784 "GET /fleet/vehicles/ HTTP/1.1" 200 18409
+INFO 2026-02-25 15:08:49,971 basehttp 9692 6784 "GET /fleet/vehicles/ HTTP/1.1" 200 18480
+INFO 2026-02-25 15:08:52,690 basehttp 9692 6784 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:08:52,761 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15169
+INFO 2026-02-25 15:09:30,987 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15169
+INFO 2026-02-25 15:09:33,047 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15169
+INFO 2026-02-25 15:10:08,213 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15169
+INFO 2026-02-25 15:10:25,352 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15343
+INFO 2026-02-25 15:10:52,906 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15469
+INFO 2026-02-25 15:11:12,505 basehttp 9692 6784 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:11:12,577 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15443
+INFO 2026-02-25 15:11:22,145 basehttp 9692 6784 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:11:22,193 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15469
+INFO 2026-02-25 15:11:24,776 basehttp 9692 6784 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:11:24,816 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15443
+INFO 2026-02-25 15:11:42,332 basehttp 9692 6784 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:11:42,379 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15443
+INFO 2026-02-25 15:11:43,735 basehttp 9692 6784 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:11:43,778 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15443
+INFO 2026-02-25 15:11:46,429 basehttp 9692 6784 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 15:11:46,476 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15443
+INFO 2026-02-25 15:12:09,384 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15506
+INFO 2026-02-25 15:12:20,219 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15569
+INFO 2026-02-25 15:12:30,056 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15506
+INFO 2026-02-25 15:12:31,665 basehttp 9692 6784 "GET /tenants/ HTTP/1.1" 200 15506
+INFO 2026-02-25 15:12:39,561 basehttp 9692 6784 "GET /fleet/ HTTP/1.1" 200 19800
+INFO 2026-02-25 15:12:58,295 basehttp 9692 6784 "GET /fleet/ HTTP/1.1" 200 19863
+INFO 2026-02-25 15:22:38,747 basehttp 9692 15484 "GET /fleet/ HTTP/1.1" 200 19864
+INFO 2026-02-25 15:22:48,279 basehttp 9692 15484 "GET /fleet/vehicles/ HTTP/1.1" 200 18393
+INFO 2026-02-25 15:22:53,042 basehttp 9692 15484 "GET /fleet/assignments/ HTTP/1.1" 200 16233
+INFO 2026-02-25 15:22:56,315 basehttp 9692 15484 "GET /fleet/brands/ HTTP/1.1" 200 14529
+INFO 2026-02-25 15:23:47,525 basehttp 9692 12628 "GET /fleet/brands/ HTTP/1.1" 200 14529
+INFO 2026-02-25 15:24:43,434 basehttp 9692 12628 "GET /fleet/brands/ HTTP/1.1" 200 14599
+INFO 2026-02-25 15:25:05,471 basehttp 9692 12628 "GET /fleet/brands/ HTTP/1.1" 200 14599
+INFO 2026-02-25 15:25:07,349 basehttp 9692 12628 "GET /fleet/brands/ HTTP/1.1" 200 14671
+INFO 2026-02-25 15:25:24,331 basehttp 9692 12628 "GET /fleet/brands/ HTTP/1.1" 200 14747
+INFO 2026-02-25 15:25:30,625 basehttp 9692 12628 "GET /fleet/brands/ HTTP/1.1" 200 14671
+INFO 2026-02-25 15:25:34,976 basehttp 9692 12628 "GET /fleet/approvals/ HTTP/1.1" 200 18362
+INFO 2026-02-25 15:26:55,835 basehttp 9692 12628 "GET /fleet/approvals/ HTTP/1.1" 200 18432
+INFO 2026-02-25 15:26:57,587 basehttp 9692 12628 "GET /fleet/approvals/ HTTP/1.1" 200 18432
+INFO 2026-02-25 15:26:59,434 basehttp 9692 12628 "GET /fleet/approvals/ HTTP/1.1" 200 18432
+INFO 2026-02-25 15:26:59,630 basehttp 9692 12628 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-25 15:26:59,630 basehttp 9692 6740 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-25 15:26:59,649 basehttp 9692 6740 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-25 15:26:59,652 basehttp 9692 12628 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-25 15:26:59,673 basehttp 9692 12628 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-25 15:26:59,688 basehttp 9692 12628 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-25 15:26:59,698 basehttp 9692 6740 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-25 15:26:59,707 basehttp 9692 12628 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-25 15:26:59,833 basehttp 9692 12628 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-25 15:28:18,581 basehttp 9692 12628 "GET /fleet/approvals/ HTTP/1.1" 200 18362
+INFO 2026-02-25 15:28:44,401 basehttp 9692 12628 "GET /fleet/approvals/ HTTP/1.1" 200 18362
+INFO 2026-02-25 15:28:46,901 basehttp 9692 12628 "GET /fleet/approvals/ HTTP/1.1" 200 18442
+INFO 2026-02-25 15:28:54,819 basehttp 9692 12628 "GET /fleet/approvals/?status=pending HTTP/1.1" 200 18450
+INFO 2026-02-25 15:28:57,281 basehttp 9692 12628 "GET /fleet/work-reports/ HTTP/1.1" 200 18652
+INFO 2026-02-25 15:29:51,267 basehttp 9692 12628 "GET /fleet/work-reports/ HTTP/1.1" 200 18652
+INFO 2026-02-25 15:29:53,188 basehttp 9692 12628 "GET /fleet/work-reports/ HTTP/1.1" 200 18579
+INFO 2026-02-25 15:30:13,967 basehttp 9692 12628 "GET /fleet/work-reports/ HTTP/1.1" 200 18659
+INFO 2026-02-25 15:30:19,112 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19002
+INFO 2026-02-25 15:31:13,343 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19082
+INFO 2026-02-25 15:31:50,072 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:32:17,940 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:32:30,312 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:32:46,998 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:32:48,065 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:32:53,580 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:32:59,220 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:05,360 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:10,676 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:15,158 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:16,022 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:19,995 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:33,437 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19011
+INFO 2026-02-25 15:33:37,190 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19011
+INFO 2026-02-25 15:33:38,009 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19011
+INFO 2026-02-25 15:33:40,089 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19011
+INFO 2026-02-25 15:33:42,674 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19011
+INFO 2026-02-25 15:33:46,008 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:48,639 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:51,069 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:54,119 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:33:56,800 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:34:00,016 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:34:04,279 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:34:08,024 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:34:09,447 basehttp 9692 12628 "GET /fleet/payments/ HTTP/1.1" 200 19009
+INFO 2026-02-25 15:34:23,519 basehttp 9692 12628 "GET /fleet/payments/?status=pending HTTP/1.1" 200 19009
+INFO 2026-02-25 15:34:27,562 basehttp 9692 12628 "GET /fleet/payments/?status=approved HTTP/1.1" 200 19009
+INFO 2026-02-25 15:34:30,484 basehttp 9692 12628 "GET /fleet/payments/?status=paid HTTP/1.1" 200 19009
+INFO 2026-02-25 15:34:33,449 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19518
+INFO 2026-02-25 15:35:20,938 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19447
+INFO 2026-02-25 15:35:53,955 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19447
+INFO 2026-02-25 15:35:55,266 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19447
+INFO 2026-02-25 15:35:59,594 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19447
+INFO 2026-02-25 15:36:04,336 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19447
+INFO 2026-02-25 15:36:05,486 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19447
+INFO 2026-02-25 15:36:13,594 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19447
+INFO 2026-02-25 15:36:14,533 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19447
+INFO 2026-02-25 15:36:31,583 basehttp 9692 12628 "GET /fleet/expense-reports/ HTTP/1.1" 200 19527
+INFO 2026-02-25 15:36:36,580 basehttp 9692 12628 "GET /personnel/employees/ HTTP/1.1" 200 16733
+INFO 2026-02-25 15:37:06,551 basehttp 9692 12628 "GET /personnel/employees/ HTTP/1.1" 200 16803
+INFO 2026-02-25 15:37:39,985 basehttp 9692 12628 "GET /personnel/employees/ HTTP/1.1" 200 16803
+INFO 2026-02-25 15:37:46,431 basehttp 9692 12628 "GET /personnel/employees/ HTTP/1.1" 200 16877
+INFO 2026-02-25 15:38:01,984 basehttp 9692 12628 "GET /personnel/employees/ HTTP/1.1" 200 16877
+INFO 2026-02-25 15:38:03,519 basehttp 9692 12628 "GET /personnel/employees/ HTTP/1.1" 200 16949
+INFO 2026-02-25 15:38:07,198 basehttp 9692 12628 "GET /personnel/drivers/ HTTP/1.1" 200 16949
+INFO 2026-02-25 15:38:10,589 basehttp 9692 12628 "GET /personnel/security/ HTTP/1.1" 200 16949
+INFO 2026-02-25 15:38:12,256 basehttp 9692 12628 "GET /personnel/employees/create/ HTTP/1.1" 200 25021
+INFO 2026-02-25 15:38:31,882 basehttp 9692 12628 "GET /personnel/employees/create/ HTTP/1.1" 200 25021
+INFO 2026-02-25 15:38:33,410 basehttp 9692 12628 "GET /personnel/employees/create/ HTTP/1.1" 200 25099
+INFO 2026-02-25 15:38:39,354 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15461
+INFO 2026-02-25 15:39:17,243 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15553
+INFO 2026-02-25 15:39:29,252 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15559
+INFO 2026-02-25 15:39:30,527 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15559
+INFO 2026-02-25 15:39:49,471 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15557
+INFO 2026-02-25 15:39:56,218 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15557
+INFO 2026-02-25 15:39:57,478 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15557
+INFO 2026-02-25 15:40:01,552 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15557
+INFO 2026-02-25 15:40:10,498 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15561
+INFO 2026-02-25 15:40:44,973 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15625
+INFO 2026-02-25 15:40:51,877 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15625
+INFO 2026-02-25 15:40:55,655 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 16946
+INFO 2026-02-25 15:41:37,863 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17022
+INFO 2026-02-25 15:42:34,490 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17085
+INFO 2026-02-25 15:43:10,536 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17161
+INFO 2026-02-25 15:43:20,513 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17148
+INFO 2026-02-25 15:43:30,466 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17149
+INFO 2026-02-25 15:44:04,983 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17238
+INFO 2026-02-25 15:44:12,879 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17238
+INFO 2026-02-25 15:44:14,592 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17238
+INFO 2026-02-25 15:44:50,421 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17251
+INFO 2026-02-25 15:44:52,014 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17251
+INFO 2026-02-25 15:45:11,036 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17251
+INFO 2026-02-25 15:45:29,564 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17240
+INFO 2026-02-25 15:45:30,973 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17240
+WARNING 2026-02-25 15:45:41,071 basehttp 9692 12628 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 15:46:10,117 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17241
+WARNING 2026-02-25 15:46:10,180 basehttp 9692 12628 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 15:46:12,516 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17241
+INFO 2026-02-25 15:46:12,552 basehttp 9692 12628 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-25 15:46:12,558 basehttp 9692 12628 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-25 15:46:12,562 basehttp 9692 12628 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-25 15:46:12,568 basehttp 9692 12628 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-25 15:46:12,576 basehttp 9692 12628 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-25 15:46:12,582 basehttp 9692 12628 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-25 15:46:12,586 basehttp 9692 12628 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+WARNING 2026-02-25 15:46:12,617 basehttp 9692 12628 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 15:46:12,621 basehttp 9692 12628 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-25 15:46:12,938 basehttp 9692 12628 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-25 15:46:20,737 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17251
+WARNING 2026-02-25 15:46:20,786 basehttp 9692 12628 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 15:46:51,702 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17260
+WARNING 2026-02-25 15:46:51,750 basehttp 9692 12628 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 15:47:34,008 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17260
+INFO 2026-02-25 15:47:34,791 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:47:43,423 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/members/ HTTP/1.1" 200 13900
+INFO 2026-02-25 15:47:46,011 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15625
+INFO 2026-02-25 15:47:50,831 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/members/ HTTP/1.1" 200 13900
+INFO 2026-02-25 15:48:13,197 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/members/ HTTP/1.1" 200 13968
+INFO 2026-02-25 15:48:44,748 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/members/ HTTP/1.1" 200 14048
+INFO 2026-02-25 15:48:50,225 basehttp 9692 12628 "GET /tenants/ HTTP/1.1" 200 15506
+INFO 2026-02-25 15:48:53,578 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/members/ HTTP/1.1" 200 14048
+INFO 2026-02-25 15:48:55,905 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:48:58,037 basehttp 9692 12628 "GET /accounts/password/change/ HTTP/1.1" 200 14952
+INFO 2026-02-25 15:49:02,329 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:49:44,255 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:49:54,258 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:49:58,171 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:49:59,265 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:04,958 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:09,900 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:13,255 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:13,891 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:17,763 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:25,037 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:28,895 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:29,573 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17334
+INFO 2026-02-25 15:50:54,608 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17192
+INFO 2026-02-25 15:51:34,475 basehttp 9692 12628 "GET /accounts/profile/ HTTP/1.1" 200 17175
+INFO 2026-02-25 15:51:41,041 basehttp 9692 12628 "GET /accounts/password/change/ HTTP/1.1" 200 14926
+INFO 2026-02-25 15:51:43,916 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15534
+ERROR 2026-02-25 15:51:50,252 log 9692 12628 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_type=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from 'current_type=='driver''
+ERROR 2026-02-25 15:51:50,260 basehttp 9692 12628 "GET /personnel/employees/ HTTP/1.1" 500 310331
+WARNING 2026-02-25 15:51:50,396 basehttp 9692 12628 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-02-25 15:51:59,670 basehttp 9692 12628 "GET /tenants/ HTTP/1.1" 200 15450
+INFO 2026-02-25 15:52:02,510 basehttp 9692 12628 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/members/ HTTP/1.1" 200 14049
+INFO 2026-02-25 16:02:45,748 basehttp 9692 17852 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/members/ HTTP/1.1" 200 14013
+INFO 2026-02-25 16:02:50,585 basehttp 9692 17852 "GET /accounts/profile/ HTTP/1.1" 200 17175
+INFO 2026-02-25 16:02:53,546 basehttp 9692 17852 "GET /accounts/password/change/ HTTP/1.1" 200 14926
+INFO 2026-02-25 16:02:55,569 basehttp 9692 17852 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15534
+INFO 2026-02-25 16:03:19,360 basehttp 9692 17852 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15510
+INFO 2026-02-25 16:03:31,405 basehttp 9692 17852 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15474
+INFO 2026-02-25 16:03:36,974 basehttp 9692 17852 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/members/ HTTP/1.1" 200 14013
+INFO 2026-02-25 16:03:39,064 basehttp 9692 17852 "GET /tenants/ HTTP/1.1" 200 15450
+ERROR 2026-02-25 16:03:41,592 log 9692 17852 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_type=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from 'current_type=='driver''
+ERROR 2026-02-25 16:03:41,597 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 500 310286
+ERROR 2026-02-25 16:04:40,489 log 9692 17852 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from '=='driver''
+ERROR 2026-02-25 16:04:40,494 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 500 309602
+ERROR 2026-02-25 16:04:41,407 log 9692 17852 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from '=='driver''
+ERROR 2026-02-25 16:04:41,412 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 500 309602
+ERROR 2026-02-25 16:05:18,144 log 9692 17852 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_type=='driver'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='driver'' from 'current_type=='driver''
+ERROR 2026-02-25 16:05:18,148 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 500 310423
+ERROR 2026-02-25 16:05:27,860 log 9692 17852 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_status=='active'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='active'' from 'current_status=='active''
+ERROR 2026-02-25 16:05:27,865 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 500 312403
+ERROR 2026-02-25 16:05:29,652 log 9692 17852 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_status=='active'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='active'' from 'current_status=='active''
+ERROR 2026-02-25 16:05:29,657 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 500 312531
+WARNING 2026-02-25 16:05:29,771 basehttp 9692 17852 "GET /favicon.ico HTTP/1.1" 404 3942
+ERROR 2026-02-25 16:05:50,239 log 9692 17852 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "==' active'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==' active'' from '==' active''
+ERROR 2026-02-25 16:05:50,245 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 500 311545
+ERROR 2026-02-25 16:05:51,167 log 9692 17852 Internal Server Error: /personnel/employees/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "==' active'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==' active'' from '==' active''
+ERROR 2026-02-25 16:05:51,176 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 500 311545
+INFO 2026-02-25 16:06:06,156 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 200 16925
+INFO 2026-02-25 16:06:10,370 basehttp 9692 17852 "GET /personnel/employees/ HTTP/1.1" 200 16925
+INFO 2026-02-25 16:06:11,619 basehttp 9692 17852 "GET /personnel/drivers/ HTTP/1.1" 200 16925
+INFO 2026-02-25 16:06:12,897 basehttp 9692 17852 "GET /personnel/security/ HTTP/1.1" 200 16925
+INFO 2026-02-25 16:06:14,183 basehttp 9692 17852 "GET /personnel/employees/create/ HTTP/1.1" 200 25081
+ERROR 2026-02-25 16:06:19,169 log 9692 17852 Internal Server Error: /fleet/approvals/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_status=='pending'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='pending'' from 'current_status=='pending''
+ERROR 2026-02-25 16:06:19,173 basehttp 9692 17852 "GET /fleet/approvals/ HTTP/1.1" 500 307824
+INFO 2026-02-25 16:07:15,231 basehttp 9692 17852 "GET /fleet/approvals/ HTTP/1.1" 200 18417
+INFO 2026-02-25 16:07:19,662 basehttp 9692 17852 "GET /fleet/approvals/?status=pending HTTP/1.1" 200 18425
+INFO 2026-02-25 16:07:22,278 basehttp 9692 17852 "GET /fleet/work-reports/ HTTP/1.1" 200 18642
+INFO 2026-02-25 16:07:26,905 basehttp 9692 17852 "GET /fleet/payments/ HTTP/1.1" 200 18987
+INFO 2026-02-25 16:07:30,892 basehttp 9692 17852 "GET /fleet/payments/?status=pending HTTP/1.1" 200 18987
+INFO 2026-02-25 16:07:33,267 basehttp 9692 17852 "GET /fleet/expense-reports/ HTTP/1.1" 200 19505
+INFO 2026-02-25 16:07:38,563 basehttp 9692 17852 "GET /fleet/ HTTP/1.1" 200 19852
+ERROR 2026-02-25 16:07:42,889 log 9692 17852 Internal Server Error: /fleet/vehicles/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'current_status==value'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==value' from 'current_status==value'
+ERROR 2026-02-25 16:07:42,894 basehttp 9692 17852 "GET /fleet/vehicles/ HTTP/1.1" 500 343960
+INFO 2026-02-25 16:08:16,592 basehttp 9692 17852 "GET /fleet/vehicles/ HTTP/1.1" 200 18361
+ERROR 2026-02-25 16:08:20,357 log 9692 17852 Internal Server Error: /fleet/assignments/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "current_active=='true'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='true'' from 'current_active=='true''
+ERROR 2026-02-25 16:08:20,363 basehttp 9692 17852 "GET /fleet/assignments/ HTTP/1.1" 500 308010
+INFO 2026-02-25 16:08:51,205 basehttp 9692 17852 "GET /fleet/assignments/ HTTP/1.1" 200 16232
+INFO 2026-02-25 16:08:56,151 basehttp 9692 17852 "GET /fleet/brands/ HTTP/1.1" 200 14654
+INFO 2026-02-25 16:08:58,653 basehttp 9692 17852 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 16:08:58,691 basehttp 9692 17852 "GET /tenants/ HTTP/1.1" 200 15450
+INFO 2026-02-25 16:09:28,400 basehttp 9692 17852 "GET /tenants/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/details/ HTTP/1.1" 200 15474
+INFO 2026-02-25 16:09:30,539 basehttp 9692 17852 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 16:09:30,578 basehttp 9692 17852 "GET /tenants/ HTTP/1.1" 200 15450
+INFO 2026-02-25 16:09:34,427 basehttp 9692 17852 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-02-25 16:09:34,439 basehttp 9692 17852 "GET / HTTP/1.1" 200 9360
+INFO 2026-02-25 16:11:16,317 basehttp 9692 17852 "GET / HTTP/1.1" 200 9214
+INFO 2026-02-25 16:11:18,347 basehttp 9692 17852 "GET / HTTP/1.1" 200 9214
+INFO 2026-02-25 16:11:18,378 basehttp 9692 15480 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-25 16:11:18,378 basehttp 9692 17852 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-25 16:11:18,382 basehttp 9692 17852 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-25 16:11:18,382 basehttp 9692 15480 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-25 16:11:18,388 basehttp 9692 15480 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-25 16:11:18,392 basehttp 9692 15480 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-25 16:11:18,393 basehttp 9692 17852 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-25 16:11:18,405 basehttp 9692 17852 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-25 16:11:21,666 basehttp 9692 17852 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-25 16:14:18,620 basehttp 9692 17852 "GET / HTTP/1.1" 200 9214
+INFO 2026-02-25 16:14:20,884 basehttp 9692 17852 "GET / HTTP/1.1" 200 9214
+INFO 2026-02-25 16:14:20,917 basehttp 9692 17852 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-25 16:14:20,917 basehttp 9692 15480 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-25 16:14:20,921 basehttp 9692 15480 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-25 16:14:20,921 basehttp 9692 17852 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-25 16:14:20,927 basehttp 9692 17852 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-25 16:14:20,931 basehttp 9692 15480 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-25 16:14:20,933 basehttp 9692 17852 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-25 16:14:20,962 basehttp 9692 17852 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-25 16:14:21,309 basehttp 9692 17852 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-25 16:18:42,798 basehttp 9692 17852 "GET / HTTP/1.1" 200 9091
+INFO 2026-02-25 16:19:29,798 basehttp 9692 17852 "GET / HTTP/1.1" 200 9093
+INFO 2026-02-25 16:19:54,735 basehttp 9692 17852 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:22:05,583 basehttp 9692 17852 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:22:07,656 basehttp 9692 17852 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:22:08,383 basehttp 9692 17852 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:22:09,604 basehttp 9692 17852 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:22:09,634 basehttp 9692 17852 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-25 16:22:09,635 basehttp 9692 16228 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-25 16:22:09,638 basehttp 9692 16228 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-25 16:22:09,639 basehttp 9692 17852 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-25 16:22:09,643 basehttp 9692 16228 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-25 16:22:09,647 basehttp 9692 17852 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-25 16:22:09,650 basehttp 9692 16228 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-25 16:22:09,652 basehttp 9692 17852 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-25 16:22:09,873 basehttp 9692 17852 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-25 16:23:50,165 basehttp 9692 15188 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:23:52,022 basehttp 9692 15188 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:23:52,056 basehttp 9692 11280 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-25 16:23:52,056 basehttp 9692 15188 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-25 16:23:52,057 basehttp 9692 4940 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-25 16:23:52,065 basehttp 9692 15188 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-25 16:23:52,065 basehttp 9692 11280 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-25 16:23:52,069 basehttp 9692 15188 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-25 16:23:52,070 basehttp 9692 4940 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-25 16:23:52,098 basehttp 9692 4940 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-25 16:23:52,273 basehttp 9692 4940 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-25 16:24:23,857 basehttp 9692 4940 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:24:24,842 basehttp 9692 4940 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:24:25,282 basehttp 9692 4940 "GET / HTTP/1.1" 200 9080
+INFO 2026-02-25 16:27:20,644 basehttp 9692 4940 "GET / HTTP/1.1" 200 9101
+INFO 2026-02-25 16:27:22,427 basehttp 9692 4940 "GET / HTTP/1.1" 200 9101
+INFO 2026-02-25 16:27:22,461 basehttp 9692 4940 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-25 16:27:22,462 basehttp 9692 15188 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-25 16:27:22,464 basehttp 9692 11280 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-25 16:27:22,469 basehttp 9692 4940 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-25 16:27:22,469 basehttp 9692 15188 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-25 16:27:22,472 basehttp 9692 11280 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-25 16:27:22,475 basehttp 9692 4940 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-25 16:27:22,480 basehttp 9692 4940 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-25 16:27:22,719 basehttp 9692 4940 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+INFO 2026-02-25 16:27:51,431 basehttp 9692 4940 "GET / HTTP/1.1" 200 9110
+INFO 2026-02-25 16:27:53,168 basehttp 9692 4940 "GET / HTTP/1.1" 200 9110
+INFO 2026-02-25 16:27:53,202 basehttp 9692 18332 "GET /static/css/header.css HTTP/1.1" 200 1647
+INFO 2026-02-25 16:27:53,202 basehttp 9692 15188 "GET /static/css/fleet-professional.css HTTP/1.1" 200 10662
+INFO 2026-02-25 16:27:53,202 basehttp 9692 11280 "GET /static/css/home.css HTTP/1.1" 200 976
+INFO 2026-02-25 16:27:53,203 basehttp 9692 4940 "GET /static/css/base.css HTTP/1.1" 200 606
+INFO 2026-02-25 16:27:53,203 basehttp 9692 2696 "GET /static/js/navbar_menu_hover.js HTTP/1.1" 200 745
+INFO 2026-02-25 16:27:53,209 basehttp 9692 3212 "GET /static/images/logos/3d_logo_transparent.png HTTP/1.1" 200 269751
+INFO 2026-02-25 16:27:53,211 basehttp 9692 15188 "GET /static/css/navbar.css HTTP/1.1" 200 3799
+INFO 2026-02-25 16:27:53,226 basehttp 9692 15188 "GET /static/css/footer.css HTTP/1.1" 200 889
+INFO 2026-02-25 16:27:53,633 basehttp 9692 15188 "GET /static/images/logos/tms-logo-hi-res.png HTTP/1.1" 200 74400
+WARNING 2026-02-25 16:27:59,391 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:29:17,898 basehttp 9692 15188 "GET / HTTP/1.1" 200 9112
+WARNING 2026-02-25 16:29:17,933 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:29:40,170 basehttp 9692 15188 "GET / HTTP/1.1" 200 9190
+WARNING 2026-02-25 16:29:40,213 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:29:58,925 basehttp 9692 15188 "GET / HTTP/1.1" 200 9190
+WARNING 2026-02-25 16:29:58,974 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:29:59,614 basehttp 9692 15188 "GET / HTTP/1.1" 200 9271
+WARNING 2026-02-25 16:29:59,652 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:33:26,506 basehttp 9692 15188 "GET / HTTP/1.1" 200 9271
+WARNING 2026-02-25 16:33:26,539 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:34:31,289 basehttp 9692 15188 "GET / HTTP/1.1" 200 9271
+WARNING 2026-02-25 16:34:31,354 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:34:35,963 basehttp 9692 15188 "GET / HTTP/1.1" 200 9271
+WARNING 2026-02-25 16:34:36,017 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:38:04,033 basehttp 9692 15188 "GET / HTTP/1.1" 200 8068
+WARNING 2026-02-25 16:38:04,077 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:38:45,088 basehttp 9692 15188 "GET / HTTP/1.1" 200 8144
+WARNING 2026-02-25 16:38:45,121 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:38:58,622 basehttp 9692 15188 "GET / HTTP/1.1" 200 8132
+WARNING 2026-02-25 16:38:58,684 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:39:15,727 basehttp 9692 15188 "GET / HTTP/1.1" 200 8132
+WARNING 2026-02-25 16:39:15,776 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:39:25,466 basehttp 9692 15188 "GET / HTTP/1.1" 200 8132
+WARNING 2026-02-25 16:39:25,501 basehttp 9692 15188 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4053
+INFO 2026-02-25 16:39:52,829 basehttp 9692 15188 "GET / HTTP/1.1" 200 8151
+INFO 2026-02-25 16:40:02,910 basehttp 9692 15188 "GET / HTTP/1.1" 200 8152
+INFO 2026-02-25 16:40:16,234 basehttp 9692 15188 "GET / HTTP/1.1" 200 8152
+INFO 2026-02-25 16:40:24,067 basehttp 9692 15188 "GET / HTTP/1.1" 200 8152
+INFO 2026-02-25 16:40:25,038 basehttp 9692 15188 "GET / HTTP/1.1" 200 8152
+INFO 2026-02-25 16:40:29,304 basehttp 9692 15188 "GET / HTTP/1.1" 200 8152
+INFO 2026-02-25 16:40:30,030 basehttp 9692 15188 "GET / HTTP/1.1" 200 8153
+INFO 2026-02-25 16:40:56,899 basehttp 9692 15188 "GET / HTTP/1.1" 200 8142
+INFO 2026-02-25 16:41:21,594 basehttp 9692 15188 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-02-25 16:41:21,615 basehttp 9692 15188 "GET / HTTP/1.1" 200 8151
+INFO 2026-02-25 16:41:25,597 basehttp 9692 15188 "POST /i18n/ HTTP/1.1" 302 0
+INFO 2026-02-25 16:41:25,607 basehttp 9692 15188 "GET / HTTP/1.1" 200 8142
+INFO 2026-02-25 16:42:29,658 basehttp 9692 15188 "GET / HTTP/1.1" 200 8162
+INFO 2026-02-25 16:43:48,452 basehttp 9692 15188 "GET / HTTP/1.1" 200 8165
+INFO 2026-02-25 16:43:55,910 basehttp 9692 15188 "GET /accounts/login/ HTTP/1.1" 200 7837
+INFO 2026-02-25 16:44:04,997 basehttp 9692 15188 "GET /accounts/password/reset/ HTTP/1.1" 200 6905
+INFO 2026-02-25 16:44:08,567 basehttp 9692 15188 "GET /accounts/register/ HTTP/1.1" 200 10675
+INFO 2026-02-25 16:44:09,340 basehttp 9692 15188 "GET /accounts/login/ HTTP/1.1" 200 7837
+INFO 2026-02-25 16:44:11,066 basehttp 9692 15188 "GET /accounts/register/ HTTP/1.1" 200 10675
+INFO 2026-02-25 16:44:13,412 basehttp 9692 15188 "GET /accounts/login/ HTTP/1.1" 200 7837
+INFO 2026-02-25 16:44:20,415 basehttp 9692 15188 "GET / HTTP/1.1" 200 8165
+INFO 2026-02-25 18:03:07,414 basehttp 9692 19500 "GET /accounts/login/ HTTP/1.1" 200 7837
+INFO 2026-02-25 18:03:11,527 basehttp 9692 19500 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-02-25 18:03:11,555 basehttp 9692 19500 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-25 18:03:11,596 basehttp 9692 19500 "GET /tenants/ HTTP/1.1" 200 15450
+INFO 2026-02-25 18:03:17,670 basehttp 9692 19500 "GET /accounts/profile/ HTTP/1.1" 200 17175
+INFO 2026-02-25 18:04:04,693 basehttp 9692 19500 "GET /fleet/vehicles/ HTTP/1.1" 200 18361
+INFO 2026-02-25 18:04:07,929 basehttp 9692 19500 "GET /fleet/vehicles/create/ HTTP/1.1" 200 24631
+INFO 2026-02-25 18:04:53,471 basehttp 9692 1528 "GET /fleet/brands/create HTTP/1.1" 200 17295
+INFO 2026-02-25 18:05:32,427 basehttp 9692 1528 "POST /fleet/brands/create HTTP/1.1" 302 0
+INFO 2026-02-25 18:05:32,507 basehttp 9692 1528 "GET /fleet/brands/ HTTP/1.1" 200 15807
+INFO 2026-02-25 18:05:32,586 basehttp 9692 1528 "GET /media/fleet/logos/brands/car-logos-citroen_6kQUelu.jpg HTTP/1.1" 200 28395
+INFO 2026-02-25 18:05:40,296 basehttp 9692 1528 "GET /fleet/brands/063d7785-fc43-49b3-884a-0a7b7ef9ef6b/edit HTTP/1.1" 200 17622
+INFO 2026-02-25 18:05:40,360 basehttp 9692 1528 "GET /media/fleet/logos/brands/car-logos-citroen_6kQUelu.jpg HTTP/1.1" 304 0
+INFO 2026-02-25 18:05:43,909 basehttp 9692 1528 "GET /fleet/brands/ HTTP/1.1" 200 15807
+INFO 2026-02-25 18:05:43,970 basehttp 9692 1528 "GET /media/fleet/logos/brands/car-logos-citroen_6kQUelu.jpg HTTP/1.1" 304 0
+INFO 2026-02-25 18:05:48,920 basehttp 9692 1528 "GET /fleet/vehicles/ HTTP/1.1" 200 18361
+INFO 2026-02-25 18:05:53,540 basehttp 9692 1528 "GET /fleet/vehicles/create/ HTTP/1.1" 200 24777
+ERROR 2026-02-25 18:07:03,715 signals 9692 1528 Error logging vehicle change: Object of type VehicleBrand is not JSON serializable
+INFO 2026-02-25 18:07:03,725 basehttp 9692 1528 "POST /fleet/vehicles/create/ HTTP/1.1" 302 0
+INFO 2026-02-25 18:07:03,827 basehttp 9692 1528 "GET /fleet/vehicles/ HTTP/1.1" 200 21104
+INFO 2026-02-25 18:07:03,901 basehttp 9692 1528 "GET /media/fleet/vehicles/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/car-photos-jumpy2.jpg HTTP/1.1" 200 6207
+INFO 2026-02-25 18:07:11,884 basehttp 9692 1528 "GET /fleet/vehicles/4c55e074-2d44-4caa-97a7-5c30ff27ee7e/edit HTTP/1.1" 200 25201
+INFO 2026-02-25 18:07:11,952 basehttp 9692 1528 "GET /media/fleet/vehicles/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/car-photos-jumpy2.jpg HTTP/1.1" 304 0
+ERROR 2026-02-25 18:07:22,289 signals 9692 1528 Error logging vehicle change: Object of type VehicleBrand is not JSON serializable
+INFO 2026-02-25 18:07:22,297 basehttp 9692 1528 "POST /fleet/vehicles/4c55e074-2d44-4caa-97a7-5c30ff27ee7e/edit HTTP/1.1" 302 0
+INFO 2026-02-25 18:07:22,387 basehttp 9692 1528 "GET /fleet/vehicles/ HTTP/1.1" 200 21107
+INFO 2026-02-25 18:07:22,468 basehttp 9692 1528 "GET /media/fleet/vehicles/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/car-photos-jumpy2.jpg HTTP/1.1" 304 0
+WARNING 2026-02-25 18:07:48,966 basehttp 9692 1528 "GET /Aadmin HTTP/1.1" 404 3927
+WARNING 2026-02-25 18:07:49,087 basehttp 9692 1528 "GET /favicon.ico HTTP/1.1" 404 3942
+INFO 2026-02-25 18:07:53,858 basehttp 9692 1528 "GET /admin HTTP/1.1" 301 0
+INFO 2026-02-25 18:07:53,944 basehttp 9692 7852 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-02-25 18:07:54,256 basehttp 9692 7852 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 8160
+INFO 2026-02-25 18:07:54,320 basehttp 9692 7852 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2026-02-25 18:07:54,331 basehttp 9692 7852 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2026-02-25 18:07:54,341 basehttp 9692 7852 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2026-02-25 18:07:54,362 basehttp 9692 7852 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-02-25 18:07:54,386 basehttp 9692 7852 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2026-02-25 18:07:54,436 basehttp 9692 7852 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-02-25 18:07:54,499 basehttp 9692 7852 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-02-25 18:07:54,524 basehttp 9692 7852 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-02-25 18:07:54,559 basehttp 9692 7852 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2026-02-25 18:07:54,588 basehttp 9692 7852 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2026-02-25 18:08:11,181 basehttp 9692 7852 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3851
+INFO 2026-02-25 18:08:21,083 basehttp 9692 7852 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-02-25 18:08:21,098 basehttp 9692 7852 "GET / HTTP/1.1" 200 8165
+INFO 2026-02-25 18:08:26,759 basehttp 9692 7852 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4482
+INFO 2026-02-25 18:09:22,088 autoreload 1076 11220 Watching for file changes with StatReloader
+INFO 2026-02-25 18:09:27,731 basehttp 1076 15292 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4338
+INFO 2026-02-25 18:09:35,780 basehttp 1076 15292 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4336
+INFO 2026-02-25 18:10:28,628 autoreload 14456 18800 Watching for file changes with StatReloader
+INFO 2026-02-25 18:11:01,619 basehttp 14456 5264 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-02-25 18:11:01,896 basehttp 14456 5264 "GET /admin/ HTTP/1.1" 200 16866
+INFO 2026-02-25 18:11:02,076 basehttp 14456 5264 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-02-25 18:11:02,098 basehttp 14456 12252 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2026-02-25 18:11:02,099 basehttp 14456 5264 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-02-25 18:11:02,125 basehttp 14456 12436 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-02-25 18:11:27,088 basehttp 14456 12436 "GET /admin/tenants/tenant/ HTTP/1.1" 200 20982
+INFO 2026-02-25 18:11:27,137 basehttp 14456 12436 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2026-02-25 18:11:27,156 basehttp 14456 12436 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-02-25 18:11:27,173 basehttp 14456 12436 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2026-02-25 18:11:27,234 basehttp 14456 12252 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 18:11:27,246 basehttp 14456 12252 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2026-02-25 18:11:27,247 basehttp 14456 12436 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2026-02-25 18:11:27,258 basehttp 14456 12252 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-02-25 18:11:27,258 basehttp 14456 12436 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-02-25 18:11:27,268 basehttp 14456 12436 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-02-25 18:11:27,297 basehttp 14456 5264 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2026-02-25 18:11:27,350 basehttp 14456 5264 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-02-25 18:11:27,437 basehttp 14456 12252 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2026-02-25 18:11:27,472 basehttp 14456 12252 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-02-25 21:00:15,049 basehttp 14456 9244 "GET /admin/tenants/tenant/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/change/ HTTP/1.1" 200 41653
+INFO 2026-02-25 21:00:15,163 basehttp 14456 9244 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2026-02-25 21:00:15,210 basehttp 14456 19464 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2026-02-25 21:00:15,215 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:00:15,217 basehttp 14456 18940 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2026-02-25 21:00:15,232 basehttp 14456 18940 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-02-25 21:00:15,266 basehttp 14456 19464 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2026-02-25 21:00:15,337 basehttp 14456 9244 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2026-02-25 21:00:15,413 basehttp 14456 9244 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-02-25 21:00:15,588 basehttp 14456 9244 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2026-02-25 21:00:15,622 basehttp 14456 19464 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2026-02-25 21:00:34,515 basehttp 14456 19464 "GET /admin/accounts/customuser/add/?_to_field=id&_popup=1 HTTP/1.1" 200 13047
+INFO 2026-02-25 21:00:34,555 basehttp 14456 19464 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:00:34,557 basehttp 14456 9244 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2026-02-25 21:00:34,575 basehttp 14456 9244 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2026-02-25 21:00:54,571 basehttp 14456 9244 "POST /admin/accounts/customuser/add/?_to_field=id&_popup=1 HTTP/1.1" 200 365
+INFO 2026-02-25 21:00:54,598 basehttp 14456 9244 "GET /static/admin/js/popup_response.js HTTP/1.1" 200 532
+INFO 2026-02-25 21:01:08,131 basehttp 14456 9244 "POST /admin/tenants/tenant/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/change/ HTTP/1.1" 302 0
+INFO 2026-02-25 21:01:08,241 basehttp 14456 9244 "GET /admin/tenants/tenant/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/change/ HTTP/1.1" 200 42150
+INFO 2026-02-25 21:01:08,273 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:01:19,267 basehttp 14456 9244 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 537
+INFO 2026-02-25 21:01:31,158 basehttp 14456 9244 "POST /admin/tenants/tenant/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/change/ HTTP/1.1" 200 45426
+INFO 2026-02-25 21:01:31,196 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:01:36,557 basehttp 14456 9244 "POST /admin/tenants/tenant/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/change/ HTTP/1.1" 302 0
+INFO 2026-02-25 21:01:36,621 basehttp 14456 9244 "GET /admin/tenants/tenant/ HTTP/1.1" 200 21221
+INFO 2026-02-25 21:01:36,659 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:01:38,581 basehttp 14456 9244 "GET /admin/tenants/tenant/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/change/ HTTP/1.1" 200 41862
+INFO 2026-02-25 21:01:38,615 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:02:07,584 signals 14456 9244 Tenant 6bf1a1b1-cd9c-4304-9dc2-516b66616eb8: User dauroajr@daj.com koined as admin
+INFO 2026-02-25 21:02:07,599 basehttp 14456 9244 "POST /admin/tenants/tenant/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/change/ HTTP/1.1" 302 0
+INFO 2026-02-25 21:02:07,670 basehttp 14456 9244 "GET /admin/tenants/tenant/ HTTP/1.1" 200 21222
+INFO 2026-02-25 21:02:07,707 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:02:09,432 basehttp 14456 9244 "GET /admin/tenants/tenant/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/change/ HTTP/1.1" 200 41879
+INFO 2026-02-25 21:02:09,471 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:02:16,403 basehttp 14456 9244 "POST /admin/tenants/tenant/5e08ccee-fe8d-4ca4-bc16-b438acb47b58/change/ HTTP/1.1" 302 0
+INFO 2026-02-25 21:02:16,460 basehttp 14456 9244 "GET /admin/tenants/tenant/ HTTP/1.1" 200 21221
+INFO 2026-02-25 21:02:16,500 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:02:17,808 basehttp 14456 9244 "GET /admin/tenants/tenant/6bf1a1b1-cd9c-4304-9dc2-516b66616eb8/change/ HTTP/1.1" 200 45357
+INFO 2026-02-25 21:02:17,845 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:02:33,546 basehttp 14456 9244 "GET /admin/fleet/vehicle/ HTTP/1.1" 200 27145
+INFO 2026-02-25 21:02:33,581 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:02:33,622 basehttp 14456 9244 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2026-02-25 21:02:51,763 basehttp 14456 9244 "GET /admin/fleet/vehicle/?tenant__id__exact=6bf1a1b1-cd9c-4304-9dc2-516b66616eb8 HTTP/1.1" 200 30559
+INFO 2026-02-25 21:02:51,804 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:02:55,017 basehttp 14456 9244 "GET /admin/fleet/vehicle/?tenant__id__exact=5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 200 31316
+INFO 2026-02-25 21:02:55,051 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:03:00,816 basehttp 14456 9244 "GET /admin/fleet/vehicle/?_facets=True&tenant__id__exact=5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 200 33010
+INFO 2026-02-25 21:03:00,852 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:03:00,874 basehttp 14456 9244 "GET /static/admin/img/icon-hidelink.svg HTTP/1.1" 200 784
+INFO 2026-02-25 21:03:04,255 basehttp 14456 9244 "GET /admin/fleet/vehicle/?tenant__id__exact=5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 200 31316
+INFO 2026-02-25 21:03:04,291 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 21:03:05,099 basehttp 14456 9244 "GET /admin/fleet/vehicle/?_facets=True&tenant__id__exact=5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 200 33010
+INFO 2026-02-25 21:03:05,136 basehttp 14456 9244 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2026-02-25 21:03:06,917 log 14456 9244 Internal Server Error: /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (capacity_m3_or_liters_or_liters) specified for Vehicle
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+        request, obj, change=not add, fields=flatten_fieldsets(fieldsets)
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unknown field(s) (capacity_m3_or_liters_or_liters) specified for Vehicle. Check fields/fieldsets/exclude attributes of class VehicleAdmin.
+ERROR 2026-02-25 21:03:06,929 basehttp 14456 9244 "GET /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/?_changelist_filters=_facets%3DTrue%26tenant__id__exact%3D5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 500 164644
+INFO 2026-02-25 21:05:39,911 autoreload 14456 18800 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:05:41,285 autoreload 4728 20840 Watching for file changes with StatReloader
+ERROR 2026-02-25 21:06:14,844 log 4728 19924 Internal Server Error: /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'maintenance_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: Vehicle has no field named 'maintenance_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 722, in resolve
+    obj = self.var.resolve(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 925, in _resolve_lookup
+    current = current()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\helpers.py", line 275, in contents
+    f, attr, value = lookup_field(field, obj, model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py", line 173, in maintenance_status
+    return format_html(
+        "<span class='badge bg-success'>{% translate 'Up to date' %}</span>"
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\html.py", line 145, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: "% translate 'Up to date' %"
+ERROR 2026-02-25 21:06:14,863 basehttp 4728 19924 "GET /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/?_changelist_filters=_facets%3DTrue%26tenant__id__exact%3D5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 500 613012
+INFO 2026-02-25 21:07:57,436 autoreload 4728 20840 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:07:58,015 autoreload 24132 23712 Watching for file changes with StatReloader
+INFO 2026-02-25 21:08:00,553 autoreload 24132 23712 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:08:01,089 autoreload 24088 25300 Watching for file changes with StatReloader
+INFO 2026-02-25 21:08:04,317 autoreload 24088 25300 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:08:04,992 autoreload 17424 2696 Watching for file changes with StatReloader
+INFO 2026-02-25 21:08:06,167 autoreload 17424 2696 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:08:06,641 autoreload 23524 22400 Watching for file changes with StatReloader
+INFO 2026-02-25 21:08:49,996 autoreload 23524 22400 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:08:50,491 autoreload 13484 12792 Watching for file changes with StatReloader
+INFO 2026-02-25 21:08:52,693 autoreload 13484 12792 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:08:53,251 autoreload 9464 19464 Watching for file changes with StatReloader
+ERROR 2026-02-25 21:09:02,045 log 9464 15476 Internal Server Error: /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'maintenance_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: Vehicle has no field named 'maintenance_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 722, in resolve
+    obj = self.var.resolve(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 925, in _resolve_lookup
+    current = current()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\helpers.py", line 275, in contents
+    f, attr, value = lookup_field(field, obj, model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py", line 173, in maintenance_status
+    return format_html(
+        '<span class="badge bg-success">{% translate "Up to date" %}</span>'
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\html.py", line 145, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: '% translate "Up to date" %'
+ERROR 2026-02-25 21:09:02,055 basehttp 9464 15476 "GET /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/?_changelist_filters=_facets%3DTrue%26tenant__id__exact%3D5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 500 612880
+ERROR 2026-02-25 21:09:08,525 log 9464 15476 Internal Server Error: /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'maintenance_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: Vehicle has no field named 'maintenance_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 722, in resolve
+    obj = self.var.resolve(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 925, in _resolve_lookup
+    current = current()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\helpers.py", line 275, in contents
+    f, attr, value = lookup_field(field, obj, model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py", line 173, in maintenance_status
+    return format_html(
+        '<span class="badge bg-success">{% translate "Up to date" %}</span>'
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\html.py", line 145, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: '% translate "Up to date" %'
+ERROR 2026-02-25 21:09:08,532 basehttp 9464 15476 "GET /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/?_changelist_filters=_facets%3DTrue%26tenant__id__exact%3D5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 500 613011
+INFO 2026-02-25 21:17:19,310 autoreload 9464 19464 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:17:19,868 autoreload 6764 23884 Watching for file changes with StatReloader
+INFO 2026-02-25 21:17:21,096 autoreload 6764 23884 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:17:21,872 autoreload 7672 24888 Watching for file changes with StatReloader
+INFO 2026-02-25 21:17:33,282 autoreload 7672 24888 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 21:17:33,845 autoreload 25092 19088 Watching for file changes with StatReloader
+ERROR 2026-02-25 21:17:37,493 log 25092 14076 Internal Server Error: /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'maintenance_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: Vehicle has no field named 'maintenance_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 722, in resolve
+    obj = self.var.resolve(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\template\base.py", line 925, in _resolve_lookup
+    current = current()
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\helpers.py", line 275, in contents
+    f, attr, value = lookup_field(field, obj, model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py", line 173, in maintenance_status
+    return format_html(
+        "<span class='badge bg-success'>{% translate 'Up to date' %}</span>"
+    )
+  File "C:\daj\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\.venv\Lib\site-packages\django\utils\html.py", line 145, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: "% translate 'Up to date' %"
+ERROR 2026-02-25 21:17:37,499 basehttp 25092 14076 "GET /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/?_changelist_filters=_facets%3DTrue%26tenant__id__exact%3D5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 500 613011
+INFO 2026-02-25 22:36:56,690 autoreload 25092 19088 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 22:36:57,707 autoreload 2132 19552 Watching for file changes with StatReloader
+INFO 2026-02-25 22:36:58,952 autoreload 2132 19552 C:\DAJ\PROGRAMMING\Projects\Web Apps\TMS\tms_v0.0.9\fleet\admin.py changed, reloading.
+INFO 2026-02-25 22:36:59,664 autoreload 19444 15096 Watching for file changes with StatReloader
+INFO 2026-02-25 22:37:04,398 basehttp 19444 20384 "GET /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/?_changelist_filters=_facets%3DTrue%26tenant__id__exact%3D5e08ccee-fe8d-4ca4-bc16-b438acb47b58 HTTP/1.1" 200 48292
+INFO 2026-02-25 22:37:04,480 basehttp 19444 20384 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:37:04,603 basehttp 19444 20384 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2026-02-25 22:38:04,679 basehttp 19444 2236 "GET /admin/accounts/customuser/ HTTP/1.1" 200 25607
+INFO 2026-02-25 22:38:04,723 basehttp 19444 2236 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:38:14,816 basehttp 19444 2236 "GET /admin/personnel/driverprofile/ HTTP/1.1" 200 20325
+INFO 2026-02-25 22:38:14,860 basehttp 19444 2236 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:38:17,598 basehttp 19444 2236 "GET /admin/personnel/driverprofile/add/ HTTP/1.1" 200 37953
+INFO 2026-02-25 22:38:17,634 basehttp 19444 2236 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:38:22,731 basehttp 19444 2236 "GET /admin/personnel/employee/ HTTP/1.1" 200 24079
+INFO 2026-02-25 22:38:22,765 basehttp 19444 2236 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:38:30,771 basehttp 19444 2236 "GET /admin/personnel/employee/add/ HTTP/1.1" 200 47042
+INFO 2026-02-25 22:38:30,810 basehttp 19444 2236 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:38:30,811 basehttp 19444 24528 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2026-02-25 22:38:49,755 basehttp 19444 24528 "POST /admin/personnel/employee/add/ HTTP/1.1" 200 47882
+INFO 2026-02-25 22:38:49,793 basehttp 19444 24528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:39:28,190 basehttp 19444 24528 "POST /admin/personnel/employee/add/ HTTP/1.1" 200 47445
+INFO 2026-02-25 22:39:28,223 basehttp 19444 24528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:39:52,792 basehttp 19444 24528 "POST /admin/personnel/employee/add/ HTTP/1.1" 200 47438
+INFO 2026-02-25 22:39:52,827 basehttp 19444 24528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:40:01,149 signals 19444 24528 Employee keke keke (12) created
+INFO 2026-02-25 22:40:01,166 basehttp 19444 24528 "POST /admin/personnel/employee/add/ HTTP/1.1" 302 0
+INFO 2026-02-25 22:40:01,231 basehttp 19444 24528 "GET /admin/personnel/employee/ HTTP/1.1" 200 25090
+INFO 2026-02-25 22:40:01,263 basehttp 19444 24528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:45:52,009 basehttp 19444 1232 "GET /admin/personnel/driverprofile/ HTTP/1.1" 200 20325
+INFO 2026-02-25 22:45:52,046 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:45:53,155 basehttp 19444 1232 "GET /admin/personnel/driverprofile/add/ HTTP/1.1" 200 38033
+INFO 2026-02-25 22:45:53,188 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:46:13,274 basehttp 19444 1232 "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 2455
+INFO 2026-02-25 22:47:05,739 basehttp 19444 1232 "POST /admin/personnel/driverprofile/add/ HTTP/1.1" 200 38383
+INFO 2026-02-25 22:47:05,774 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:47:18,820 basehttp 19444 1232 "POST /admin/personnel/driverprofile/add/ HTTP/1.1" 200 38383
+INFO 2026-02-25 22:47:18,858 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:47:29,497 signals 19444 1232 Driver profile for keke keke created
+INFO 2026-02-25 22:47:29,511 basehttp 19444 1232 "POST /admin/personnel/driverprofile/add/ HTTP/1.1" 302 0
+INFO 2026-02-25 22:47:29,578 basehttp 19444 1232 "GET /admin/personnel/driverprofile/ HTTP/1.1" 200 23750
+INFO 2026-02-25 22:47:29,617 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:47:33,065 basehttp 19444 1232 "GET /admin/fleet/vehicle/ HTTP/1.1" 200 27145
+INFO 2026-02-25 22:47:33,105 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:47:36,560 basehttp 19444 1232 "GET /admin/fleet/vehicle/65036327-7482-481f-8508-e7a4d00b42c3/change/ HTTP/1.1" 200 48000
+INFO 2026-02-25 22:47:36,595 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:47:44,501 basehttp 19444 1232 "GET /admin/fleet/vehicleassignment/ HTTP/1.1" 200 18979
+INFO 2026-02-25 22:47:44,537 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:47:46,414 basehttp 19444 1232 "GET /admin/fleet/vehicleassignment/add/ HTTP/1.1" 200 31618
+INFO 2026-02-25 22:47:46,453 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-25 22:49:28,580 basehttp 19444 1232 "POST /admin/fleet/vehicleassignment/add/ HTTP/1.1" 200 31821
+INFO 2026-02-25 22:49:28,620 basehttp 19444 1232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342

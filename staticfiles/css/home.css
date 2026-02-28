@@ -1,58 +1,39 @@
-.main-content {
-  width: 100%;
-  max-width: none;
-  display: grid;
-  /* align-items: center; */
-  /* align-content: center; */
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  background: #efefef; /* #9392d2 */
+/* ==============================
+   HOME PAGE
+============================== */
+
+.home-page {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.home-title {
-  font-family: "Baskervville";
-  margin-top: 20px;
-  margin-bottom: 40px;
+/* Feature Cards */
+
+.home-page .feature-card {
+  border-radius: 12px;
+  transition: all 0.25s ease;
 }
 
-.card-group {
-  margin: 15px;
-  display: block;
+.home-page .feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
-.card {
-  display: flex;
-  flex-direction: row;
+.home-page .feature-card .card-body {
+  padding: 2rem;
 }
 
-.card:nth-child(1),
-.card:nth-child(3) {
-  flex-direction: row-reverse;
+.home-page .feature-card h5 {
+  margin-bottom: 1rem;
 }
 
-.card-img-top {
-  max-height: 260px;
-  max-width: 750px;
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: blur(0.5px);
-  /* filter: opacity(90%); */
-  background-clip: content-box;
-  border-radius: 0;
+.home-page .feature-card p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-}
+/* CTA */
 
-p.card-text {
-  width: 700px;
-  align-items: flex-start;
+.home-page .cta-card {
+  border-radius: 14px;
 }

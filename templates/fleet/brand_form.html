@@ -34,7 +34,8 @@
           </p>
         </div>
         <div>
-          <a href="{% url 'fleet:brand_list' %}" class="btn btn-outline-secondary">
+          <a href="{% url 'fleet:brand_list' %}" class="btn btn-outline-secondary"
+            style="background: linear-gradient(to bottom, #4374d5,black);">
             <i class="bi bi-arrow-left"></i> {% translate "Back" %}
           </a>
         </div>
@@ -147,7 +148,8 @@
               <a href="{% url 'fleet:brand_list' %}" class="btn btn-outline-secondary">
                 <i class="bi bi-x-circle"></i> {% translate "Cancel" %}
               </a>
-              <button type="submit" class="btn btn-primary" style="background: linear-gradient(to bottom, #284378, black);">
+              <button type="submit" class="btn btn-primary"
+                style="background: linear-gradient(to bottom, #4374d5, black);">
                 <i class="bi bi-check-circle"></i>
                 {% if object %}
                 {% translate "Update Brand" %}
@@ -167,7 +169,7 @@
             <i class="bi bi-lightbulb"></i> {% translate "Tip" %}
           </h6>
           <p class="text-muted small mb-0">
-          {% translate "After adding brands, you'll be able to select them when adding new vehicles to your fleet."%}
+            {% translate "After adding brands, you'll be able to select them when adding new vehicles to your fleet."%}
           </p>
         </div>
       </div>

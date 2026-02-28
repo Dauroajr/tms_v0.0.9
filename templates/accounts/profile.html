@@ -2,7 +2,7 @@
 {% load static i18n l10n %}
 
 {% block title %}
-  {% translate 'My profile - TMS' %}
+{% translate 'My profile - TMS' %}
 {% endblock title %}
 
 {% block content %}
@@ -13,7 +13,7 @@
       <div class="card shadow-sm mb-4">
         <div class="card-body text-center p-4">
           <div class="mb-3">
-            <i class="bi bi-person-circle display-1 text-primary"></i>            
+            <i class="bi bi-person-circle display-1 text-primary"></i>
           </div>
 
           <h4 class="mb-1">
@@ -23,7 +23,8 @@
           <p class="text-muted mb-3">{{ user_profile.email }}</p>
 
           <div class="d-grid gap-2">
-            <a href="{% url 'accounts:profile_edit' %}" class="btn btn-primary">
+            <a href="{% url 'accounts:profile_edit' %}" class="btn btn-primary"
+              style="background: linear-gradient(to bottom, #4374d5,black);">
               <i class="bi bi-pencil"></i>{% translate 'Edit Profile' %}
             </a>
             <a href="{% url 'accounts:password_change' %}" class="btn btn-outline-secondary">
@@ -43,16 +44,16 @@
             <dt class="col-sm-5 text-muted small">{% translate 'Username' %}:</dt>
             <dd class="col-sm-7 small">{{ user_profile.username }}</dd>
 
-            
+
             <dt class="col-sm-5 text-muted small">{% translate 'Phone' %}:</dt>
             <dd class="col-sm-7 small">{{ user_profile.phone|default:"Not provided" }}</dd>
 
             <dt class="col-sm-5 text-muted small">{% translate 'Document' %}:</dt>
             <dd class="col-sm-7 small">
               {% if user_profile.document_number %}
-                {{ user_profile.get_document_type_display }}: {{ user_profile.document_number}}
+              {{ user_profile.get_document_type_display }}: {{ user_profile.document_number}}
               {% else %}
-                {% translate 'Not provided' %}
+              {% translate 'Not provided' %}
               {% endif %}
             </dd>
 
@@ -64,15 +65,15 @@
             <dt class="col-sm-5 text-muted small">{% translate 'Last Login' %}:</dt>
             <dd class="col-sm-7 small">
               {% if user_profile.last_login %}
-                {{ user_profile.last_login|date:"d M, Y H:i" }}
+              {{ user_profile.last_login|date:"d M, Y H:i" }}
               {% else %}
-                {% translate 'Never' %}
+              {% translate 'Never' %}
               {% endif %}
             </dd>
 
           </dl>
         </div>
-      </div>      
+      </div>
     </div>
 
     <div class="col-lg-8">
@@ -81,59 +82,61 @@
           <h5 class="mb-0">
             <i class="bi bi-building">{% translate 'My Organizations' %}</i>
           </h5>
-          <a href="{% url 'tenants:create' %}" class="btn btn-sm btn-primary">
+          <a href="{% url 'tenants:create' %}" class="btn btn-sm btn-primary"
+            style="background: linear-gradient(to bottom, #4374d5,black);">
             <i class="bi bi-plus"></i>
           </a>
         </div>
 
         <div class="card-body">
           {% if memberships %}
-            <div class="list-group list-group-flush">
-              {% for membership in memberships %}
-                <div class="list-group-item">
-                  <div class="d-flex justify-content-between align-items center">
-                    <div>
-                      <h6 class="mb-1">
-                        <i class="bi bi-building"></i>{{ membership.tenant.name }}
-                      </h6>
-                      <small class="text-muted">
-                        <i class="bi bi-shield check"></i>
-                        {{ membership.get_role_display }}
-                        {% if membership.get_role_display %}
-                          <span class="badge bg-primary">{% translate 'Owner' %}</span>
-                        {% endif %}
-                      </small>
-                      <br>
-                      <small class="text-muted">
-                        <i class="bi bi-calendar"></i>
-                        {% translate 'Joined' %} {{ membership.joined_at|date:"d M, Y"}}
-                      </small>
-                    </div>
-
-                    <div>
-                      <a href="" class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-arrow-right"></i>{% translate 'View' %}
-                      </a>
-                    </div>
-                  </div>
+          <div class="list-group list-group-flush">
+            {% for membership in memberships %}
+            <div class="list-group-item">
+              <div class="d-flex justify-content-between align-items center">
+                <div>
+                  <h6 class="mb-1">
+                    <i class="bi bi-building"></i>{{ membership.tenant.name }}
+                  </h6>
+                  <small class="text-muted">
+                    <i class="bi bi-shield check"></i>
+                    {{ membership.get_role_display }}
+                    {% if membership.get_role_display %}
+                    <span class="badge bg-primary" style="background: linear-gradient(to bottom, #4374d5,black);">
+                      {% translate 'Owner' %}</span>
+                    {% endif %}
+                  </small>
+                  <br>
+                  <small class="text-muted">
+                    <i class="bi bi-calendar"></i>
+                    {% translate 'Joined' %} {{ membership.joined_at|date:"d M, Y"}}
+                  </small>
                 </div>
-              {% endfor %}
+
+                <div>
+                  <a href="" class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-arrow-right"></i>{% translate 'View' %}
+                  </a>
+                </div>
+              </div>
             </div>
+            {% endfor %}
+          </div>
           {% else %}
-            <div class="text-center py-5">
-              <i class="bi bi-building display-1 text-muted"></i>
-              <p class="mt-3 text-muted">{% translate "You're not a member of any organization yet" %}</p>
-              <a href="{% url 'tenants:create' %}" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i>{% translate 'Create your first organization' %}
-              </a>
-            </div>
+          <div class="text-center py-5">
+            <i class="bi bi-building display-1 text-muted"></i>
+            <p class="mt-3 text-muted">{% translate "You're not a member of any organization yet" %}</p>
+            <a href="{% url 'tenants:create' %}" class="btn btn-primary">
+              <i class="bi bi-plus-circle"></i>{% translate 'Create your first organization' %}
+            </a>
+          </div>
           {% endif %}
         </div>
       </div>
 
       <div class="card shadow-sm border-danger">
-        <div class="card-header bg-danger text-white">
-          <h6 class="mb-0">
+        <div class="card-header bg-danger text-white" style="background: linear-gradient(to bottom, #fd5959,black);">
+          <h6 class="mb-0" style=" color: #fff;">
             <i class="bi bi-exclamation-triangle"></i>{% translate 'Danger Zone' %}
           </h6>
         </div>
@@ -141,7 +144,8 @@
           <p class="text-muted mb-3">
             {% translate 'Once you delete your account, there is no going back. Please be certain.' %}
           </p>
-          <a href="{% url 'accounts:delete_account' %}" class="btn btn-danger">
+          <a href="{% url 'accounts:delete_account' %}" class="btn btn-danger"
+            style="background: linear-gradient(to bottom, #fd5959,black);">
             <i class="bi bi-trash"></i>{% translate 'Delete Account' %}
           </a>
         </div>

@@ -74,12 +74,12 @@
           <i class="bi bi-calendar-check"></i> {% translate 'Pending Workdays' %}
         </h5>
         <div>
-          <button type="button" class="btn btn-sm btn-outline-primary" id="selectAll" 
-          style="background: linear-gradient(to bottom, #284378, black);">
+          <button type="button" class="btn btn-sm btn-outline-primary" id="selectAll"
+            style="background: linear-gradient(to bottom, #4374d5, black);">
             <i class="bi bi-check-all"></i> {% translate 'Select All' %}
           </button>
-          <button type="button" class="btn btn-sm btn-outline-secondary" 
-          style="background: linear-gradient(to bottom, #284378, black);" id="deselectAll">
+          <button type="button" class="btn btn-sm btn-outline-secondary"
+            style="background: linear-gradient(to bottom, #4374d5, black);" id="deselectAll">
             <i class="bi bi-x-circle"></i> {% translate "Deselect All" %}
           </button>
         </div>
@@ -194,8 +194,8 @@
             </p>
           </div>
           <div class="col-md-4 text-end">
-            <button type="submit" class="btn btn-success btn-lg" 
-            style="background: linear-gradient(to bottom, #284378, black);" id="approveBtn" disabled>
+            <button type="submit" class="btn btn-success btn-lg"
+              style="background: linear-gradient(to bottom, #4374d5, black);" id="approveBtn" disabled>
               <i class="bi bi-check-circle"></i> {% translate "Create Approval Batch" %}
             </button>
           </div>
@@ -222,7 +222,7 @@
 
 <!-- JavaScript -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const checkAll = document.getElementById('checkAll');
     const selectAllBtn = document.getElementById('selectAll');
     const deselectAllBtn = document.getElementById('deselectAll');
@@ -251,7 +251,7 @@
     }
 
     // Check All
-    checkAll.addEventListener('change', function() {
+    checkAll.addEventListener('change', function () {
       checkboxes.forEach(checkbox => {
         checkbox.checked = this.checked;
       });
@@ -259,7 +259,7 @@
     });
 
     // Select All button
-    selectAllBtn.addEventListener('click', function() {
+    selectAllBtn.addEventListener('click', function () {
       checkboxes.forEach(checkbox => {
         checkbox.checked = true;
       });
@@ -268,17 +268,17 @@
     });
 
     // Deselect All button
-    deselectAllBtn.addEventListener('click', function() {
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = false;
-        });
-        checkAll.checked = false;
-        updateTotals();
+    deselectAllBtn.addEventListener('click', function () {
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      checkAll.checked = false;
+      updateTotals();
     });
 
     // Individual Checkbox Change
     checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', function() {
+      checkbox.addEventListener('change', function () {
         // Update check all status
         const allChecked = Array.from(checkboxes).every(cb => cb.checked);
         checkAll.checked = allChecked

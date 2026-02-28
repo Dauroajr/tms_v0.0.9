@@ -2,7 +2,7 @@
 {% load static i18n l10n %}
 
 {% block title %}
-  Login - TMS
+Login - TMS
 {% endblock title %}
 
 {% block content %}
@@ -39,21 +39,21 @@
               </label>
               {{ form.password }}
               {% if form.password.errors %}
-                <div class="invalid-feedbac d-block">
-                  {{ form.password.errors }}
-                </div>
+              <div class="invalid-feedbac d-block">
+                {{ form.password.errors }}
+              </div>
               {% endif %}
             </div>
 
             {% if form.non_field.errors %}
-              <div class="alert alert-danger">
-                {{ form.non_field_errors }}
-              </div>
+            <div class="alert alert-danger">
+              {{ form.non_field_errors }}
+            </div>
             {% endif %}
 
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary btn-lg" 
-                      style="background: linear-gradient(to bottom, #284378, black);">
+              <button type="submit" class="btn btn-primary btn-lg"
+                style="background: linear-gradient(to bottom, #4374d5, black);">
                 <i class="bi bi-box-arrow-in-right"></i> {% translate 'Sign In' %}
               </button>
             </div>

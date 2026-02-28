@@ -95,7 +95,8 @@
               <i class="bi bi-info-circle"></i> {% translate "Cannot Delete" %}
             </h6>
             <p class="mb-0">
-              {% translate "This workday has already been paid and cannot be deleted. Please contact your administrator if you need to make changes." %}
+              {% translate "This workday has already been paid and cannot be deleted. Please contact your administrator
+              if you need to make changes." %}
             </p>
           </div>
           {% else %}
@@ -114,8 +115,8 @@
               <a href="{% url 'fleet:workday_detail' object.pk %}" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i> {% translate "Cancel" %}
               </a>
-              <button type="submit" class="btn btn-danger" 
-              style="background: linear-gradient(to bottom, #284378, black);">
+              <button type="submit" class="btn btn-danger"
+                style="background: linear-gradient(to bottom, #4374d5, black);">
                 <i class="bi bi-trash"></i> {% translate "Yes, Delete Workday" %}
               </button>
             </div>

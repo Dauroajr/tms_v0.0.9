@@ -136,17 +136,17 @@
         <div class="col-md-3">
           <label for="client" class="form-label small text-muted">{% translate "Client" %}</label>
           <input type="text" name="client" id="client" class="form-control"
-                 placeholder="{% translate 'Client name...' %}">
+            placeholder="{% translate 'Client name...' %}">
         </div>
 
-        <div class="col-md-2 d-flex align-items-end">
-          <button type="submit" class="btn btn-primary w-100" 
-          style="background: linear-gradient(to bottom, #284378, black);">
+        <div class="col-md-3 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100"
+            style="background: linear-gradient(to bottom, #4374d5, black);">
             <i class="bi bi-funnel"></i> {% translate "Filter" %}
           </button>
         </div>
 
-        <div class="col-md-2 d-flex align-items-end">
+        <div class="col-md-3 d-flex align-items-end">
           <a href="{% url 'fleet:expense_report_list' %}" class="btn btn-outline-secondary w-100">
             <i class="bi bi-x-circle"></i> {% translate "Clear" %}
           </a>
@@ -161,8 +161,7 @@
       <h5 class="mb-0">
         <i class="bi bi-table"></i> {% translate "Expense Reports" %}
       </h5>
-      <button class="btn btn-sm btn-outline-success" 
-      style="background: linear-gradient(to bottom, #284378, black);">
+      <button class="btn btn-sm btn-outline-success">
         <i class="bi bi-file-earmark-excel"></i> {% translate "Export" %}
       </button>
     </div>
@@ -196,8 +195,9 @@
               </td>
               <td>
                 <div class="d-flex align-items-center">
-                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" 
-                       style="width: 36px; height: 36px; font-size: 14px;">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
+                    style="width: 36px; height: 36px; font-size: 14px;">
                     {{ expense_report.assignment.driver.full_name|slice:":1"|upper }}
                   </div>
                   <div>
@@ -213,50 +213,46 @@
               </td>
               <td class="text-center">
                 {% if expense_report.status == 'generated' %}
-                  <span class="badge bg-info">
-                    <i class="bi bi-file-plus"></i> {% translate "Generated" %}
-                  </span>
+                <span class="badge bg-info">
+                  <i class="bi bi-file-plus"></i> {% translate "Generated" %}
+                </span>
                 {% elif expense_report.status == 'sent' %}
-                  <span class="badge bg-warning">
-                    <i class="bi bi-envelope"></i> {% translate "Sent" %}
-                  </span>
+                <span class="badge bg-warning">
+                  <i class="bi bi-envelope"></i> {% translate "Sent" %}
+                </span>
                 {% elif expense_report.status == 'approved' %}
-                  <span class="badge bg-success">
-                    <i class="bi bi-check-circle"></i> {% translate "Approved" %}
-                  </span>
+                <span class="badge bg-success">
+                  <i class="bi bi-check-circle"></i> {% translate "Approved" %}
+                </span>
                 {% elif expense_report.status == 'rejected' %}
-                  <span class="badge bg-danger">
-                    <i class="bi bi-x-circle"></i> {% translate "Rejected" %}
-                  </span>
+                <span class="badge bg-danger">
+                  <i class="bi bi-x-circle"></i> {% translate "Rejected" %}
+                </span>
                 {% endif %}
               </td>
               <td class="text-center">
                 {% if expense_report.sent_at %}
-                  <i class="bi bi-check-circle-fill text-success" 
-                     title="{{ expense_report.sent_at|date:'d/m/Y H:i' }}"></i>
+                <i class="bi bi-check-circle-fill text-success"
+                  title="{{ expense_report.sent_at|date:'d/m/Y H:i' }}"></i>
                 {% else %}
-                  <i class="bi bi-x-circle text-muted"></i>
+                <i class="bi bi-x-circle text-muted"></i>
                 {% endif %}
               </td>
               <td class="text-end pe-3">
                 <div class="btn-group btn-group-sm">
-                  <a href="{% url 'fleet:expense_report_detail' expense_report.pk %}" 
-                     class="btn btn-outline-primary"
-                     title="{% translate 'View Details' %}">
+                  <a href="{% url 'fleet:expense_report_detail' expense_report.pk %}" class="btn btn-outline-primary"
+                    title="{% translate 'View Details' %}">
                     <i class="bi bi-eye"></i>
                   </a>
                   {% if expense_report.pdf_file %}
-                  <a href="{{ expense_report.pdf_file.url }}" 
-                     class="btn btn-outline-success"
-                     title="{% translate 'Download PDF' %}"
-                     target="_blank">
+                  <a href="{{ expense_report.pdf_file.url }}" class="btn btn-outline-success"
+                    title="{% translate 'Download PDF' %}" target="_blank">
                     <i class="bi bi-file-pdf"></i>
                   </a>
                   {% endif %}
                   {% if expense_report.status == 'sent' %}
-                  <button class="btn btn-outline-info btn-sm"
-                          title="{% translate 'Resend Email' %}" 
-                          style="background: linear-gradient(to bottom, #284378, black);">
+                  <button class="btn btn-outline-info btn-sm" title="{% translate 'Resend Email' %}"
+                    style="background: linear-gradient(to bottom, #4374d5, black);">
                     <i class="bi bi-envelope"></i>
                   </button>
                   {% endif %}
@@ -270,7 +266,8 @@
                 <p class="text-muted mt-3 mb-0">
                   {% translate "No expense reports found" %}
                 </p>
-                <a href="{% url 'fleet:payment_order_list' %}" class="btn btn-primary mt-3">
+                <a href="{% url 'fleet:payment_order_list' %}" class="btn btn-primary mt-3"
+                  style="background: linear-gradient(to bottom, #4374d5,black);">
                   <i class="bi bi-cash-stack"></i> {% translate "View Payment Orders" %}
                 </a>
               </td>
@@ -306,7 +303,8 @@
             <a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="bi bi-chevron-right"></i></a>
           </li>
           <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"><i class="bi bi-chevron-double-right"></i></a>
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"><i
+                class="bi bi-chevron-double-right"></i></a>
           </li>
           {% endif %}
         </ul>

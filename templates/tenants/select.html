@@ -30,7 +30,9 @@
                   </small>
                 </div>
                 {% if membership.is_owner %}
-                <span class="badge bg-primary">{% translate 'Owner' %}</span>
+                <span class="badge bg-primary" style="background: linear-gradient(to bottom, #4374d5,black);">
+                  {% translate 'Owner' %}
+                </span>
                 {% endif %}
               </div>
 
@@ -39,7 +41,7 @@
                   <i class="bi bi-shield-check"></i>
                   {{ membership.get_role_display }}
                 </span>
-                <span class="badge bg-info ">
+                <span class="badge bg-info " style="background: linear-gradient(to bottom, #4374d5,black);">
                   <i class="bi bi-graph-up"></i>
                   {{ membership.tenant.get_plan_display }}
                 </span>
@@ -53,8 +55,10 @@
               <form method="post" class="d-grid">
                 {% csrf_token %}
                 <input type="hidden" name="tenant_id" value="{{ membership.tenant.id }}">
-                <button type="submit" class="btn btn-primary">
-                  <i class="bi bi-arrow-right-circle"></i> {% translate 'Select' %}
+                <button type="submit" class="btn btn-primary"
+                  style="background: linear-gradient(to bottom, #4374d5,black);">
+                  <i class="bi bi-arrow-right-circle"
+                    style="background: linear-gradient(to bottom, #4374d5,black);"></i> {% translate 'Select' %}
                 </button>
               </form>
             </div>
@@ -73,7 +77,8 @@
         <div class="card-body text-center p-5">
           <i class="bi bi-building display-1 text-muted"></i>
           <h4 class="mt-4">{% translate 'No Organizations Yet' %}</h4>
-          <p class="text-muted">{% translate "You're not a member of any organization. Create one to get started!" %}</p>
+          <p class="text-muted">{% translate "You're not a member of any organization. Create one to get started!" %}
+          </p>
           <a href="{% url 'tenants:create' %}" class="btn btn-primary btn-lg mt-3">
             <i class="bi bi-plus-circle"></i> {% translate 'Create Your First Organization' %}
           </a>

@@ -114,12 +114,12 @@
         <div class="col-md-3">
           <label for="search" class="form-label small text-muted">{% translate "Search" %}</label>
           <input type="text" name="search" id="search" class="form-control"
-                 placeholder="{% translate 'Payment number...' %}">
+            placeholder="{% translate 'Payment number...' %}">
         </div>
 
-        <div class="col-md-1 d-flex align-items-end">
-          <button type="submit" class="btn btn-primary w-150" 
-          style="background: linear-gradient(to bottom, #284378, black);">
+        <div class="col-md-2 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-150"
+            style="background: linear-gradient(to bottom, #4374d5, black);">
             <i class="bi bi-funnel"></i> {% translate 'Filter' %}
           </button>
         </div>
@@ -140,8 +140,7 @@
         <i class="bi bi-table"></i> {% translate "Payments List" %}
       </h5>
       <div>
-        <button class="btn btn-sm btn-outline-success" 
-        style="background: linear-gradient(to bottom, #284378, black);">
+        <button class="btn btn-sm btn-outline-success">
           <i class="bi bi-file-earmark-excel"></i> {% translate "Export" %}
         </button>
       </div>
@@ -172,8 +171,9 @@
               </td>
               <td>
                 <div class="d-flex align-items-center">
-                  <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" 
-                       style="width: 36px; height: 36px; font-size: 14px;">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
+                    style="width: 36px; height: 36px; font-size: 14px;">
                     {{ payment.driver.full_name|slice:":1"|upper }}
                   </div>
                   <div>
@@ -191,9 +191,9 @@
               </td>
               <td class="text-end">
                 {% if payment.deductions > 0 %}
-                  <span class="text-danger">- R$ {{ payment.deductions|floatformat:2 }}</span>
+                <span class="text-danger">- R$ {{ payment.deductions|floatformat:2 }}</span>
                 {% else %}
-                  <span class="text-muted">-</span>
+                <span class="text-muted">-</span>
                 {% endif %}
               </td>
               <td class="text-end">
@@ -201,67 +201,61 @@
               </td>
               <td class="text-center">
                 {% if payment.status == 'pending' %}
-                  <span class="badge bg-warning">
-                    <i class="bi bi-clock"></i> {% translate "Pending" %}
-                  </span>
+                <span class="badge bg-warning">
+                  <i class="bi bi-clock"></i> {% translate "Pending" %}
+                </span>
                 {% elif payment.status == 'approved' %}
-                  <span class="badge bg-info">
-                    <i class="bi bi-check-circle"></i> {% translate "Approved" %}
-                  </span>
+                <span class="badge bg-info">
+                  <i class="bi bi-check-circle"></i> {% translate "Approved" %}
+                </span>
                 {% elif payment.status == 'processing' %}
-                  <span class="badge bg-primary">
-                    <i class="bi bi-arrow-repeat"></i> {% translate "Processing" %}
-                  </span>
+                <span class="badge bg-primary">
+                  <i class="bi bi-arrow-repeat"></i> {% translate "Processing" %}
+                </span>
                 {% elif payment.status == 'paid' %}
-                  <span class="badge bg-success">
-                    <i class="bi bi-cash-coin"></i> {% translate "Paid" %}
-                  </span>
+                <span class="badge bg-success">
+                  <i class="bi bi-cash-coin"></i> {% translate "Paid" %}
+                </span>
                 {% elif payment.status == 'cancelled' %}
-                  <span class="badge bg-danger">
-                    <i class="bi bi-x-circle"></i> {% translate "Cancelled" %}
-                  </span>
+                <span class="badge bg-danger">
+                  <i class="bi bi-x-circle"></i> {% translate "Cancelled" %}
+                </span>
                 {% endif %}
               </td>
               <td class="text-center">
                 {% if payment.payment_method %}
-                  <small class="badge bg-secondary">
-                    {{ payment.get_payment_method_display }}
-                  </small>
+                <small class="badge bg-secondary">
+                  {{ payment.get_payment_method_display }}
+                </small>
                 {% else %}
-                  <span class="text-muted">-</span>
+                <span class="text-muted">-</span>
                 {% endif %}
               </td>
               <td class="text-end pe-3">
                 <div class="btn-group btn-group-sm">
-                  <a href="{% url 'fleet:payment_order_detail' payment.pk %}" 
-                     class="btn btn-outline-primary"
-                     title="{% translate 'View Details' %}">
+                  <a href="{% url 'fleet:payment_order_detail' payment.pk %}" class="btn btn-outline-primary"
+                    title="{% translate 'View Details' %}">
                     <i class="bi bi-eye"></i>
                   </a>
-                  
+
                   {% if payment.status == 'pending' %}
                   {% translate 'Approve this payment order?' as confirm_message_4 %}
-                  <a href="{% url 'fleet:payment_order_approve' payment.pk %}" 
-                     class="btn btn-outline-success"
-                     title="{% translate 'Approve for Payment' %}"
-                     onclick="return confirm('{{ confirm_message_4 }}')">
+                  <a href="{% url 'fleet:payment_order_approve' payment.pk %}" class="btn btn-outline-success"
+                    title="{% translate 'Approve for Payment' %}" onclick="return confirm('{{ confirm_message_4 }}')">
                     <i class="bi bi-check-lg"></i>
                   </a>
                   {% endif %}
 
                   {% if payment.status == 'approved' %}
-                  <a href="{% url 'fleet:payment_order_pay' payment.pk %}" 
-                     class="btn btn-outline-success"
-                     title="{% translate 'Process Payment' %}">
+                  <a href="{% url 'fleet:payment_order_pay' payment.pk %}" class="btn btn-outline-success"
+                    title="{% translate 'Process Payment' %}">
                     <i class="bi bi-cash-coin"></i>
                   </a>
                   {% endif %}
 
                   {% if payment.receipt_file %}
-                  <a href="{{ payment.receipt_file.url }}" 
-                     class="btn btn-outline-info"
-                     title="{% translate 'Download Receipt' %}"
-                     target="_blank">
+                  <a href="{{ payment.receipt_file.url }}" class="btn btn-outline-info"
+                    title="{% translate 'Download Receipt' %}" target="_blank">
                     <i class="bi bi-file-pdf"></i>
                   </a>
                   {% endif %}
@@ -275,7 +269,8 @@
                 <p class="text-muted mt-3 mb-0">
                   {% translate "No payment orders found" %}
                 </p>
-                <a href="{% url 'fleet:work_report_list' %}" class="btn btn-primary mt-3">
+                <a href="{% url 'fleet:work_report_list' %}" class="btn btn-primary mt-3"
+                  style="background: linear-gradient(to bottom, #4374d5,black);">
                   <i class="bi bi-file-earmark-text"></i> {% translate "View Work Reports" %}
                 </a>
               </td>
@@ -311,7 +306,8 @@
             <a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="bi bi-chevron-right"></i></a>
           </li>
           <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"><i class="bi bi-chevron-double-right"></i></a>
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"><i
+                class="bi bi-chevron-double-right"></i></a>
           </li>
           {% endif %}
         </ul>
